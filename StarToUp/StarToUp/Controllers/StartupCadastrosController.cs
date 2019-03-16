@@ -54,6 +54,7 @@ namespace StarToUp.Controllers
             {
                 db.StartupCadastros.Add(startupCadastro);
                 db.SaveChanges();
+                Session["StartupCadastroID"] = startupCadastro;
                 return RedirectToAction("../Home/Index");
             }
 
