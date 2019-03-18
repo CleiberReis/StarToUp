@@ -1,6 +1,5 @@
 ﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
 
 *.lock
-.vs
