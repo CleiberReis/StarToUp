@@ -16,15 +16,29 @@ namespace StarToUp
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/css/bootstrap.min.css",
+                      "~/Content/css/owl.carousel.css",
+                      "~/Content/css/owl.theme.default.css",
+                      "~/Content/css/magnific-popup.css",
+                      "~/Content/css/font-awesome.min.css",
+                      "~/Content/css/style.css"));
+
+            bundles.Add(new StyleBundle("~/Content/js").Include(
+                      "~/Content/js/jquery.min.js",
+                      "~/Content/js/bootstrap.min.js",
+                      "~/Content/js/owl.carousel.min.js",
+                      "~/Content/js/jquery.magnific-popup.js",
+                      "~/Content/js/main.js"));
         }
     }
 }
