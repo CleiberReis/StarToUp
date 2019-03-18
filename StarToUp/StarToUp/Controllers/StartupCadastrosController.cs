@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StarToUp.Models;
+using StarToUp.Repositories;
 
 namespace StarToUp.Controllers
 {
@@ -55,6 +56,15 @@ namespace StarToUp.Controllers
                 db.StartupCadastros.Add(startupCadastro);
                 db.SaveChanges();
                 Session["StartupCadastroID"] = startupCadastro;
+
+                GmailEmailService gmail = new GmailEmailService();
+                EmailMessage msg = new EmailMessage();
+                msg.Body = "<!DOCTYPE HTML><html><body><p>Cara Startup,<br/>Seja bem-vinda!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><p>'LINK'</p><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+                msg.IsHtml = true;
+                msg.Subject = "E-mail de Confirmação - StarToUp";
+                msg.ToEmail = startupCadastro.Email;
+                gmail.SendEmailMessage(msg);
+
                 return RedirectToAction("../Home/Index");
             }
 
