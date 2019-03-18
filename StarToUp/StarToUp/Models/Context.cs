@@ -15,8 +15,7 @@ namespace StarToUp.Models
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
         public DbSet<TipoUsuario> TipoUsuarios { get; set; }
-        public DbSet<StartupCadastro> StartupCadastros { get; set; }        public DbSet<EmpresaCadastro> EmpresaCadastro { get; set; }
-
+        public DbSet<StartupCadastro> StartupCadastros { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();

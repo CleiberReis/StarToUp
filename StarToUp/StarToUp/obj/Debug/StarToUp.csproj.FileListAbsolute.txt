@@ -295,4 +295,3 @@ C:\Users\Gabriele Kiane\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\
 C:\Users\Gabriele Kiane\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Gabriele Kiane\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Gabriele Kiane\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\Gabriele Kiane\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.EmpresaCadastro.resources
