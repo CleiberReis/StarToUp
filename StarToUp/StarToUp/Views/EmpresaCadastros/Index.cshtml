@@ -1,0 +1,55 @@
+﻿@model IEnumerable<StarToUp.Models.EmpresaCadastro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <div class="row linhaunderline">
+        <div class="col-md-8">
+            <b>Descrição</b>
+        </div>
+        <div class="col-md-2">
+            <b>Nome:</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>E-mail:</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Senha:</b>
+        </div>
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+    <div class="row linhaunderline"
+         onmouseover="javascript:this.style.backgroundColor='#e2e2e2'"
+         onmouseout="javascript:this.style.backgroundColor=''">
+        <div class="col-md-8">
+            @Html.DisplayFor(modelItem => item.Nome)
+        </div>
+        <div class="col-md-2">
+            @Html.DisplayFor(modelItem => item.Email)
+        </div>
+        <div class="col-md-2">
+            @Html.DisplayFor(modelItem => item.Senha)
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <a href='@Url.Action("Edit", "Empresas", new { id = item.EmpresaCadastroID })'>
+                <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
+                     title="Editar" />
+            </a>
+            <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal"
+               data-content="@item.Nome" data-id="@item.EmpresaCadastroID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
+            </a>
+        </div>
+    </div>
+    }
+
+</table>

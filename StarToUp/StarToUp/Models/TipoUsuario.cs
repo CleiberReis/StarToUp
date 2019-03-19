@@ -10,6 +10,6 @@ namespace StarToUp.Models
         public int TipoUsuarioID { get; set; }
         public string Descricao { get; set; }
 
-        public virtual ICollection<StartupCadastro> StartupCadastros { get; set; }
+        public virtual ICollection<StartupCadastro> StartupCadastros { get; set; }        public virtual ICollection<EmpresaCadastro> EmpresaCadastros { get; set; }
     }
 }
