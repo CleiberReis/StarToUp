@@ -240,11 +240,11 @@
     <Content Include="Content\img\about1.jpg" />
     <Content Include="Content\img\about2.jpg" />
     <Content Include="Content\img\author.jpg" />
-    <Content Include="Content\img\background#1.png" />
-    <Content Include="Content\img\background#2.jpg" />
-    <Content Include="Content\img\background#3.jpg" />
-    <Content Include="Content\img\background#4.jpg" />
-    <Content Include="Content\img\background#5.jpg" />
+    <Content Include="Content\img\backgroun1.png" />
+    <Content Include="Content\img\backgroun2.jpg" />
+    <Content Include="Content\img\backgroun3.jpg" />
+    <Content Include="Content\img\backgroun4.jpg" />
+    <Content Include="Content\img\backgroun5.jpg" />
     <Content Include="Content\img\background1.jpg" />
     <Content Include="Content\img\background2.jpg" />
     <Content Include="Content\img\background3.jpg" />
