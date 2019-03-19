@@ -411,6 +411,10 @@ C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
+<<<<<<< HEAD
+C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.startupCadastro_2.resources
+=======
 C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
 C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
@@ -469,3 +473,4 @@ C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\obj\Debug\Star
 C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\backup\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
+>>>>>>> 6bf0fe67a466b1de9d102592e7397525d19ce9f5
