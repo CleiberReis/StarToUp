@@ -27,7 +27,7 @@
     <!-- Header -->
     <header id="home">
         <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('./img/background1.jpg');">
+        <div class="bg-img" style="background-image: url('../../Content/img/background1.jpg');">
             <div class="overlay"></div>
         </div>
         <!-- /Background Image -->
@@ -39,8 +39,8 @@
                     <!-- Logo -->
                     <div class="navbar-brand">
                         <a href="index.html">
-                            <img class="logo" src="img/logo.png" alt="logo">
-                            <img class="logo-alt" src="img/logo-alt.png" alt="logo">
+                            <img class="logo" src="~/Content/img/Logo_StarToUp1.png" alt="logo">
+                            <img class="logo-alt" src="~/Content/img/logo-alt.png" alt="logo">
                         </a>
                     </div>
                     <!-- /Logo -->
@@ -84,7 +84,7 @@
                             <p class="white-text">
                                 Venha decolar com a gente!
                             </p>
-                            <button class="btn-lg btn-default">@Html.ActionLink("Cadastrar Empresa", "Create", "EmpresaCadastros")</button>
+                            <button class="btn-lg btn-default">@Html.ActionLink("Cadastrar Empresa", "Create", "StartupCadastros")</button>
                             <button class="btn-lg btn-default">@Html.ActionLink("Cadastrar Startup", "Create", "StartupCadastros")</button>
                         </div>
                     </div>
@@ -98,59 +98,7 @@
     </header>
     @RenderBody()
     <!-- /Header -->
-    @*<!-- About -->
-        <div id="about" class="section md-padding">
-
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Row -->
-                <div class="row">
-
-                    <!-- Section header -->
-                    <div class="section-header text-center">
-                        <h2 class="title">Welcome to Website</h2>
-                    </div>
-                    <!-- /Section header -->
-                    <!-- about -->
-                    <div class="col-md-4">
-                        <div class="about">
-                            <i class="fa fa-cogs"></i>
-                            <h3>Fully Customizible</h3>
-                            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <!-- /about -->
-                    <!-- about -->
-                    <div class="col-md-4">
-                        <div class="about">
-                            <i class="fa fa-magic"></i>
-                            <h3>Awesome Features</h3>
-                            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <!-- /about -->
-                    <!-- about -->
-                    <div class="col-md-4">
-                        <div class="about">
-                            <i class="fa fa-mobile"></i>
-                            <h3>Fully Responsive</h3>
-                            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <!-- /about -->
-
-                </div>
-                <!-- /Row -->
-
-            </div>
-            <!-- /Container -->
-
-        </div>
-        <!-- /About -->
+    @*
         <!-- Portfolio -->
         <div id="portfolio" class="section md-padding bg-grey">
 

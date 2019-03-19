@@ -139,7 +139,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
     <Compile Include="Controllers\StartupCadastrosController.cs" />
@@ -154,13 +153,8 @@
     <Compile Include="Migrations\201903162104134_StartupCadastro.Designer.cs">
       <DependentUpon>201903162104134_StartupCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903182341020_empresaCadastro.cs" />
-    <Compile Include="Migrations\201903182341020_empresaCadastro.Designer.cs">
-      <DependentUpon>201903182341020_empresaCadastro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\StartupCadastro.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,6 +234,11 @@
     <Content Include="Content\img\about1.jpg" />
     <Content Include="Content\img\about2.jpg" />
     <Content Include="Content\img\author.jpg" />
+    <Content Include="Content\img\background#1.png" />
+    <Content Include="Content\img\background#2.jpg" />
+    <Content Include="Content\img\background#3.jpg" />
+    <Content Include="Content\img\background#4.jpg" />
+    <Content Include="Content\img\background#5.jpg" />
     <Content Include="Content\img\background1.jpg" />
     <Content Include="Content\img\background2.jpg" />
     <Content Include="Content\img\background3.jpg" />
@@ -249,6 +248,7 @@
     <Content Include="Content\img\blog3.jpg" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\Logo_StarToUp1.png" />
     <Content Include="Content\img\perso1.jpg" />
     <Content Include="Content\img\perso2.jpg" />
     <Content Include="Content\img\post1.jpg" />
@@ -324,11 +324,6 @@
     <Content Include="Views\Logon\Logar.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Logon\AcessoNegado.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Create.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Delete.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Details.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Edit.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,9 +347,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903162104134_StartupCadastro.resx">
       <DependentUpon>201903162104134_StartupCadastro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903182341020_empresaCadastro.resx">
-      <DependentUpon>201903182341020_empresaCadastro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
