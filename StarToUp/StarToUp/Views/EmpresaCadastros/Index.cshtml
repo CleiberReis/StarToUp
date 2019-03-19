@@ -10,42 +10,46 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoUsuario.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
-        <th></th>
-    </tr>
+    <div class="row linhaunderline">
+        <div class="col-md-8">
+            <b>Descrição</b>
+        </div>
+        <div class="col-md-2">
+            <b>Nome:</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>E-mail:</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Senha:</b>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoUsuario.Descricao)
-        </td>
-        <td>
+
+    @foreach (var item in Model)
+    {
+    <div class="row linhaunderline"
+         onmouseover="javascript:this.style.backgroundColor='#e2e2e2'"
+         onmouseout="javascript:this.style.backgroundColor=''">
+        <div class="col-md-8">
             @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
+        </div>
+        <div class="col-md-2">
             @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
+        </div>
+        <div class="col-md-2">
             @Html.DisplayFor(modelItem => item.Senha)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmpresaCadastroID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EmpresaCadastroID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmpresaCadastroID })
-        </td>
-    </tr>
-}
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <a href='@Url.Action("Edit", "Empresas", new { id = item.EmpresaCadastroID })'>
+                <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
+                     title="Editar" />
+            </a>
+            <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal"
+               data-content="@item.Nome" data-id="@item.EmpresaCadastroID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
+            </a>
+        </div>
+    </div>
+    }
 
 </table>

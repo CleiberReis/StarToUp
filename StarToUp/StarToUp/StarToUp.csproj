@@ -142,6 +142,7 @@
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
+    <Compile Include="Controllers\PerfilEmpresasController.cs" />
     <Compile Include="Controllers\StartupCadastrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,9 +159,18 @@
     <Compile Include="Migrations\201903182341020_empresaCadastro.Designer.cs">
       <DependentUpon>201903182341020_empresaCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903190432473_startupCadastro_2.cs" />
+    <Compile Include="Migrations\201903190432473_startupCadastro_2.Designer.cs">
+      <DependentUpon>201903190432473_startupCadastro_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903191924067_perfilEmpresa.cs" />
+    <Compile Include="Migrations\201903191924067_perfilEmpresa.Designer.cs">
+      <DependentUpon>201903191924067_perfilEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
+    <Compile Include="Models\PerfilEmpresa.cs" />
     <Compile Include="Models\StartupCadastro.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,6 +249,8 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\about1.jpg" />
     <Content Include="Content\img\about2.jpg" />
+    <Content Include="Content\img\adicionar.png" />
+    <Content Include="Content\img\ativar.png" />
     <Content Include="Content\img\author.jpg" />
     <Content Include="Content\img\backgroun1.png" />
     <Content Include="Content\img\backgroun2.jpg" />
@@ -252,6 +264,11 @@
     <Content Include="Content\img\blog1.jpg" />
     <Content Include="Content\img\blog2.jpg" />
     <Content Include="Content\img\blog3.jpg" />
+    <Content Include="Content\img\cancelar.png" />
+    <Content Include="Content\img\desativar.png" />
+    <Content Include="Content\img\detalhes.png" />
+    <Content Include="Content\img\editar.png" />
+    <Content Include="Content\img\excluir.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
@@ -263,6 +280,7 @@
     <Content Include="Content\img\team1.jpg" />
     <Content Include="Content\img\team2.jpg" />
     <Content Include="Content\img\team3.jpg" />
+    <Content Include="Content\img\voltar.png" />
     <Content Include="Content\img\work1.jpg" />
     <Content Include="Content\img\work2.jpg" />
     <Content Include="Content\img\work3.jpg" />
@@ -335,6 +353,11 @@
     <Content Include="Views\EmpresaCadastros\Details.cshtml" />
     <Content Include="Views\EmpresaCadastros\Edit.cshtml" />
     <Content Include="Views\EmpresaCadastros\Index.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Create.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Delete.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Details.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Edit.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903182341020_empresaCadastro.resx">
       <DependentUpon>201903182341020_empresaCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903190432473_startupCadastro_2.resx">
+      <DependentUpon>201903190432473_startupCadastro_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903191924067_perfilEmpresa.resx">
+      <DependentUpon>201903191924067_perfilEmpresa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,8 +14,10 @@ namespace StarToUp.Models
             Configuration.ProxyCreationEnabled = false;
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
+
+        public DbSet<PerfilEmpresa> PerfilEmpresas { get; set; }
         public DbSet<TipoUsuario> TipoUsuarios { get; set; }
-        public DbSet<StartupCadastro> StartupCadastros { get; set; }        public DbSet<EmpresaCadastro> EmpresaCadastros { get; set; }
+        public DbSet<StartupCadastro> StartupCadastros { get; set; }        public DbSet<EmpresaCadastro> EmpresaCadastros { get; set; }  
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();

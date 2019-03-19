@@ -1,15 +1,15 @@
 ﻿@model StarToUp.Models.EmpresaCadastro
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edição da Empresa";
 }
 
-<h2>Edit</h2>
+<h2>Edição da Empresa:</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>EmpresaCadastro</h4>
         <hr />
@@ -50,12 +50,27 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <div>
+        <a href='@Url.Action("Index", "EmpresaCadastros")'>
+            <img src='@Url.Content("~/Content/img/voltar.png")' class="botaoicone"
+                 title="Voltar" /> 
+        </a>
+    </div>
+    @section scripts{
+        <script>
+            $(function () {
+                $('input, select, textarea').each(function () {
+                    if ($(this).hasClass('input-validation-error'))
+                        $(this).focus();
+                });
+            });
+        </script>
+    }
 </div>
