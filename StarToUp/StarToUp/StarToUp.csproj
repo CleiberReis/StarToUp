@@ -142,6 +142,7 @@
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
+    <Compile Include="Controllers\PerfilEmpresasController.cs" />
     <Compile Include="Controllers\StartupCadastrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -352,6 +353,11 @@
     <Content Include="Views\EmpresaCadastros\Details.cshtml" />
     <Content Include="Views\EmpresaCadastros\Edit.cshtml" />
     <Content Include="Views\EmpresaCadastros\Index.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Create.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Delete.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Details.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Edit.cshtml" />
+    <Content Include="Views\PerfilEmpresas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
