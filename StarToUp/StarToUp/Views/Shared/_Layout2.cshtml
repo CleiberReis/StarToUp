@@ -27,7 +27,7 @@
     <!-- Header -->
     <header id="home">
         <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/background1.jpg');">
+        <div class="bg-img" style="background-image: url('../../Content/img/backgroun3.jpg');">
             <div class="overlay"></div>
         </div>
         <!-- /Background Image -->
@@ -37,12 +37,12 @@
 
                 <div class="navbar-header">
                     <!-- Logo -->
-                    <div class="navbar-brand">
-                        <a href="index.html">
-                            <img class="logo" src="~/Content/img/Logo_StarToUp1.png" alt="logo">
-                            <img class="logo-alt" src="~/Content/img/logo-alt.png" alt="logo">
-                        </a>
-                    </div>
+                    @*<div class="navbar-brand">
+                            <a href="index.html">
+                                <img class="logo" src="~/Content/img/Logo_StarToUp1.png" alt="logo">
+                                <img class="logo-alt" src="~/Content/img/logo-alt.png" alt="logo">
+                            </a>
+                        </div>*@
                     <!-- /Logo -->
                     <!-- Collapse nav button -->
                     <div class="nav-collapse">
@@ -56,16 +56,13 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Sobre o site</a></li>
                     <li><a href="#portfolio">Startups em Destaque</a></li>
-                    <li><a href="#service">Eventos</a></li>
-                    <li><a href="#pricing">Prices</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contato</a></li>
                     <li class="has-dropdown">
                         <a href="#blog">Sign In</a>
                         <ul class="dropdown">
                             <li>@Html.ActionLink("Sign In", "Logar", "Logon")</li>
                         </ul>
                     </li>
-                    <li><a href="#contact">Contato</a></li>
                 </ul>
                 <!-- /Main navigation -->
 
@@ -84,8 +81,8 @@
                             <p class="white-text">
                                 Venha decolar com a gente!
                             </p>
-                            <button class="btn-lg btn-default">@Html.ActionLink("Cadastrar Empresa", "Create", "EmpresaCadastros")</button>
-                            <button class="btn-lg btn-default">@Html.ActionLink("Cadastrar Startup", "Create", "StartupCadastros")</button>
+                            <button class="btn-lg btn-outline-primary">@Html.ActionLink("Cadastrar Empresa", "Create", "EmpresaCadastros")</button>
+                            <button class="btn-lg btn-outline-primary">@Html.ActionLink("Cadastrar Startup", "Create", "StartupCadastros")</button>
                         </div>
                     </div>
                     <!-- /home content -->
@@ -99,113 +96,7 @@
     @RenderBody()
     <!-- /Header -->
     @*
-        <!-- Portfolio -->
-        <div id="portfolio" class="section md-padding bg-grey">
 
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Row -->
-                <div class="row">
-
-                    <!-- Section header -->
-                    <div class="section-header text-center">
-                        <h2 class="title">Featured Works</h2>
-                    </div>
-                    <!-- /Section header -->
-                    <!-- Work -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work1.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work1.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Work -->
-                    <!-- Work -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work2.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work2.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Work -->
-                    <!-- Work -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work3.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Work -->
-                    <!-- Work -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work4.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work4.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Work -->
-                    <!-- Work -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work5.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work5.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Work -->
-                    <!-- Work -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <img class="img-responsive" src="./img/work6.jpg" alt="">
-                        <div class="overlay"></div>
-                        <div class="work-content">
-                            <span>Category</span>
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
-                                <a class="lightbox" href="./img/work6.jpg"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Work -->
-
-                </div>
-                <!-- /Row -->
-
-            </div>
-            <!-- /Container -->
-
-        </div>
-        <!-- /Portfolio -->
         <!-- Service -->
         <div id="service" class="section md-padding">
 
@@ -335,65 +226,7 @@
 
         </div>
         <!-- /Why Choose Us -->
-        <!-- Numbers -->
-        <div id="numbers" class="section sm-padding">
 
-            <!-- Background Image -->
-            <div class="bg-img" style="background-image: url('./img/background2.jpg');">
-                <div class="overlay"></div>
-            </div>
-            <!-- /Background Image -->
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Row -->
-                <div class="row">
-
-                    <!-- number -->
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="number">
-                            <i class="fa fa-users"></i>
-                            <h3 class="white-text"><span class="counter">451</span></h3>
-                            <span class="white-text">Happy clients</span>
-                        </div>
-                    </div>
-                    <!-- /number -->
-                    <!-- number -->
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="number">
-                            <i class="fa fa-trophy"></i>
-                            <h3 class="white-text"><span class="counter">12</span></h3>
-                            <span class="white-text">Awards won</span>
-                        </div>
-                    </div>
-                    <!-- /number -->
-                    <!-- number -->
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="number">
-                            <i class="fa fa-coffee"></i>
-                            <h3 class="white-text"><span class="counter">154</span>K</h3>
-                            <span class="white-text">Cups of Coffee</span>
-                        </div>
-                    </div>
-                    <!-- /number -->
-                    <!-- number -->
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="number">
-                            <i class="fa fa-file"></i>
-                            <h3 class="white-text"><span class="counter">45</span></h3>
-                            <span class="white-text">Projects completed</span>
-                        </div>
-                    </div>
-                    <!-- /number -->
-
-                </div>
-                <!-- /Row -->
-
-            </div>
-            <!-- /Container -->
-
-        </div>
-        <!-- /Numbers -->
         <!-- Pricing -->
         <div id="pricing" class="section md-padding">
 
@@ -629,202 +462,20 @@
 
         </div>
         <!-- /Team -->
-        <!-- Blog -->
-        <div id="blog" class="section md-padding bg-grey">
-
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Row -->
-                <div class="row">
-
-                    <!-- Section header -->
-                    <div class="section-header text-center">
-                        <h2 class="title">Recents news</h2>
-                    </div>
-                    <!-- /Section header -->
-                    <!-- blog -->
-                    <div class="col-md-4">
-                        <div class="blog">
-                            <div class="blog-img">
-                                <img class="img-responsive" src="./img/blog1.jpg" alt="">
-                            </div>
-                            <div class="blog-content">
-                                <ul class="blog-meta">
-                                    <li><i class="fa fa-user"></i>John doe</li>
-                                    <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                                    <li><i class="fa fa-comments"></i>57</li>
-                                </ul>
-                                <h3>Molestie at elementum eu facilisis sed odio</h3>
-                                <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                <a href="blog-single.html">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /blog -->
-                    <!-- blog -->
-                    <div class="col-md-4">
-                        <div class="blog">
-                            <div class="blog-img">
-                                <img class="img-responsive" src="./img/blog2.jpg" alt="">
-                            </div>
-                            <div class="blog-content">
-                                <ul class="blog-meta">
-                                    <li><i class="fa fa-user"></i>John doe</li>
-                                    <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                                    <li><i class="fa fa-comments"></i>57</li>
-                                </ul>
-                                <h3>Molestie at elementum eu facilisis sed odio</h3>
-                                <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                <a href="blog-single.html">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /blog -->
-                    <!-- blog -->
-                    <div class="col-md-4">
-                        <div class="blog">
-                            <div class="blog-img">
-                                <img class="img-responsive" src="./img/blog3.jpg" alt="">
-                            </div>
-                            <div class="blog-content">
-                                <ul class="blog-meta">
-                                    <li><i class="fa fa-user"></i>John doe</li>
-                                    <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                                    <li><i class="fa fa-comments"></i>57</li>
-                                </ul>
-                                <h3>Molestie at elementum eu facilisis sed odio</h3>
-                                <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                <a href="blog-single.html">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /blog -->
-
-                </div>
-                <!-- /Row -->
-
-            </div>
-            <!-- /Container -->
-
+    *@
+    <!-- Back to top -->
+    @*<div id="back-to-top"></div>
+    <!-- /Back to top -->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <!-- /Blog -->
-        <!-- Contact -->
-        <div id="contact" class="section md-padding">
-
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Row -->
-                <div class="row">
-
-                    <!-- Section-header -->
-                    <div class="section-header text-center">
-                        <h2 class="title">Get in touch</h2>
-                    </div>
-                    <!-- /Section-header -->
-                    <!-- contact -->
-                    <div class="col-sm-4">
-                        <div class="contact">
-                            <i class="fa fa-phone"></i>
-                            <h3>Phone</h3>
-                            <p>512-421-3940</p>
-                        </div>
-                    </div>
-                    <!-- /contact -->
-                    <!-- contact -->
-                    <div class="col-sm-4">
-                        <div class="contact">
-                            <i class="fa fa-envelope"></i>
-                            <h3>Email</h3>
-                            <p>email@support.com</p>
-                        </div>
-                    </div>
-                    <!-- /contact -->
-                    <!-- contact -->
-                    <div class="col-sm-4">
-                        <div class="contact">
-                            <i class="fa fa-map-marker"></i>
-                            <h3>Address</h3>
-                            <p>1739 Bubby Drive</p>
-                        </div>
-                    </div>
-                    <!-- /contact -->
-                    <!-- contact form -->
-                    <div class="col-md-8 col-md-offset-2">
-                        <form class="contact-form">
-                            <input type="text" class="input" placeholder="Name">
-                            <input type="email" class="input" placeholder="Email">
-                            <input type="text" class="input" placeholder="Subject">
-                            <textarea class="input" placeholder="Message"></textarea>
-                            <button class="main-btn">Send message</button>
-                        </form>
-                    </div>
-                    <!-- /contact form -->
-
-                </div>
-                <!-- /Row -->
-
-            </div>
-            <!-- /Container -->
-
-        </div>
-        <!-- /Contact -->*@
-    <!-- Footer -->
-    @*<footer id="footer" class="sm-padding bg-dark">
-
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Row -->
-                <div class="row">
-
-                    <div class="col-md-12">
-
-                        <!-- footer logo -->
-                        <div class="footer-logo">
-                            <a href="index.html"><img src="img/logo-alt.png" alt="logo"></a>
-                        </div>
-                        <!-- /footer logo -->
-                        <!-- footer follow -->
-                        <ul class="footer-follow">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                        <!-- /footer follow -->
-                        <!-- footer copyright -->
-                        <div class="footer-copyright">
-                            <p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                        </div>
-                        <!-- /footer copyright -->
-
-                    </div>
-
-                </div>
-                <!-- /Row -->
-
-            </div>
-            <!-- /Container -->
-
-        </footer>
-        <!-- /Footer -->
-        <!-- Back to top -->
-        <div id="back-to-top"></div>
-        <!-- /Back to top -->
-        <!-- Preloader -->
-        <div id="preloader">
-            <div class="preloader">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>*@
-    <!-- /Preloader -->
+    </div>
+    <!-- /Preloader -->*@
     <!-- jQuery Plugins -->
     @Scripts.Render("~/bundles/js")
 
