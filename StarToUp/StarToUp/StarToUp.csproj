@@ -239,6 +239,8 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\about1.jpg" />
     <Content Include="Content\img\about2.jpg" />
+    <Content Include="Content\img\adicionar.png" />
+    <Content Include="Content\img\ativar.png" />
     <Content Include="Content\img\author.jpg" />
     <Content Include="Content\img\background#1.png" />
     <Content Include="Content\img\background#2.jpg" />
@@ -252,6 +254,11 @@
     <Content Include="Content\img\blog1.jpg" />
     <Content Include="Content\img\blog2.jpg" />
     <Content Include="Content\img\blog3.jpg" />
+    <Content Include="Content\img\cancelar.png" />
+    <Content Include="Content\img\desativar.png" />
+    <Content Include="Content\img\detalhes.png" />
+    <Content Include="Content\img\editar.png" />
+    <Content Include="Content\img\excluir.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
@@ -263,6 +270,7 @@
     <Content Include="Content\img\team1.jpg" />
     <Content Include="Content\img\team2.jpg" />
     <Content Include="Content\img\team3.jpg" />
+    <Content Include="Content\img\voltar.png" />
     <Content Include="Content\img\work1.jpg" />
     <Content Include="Content\img\work2.jpg" />
     <Content Include="Content\img\work3.jpg" />
