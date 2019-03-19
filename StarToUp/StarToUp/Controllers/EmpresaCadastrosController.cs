@@ -65,7 +65,7 @@ namespace StarToUp.Controllers
                 msg.ToEmail = empresaCadastro.Email;
                 gmail.SendEmailMessage(msg);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("../Home/Index");
             }
 
             ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", empresaCadastro.TipoUsuarioID);
