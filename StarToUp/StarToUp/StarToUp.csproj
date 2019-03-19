@@ -162,6 +162,10 @@
     <Compile Include="Migrations\201903190432473_startupCadastro_2.Designer.cs">
       <DependentUpon>201903190432473_startupCadastro_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903191924067_perfilEmpresa.cs" />
+    <Compile Include="Migrations\201903191924067_perfilEmpresa.Designer.cs">
+      <DependentUpon>201903191924067_perfilEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903190432473_startupCadastro_2.resx">
       <DependentUpon>201903190432473_startupCadastro_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903191924067_perfilEmpresa.resx">
+      <DependentUpon>201903191924067_perfilEmpresa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

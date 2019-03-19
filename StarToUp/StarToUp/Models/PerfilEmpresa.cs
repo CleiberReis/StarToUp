@@ -25,7 +25,7 @@ namespace StarToUp.Models
         public string Estado { get; set; }
 
         // Dados da apresentação da empresa
-        public string Logomarca { get; set; } // Aqui será a foto! 
+        public string Logomarca { get; set; }
         public string Objetivo { get; set; }
 
         // Relacionamento
