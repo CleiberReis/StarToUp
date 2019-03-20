@@ -666,7 +666,7 @@ header {
 
 
 /*------------------------------------*\
-	Portfolio
+	Startups em destaques
 \*------------------------------------*/
 
 .work {
@@ -675,7 +675,7 @@ header {
 }
 
 .work>img {
-  width: 100%;
+    width: 100%;
 }
 
 .work .overlay {
