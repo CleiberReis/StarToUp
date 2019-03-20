@@ -9,19 +9,20 @@ namespace StarToUp.Models
 {
     public class EmpresaCadastro
     {
-        //[Key]
-        //public int EmpresaID { get; set; }
-        //[Required(ErrorMessage = "Preencha a descrição da Empresa")]
-        //[DisplayName("Descrição")]
-        //[StringLength(50, MinimumLength = 3, ErrorMessage = "A descrição do estado deve ter entre 3 e 50 caracteres.")]
-        //public string Descricao { get; set; }
-        //[Required(ErrorMessage = "Preencha a sigla do estado")]
-        //[StringLength(2, MinimumLength = 2, ErrorMessage = "A sigla do estado deve ter 2 caracteres.")]
-
-      
+        [Key]
         public int EmpresaCadastroID { get; set; }
+
+        [Required(ErrorMessage = "Preencha o nome da Empresa")]
+        [DisplayName("Nome:")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "O nome da empresa deve ter entre 3 e 50 caracteres.")]
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "Preencha o E-mail de sua Empresa")]
+        [DisplayName("E-mail:")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Você precisa de uma senha!")]
+        [DisplayName("Senha:")]
         public string Senha { get; set; }
 
         public int TipoUsuarioID { get; set; }
