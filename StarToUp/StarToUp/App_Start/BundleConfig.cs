@@ -33,7 +33,7 @@ namespace StarToUp
                       "~/Content/css/font-awesome.min.css",
                       "~/Content/css/style.css"));
 
-            bundles.Add(new StyleBundle("~/Content/js").Include(
+            bundles.Add(new ScriptBundle("~/Content/js").Include(
                       "~/Content/js/jquery.min.js",
                       "~/Content/js/bootstrap.min.js",
                       "~/Content/js/owl.carousel.min.js",

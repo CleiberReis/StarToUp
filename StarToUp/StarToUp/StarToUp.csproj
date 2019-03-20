@@ -269,6 +269,8 @@
     <Content Include="Content\img\detalhes.png" />
     <Content Include="Content\img\editar.png" />
     <Content Include="Content\img\excluir.png" />
+    <Content Include="Content\img\fatecoins1.png" />
+    <Content Include="Content\img\fatecoins2.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
