@@ -97,9 +97,6 @@ C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.TipoUsuario.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.StartupCadastro.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
@@ -416,6 +413,5 @@ C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\Sta
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.startupCadastro_2.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.perfilEmpresa.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.a.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
