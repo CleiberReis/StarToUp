@@ -28,19 +28,20 @@
 
     @foreach (var item in Model)
     {
-    <div class="row linhaunderline"
-         onmouseover="javascript:this.style.backgroundColor='#e2e2e2'"
-         onmouseout="javascript:this.style.backgroundColor=''">
-        <div class="col-md-8">
-            @Html.DisplayFor(modelItem => item.Nome)
+        <div class="row linhaunderline"
+             onmouseover="javascript:this.style.backgroundColor='#e2e2e2'"
+             onmouseout="javascript:this.style.backgroundColor=''">
+            <div class="col-md-8">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </div>
+            <div class="col-md-2">
+                @Html.DisplayFor(modelItem => item.Email)
+            </div>
+            <div class="col-md-2">
+                @Html.DisplayFor(modelItem => item.Senha)
+            </div>
         </div>
-        <div class="col-md-2">
-            @Html.DisplayFor(modelItem => item.Email)
-        </div>
-        <div class="col-md-2">
-            @Html.DisplayFor(modelItem => item.Senha)
-        </div>
-    </div>
     }
 
 </table>
+

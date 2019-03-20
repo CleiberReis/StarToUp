@@ -70,6 +70,17 @@ namespace StarToUp.Repositories
                 return startupCadastro;
             }
         }
+
+        internal static bool AutenticarUsuario(object email, object senha)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static bool AutenticarUsuario(string email, object senha)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void Deslogar()
         {
             HttpContext.Current.Session["Usuario"] = "";
