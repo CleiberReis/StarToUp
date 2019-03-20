@@ -40,15 +40,6 @@
         <div class="col-md-2">
             @Html.DisplayFor(modelItem => item.Senha)
         </div>
-        <div class="col-md-2 acoesadireita">
-            <a href='@Url.Action("Edit", "Empresas", new { id = item.EmpresaCadastroID })'>
-                <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
-                     title="Editar" />
-            </a>
-            <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal"
-               data-content="@item.Nome" data-id="@item.EmpresaCadastroID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
-            </a>
-        </div>
     </div>
     }
 
