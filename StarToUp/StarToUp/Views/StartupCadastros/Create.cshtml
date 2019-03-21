@@ -1,79 +1,219 @@
 ﻿@model StarToUp.Models.StartupCadastro
 
 @{
+    /**/
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+@*<div id="contact" class="section md-padding">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Section-header -->
+                <div class="section-header text-center">
+                    <h2 class="title">Startup, Crie seu cadastro</h2>
+                </div>
+                <!-- /Section-header -->
+                <!-- contact form -->
+                <div class="col-md-8 col-md-offset-2">
+                    <form class="contact-form">
+                        <input type="text" class="input" placeholder="Nome">
+                        <input type="email" class="input" placeholder="Email">
+                        <input type="text" class="input" placeholder="Assunto">
+                        <textarea class="input" placeholder="Mensagem"></textarea>
+                        <button class="main-btn">Enviar mensagem</button>
+                    </form>
+                </div>
+                <!-- /contact form -->
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Contact -->*@
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    <div id="contact" class="section md-padding">
 
-    <div class="form-horizontal">
-        <h4>StartupCadastro</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label class="control-label col-md-2">
-                Escolha:
-            </label>
-            <div class="col-md-10">
-                @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Section-header -->
+                <div class="section-header text-center">
+                    <h2 class="title">Startup, Crie seu cadastro</h2>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </div>
+                <!-- /Section-header -->
+                <!-- Form -->
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <h3 class="text-center">@ViewBag.Error</h3>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div>
+                            <div class="col-md-10 ">
+                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome da Startup *" />
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group">
+                        <div>
+                            <div class="col-md-10 ">
+                                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail de Contato *" />
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha *" />
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
+                        </div>
+                    </div>
+                    <br /><br /><br /><br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Cadastrar" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-horizontal">
+        <!-- /Form-->
+    </div>
+    <!-- /Row -->
+    <!-- /Container -->
+    @*<div class="form-horizontal">
+            <h4>StartupCadastro</h4>
             <hr />
-            <h3 class="text-center">@ViewBag.Error</h3>
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 <label class="control-label col-md-2">
-                    Nome
-                </label>
-                <div>
-                    <div class="col-md-10 ">
-                        <input type="text" name="nome" id="nome" class="form-control" />
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">
-                    Email
-                </label>
-                <div>
-                    <div class="col-md-10 ">
-                        <input type="text" name="email" id="email" class="form-control" />
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">
-                    Senha
+                    Escolha:
                 </label>
                 <div class="col-md-10">
-                    <input type="password" name="senha" id="senha" class="form-control" />
+                    @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
 
-    </div>
+            <div class="form-horizontal">
+                <hr />
+                <h3 class="text-center">@ViewBag.Error</h3>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                        Nome
+                    </label>
+                    <div>
+                        <div class="col-md-10 ">
+                            <input type="text" name="nome" id="nome" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                        Email
+                    </label>
+                    <div>
+                        <div class="col-md-10 ">
+                            <input type="text" name="email" id="email" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                        Senha
+                    </label>
+                    <div class="col-md-10">
+                        <input type="password" name="senha" id="senha" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+        </div>*@
 }
-
 <div>
-    <a href='@Url.Action("Index", "Home")'>
-        <img src='@Url.Content("~/Content/Images/voltar.png")' class="botaoicone" title="" /> Startups Cadastradas
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href='@Url.Action("Index", "EmpresaCadastros")'>
+        <img src='@Url.Content("~/Content/img/voltar.png")' class="botaoicone"
+             title="Voltar" />
     </a>
 </div>
 
+<!-- Footer -->
+<footer id="footer" class="sm-padding bg-dark">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!-- footer logo -->
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+                </div>
+                <!-- /footer logo -->
+                <!-- footer follow -->
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <!-- /footer follow -->
+                <!-- footer copyright -->
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
+                <!-- /footer copyright -->
+
+            </div>
+
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+</footer>
+<!-- /Footer -->
 
 @section scripts{
     <script>
@@ -84,4 +224,5 @@
             });
         });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 }

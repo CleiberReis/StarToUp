@@ -147,25 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903162051527_TipoUsuario.cs" />
-    <Compile Include="Migrations\201903162051527_TipoUsuario.Designer.cs">
-      <DependentUpon>201903162051527_TipoUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903162104134_StartupCadastro.cs" />
-    <Compile Include="Migrations\201903162104134_StartupCadastro.Designer.cs">
-      <DependentUpon>201903162104134_StartupCadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903182341020_empresaCadastro.cs" />
-    <Compile Include="Migrations\201903182341020_empresaCadastro.Designer.cs">
-      <DependentUpon>201903182341020_empresaCadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903190432473_startupCadastro_2.cs" />
-    <Compile Include="Migrations\201903190432473_startupCadastro_2.Designer.cs">
-      <DependentUpon>201903190432473_startupCadastro_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903191924067_perfilEmpresa.cs" />
-    <Compile Include="Migrations\201903191924067_perfilEmpresa.Designer.cs">
-      <DependentUpon>201903191924067_perfilEmpresa.cs</DependentUpon>
+    <Compile Include="Migrations\201903210440004_atualizacoes.cs" />
+    <Compile Include="Migrations\201903210440004_atualizacoes.Designer.cs">
+      <DependentUpon>201903210440004_atualizacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
@@ -377,20 +361,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903162051527_TipoUsuario.resx">
-      <DependentUpon>201903162051527_TipoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903162104134_StartupCadastro.resx">
-      <DependentUpon>201903162104134_StartupCadastro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903182341020_empresaCadastro.resx">
-      <DependentUpon>201903182341020_empresaCadastro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903190432473_startupCadastro_2.resx">
-      <DependentUpon>201903190432473_startupCadastro_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903191924067_perfilEmpresa.resx">
-      <DependentUpon>201903191924067_perfilEmpresa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903210440004_atualizacoes.resx">
+      <DependentUpon>201903210440004_atualizacoes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
