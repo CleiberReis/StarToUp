@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using StarToUp.Models;
 using StarToUp.Repositories;
 
@@ -65,7 +66,47 @@ namespace StarToUp.Controllers
                 msg.ToEmail = startupCadastro.Email;
                 gmail.SendEmailMessage(msg);
 
-                return RedirectToAction("../Home/Index");
+                var response = Request["g-recaptcha-response"];
+                //chave secreta que foi gerada no site
+                const string secret = "6Ldjv5gUAAAAAE8AgNayyITU99Lexs-BEeZU4imx";
+                var client = new WebClient();
+                var reply =
+                client.DownloadString(
+
+               string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+               secret, response));
+                var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
+                //Response false – devemos ver qual a mensagem de erro
+                if (!captchaResponse.Success)
+                {
+                    if (captchaResponse.ErrorCodes.Count <= 0) return View();
+                    var error = captchaResponse.ErrorCodes[0].ToLower();
+                    switch (error)
+                    {
+                        case ("missing-input-secret"):
+                            ViewBag.Message = "The secret parameter is missing.";
+                            break;
+                        case ("invalid-input-secret"):
+                            ViewBag.Message = "The secret parameter is invalid or malformed.";
+                            break;
+                        case ("missing-input-response"):
+                            ViewBag.Message = "The response parameter is missing.";
+                            break;
+                        case ("invalid-input-response"):
+                            ViewBag.Message = "The response parameter is invalid or malformed.";
+                            break;
+                        default:
+                            ViewBag.Message = "Error occured. Please try again";
+                            break;
+                    }
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Message = "Valid";
+                    return RedirectToAction("../Home/Index");
+                }
+
             }
 
             ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", startupCadastro.TipoUsuarioID);
