@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
@@ -21,4 +21,18 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#divCenter { 
+                background-color: #e1e1e1; 
+                width: 400px; 
+                height: 150px; 
+                left: 50%; 
+                margin: -130px 0 0 -210px; 
+                padding:10px;
+                position: absolute; 
+                top: 50%; }
+
+.top{
+	margin-top: 20px;
 }
