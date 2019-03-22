@@ -1,49 +1,46 @@
 ﻿@model StarToUp.Models.StartupCadastro
-
 @{
-    /**/
-    //ViewBag.Title = "Create";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="container">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-4">
             <section>
-                <div class="panel panel-default top">
+                <div class="top">
                     <div class="panel-body">
                         <h3 class="text-center">Colocar Logo?</h3>
                         <hr />
-                        <form>
-                            <div class="input-group input-group-lg">
+                        <form class="form-horizontal">
+                            <div class="form-group-lg">
                                 @*<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>*@
-                                @*@Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })*@
+                                @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
                             </div>
                             <br>
-                            <div class="input-group input-group-lg">
+                            <div class="form-group-lg">
                                 @*<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>*@
                                 <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome da Startup *" />
                             </div>
                             <br>
-                            <div class="input-group input-group-lg">
+                            <div class="form-group-lg">
                                 @*<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>*@
                                 <input type="text" name="email" id="email" class="form-control" placeholder="E-mail de Contato *" />
                             </div>
                             <br>
-                            <div class="input-group input-group-lg">
+                            <div class="form-group-lg">
                                 @*<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>*@
                                 <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha *" />
                             </div>
                             <br>
-                            <div class="input-group input-group-lg">
+                            <div class="form-group-lg">
                                 @*<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>*@
                                 <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
                             </div>
                             <br />
-                            <input type="submit" value="Cadastrar" class="btn btn-success btn-block" />
+                            <input type="submit" value="Cadastrar" class="btn btn-success btn-group-justified" />
                         </form>
                     </div>
                 </div>
@@ -51,18 +48,9 @@
         </div>
     </div>
 }
-
-<div>
-    <a href='@Url.Action("Index", "StartupCadastros")'>
-        <img src='@Url.Content("~/Content/img/voltar.png")' class="botaoicone"
-             title="Voltar" />
-    </a>
-</div>
-
-<!-- Footer -->
-<div class="container-fluid">
-    <footer id="footer" class="sm-padding bg-dark">
-        <!-- Container -->
+<footer id="footer" class="sm-padding bg-dark">
+    <!-- Container -->
+    <div class="container">
         <!-- Row -->
         <div class="row">
             <div class="col-md-12">
@@ -89,10 +77,12 @@
             </div>
         </div>
         <!-- /Row -->
-        <!-- /Container -->
-    </footer>
-</div>
+    </div>
+    <!-- /Container -->
+</footer>
 <!-- /Footer -->
+
+
 @section scripts{
     <script>
         $(function () {
