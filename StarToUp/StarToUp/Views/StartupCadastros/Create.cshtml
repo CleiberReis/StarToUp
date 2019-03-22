@@ -3,59 +3,57 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="container">
-        <div class="col-md-4 col-md-offset-4">
-            <section>
-                <div class="top">
-                    <div class="panel-body">
-                        <h3 class="text-center">Colocar Logo?</h3>
-                        <hr />
-                        <form class="form-horizontal">
-                            <div class="form-group-lg">
-                                @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
-                            </div>
-                            <br>
-                            <div class="form-group-lg">
-                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome da Startup *" />
-                            </div>
-                            <br>
-                            <div class="form-group-lg">
-                                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail de Contato *" />
-                            </div>
-                            <br>
-                            <div class="form-group-lg">
-                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha *" />
-                            </div>
-                            <br>
-                            <div class="form-group-lg">
-                                <input type="password" name="confSenha" id="confSenha" class="form-control" placeholder="Confirmar Senha *" />
-                            </div>
-                            <br>
-                            <div class="form-group-lg">
-                                <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
-                            </div>
-                            <br>
-                            <input type="submit" value="Cadastrar" class="btn btn-success btn-group-justified" />
-                            <div class="form-group-lg">
-                                <p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site <a href="#">Termos de Uso</a></p>
-                            </div>
-                        </form>
-                    </div>
+        <br/>
+        <div class="section-header text-center">
+            <h2 class="title">Startup, Crie seu cadastro</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <br/>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                @*@Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })*@
+                <div>
+                    <input type="text" name="nome" id="nome" class="input"  placeholder="Nome da Startup *" />
                 </div>
-            </section>
+                <br />
+                <div>
+                    <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
+                </div>
+                <br />
+                <div>
+                    <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
+                </div>
+                <br />
+                <div>
+                    <input type="password" name="confSenha" id="confSenha" class="input" placeholder="Confirmar Senha *" />
+                </div>
+                <br />
+                <div class="captcha">
+                    <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
+                </div>
+                <br />
+                @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
+                <button class="btn btn-lg btn-success btn-block" type="submit" value="Cadastrar">Cadastrar</button>
+            </form>
         </div>
     </div>
+
 }
 <footer id="footer" class="sm-padding bg-dark">
     <!-- Container -->
-    <div class="container">
+    <div class="container-fluid">
         <!-- Row -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12">
                 <!-- footer logo -->
                 <div class="footer-logo">
                     <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
@@ -83,8 +81,6 @@
     <!-- /Container -->
 </footer>
 <!-- /Footer -->
-
-
 @section scripts{
     <script>
         $(function () {
