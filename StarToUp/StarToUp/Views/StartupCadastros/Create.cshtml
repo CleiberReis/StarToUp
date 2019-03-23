@@ -26,18 +26,22 @@
                 <br />
                 <div>
                     <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                 </div>
                 <br />
                 <div>
                     <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
                 <br />
                 <div>
                     <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
+                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
                 </div>
                 <br />
                 <div>
-                    <input type="password" name="confSenha" id="confSenha" class="input" placeholder="Confirmar Senha *" />
+                    <input type="password" name="senha" id="confsenha" class="input" placeholder="Confirmar Senha *" />
+                    @Html.ValidationMessageFor(model => model.ConfSenha, "", new { @class = "text-danger" })
                 </div>
                 <br />
                 <div class="captcha">

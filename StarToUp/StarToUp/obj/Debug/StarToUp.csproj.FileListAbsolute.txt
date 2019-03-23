@@ -420,5 +420,7 @@ C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VB
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacao.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual2.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual3.resources

@@ -50,9 +50,9 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,TipoUsuarioID")] StartupCadastro startupCadastro)
+        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,ConfSenha,TipoUsuarioID")] StartupCadastro startupCadastro)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && startupCadastro.Senha == startupCadastro.ConfSenha)
             {
                 db.StartupCadastros.Add(startupCadastro);
                 db.SaveChanges();
@@ -110,6 +110,7 @@ namespace StarToUp.Controllers
             }
 
             ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", startupCadastro.TipoUsuarioID);
+            ViewBag.Message = "Error occured. Please try again";
             return View(startupCadastro);
         }
 

@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Senha)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfSenha)
+        </th>
         <th></th>
     </tr>
 
@@ -41,9 +44,12 @@
             @Html.DisplayFor(modelItem => item.Senha)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StartupCadastroID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StartupCadastroID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StartupCadastroID })
+            @Html.DisplayFor(modelItem => item.ConfSenha)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StartupCadastroID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StartupCadastroID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StartupCadastroID })
         </td>
     </tr>
 }

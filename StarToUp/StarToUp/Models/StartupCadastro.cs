@@ -23,6 +23,10 @@ namespace StarToUp.Models
         [DisplayName("Senha:")]
         public string Senha { get; set; }
 
+        [Required(ErrorMessage = "Confirme a senha!")]
+        [DisplayName("Confirmar Senha:")]
+        public string ConfSenha { get; set; }
+
         public int TipoUsuarioID { get; set; }
         public virtual TipoUsuario TipoUsuario { get; set; }
     }
