@@ -383,8 +383,6 @@ C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\Sta
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.a.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacoes.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atuliazacao.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
@@ -422,3 +420,7 @@ C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\vb
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizar.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.admin.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.evento.resources

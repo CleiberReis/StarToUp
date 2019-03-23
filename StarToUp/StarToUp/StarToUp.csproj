@@ -139,6 +139,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministradorsController.cs" />
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
@@ -147,13 +148,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903212225033_atuliazacao.cs" />
-    <Compile Include="Migrations\201903212225033_atuliazacao.Designer.cs">
-      <DependentUpon>201903212225033_atuliazacao.cs</DependentUpon>
+    <Compile Include="Migrations\201903230249046_atualizar.cs" />
+    <Compile Include="Migrations\201903230249046_atualizar.Designer.cs">
+      <DependentUpon>201903230249046_atualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903230346516_admin.cs" />
+    <Compile Include="Migrations\201903230346516_admin.Designer.cs">
+      <DependentUpon>201903230346516_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903230436341_evento.cs" />
+    <Compile Include="Migrations\201903230436341_evento.Designer.cs">
+      <DependentUpon>201903230436341_evento.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
+    <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\PerfilEmpresa.cs" />
     <Compile Include="Models\StartupCadastro.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
@@ -237,11 +248,12 @@
     <Content Include="Content\img\adicionar.png" />
     <Content Include="Content\img\ativar.png" />
     <Content Include="Content\img\author.jpg" />
-    <Content Include="Content\img\backgroun1.png" />
-    <Content Include="Content\img\backgroun2.jpg" />
     <Content Include="Content\img\backgroun3.jpg" />
     <Content Include="Content\img\backgroun4.jpg" />
     <Content Include="Content\img\backgroun5.jpg" />
+    <Content Include="Content\img\backgroun6.jpg" />
+    <Content Include="Content\img\backgroun7.jpg" />
+    <Content Include="Content\img\backgrounadm.jpg" />
     <Content Include="Content\img\background1.jpg" />
     <Content Include="Content\img\background2.jpg" />
     <Content Include="Content\img\background3.jpg" />
@@ -343,6 +355,12 @@
     <Content Include="Views\PerfilEmpresas\Details.cshtml" />
     <Content Include="Views\PerfilEmpresas\Edit.cshtml" />
     <Content Include="Views\PerfilEmpresas\Index.cshtml" />
+    <Content Include="Views\Shared\_AreaAdmin.cshtml" />
+    <Content Include="Views\Administradors\Create.cshtml" />
+    <Content Include="Views\Administradors\Delete.cshtml" />
+    <Content Include="Views\Administradors\Details.cshtml" />
+    <Content Include="Views\Administradors\Edit.cshtml" />
+    <Content Include="Views\Administradors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,8 +379,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903212225033_atuliazacao.resx">
-      <DependentUpon>201903212225033_atuliazacao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903230249046_atualizar.resx">
+      <DependentUpon>201903230249046_atualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903230346516_admin.resx">
+      <DependentUpon>201903230346516_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903230436341_evento.resx">
+      <DependentUpon>201903230436341_evento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
