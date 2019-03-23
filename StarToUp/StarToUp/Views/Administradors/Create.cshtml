@@ -1,49 +1,82 @@
-﻿@model StarToUp.Models.Evento
+﻿@model StarToUp.Models.Administrador
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_AreaAdmin.cshtml";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Administrador</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
-            </div>
+    <div class="container">
+        <br />
+        <div class="section-header text-center">
+            <h2 class="title">Novo Usuário Administrador</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <br />
+            <form class="form-signin">
+                @*@Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })*@
+                <div>
+                    <input type="text" name="login" id="login" class="input" placeholder="Login *" />
+                </div>
+                <br />
+                <div>
+                    <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
+                </div>
+                <br />
+                @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
+                <button class="btn btn-lg btn-success btn-block" type="submit" value="Cadastrar">Cadastrar</button>
+            </form>
         </div>
     </div>
+
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
+<footer id="footer" class="sm-padding bg-dark">
+    <!-- Container -->
+    <div class="container-fluid">
+        <!-- Row -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <!-- footer logo -->
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+                </div>
+                <!-- /footer logo -->
+                <!-- footer follow -->
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <!-- /footer follow -->
+                <!-- footer copyright -->
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
+                <!-- /footer copyright -->
+            </div>
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</footer>
+<!-- /Footer -->
+@section scripts{
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+            $('input, select, textarea').each(function () {
+                if ($(this).hasClass('input-validation-error'))
+                    $(this).focus();
+            });
+        });
+    </script>
 }

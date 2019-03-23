@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradorsController.cs" />
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
+    <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
     <Compile Include="Controllers\PerfilEmpresasController.cs" />
@@ -148,17 +149,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903230249046_atualizar.cs" />
-    <Compile Include="Migrations\201903230249046_atualizar.Designer.cs">
-      <DependentUpon>201903230249046_atualizar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903230346516_admin.cs" />
-    <Compile Include="Migrations\201903230346516_admin.Designer.cs">
-      <DependentUpon>201903230346516_admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903230436341_evento.cs" />
-    <Compile Include="Migrations\201903230436341_evento.Designer.cs">
-      <DependentUpon>201903230436341_evento.cs</DependentUpon>
+    <Compile Include="Migrations\201903230444139_atualizar.cs" />
+    <Compile Include="Migrations\201903230444139_atualizar.Designer.cs">
+      <DependentUpon>201903230444139_atualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -361,6 +354,11 @@
     <Content Include="Views\Administradors\Details.cshtml" />
     <Content Include="Views\Administradors\Edit.cshtml" />
     <Content Include="Views\Administradors\Index.cshtml" />
+    <Content Include="Views\Eventos\Create.cshtml" />
+    <Content Include="Views\Eventos\Delete.cshtml" />
+    <Content Include="Views\Eventos\Details.cshtml" />
+    <Content Include="Views\Eventos\Edit.cshtml" />
+    <Content Include="Views\Eventos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -379,14 +377,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903230249046_atualizar.resx">
-      <DependentUpon>201903230249046_atualizar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903230346516_admin.resx">
-      <DependentUpon>201903230346516_admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903230436341_evento.resx">
-      <DependentUpon>201903230436341_evento.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903230444139_atualizar.resx">
+      <DependentUpon>201903230444139_atualizar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
