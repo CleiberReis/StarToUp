@@ -17,8 +17,7 @@ namespace StarToUp.Controllers
         // GET: Eventos
         public ActionResult Index()
         {
-            var eventoes = db.Eventoes.Include(e => e.Administrador);
-            return View(eventoes.ToList());
+            return View(db.Eventoes.ToList());
         }
 
         // GET: Eventos/Details/5
@@ -39,7 +38,6 @@ namespace StarToUp.Controllers
         // GET: Eventos/Create
         public ActionResult Create()
         {
-            ViewBag.AdminID = new SelectList(db.Administradors, "AdminID", "Login");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventoID,Nome,Descricao,Foto,DataEvento,AdminID")] Evento evento)
+        public ActionResult Create([Bind(Include = "EventoID,Nome,Descricao,Foto,DataEvento")] Evento evento)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace StarToUp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AdminID = new SelectList(db.Administradors, "AdminID", "Login", evento.AdminID);
             return View(evento);
         }
 
@@ -73,7 +70,6 @@ namespace StarToUp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AdminID = new SelectList(db.Administradors, "AdminID", "Login", evento.AdminID);
             return View(evento);
         }
 
@@ -82,7 +78,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventoID,Nome,Descricao,Foto,DataEvento,AdminID")] Evento evento)
+        public ActionResult Edit([Bind(Include = "EventoID,Nome,Descricao,Foto,DataEvento")] Evento evento)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace StarToUp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AdminID = new SelectList(db.Administradors, "AdminID", "Login", evento.AdminID);
             return View(evento);
         }
 

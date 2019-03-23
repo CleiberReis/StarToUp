@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atualizar : DbMigration
+    public partial class atual : DbMigration
     {
         public override void Up()
         {
@@ -16,21 +16,6 @@ namespace StarToUp.Migrations
                         Senha = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.AdminID);
-            
-            CreateTable(
-                "dbo.Evento",
-                c => new
-                    {
-                        EventoID = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false, unicode: false),
-                        Descricao = c.String(nullable: false, unicode: false),
-                        Foto = c.String(unicode: false),
-                        DataEvento = c.DateTime(nullable: false, precision: 0),
-                        AdminID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.EventoID)
-                .ForeignKey("dbo.Administrador", t => t.AdminID, cascadeDelete: true)
-                .Index(t => t.AdminID);
             
             CreateTable(
                 "dbo.EmpresaCadastro",
@@ -92,6 +77,18 @@ namespace StarToUp.Migrations
                 .ForeignKey("dbo.TipoUsuario", t => t.TipoUsuarioID, cascadeDelete: true)
                 .Index(t => t.TipoUsuarioID);
             
+            CreateTable(
+                "dbo.Evento",
+                c => new
+                    {
+                        EventoID = c.Int(nullable: false, identity: true),
+                        Nome = c.String(nullable: false, unicode: false),
+                        Descricao = c.String(nullable: false, unicode: false),
+                        Foto = c.String(unicode: false),
+                        DataEvento = c.DateTime(nullable: false, precision: 0),
+                    })
+                .PrimaryKey(t => t.EventoID);
+            
         }
         
         public override void Down()
@@ -99,16 +96,14 @@ namespace StarToUp.Migrations
             DropForeignKey("dbo.StartupCadastro", "TipoUsuarioID", "dbo.TipoUsuario");
             DropForeignKey("dbo.EmpresaCadastro", "TipoUsuarioID", "dbo.TipoUsuario");
             DropForeignKey("dbo.PerfilEmpresa", "EmpresaCadastroID", "dbo.EmpresaCadastro");
-            DropForeignKey("dbo.Evento", "AdminID", "dbo.Administrador");
             DropIndex("dbo.StartupCadastro", new[] { "TipoUsuarioID" });
             DropIndex("dbo.PerfilEmpresa", new[] { "EmpresaCadastroID" });
             DropIndex("dbo.EmpresaCadastro", new[] { "TipoUsuarioID" });
-            DropIndex("dbo.Evento", new[] { "AdminID" });
+            DropTable("dbo.Evento");
             DropTable("dbo.StartupCadastro");
             DropTable("dbo.TipoUsuario");
             DropTable("dbo.PerfilEmpresa");
             DropTable("dbo.EmpresaCadastro");
-            DropTable("dbo.Evento");
             DropTable("dbo.Administrador");
         }
     }

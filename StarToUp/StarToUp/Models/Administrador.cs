@@ -19,7 +19,5 @@ namespace StarToUp.Models
         [Required(ErrorMessage = "Digite sua Senha")]
         [DisplayName("Senha:")]
         public string Senha { get; set; }
-
-        public virtual ICollection<Evento> Eventos { get; set; }
     }
 }

@@ -13,9 +13,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Administrador.Login)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
@@ -24,14 +21,14 @@
         <th>
             @Html.DisplayNameFor(model => model.Foto)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEvento)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Administrador.Login)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
@@ -40,6 +37,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Foto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEvento)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EventoID }) |

@@ -25,11 +25,7 @@ namespace StarToUp.Models
 
         [DisplayName("Data")]
         [DataType(DataType.DateTime, ErrorMessage = "Formato de data inválido")]
-        [ScaffoldColumn(false)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss tt}")]
         public DateTime DataEvento { get; set; }
-
-        public int AdminID { get; set; }
-        public virtual Administrador Administrador { get; set; }
     }
 }

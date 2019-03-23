@@ -149,9 +149,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903230444139_atualizar.cs" />
-    <Compile Include="Migrations\201903230444139_atualizar.Designer.cs">
-      <DependentUpon>201903230444139_atualizar.cs</DependentUpon>
+    <Compile Include="Migrations\201903231454182_atual.cs" />
+    <Compile Include="Migrations\201903231454182_atual.Designer.cs">
+      <DependentUpon>201903231454182_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -377,8 +377,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903230444139_atualizar.resx">
-      <DependentUpon>201903230444139_atualizar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903231454182_atual.resx">
+      <DependentUpon>201903231454182_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
