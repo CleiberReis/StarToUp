@@ -40,13 +40,13 @@
 
     </div>
     <!-- /Numbers -->
-    <div class="container body-content">
-        @RenderBody()
+    @RenderBody()
+    @*<div class="container body-content">
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - StarToUp</p>
         </footer>
-    </div>
+    </div>*@
 
     <!-- jQuery Plugins -->
     @Scripts.Render("~/bundles/js")

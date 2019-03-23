@@ -274,9 +274,6 @@ C:\Users\Antonio Carlos\Desktop\StarToUp-PI\StarToUp\StarToUp\StarToUp\obj\Debug
 C:\Users\Antonio Carlos\Desktop\StarToUp-PI\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\Antonio Carlos\Desktop\StarToUp-PI\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.TipoUsuario.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.StartupCadastro.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
@@ -309,31 +306,9 @@ C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\EntityFramework.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\EntityFramework.SqlServer.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.Helpers.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.Mvc.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.Optimization.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.Razor.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.WebPages.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Web.WebPages.Razor.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\Newtonsoft.Json.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\Antlr3.Runtime.pdb
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\System.Diagnostics.DiagnosticSource.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\Microsoft.AspNet.TelemetryCorrelation.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.Helpers.resources.dll
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.Razor.resources.dll
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.WebPages.resources.dll
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.startupCadastro_2.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.startupCadastro_2.resources
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
@@ -363,16 +338,11 @@ C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe.config
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.TipoUsuario.resources
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.StartupCadastro.resources
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.empresaCadastro.resources
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.startupCadastro_2.resources
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.perfilEmpresa.resources
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
@@ -415,3 +385,40 @@ C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\Sta
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.a.resources
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacoes.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atuliazacao.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojResolveAssemblyReference.cache
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atuliazacao.resources
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.Cache
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe.config
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.rsp
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.exe
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.rsp
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\System.AppContext.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe.config
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
