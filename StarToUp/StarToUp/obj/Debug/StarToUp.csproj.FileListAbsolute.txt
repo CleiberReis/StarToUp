@@ -384,8 +384,6 @@ C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\Sta
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacoes.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atuliazacao.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
@@ -422,3 +420,5 @@ C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VB
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacao.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp-Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
