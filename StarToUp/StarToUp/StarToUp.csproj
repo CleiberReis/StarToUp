@@ -149,17 +149,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903232000321_atual.cs" />
-    <Compile Include="Migrations\201903232000321_atual.Designer.cs">
-      <DependentUpon>201903232000321_atual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903232028332_atual2.cs" />
-    <Compile Include="Migrations\201903232028332_atual2.Designer.cs">
-      <DependentUpon>201903232028332_atual2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903232034460_atual3.cs" />
-    <Compile Include="Migrations\201903232034460_atual3.Designer.cs">
-      <DependentUpon>201903232034460_atual3.cs</DependentUpon>
+    <Compile Include="Migrations\201903241700238_atualizacao.cs" />
+    <Compile Include="Migrations\201903241700238_atualizacao.Designer.cs">
+      <DependentUpon>201903241700238_atualizacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -269,6 +261,7 @@
     <Content Include="Content\img\excluir.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo1.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
     <Content Include="Content\img\perso1.jpg" />
     <Content Include="Content\img\perso2.jpg" />
@@ -385,14 +378,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903232000321_atual.resx">
-      <DependentUpon>201903232000321_atual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903232028332_atual2.resx">
-      <DependentUpon>201903232028332_atual2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903232034460_atual3.resx">
-      <DependentUpon>201903232034460_atual3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903241700238_atualizacao.resx">
+      <DependentUpon>201903241700238_atualizacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
