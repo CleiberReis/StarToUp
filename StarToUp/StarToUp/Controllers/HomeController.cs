@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using StarToUp.Models;
+using StarToUp.Repositories;
 
 namespace StarToUp.Controllers
 {
@@ -12,14 +13,16 @@ namespace StarToUp.Controllers
     {
         public ActionResult Index()
         {
-            if (Session["Usuario"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Logar", "Logon");
-            }
+            //if (Session["Usuario"] != null)
+            //{
+            //    Funcoes.GetUsuario();
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Logar", "Logon");
+            //}
+            return View();
         }
 
         public ActionResult Login()
