@@ -153,6 +153,18 @@
     <Compile Include="Migrations\201903241700238_atualizacao.Designer.cs">
       <DependentUpon>201903241700238_atualizacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903250218105_logon.cs" />
+    <Compile Include="Migrations\201903250218105_logon.Designer.cs">
+      <DependentUpon>201903250218105_logon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903250220306_logon1.cs" />
+    <Compile Include="Migrations\201903250220306_logon1.Designer.cs">
+      <DependentUpon>201903250220306_logon1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903250222293_logon2.cs" />
+    <Compile Include="Migrations\201903250222293_logon2.Designer.cs">
+      <DependentUpon>201903250222293_logon2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Context.cs" />
@@ -380,6 +392,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903241700238_atualizacao.resx">
       <DependentUpon>201903241700238_atualizacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903250218105_logon.resx">
+      <DependentUpon>201903250218105_logon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903250220306_logon1.resx">
+      <DependentUpon>201903250220306_logon1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903250222293_logon2.resx">
+      <DependentUpon>201903250222293_logon2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
