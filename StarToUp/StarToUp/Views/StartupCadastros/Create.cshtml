@@ -7,55 +7,55 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="container">
+<div class="container">
+    <div class="section-header text-center">
         <br/>
-        <div class="section-header text-center">
-            <h2 class="title">Startup, Crie seu cadastro</h2>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        </div>
-        <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <br/>
-            <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <div class="input">
-                    @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
-                </div>
-                <br />
-                <div>
-                    <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
-                </div>
-                <br />
-                <div>
-                    <input type="password" name="confSenha" id="confSenha" class="input" placeholder="Confirmar Senha *" />
-                </div>
-                <br />
-                <div class="captcha">
-                    <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
-                </div>
-                <br />
-                <button class="main-btn btn-block" type="submit" value="Cadastrar">Cadastrar</button>
-                @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
-                
-            </form>
-        </div>
+        <h2 class="title">Startup, Crie seu cadastro</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     </div>
+    <div class="card card-container">
+        <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <div class="input">
+                @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                <input type="password" name="senha" id="confsenha" class="input" placeholder="Confirmar Senha *" />
+            </div>
+            <br />
+            <div class="captcha">
+                <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
+            </div>
+            <br />
+            <button class="main-btn btn-block" type="submit" value="Cadastrar">Cadastrar</button>
+            @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
+
+        </form>
+    </div>
+</div>
 
 }
 <footer id="footer" class="sm-padding bg-dark">
     <!-- Container -->
     <div class="container-fluid">
-        <br/><br/>
+        <br /><br />
         <!-- Row -->
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -93,6 +93,13 @@
                 if ($(this).hasClass('input-validation-error'))
                     $(this).focus();
             });
+        });
+
+        $('form').on('submit', function () {
+            if ($('#senha').val() != $('#confsenha').val()) {
+                alert('A senha não confere!');
+                return false;
+            }
         });
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

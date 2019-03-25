@@ -59,9 +59,15 @@
     <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="SendGrid.CSharp.HTTP.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=79219bf4e5ecaaca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.CSharp.HTTP.Client.3.0.0\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -149,9 +155,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903231454182_atual.cs" />
-    <Compile Include="Migrations\201903231454182_atual.Designer.cs">
-      <DependentUpon>201903231454182_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201903250255336_atual.cs" />
+    <Compile Include="Migrations\201903250255336_atual.Designer.cs">
+      <DependentUpon>201903250255336_atual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903250344151_atual2.cs" />
+    <Compile Include="Migrations\201903250344151_atual2.Designer.cs">
+      <DependentUpon>201903250344151_atual2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -261,6 +271,7 @@
     <Content Include="Content\img\excluir.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo1.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
     <Content Include="Content\img\perso1.jpg" />
     <Content Include="Content\img\perso2.jpg" />
@@ -377,8 +388,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903231454182_atual.resx">
-      <DependentUpon>201903231454182_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903250255336_atual.resx">
+      <DependentUpon>201903250255336_atual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903250344151_atual2.resx">
+      <DependentUpon>201903250344151_atual2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

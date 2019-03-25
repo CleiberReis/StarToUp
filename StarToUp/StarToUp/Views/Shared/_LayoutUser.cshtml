@@ -1,41 +1,56 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Cadastro</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" datatarget=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Sign In", "Logar", "Logon", new { area = "" }, new
-               { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Sobre", "About", "Publico")</li>*@
-                </ul>
-            </div>
+    <!-- Numbers -->
+    <div id="numbers" class="section sm-padding">
+        <!-- Background Image -->
+        <div class="bg-img" style="background-image: url('../../Content/img/backgroun7.jpg');">
+            <div class="overlay"></div>
         </div>
+        <!-- /Background Image -->
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- number -->
+                <div class="col-sm-12 col-xs-6">
+                    <div class="number">
+                        <h3 class="white-text"><span class="counter">STARTOUP</span></h3>
+                    </div>
+                </div>
+                <!-- /number -->
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year</p>
-        </footer>
-    </div>
+    <!-- /Numbers -->
+    @RenderBody()
+    @*<div class="container body-content">
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - StarToUp</p>
+            </footer>
+        </div>*@
+
+    <!-- jQuery Plugins -->
+    @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

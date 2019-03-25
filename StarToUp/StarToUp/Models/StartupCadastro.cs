@@ -24,6 +24,7 @@ namespace StarToUp.Models
         public string Senha { get; set; }
 
         public int TipoUsuarioID { get; set; }
-        public virtual TipoUsuario TipoUsuario { get; set; }
+        public virtual TipoUsuario TipoUsuario { get; set; }
+        public IEnumerable<object> StartupCadastros { get; internal set; }
     }
 }

@@ -106,9 +106,7 @@ namespace StarToUp.Controllers
                     ViewBag.Message = "Valid";
                     return RedirectToAction("../Home/Index");
                 }
-
             }
-
             ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", startupCadastro.TipoUsuarioID);
             return View(startupCadastro);
         }
