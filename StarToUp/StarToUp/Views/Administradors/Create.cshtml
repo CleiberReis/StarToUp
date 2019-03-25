@@ -1,30 +1,36 @@
-﻿@model IEnumerable<StarToUp.Models.StartupCadastro>
+﻿@model StarToUp.Models.Administrador
+
 @{
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AreaAdmin.cshtml";
 }
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="container">
+        <br />
         <div class="section-header text-center">
-            <br />
-            <h2 class="title">Startup, Crie seu cadastro</h2>
+            <h2 class="title">Novo Usuário Administrador</h2>
+            <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         </div>
         <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <br />
             <form class="form-signin">
-                <br />
+                @*@Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })*@
                 <div>
-                    <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
+                    <input type="text" name="login" id="login" class="input" placeholder="Login *" />
                 </div>
                 <br />
                 <div>
                     <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
                 </div>
                 <br />
-                <button class="main-btn btn-block" type="submit" value="Entrar">Entrar</button>
+                @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
+                <button class="btn btn-lg btn-success btn-block" type="submit" value="Cadastrar">Cadastrar</button>
             </form>
         </div>
     </div>
@@ -33,7 +39,6 @@
 <footer id="footer" class="sm-padding bg-dark">
     <!-- Container -->
     <div class="container-fluid">
-        <br /><br />
         <!-- Row -->
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -65,6 +70,7 @@
 </footer>
 <!-- /Footer -->
 @section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(function () {
             $('input, select, textarea').each(function () {

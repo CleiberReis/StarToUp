@@ -60,7 +60,7 @@ namespace StarToUp.Controllers
 
                 GmailEmailService gmail = new GmailEmailService();
                 EmailMessage msg = new EmailMessage();
-                msg.Body = "<!DOCTYPE HTML><html><body><p>Cara Startup,<br/>Seja bem-vinda!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><p>'LINK'</p><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+                msg.Body = "<!DOCTYPE HTML><html><body><p>" + startupCadastro.Nome + ",<br/>Seja bem-vinda(o)!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><a href= http://localhost:50072/Logon/Logar/ " + "> Faça seu login aqui!</a><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
                 msg.IsHtml = true;
                 msg.Subject = "E-mail de Confirmação - StarToUp";
                 msg.ToEmail = startupCadastro.Email;
@@ -106,9 +106,7 @@ namespace StarToUp.Controllers
                     ViewBag.Message = "Valid";
                     return RedirectToAction("../Home/Index");
                 }
-
             }
-
             ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", startupCadastro.TipoUsuarioID);
             return View(startupCadastro);
         }

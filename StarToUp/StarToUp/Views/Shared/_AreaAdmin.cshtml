@@ -1,24 +1,41 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Cadastro</title>
+    <title>@ViewBag.Title - Administração</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <!-- Numbers -->
     <div id="numbers" class="section sm-padding">
+
         <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/backgroun7.jpg');">
+        <div class="bg-img" style="background-image: url('../../Content/img/backgrounadm.jpg');">
             <div class="overlay"></div>
         </div>
         <!-- /Background Image -->
+        <!-- Nav -->
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
+
+                <!--  Main navigation  -->
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    <li class="has-dropdown">
+                        <a href="#">Configurações</a>
+                        <ul class="dropdown">
+                            <li>@Html.ActionLink("Novo Usuário", "Create", "Administradors")</li>
+                            <li>@Html.ActionLink("Editar", "Edit", "Administradors")</li>
+                            <li>@Html.ActionLink("Excluir", "Delete", "Administradors")</li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /Main navigation -->
+
+            </div>
+        </nav>
+        <!-- /Nav -->
         <!-- Container -->
         <div class="container">
 
@@ -28,7 +45,9 @@
                 <!-- number -->
                 <div class="col-sm-12 col-xs-6">
                     <div class="number">
+
                         <h3 class="white-text"><span class="counter">STARTOUP</span></h3>
+
                     </div>
                 </div>
                 <!-- /number -->

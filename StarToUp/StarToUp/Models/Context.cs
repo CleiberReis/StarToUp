@@ -23,5 +23,9 @@ namespace StarToUp.Models
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<StarToUp.Models.Administrador> Administradors { get; set; }
+
+        public System.Data.Entity.DbSet<StarToUp.Models.Evento> Eventoes { get; set; }
     }
 }

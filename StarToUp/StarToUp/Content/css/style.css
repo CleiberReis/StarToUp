@@ -125,13 +125,13 @@ ul, ol {
 }
 
 .md-padding {
-    padding-top: 120px;
+    padding-top: 0px;
     padding-bottom: 120px;
 }
 
 .sm-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -203,8 +203,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     height: 40px;
     width: 100%;
     border: none;
-	  background: #F4F4F4;
-    border-bottom: 2px solid #EEE;
+	background: #FFF;
+    border-bottom: 2px solid #4d4949;
     color: #354052;
     padding: 0px 10px;
     opacity: 0.5;

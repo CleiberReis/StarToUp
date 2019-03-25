@@ -1,0 +1,62 @@
+﻿@model IEnumerable<StarToUp.Models.Administrador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AreaAdmin.cshtml";
+}
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.AdminID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AdminID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AdminID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+<div id="contact" class="section md-padding">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+            <!-- home content -->
+            <div class="col-md-10 col-md-offset-1">
+                <div class="home-content">
+                    <button class="btn-lg btn-outline-primary">@Html.ActionLink("Cadastrar Evento", "Create", "Eventos")</button>
+                    <button class="btn-lg btn-outline-primary">Inserir Startups em Destaque</button>
+                    <button class="btn-lg btn-outline-primary">Inserir Startups em Destaque</button>
+                </div>
+            </div>
+            <!-- /home content -->
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Contact -->
