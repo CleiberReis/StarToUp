@@ -40,6 +40,7 @@ namespace StarToUp.Migrations
                         RazaoSocial = c.String(unicode: false),
                         SegmentoMercado = c.String(unicode: false),
                         QtdFuncionario = c.String(unicode: false),
+                        Cep = c.Int(nullable: false),
                         Rua = c.String(unicode: false),
                         Bairro = c.String(unicode: false),
                         Numero = c.Int(nullable: false),
