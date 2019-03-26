@@ -582,7 +582,22 @@ header {
     height: 100vh;
 }
 
+#homeadm {
+    height: 450px;
+}
+
 #home .home-wrapper {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+#homeadm .home-wrapper {
     position: absolute;
     left: 0px;
     right: 0px;
