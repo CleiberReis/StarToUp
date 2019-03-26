@@ -17,6 +17,7 @@ namespace StarToUp.Models
         public string QtdFuncionario { get; set; }
 
         // Dados de Endereço
+        public int Cep { get; set; }
         public string Rua { get; set; }
         public string Bairro { get; set; }
         public int Numero { get; set; }
