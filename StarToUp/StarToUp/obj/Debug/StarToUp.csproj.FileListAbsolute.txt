@@ -347,7 +347,6 @@ C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojResolveAssemblyReference.cache
-C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atuliazacao.resources
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.Cache
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
@@ -513,3 +512,8 @@ C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.Gen
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizandoPerfil.resources
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
+C:\Users\Desireé Fraga\Desktop\Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizandoPerfil.resources
