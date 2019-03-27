@@ -46,15 +46,35 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventoID,Nome,Descricao,Foto,DataEvento")] Evento evento)
+        public ActionResult Create([Bind(Include = "EventoID,Nome,Descricao,Foto,DataEvento")] Evento evento, HttpPostedFileBase foto)
         {
-            if (ModelState.IsValid)
+            ViewBag.FotoMensagem = "";
+            try
             {
-                db.Eventoes.Add(evento);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    string fileName = "";
+                    string contentType = "";
+                    string path = "";
+                    if (foto != null && foto.ContentLength > 0)
+                    {
+                        fileName = System.IO.Path.GetFileName(foto.FileName);
+                        contentType = foto.ContentType;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Evento\\" + fileName;
+                        foto.SaveAs(path);
+                        evento.Foto = fileName;
+                    }
 
+                        db.Eventoes.Add(evento);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.FotoMensagem = "Não foi possível salvar a foto";
+            }
+            ViewBag.EventoID = new SelectList(db.Eventoes, "EventoID", "Nome", evento.EventoID);
             return View(evento);
         }
 

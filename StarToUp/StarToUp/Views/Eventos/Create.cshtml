@@ -1,13 +1,13 @@
 ﻿@model StarToUp.Models.Evento
 
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Cadastro de Eventos";
-                Layout = "~/Views/Shared/_AreaAdmin.cshtml";
+    ViewBag.Title = "Cadastro de Eventos";
+    Layout = "~/Views/Shared/_AreaAdmin.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Eventos", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="container">
@@ -30,7 +30,15 @@
                 </div>
                 <br />
                 <div>
-                    <input type="text" name="foto" id="foto" class="input" placeholder="Foto *" />
+                    <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
+                    @{
+                        string str = ViewBag.FotoMensagem;
+                        if (str != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.FotoMensagem
+                            </span> }
+                    }
                 </div>
                 <br />
                 <div>
