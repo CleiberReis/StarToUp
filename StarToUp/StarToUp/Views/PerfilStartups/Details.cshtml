@@ -1,0 +1,195 @@
+﻿@model StarToUp.Models.PerfilStartup
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PerfilStartup</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fundadores.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fundadores.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Segmentacoes.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartupCadastro.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartupCadastro.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeStartup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeStartup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFundacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFundacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamanhoTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamanhoTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sobre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sobre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Objetivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Objetivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logotipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logotipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemLocal1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemLocal1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemLocal2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemLocal2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemMVP1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemMVP1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemMVP2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemMVP2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemMVP3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemMVP3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemMVP4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemMVP4)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PerfilStartupID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
