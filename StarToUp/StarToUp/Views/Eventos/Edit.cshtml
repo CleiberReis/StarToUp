@@ -8,14 +8,10 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm("Edit", "Eventos", null, FormMethod.Post, new
-{
-    enctype =
-"multipart/form-data"
-}))
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <h4>Evento</h4>
         <hr />
@@ -41,40 +37,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Foto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @{
-                    string foto = Model.Foto;
-                    if (foto != string.Empty)
-                    {
-                        if (foto != null)
-                        {
-                            string file = foto;
-                            string path =
-                            System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Evento/" + file;
-                            <img class="img-responsive" src='@Url.Content(path)' title="Foto" />
-                            @Html.ActionLink("Excluir", "DeleteFile", "Eventos", new { id = Model.EventoID, arquivo =
-                            "Foto" }, null)
-                        }
-                        else
-                        {
-                            <div class="col-md-10">
-                                <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
-                            </div>
-                        }
-                    }
-                    else
-                    {
-                        <div class="col-md-10">
-                            <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
-                        </div>
-                    }
-                    string str = ViewBag.FotoMensagem;
-                    if (str != "")
-                    {
-                        <span class="text-danger contenterror">
-                            @ViewBag.FotoMensagem
-                        </span>
-                    }
-                }
+                @Html.EditorFor(model => model.Foto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -88,7 +52,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

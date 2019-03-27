@@ -5,192 +5,192 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>PerfilStartup</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.NomeStartup, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NomeStartup, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NomeStartup, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DataFundacao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DataFundacao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
-            </div>
+    <div class="container">
+        <div class="section-header text-center">
+            <br />
+            <h2 class="title">Startup, Crie seu perfil</h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         </div>
+        <div class="card card-container">
+            <form class="form-signin">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TamanhoTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TamanhoTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Rua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Complemento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sobre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sobre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Objetivo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Objetivo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Logotipo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Logotipo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Logotipo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemLocal1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemLocal1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemLocal1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemLocal2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemLocal2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemLocal2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP3, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP3, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP4, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP4, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.StartupCadastroID, "StartupCadastroID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("StartupCadastroID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SegmentacaoID, "SegmentacaoID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("SegmentacaoID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                <div class="input">
+                    @Html.DropDownList("StartupCadastroID", null, "Qual Startup é você?", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
+                    @Html.ValidationMessageFor(model => model.NomeStartup, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="dataFundacao" id="dataFundacao" class="input" placeholder="Data da Fundação DD/MM/YYYY *" />
+                    @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div class="input">
+                    @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="tamanhoTime" id="tamanhoTime" class="input" placeholder="Qual a média de pessoas no seu time?" />
+                    @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                @*Endereço*@
+                <div>
+                    <input type="text" name="cep" id="cep" class="input" placeholder="CEP XX.XXX-XXX" />
+                    @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="rua" id="rua" class="input" placeholder="Digite a Rua *" />
+                    @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="bairro" id="bairro" class="input" placeholder="Digite o Bairro *" />
+                    @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="numero" id="numero" class="input" placeholder="Digite o Numero *" />
+                    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="complemento" id="complemento" class="input" placeholder="Tem algum complemento?" />
+                    @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="cidade" id="cidade" class="input" placeholder="Em qual cidade fica sua Startup?" />
+                    @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="estado" id="estado" class="input" placeholder="Em qual estado fica sua Startup?" />
+                    @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                @*Sobre a Startup*@
+                <div>
+                    <input type="text" name="sobre" id="sobre" class="input" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!" />
+                    @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="objetivo" id="objetivo" class="input" placeholder="Digite qual o onjetivo de vocês. É apenas uma breve descrição ou frase!" />
+                    @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                @*Imagens da Startup*@
+                <div>
+                    <label>Insira seu logo!</label>
+                    <input type="file" id="logo" name="logo" />
+                    @{
+                        string logo = ViewBag.LogoMensagem;
+                        if (logo != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <label>Insira uma imagem da sua Startup!</label>
+                    <input type="file" id="imagemLocal1" name="imagemLocal1" />
+                    @{
+                        string imagemLocal1 = ViewBag.LogoMensagem;
+                        if (imagemLocal1 != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <label>Caso tenha outra imagem da sua Startup, insira aqui!</label>
+                    <input type="file" id="imagemLocal2" name="imagemLocal2" />
+                    @{
+                        string imagemLocal2 = ViewBag.LogoMensagem;
+                        if (imagemLocal2 != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <label>Insira as imagens do seu MVP a baixo!</label>
+                    <input type="file" id="MVP1" name="MVP1" />
+                    @{
+                        string MVP1 = ViewBag.LogoMensagem;
+                        if (MVP1 != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="file" id="MVP2" name="MVP2" />
+                    @{
+                        string MVP2 = ViewBag.LogoMensagem;
+                        if (MVP2 != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="file" id="MVP3" name="MVP3" />
+                    @{
+                        string MVP3 = ViewBag.LogoMensagem;
+                        if (MVP3 != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="file" id="MVP4" name="MVP4" />
+                    @{
+                        string MVP4 = ViewBag.LogoMensagem;
+                        if (MVP4 != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.LogoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br /><br />
+                <div>
+                    <button class="main-btn btn-block" type="submit" value="Criar">Criar Perfil</button>
+                </div>
+            </form>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
