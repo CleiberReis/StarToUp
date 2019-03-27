@@ -10,7 +10,7 @@ namespace StarToUp.Models
     public class Administrador
     {
         [Key]
-        public int AdminID { get; set; }
+        public int AdministradorID { get; set; }
 
         [Required(ErrorMessage = "Preenchimento obrigatório")]
         [DisplayName("Login:")]

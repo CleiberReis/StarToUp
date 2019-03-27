@@ -1,0 +1,160 @@
+﻿@model IEnumerable<StarToUp.Models.PerfilStartup>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fundadores.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartupCadastro.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeStartup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFundacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TamanhoTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sobre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Objetivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logotipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagemLocal1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagemLocal2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagemMVP1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagemMVP2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagemMVP3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagemMVP4)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fundadores.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartupCadastro.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeStartup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFundacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TamanhoTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sobre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Objetivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logotipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagemLocal1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagemLocal2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagemMVP1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagemMVP2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagemMVP3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagemMVP4)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PerfilStartupID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PerfilStartupID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PerfilStartupID })
+        </td>
+    </tr>
+}
+
+</table>

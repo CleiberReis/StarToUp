@@ -23,6 +23,16 @@ namespace StarToUp.Migrations
             {
                 context.TipoUsuarios.AddOrUpdate(x => x.TipoUsuarioID, tipoUsuario);
             }
+
+            IList<Segmentacao> segmentacoes = new List<Segmentacao>();
+            segmentacoes.Add(new Segmentacao() { Descricao = "Saúde" });
+            segmentacoes.Add(new Segmentacao() { Descricao = "Educação" });
+            segmentacoes.Add(new Segmentacao() { Descricao = "Tecnologia e Inovacação" });
+            segmentacoes.Add(new Segmentacao() { Descricao = "Meio Ambiente" });
+            foreach (Segmentacao segmentacao in segmentacoes)
+            {
+                context.Segmentacoes.AddOrUpdate(x => x.SegmentacaoID, segmentacao);
+            }
         }
     }
 }
