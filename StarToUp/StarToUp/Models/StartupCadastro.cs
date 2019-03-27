@@ -26,5 +26,8 @@ namespace StarToUp.Models
         public int TipoUsuarioID { get; set; }
         public virtual TipoUsuario TipoUsuario { get; set; }
         public IEnumerable<object> StartupCadastros { get; internal set; }
+
+        //Relacionamento com PerfilStartup
+        public virtual ICollection<PerfilStartup> PerfilStartups { get; set; }
     }
 }
