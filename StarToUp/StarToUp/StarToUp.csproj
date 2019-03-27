@@ -155,9 +155,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903260117444_atual.cs" />
-    <Compile Include="Migrations\201903260117444_atual.Designer.cs">
-      <DependentUpon>201903260117444_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201903262244223_atualizado.cs" />
+    <Compile Include="Migrations\201903262244223_atualizado.Designer.cs">
+      <DependentUpon>201903262244223_atualizado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -369,6 +369,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\Evento\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -384,8 +385,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903260117444_atual.resx">
-      <DependentUpon>201903260117444_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903262244223_atualizado.resx">
+      <DependentUpon>201903262244223_atualizado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
