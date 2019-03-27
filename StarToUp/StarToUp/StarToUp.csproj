@@ -151,13 +151,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
     <Compile Include="Controllers\PerfilEmpresasController.cs" />
+    <Compile Include="Controllers\PerfilStartupsController.cs" />
     <Compile Include="Controllers\StartupCadastrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903262244223_atualizado.cs" />
-    <Compile Include="Migrations\201903262244223_atualizado.Designer.cs">
-      <DependentUpon>201903262244223_atualizado.cs</DependentUpon>
+    <Compile Include="Migrations\201903270233290_atual.cs" />
+    <Compile Include="Migrations\201903270233290_atual.Designer.cs">
+      <DependentUpon>201903270233290_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -165,6 +166,8 @@
     <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\PerfilEmpresa.cs" />
+    <Compile Include="Models\PerfilStartup.cs" />
+    <Compile Include="Models\Segmentacao.cs" />
     <Compile Include="Models\StartupCadastro.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -366,6 +369,11 @@
     <Content Include="Views\Eventos\Details.cshtml" />
     <Content Include="Views\Eventos\Edit.cshtml" />
     <Content Include="Views\Eventos\Index.cshtml" />
+    <Content Include="Views\PerfilStartups\Create.cshtml" />
+    <Content Include="Views\PerfilStartups\Delete.cshtml" />
+    <Content Include="Views\PerfilStartups\Details.cshtml" />
+    <Content Include="Views\PerfilStartups\Edit.cshtml" />
+    <Content Include="Views\PerfilStartups\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -385,8 +393,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903262244223_atualizado.resx">
-      <DependentUpon>201903262244223_atualizado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903270233290_atual.resx">
+      <DependentUpon>201903270233290_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

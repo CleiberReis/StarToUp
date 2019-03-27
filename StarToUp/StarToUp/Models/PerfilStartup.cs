@@ -42,8 +42,5 @@ namespace StarToUp.Models
 
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
-
-        public int FundadorID { get; set; }
-        public virtual Fundador Fundadores { get; set; }
     }
 }

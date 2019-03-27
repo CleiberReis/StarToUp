@@ -17,7 +17,7 @@ namespace StarToUp.Controllers
         // GET: PerfilStartups
         public ActionResult Index()
         {
-            var perfilStartups = db.PerfilStartups.Include(p => p.Fundadores).Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
+            var perfilStartups = db.PerfilStartups.Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
             return View(perfilStartups.ToList());
         }
 
@@ -39,7 +39,6 @@ namespace StarToUp.Controllers
         // GET: PerfilStartups/Create
         public ActionResult Create()
         {
-            ViewBag.FundadorID = new SelectList(db.Fundadores, "FundadorID", "Nome");
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao");
             ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome");
             return View();
@@ -50,7 +49,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID,FundadorID")] PerfilStartup perfilStartup)
+        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +58,6 @@ namespace StarToUp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FundadorID = new SelectList(db.Fundadores, "FundadorID", "Nome", perfilStartup.FundadorID);
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", perfilStartup.SegmentacaoID);
             ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", perfilStartup.StartupCadastroID);
             return View(perfilStartup);
@@ -77,7 +75,6 @@ namespace StarToUp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FundadorID = new SelectList(db.Fundadores, "FundadorID", "Nome", perfilStartup.FundadorID);
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", perfilStartup.SegmentacaoID);
             ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", perfilStartup.StartupCadastroID);
             return View(perfilStartup);
@@ -88,7 +85,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID,FundadorID")] PerfilStartup perfilStartup)
+        public ActionResult Edit([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +93,6 @@ namespace StarToUp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FundadorID = new SelectList(db.Fundadores, "FundadorID", "Nome", perfilStartup.FundadorID);
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", perfilStartup.SegmentacaoID);
             ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", perfilStartup.StartupCadastroID);
             return View(perfilStartup);
