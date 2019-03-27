@@ -160,6 +160,10 @@
     <Compile Include="Migrations\201903270233290_atual.Designer.cs">
       <DependentUpon>201903270233290_atual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903270417001_atualizandoPerfil.cs" />
+    <Compile Include="Migrations\201903270417001_atualizandoPerfil.Designer.cs">
+      <DependentUpon>201903270417001_atualizandoPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Context.cs" />
@@ -293,6 +297,7 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\Evento\Logo_StarToUp1.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -377,7 +382,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Files\Evento\" />
+    <Folder Include="Files\PerfilStartup\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -395,6 +400,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903270233290_atual.resx">
       <DependentUpon>201903270233290_atual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270417001_atualizandoPerfil.resx">
+      <DependentUpon>201903270417001_atualizandoPerfil.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

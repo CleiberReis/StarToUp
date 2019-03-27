@@ -52,7 +52,7 @@ namespace StarToUp.Controllers
         public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup, 
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase MVP1, HttpPostedFileBase MVP2, HttpPostedFileBase MVP3, HttpPostedFileBase MVP4)
         {
-            ViewBag.FotoMensagem = "";
+            ViewBag.LogoMensagem = "";
             try
             {
 
@@ -66,7 +66,7 @@ namespace StarToUp.Controllers
                         fileName = System.IO.Path.GetFileName(logoTipo.FileName);
                         contentType = logoTipo.ContentType;
                         path =
-                       System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Cliente\\" +
+                       System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" +
                        fileName;
                         logoTipo.SaveAs(path);
                         perfilStartup.Logotipo = fileName;
@@ -75,7 +75,7 @@ namespace StarToUp.Controllers
                     {
                         fileName = System.IO.Path.GetFileName(imagemLocal1.FileName);
                         contentType = imagemLocal1.ContentType;
-                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Cliente\\" + fileName;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
                         imagemLocal1.SaveAs(path);
                         perfilStartup.ImagemLocal1 = fileName;
                     }
@@ -83,7 +83,7 @@ namespace StarToUp.Controllers
                     {
                         fileName = System.IO.Path.GetFileName(MVP1.FileName);
                         contentType = MVP1.ContentType;
-                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Cliente\\" + fileName;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
                         MVP1.SaveAs(path);
                         perfilStartup.ImagemMVP1 = fileName;
                     }
@@ -91,7 +91,7 @@ namespace StarToUp.Controllers
                     {
                         fileName = System.IO.Path.GetFileName(MVP2.FileName);
                         contentType = MVP2.ContentType;
-                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Cliente\\" + fileName;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
                         MVP2.SaveAs(path);
                         perfilStartup.ImagemMVP2 = fileName;
                     }
@@ -99,7 +99,7 @@ namespace StarToUp.Controllers
                     {
                         fileName = System.IO.Path.GetFileName(MVP3.FileName);
                         contentType = MVP3.ContentType;
-                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Cliente\\" + fileName;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
                         MVP3.SaveAs(path);
                         perfilStartup.ImagemMVP3 = fileName;
                     }
@@ -107,13 +107,13 @@ namespace StarToUp.Controllers
                     {
                         fileName = System.IO.Path.GetFileName(MVP4.FileName);
                         contentType = MVP4.ContentType;
-                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Cliente\\" + fileName;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
                         MVP4.SaveAs(path);
                         perfilStartup.ImagemMVP4 = fileName;
                     }
                     db.PerfilStartups.Add(perfilStartup);
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("../Home/Index");
                 }
             }
             catch (Exception ex)
