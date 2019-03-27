@@ -49,8 +49,8 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup, 
-            HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase MVP1, HttpPostedFileBase MVP2, HttpPostedFileBase MVP3, HttpPostedFileBase MVP4)
+        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup,
+            HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase mvp1, HttpPostedFileBase mvp2, HttpPostedFileBase mvp3, HttpPostedFileBase mvp4)
         {
             ViewBag.LogoMensagem = "";
             try
@@ -66,8 +66,8 @@ namespace StarToUp.Controllers
                         fileName = System.IO.Path.GetFileName(logoTipo.FileName);
                         contentType = logoTipo.ContentType;
                         path =
-                       System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" +
-                       fileName;
+                        System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" +
+                        fileName;
                         logoTipo.SaveAs(path);
                         perfilStartup.Logotipo = fileName;
                     }
@@ -79,36 +79,44 @@ namespace StarToUp.Controllers
                         imagemLocal1.SaveAs(path);
                         perfilStartup.ImagemLocal1 = fileName;
                     }
-                    if (MVP1 != null && MVP1.ContentLength > 0)
+                    if (imagemLocal2 != null && imagemLocal2.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(MVP1.FileName);
-                        contentType = MVP1.ContentType;
+                        fileName = System.IO.Path.GetFileName(imagemLocal2.FileName);
+                        contentType = imagemLocal2.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        MVP1.SaveAs(path);
+                        imagemLocal2.SaveAs(path);
+                        perfilStartup.ImagemLocal2 = fileName;
+                    }
+                    if (mvp1 != null && mvp1.ContentLength > 0)
+                    {
+                        fileName = System.IO.Path.GetFileName(mvp1.FileName);
+                        contentType = mvp1.ContentType;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
+                        mvp1.SaveAs(path);
                         perfilStartup.ImagemMVP1 = fileName;
                     }
-                    if (MVP2 != null && MVP2.ContentLength > 0)
+                    if (mvp2 != null && mvp2.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(MVP2.FileName);
-                        contentType = MVP2.ContentType;
+                        fileName = System.IO.Path.GetFileName(mvp2.FileName);
+                        contentType = mvp2.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        MVP2.SaveAs(path);
+                        mvp2.SaveAs(path);
                         perfilStartup.ImagemMVP2 = fileName;
                     }
-                    if (MVP3 != null && MVP3.ContentLength > 0)
+                    if (mvp3 != null && mvp3.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(MVP3.FileName);
-                        contentType = MVP3.ContentType;
+                        fileName = System.IO.Path.GetFileName(mvp3.FileName);
+                        contentType = mvp3.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        MVP3.SaveAs(path);
+                        mvp3.SaveAs(path);
                         perfilStartup.ImagemMVP3 = fileName;
                     }
-                    if (MVP4 != null && MVP4.ContentLength > 0)
+                    if (mvp4 != null && mvp4.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(MVP4.FileName);
-                        contentType = MVP4.ContentType;
+                        fileName = System.IO.Path.GetFileName(mvp4.FileName);
+                        contentType = mvp4.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        MVP4.SaveAs(path);
+                        mvp4.SaveAs(path);
                         perfilStartup.ImagemMVP4 = fileName;
                     }
                     db.PerfilStartups.Add(perfilStartup);

@@ -19,11 +19,11 @@
             <div class="col-md-6">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="input">
+                @*<div class="input">
                         @Html.DropDownList("StartupCadastroID", null, "Qual Startup é você?", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
-                    </div>
-                    <br />
+                    </div>*@
+                <br />
                 <div>
                     <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
                     @Html.ValidationMessageFor(model => model.NomeStartup, "", new { @class = "text-danger" })
@@ -34,11 +34,11 @@
                     @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
                 </div>
                 <br />
-                <div class="input">
+                @*<div class="input">
                         @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
-                    </div>
-                    <br />
+                    </div>*@
+                <br />
                 <div>
                     <input type="text" name="tamanhoTime" id="tamanhoTime" class="input" placeholder="Qual a média de pessoas no seu time?" />
                     @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
@@ -81,7 +81,7 @@
                 </div>
                 <br />
             </div>
-            <br/>
+            <br />
             <div class="col-md-6">
                 @*Sobre a Startup*@
                 <div class="fileUpload btn-lg btn-info">
@@ -91,9 +91,9 @@
     string logo = ViewBag.LogoMensagem;
     if (logo != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
@@ -111,9 +111,9 @@
     string imagemLocal1 = ViewBag.LogoMensagem;
     if (imagemLocal1 != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
@@ -124,65 +124,65 @@
     string imagemLocal2 = ViewBag.LogoMensagem;
     if (imagemLocal2 != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
                 <br /><br />
                 <label>Insira Imagens do seu MVP abaixo!</label>
-                <br/>
+                <br />
                 <div class="fileUpload btn-lg btn-info">
                     <span>MVP</span>
-                    <input type="file" id="MVP1" name="MVP1" class="upload" />
+                    <input type="file" id="mvp1" name="mvp1" class="upload" />
                     @{
-    string MVP1 = ViewBag.LogoMensagem;
-    if (MVP1 != "")
+    string mvp1 = ViewBag.LogoMensagem;
+    if (mvp1 != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
                 <div class="fileUpload btn-lg btn-info">
                     <span>MVP</span>
-                    <input type="file" id="MVP2" name="MVP2" class="upload" />
+                    <input type="file" id="mvp2" name="mvp2" class="upload" />
                     @{
-    string MVP2 = ViewBag.LogoMensagem;
-    if (MVP2 != "")
+    string mvp2 = ViewBag.LogoMensagem;
+    if (mvp2 != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
                 <br />
                 <div class="fileUpload btn-lg btn-lg btn-info">
                     <span>MVP</span>
-                    <input type="file" id="MVP3" name="MVP3" class="upload" />
+                    <input type="file" id="mvp3" name="mvp3" class="upload" />
                     @{
-    string MVP3 = ViewBag.LogoMensagem;
-    if (MVP3 != "")
+    string mvp3 = ViewBag.LogoMensagem;
+    if (mvp3 != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
                 <div class="fileUpload btn-lg btn-info">
                     <span>MVP</span>
-                    <input type="file" id="MVP4" name="MVP4" class="upload" />
+                    <input type="file" id="mvp4" name="mvp4" class="upload" />
                     @{
-    string MVP4 = ViewBag.LogoMensagem;
-    if (MVP4 != "")
+    string mvp4 = ViewBag.LogoMensagem;
+    if (mvp4 != "")
     {
-            <span class="text-danger contenterror">
-                @ViewBag.LogoMensagem
-            </span>
+        <span class="text-danger contenterror">
+            @ViewBag.LogoMensagem
+        </span>
     }
                     }
                 </div>
