@@ -272,9 +272,12 @@
     <Content Include="Content\img\detalhes.png" />
     <Content Include="Content\img\editar.png" />
     <Content Include="Content\img\excluir.png" />
+    <Content Include="Content\img\foto.png" />
+    <Content Include="Content\img\fotoUpload.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo1.png" />
+    <Content Include="Content\img\logoStartup.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
     <Content Include="Content\img\perso1.jpg" />
     <Content Include="Content\img\perso2.jpg" />
