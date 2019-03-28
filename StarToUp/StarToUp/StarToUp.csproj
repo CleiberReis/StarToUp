@@ -284,6 +284,7 @@
     <Content Include="Content\img\team1.jpg" />
     <Content Include="Content\img\team2.jpg" />
     <Content Include="Content\img\team3.jpg" />
+    <Content Include="Content\img\upload.png" />
     <Content Include="Content\img\voltar.png" />
     <Content Include="Content\img\work1.jpg" />
     <Content Include="Content\img\work2.jpg" />

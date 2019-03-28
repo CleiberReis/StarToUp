@@ -8,6 +8,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <div class="container">
         <div class="section-header text-center">
@@ -81,13 +82,16 @@
                 </div>
                 <br />
             </div>
-            <br />
             <div class="col-md-6">
-                @*Sobre a Startup*@
-                <div class="fileUpload btn-lg btn-info">
-                    <span>Insira seu LogoTipo aqui!</span>
-                    <input type="file" id="logo" name="logo" class="upload" />
-                    @{
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">Insira seu LogoTipo!</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string logo = ViewBag.LogoMensagem;
     if (logo != "")
     {
@@ -95,7 +99,9 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
                 <br />
                 <div>
@@ -104,10 +110,15 @@
                 </div>
                 <br />
                 @*Imagens da Startup*@
-                <div class="fileUpload btn-lg btn-info">
-                    <span>Insira uma imagem da sua Startup!</span>
-                    <input type="file" id="imagemLocal1" name="imagemLocal1" class="upload" />
-                    @{
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">Insira uma imagem da sua Startup!</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string imagemLocal1 = ViewBag.LogoMensagem;
     if (imagemLocal1 != "")
     {
@@ -115,12 +126,20 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
-                <div class="fileUpload btn-lg btn-info">
-                    <span>Caso possua outra, insira aqui!</span>
-                    <input type="file" id="imagemLocal2" name="imagemLocal2" class="upload" />
-                    @{
+
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">Caso possua outra, insira aqui!</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string imagemLocal2 = ViewBag.LogoMensagem;
     if (imagemLocal2 != "")
     {
@@ -128,15 +147,24 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
+                @*MVP*@
                 <br /><br />
                 <label>Insira Imagens do seu MVP abaixo!</label>
                 <br />
-                <div class="fileUpload btn-lg btn-info">
-                    <span>MVP</span>
-                    <input type="file" id="mvp1" name="mvp1" class="upload" />
-                    @{
+
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">MVP *</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string mvp1 = ViewBag.LogoMensagem;
     if (mvp1 != "")
     {
@@ -144,12 +172,20 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
-                <div class="fileUpload btn-lg btn-info">
-                    <span>MVP</span>
-                    <input type="file" id="mvp2" name="mvp2" class="upload" />
-                    @{
+                <br />
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">MVP *</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string mvp2 = ViewBag.LogoMensagem;
     if (mvp2 != "")
     {
@@ -157,13 +193,21 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
                 <br />
-                <div class="fileUpload btn-lg btn-lg btn-info">
-                    <span>MVP</span>
-                    <input type="file" id="mvp3" name="mvp3" class="upload" />
-                    @{
+
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">MVP *</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string mvp3 = ViewBag.LogoMensagem;
     if (mvp3 != "")
     {
@@ -171,12 +215,20 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
-                <div class="fileUpload btn-lg btn-info">
-                    <span>MVP</span>
-                    <input type="file" id="mvp4" name="mvp4" class="upload" />
-                    @{
+
+                <div class="contain animated bounce">
+                    <div class="alert"></div>
+                    <div id='img_contain'><img id="blah" align='left' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' class="img-circle img-responsive" /></div>
+                    <div class="input-group">
+                        <br /><br />
+                        <div class="fileUpload btn btn-info">
+                            <label class="custom-file-label" for="inputGroupFile01">MVP *</label>
+                            <input type="file" id="inputGroupFile01" class="imgInp custom-file-input upload" name="logo" aria-describedby="inputGroupFileAddon01">
+                            @{
     string mvp4 = ViewBag.LogoMensagem;
     if (mvp4 != "")
     {
@@ -184,9 +236,12 @@
             @ViewBag.LogoMensagem
         </span>
     }
-                    }
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </form>
         <br /><br />
 
@@ -201,38 +256,71 @@
     </div>
     <br /><br />
 }
-
 <footer id="footer" class="sm-padding bg-dark">
-    <!-- Container -->
-    <div class="container-fluid">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <!-- footer logo -->
-                <div class="footer-logo">
-                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+        <!-- Container -->
+        <div class="container-fluid">
+            <br /><br />
+            <!-- Row -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <!-- footer logo -->
+                    <div class="footer-logo">
+                        <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+                    </div>
+                    <!-- /footer logo -->
+                    <!-- footer follow -->
+                    <ul class="footer-follow">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <!-- /footer follow -->
+                    <!-- footer copyright -->
+                    <div class="footer-copyright">
+                        <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                    </div>
+                    <!-- /footer copyright -->
                 </div>
-                <!-- /footer logo -->
-                <!-- footer follow -->
-                <ul class="footer-follow">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-                <!-- /footer follow -->
-                <!-- footer copyright -->
-                <div class="footer-copyright">
-                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
-                </div>
-                <!-- /footer copyright -->
             </div>
+            <!-- /Row -->
         </div>
-        <!-- /Row -->
-    </div>
-    <!-- /Container -->
-</footer>
-<!-- /Footer -->
+        <!-- /Container -->
+    </footer>
+    <!-- /Footer -->
+
+<script type="text/javascript">
+    $("#inputGroupFile01").change(function (event) {
+        RecurFadeIn();
+        readURL(this);
+    });
+    $("#inputGroupFile01").on('click', function (event) {
+        RecurFadeIn();
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            var filename = $("#inputGroupFile01").val();
+            filename = filename.substring(filename.lastIndexOf('\\') + 1);
+            reader.onload = function (e) {
+                debugger;
+                $('#blah').attr('src', e.target.result);
+                $('#blah').hide();
+                $('#blah').fadeIn(500);
+                $('.custom-file-label').text(filename);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        $(".alert").removeClass("loading").hide();
+    }
+    function RecurFadeIn() {
+        console.log('ran');
+        FadeInAlert("Wait for it...");
+    }
+    function FadeInAlert(text) {
+        $(".alert").show();
+        $(".alert").text(text).addClass("loading");
+    }
+</script>
