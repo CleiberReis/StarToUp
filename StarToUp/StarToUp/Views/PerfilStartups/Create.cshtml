@@ -7,7 +7,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Create", "PerfilStartups", null, FormMethod.Post, new { enctype ="multipart/form-data" }))
+@using (Html.BeginForm("Create", "PerfilStartups", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+
 {
     @Html.AntiForgeryToken()
     <div class="container">
@@ -88,128 +89,107 @@
                     @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
                 </div>
                 <br />
-            </div>
-            <div>
-                @Html.LabelFor(model => model.Logotipo, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="logoTipo" name="logoTipo" />
-                    @{
-                        string logoTipo = ViewBag.FotoMensagem;
-                        if (logoTipo != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
+            <div class="fileUpload btn btn-primary">
+                <span>Insir seu LogoTipo *</span>
+                <input type="file" id="logoTipo" name="logoTipo" class="upload" />
+                @{
+                    string logoTipo = ViewBag.FotoMensagem;
+                    if (logoTipo != "")
+                    {
+                        <span class="text-danger contenterror">
+                            @ViewBag.FotoMensagem
+                        </span>
                     }
-                </div>
+                }
             </div>
-            @*Imagens da Startup*@
-            <label>Insira fotos da sua Startup</label>
-            <div>
-                @Html.LabelFor(model => model.ImagemLocal1, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="imagemLocal1" name="imagemLocal1" />
-                    @{
-                        string imagemLocal1 = ViewBag.FotoMensagem;
-                        if (imagemLocal1 != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
-                    }
-                </div>
-            </div>
+    </div>
+    @*Imagens da Startup*@
+        <label>Insira fotos da sua Startup</label>
+        <div class="fileUpload btn btn-primary">
+            <span>Imagem da Startup *</span>
+            <input type="file" id="imagemLocal1" name="imagemLocal1" class="upload" />
+            @{
+                string imagemLocal1 = ViewBag.FotoMensagem;
+                if (imagemLocal1 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+            }
+        </div>
 
-            <div>
-                @Html.LabelFor(model => model.ImagemLocal2, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="imagemLocal2" name="imagemLocal2" />
-                    @{
-                        string imagemLocal2 = ViewBag.FotoMensagem;
-                        if (imagemLocal2 != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
-                    }
-                </div>
-            </div>
+        <div class="fileUpload btn btn-primary">
+            <span>Imagem da Startup</span>
+            <input type="file" id="imagemLocal2" name="imagemLocal2" class="upload" />
+            @{
+                string imagemLocal2 = ViewBag.FotoMensagem;
+                if (imagemLocal2 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+            }
+        </div>
 
-            @*MVP*@
-            <label>Insira fotos do seu MVP</label>
-            <div>
-                @Html.LabelFor(model => model.ImagemMVP1, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="imagemMVP1" name="imagemMVP1" />
-                    @{
-                        string imagemMVP1 = ViewBag.FotoMensagem;
-                        if (imagemMVP1 != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
-                    }
-                </div>
-            </div>
+        @*MVP*@
+        <label>Insira fotos do seu MVP</label>
+        <div class="fileUpload btn btn-primary">
+            <span>MVP</span>
+            <input type="file" id="imagemMVP1" name="imagemMVP1" class="upload" />
+            @{
+                string imagemMVP1 = ViewBag.FotoMensagem;
+                if (imagemMVP1 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+            }
+        </div>
 
-            <div>
-                @Html.LabelFor(model => model.ImagemMVP2, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="imagemMVP2" name="imagemMVP2" />
-                    @{
-                        string imagemMVP2 = ViewBag.FotoMensagem;
-                        if (imagemMVP2 != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
-                    }
-                </div>
-            </div>
+        <div class="fileUpload btn btn-primary">
+            <span>MVP</span>
+            <input type="file" id="imagemMVP2" name="imagemMVP2" class="upload" />
+            @{
+                string imagemMVP2 = ViewBag.FotoMensagem;
+                if (imagemMVP2 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+            }
+        </div>
 
-            <div>
-                @Html.LabelFor(model => model.ImagemMVP3, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="imagemMVP3" name="imagemMVP3" />
-                    @{
-                        string imagemMVP3 = ViewBag.FotoMensagem;
-                        if (imagemMVP3 != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
-                    }
-                </div>
-            </div>
+        <div class="fileUpload btn btn-primary">
+            <span>MVP</span>
+            <input type="file" id="imagemMVP3" name="imagemMVP3" class="upload" />
+            @{
+                string imagemMVP3 = ViewBag.FotoMensagem;
+                if (imagemMVP3 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+            }
+        </div>
 
-            <div>
-                @Html.LabelFor(model => model.ImagemMVP4, htmlAttributes: new { @class = "controllabel col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="imagemMVP4" name="imagemMVP4" />
-                    @{
-                        string imagemMVP4 = ViewBag.FotoMensagem;
-                        if (imagemMVP4 != "")
-                        {
-                            <span class="text-danger contenterror">
-                                @ViewBag.FotoMensagem
-                            </span>
-                        }
-                    }
-                </div>
-            </div>
-
-
-
-
-
-
-
+        <div class="fileUpload btn btn-primary">
+            <span>MVP</span>
+            <input type="file" id="imagemMVP4" name="imagemMVP4" class="upload" />
+            @{
+                string imagemMVP4 = ViewBag.FotoMensagem;
+                if (imagemMVP4 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+            }
+        </div>
         </form>
         <div>
             <textarea name="sobre" id="sobre" class="input" rows="5" cols="60" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!"></textarea>

@@ -462,7 +462,6 @@ C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.perfilempresas2.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
@@ -491,6 +490,7 @@ C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bi
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
