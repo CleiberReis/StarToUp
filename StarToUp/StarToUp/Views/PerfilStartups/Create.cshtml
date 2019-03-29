@@ -8,14 +8,13 @@
 }
 
 @using (Html.BeginForm("Create", "PerfilStartups", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-
 {
     @Html.AntiForgeryToken()
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
-    
+
+
     <div class="container">
         <div class="section-header text-center">
             <br />
@@ -23,263 +22,327 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         </div>
         <form class="form-signin">
-            <div class="col-md-6">
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                @*<div class="input">
-                        @Html.DropDownList("StartupCadastroID", null, "Qual Startup é você?", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
-                    </div>*@
-                <br />
-                <div>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
-                    @Html.ValidationMessageFor(model => model.NomeStartup, "", new { @class = "text-danger" })
+                    @*<div class="input">
+                            @Html.DropDownList("StartupCadastroID", null, "Qual Startup é você?", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
+                        </div>*@
+                    <br />
+                    <div>
+                        <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
+                        @Html.ValidationMessageFor(model => model.NomeStartup, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="dataFundacao" id="dataFundacao" class="input" placeholder="Data da Fundação DD/MM/YYYY *" />
+                        @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    @*<div class="input">
+                            @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                        </div>*@
+                    <br />
+                    <div>
+                        <input type="text" name="tamanhoTime" id="tamanhoTime" class="input" placeholder="Qual a média de pessoas no seu time?" />
+                        @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    @*Endereço*@
+                    <div>
+                        <input type="text" name="cep" id="cep" class="input" placeholder="CEP XX.XXX-XXX" />
+                        @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="rua" id="rua" class="input" placeholder="Digite a Rua *" />
+                        @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="bairro" id="bairro" class="input" placeholder="Digite o Bairro *" />
+                        @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="numero" id="numero" class="input" placeholder="Digite o Numero *" />
+                        @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="complemento" id="complemento" class="input" placeholder="Tem algum complemento?" />
+                        @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="cidade" id="cidade" class="input" placeholder="Em qual cidade fica sua Startup?" />
+                        @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="estado" id="estado" class="input" placeholder="Em qual estado fica sua Startup?" />
+                        @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="objetivo" id="objetivo" class="form-control input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
+                        @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <textarea name="sobre" id="sobre" class="input" rows="15" cols="10" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!"></textarea>
+                        @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-                <br />
-                <div>
-                    <input type="text" name="dataFundacao" id="dataFundacao" class="input" placeholder="Data da Fundação DD/MM/YYYY *" />
-                    @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                @*<div class="input">
-                        @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
-                    </div>*@
-                <br />
-                <div>
-                    <input type="text" name="tamanhoTime" id="tamanhoTime" class="input" placeholder="Qual a média de pessoas no seu time?" />
-                    @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                @*Endereço*@
-                <div>
-                    <input type="text" name="cep" id="cep" class="input" placeholder="CEP XX.XXX-XXX" />
-                    @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="rua" id="rua" class="input" placeholder="Digite a Rua *" />
-                    @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="bairro" id="bairro" class="input" placeholder="Digite o Bairro *" />
-                    @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="numero" id="numero" class="input" placeholder="Digite o Numero *" />
-                    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="complemento" id="complemento" class="input" placeholder="Tem algum complemento?" />
-                    @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="cidade" id="cidade" class="input" placeholder="Em qual cidade fica sua Startup?" />
-                    @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="estado" id="estado" class="input" placeholder="Em qual estado fica sua Startup?" />
-                    @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
-                </div>
-                <br />
-            </div>
-            <div class="col-md-6">
-                <div class="col-md-offset-1">
-                    <div class="form-group">
-                        <div class="main-img-preview">
-                            <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                <div class="col-md-6">
+                    @*LogoTipo*@
+                    <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                    @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
+                    <div class="input-group">
+                        <div class="fileUpload btn btn-info fake-shadow">
+                            <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                            <input id="logo-id" name="logo" type="file" class="attachment_upload">
                         </div>
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                        @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
                         <div class="input-group">
-                            <input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">
-                            <div class="input-group-btn">
+                            <div class="fileUpload btn btn-info fake-shadow">
+                                <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                                <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                            </div>
+                        </div>
+                        <p class="help-block">* Insira uma foto da sua Startup.</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                        <div class="input-group">
+                            @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
+                            <div class="btn">
                                 <div class="fileUpload btn btn-info fake-shadow">
                                     <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
                                     <input id="logo-id" name="logo" type="file" class="attachment_upload">
                                 </div>
                             </div>
+                            <p class="help-block">* Insira uma foto da sua Startup.</p>
                         </div>
-                        <p class="help-block">* Insira o Logo da sua Startup acima.</p>
                     </div>
                 </div>
+            </div>
+            @*FimLogoTipo*@
 
-                <div class="col-md-offset-1">
-                    <div class="form-group">
-                        <div class="main-img-preview">
-                            <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+            @*Imagens do MVP*@
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="main-img-preview">
+                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                    </div>
+                    @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
+                    <div class="input-group">
+                        <div class="fileUpload btn btn-info fake-shadow">
+                            <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                            <input id="logo-id" name="logo" type="file" class="attachment_upload">
                         </div>
+                    </div>
+                    <p class="help-block">* Insira uma foto da sua Startup.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="main-img-preview">
+                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                    </div>
+                    <div class="input-group-btn">
+                        @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
                         <div class="input-group">
-                            <input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">
-                            <div class="input-group-btn">
-                                <div class="fileUpload btn btn-info fake-shadow">
-                                    <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
-                                    <input id="logo-id" name="logo" type="file" class="attachment_upload">
-                                </div>
+                            <div class="fileUpload btn btn-info fake-shadow">
+                                <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                                <input id="logo-id" name="logo" type="file" class="attachment_upload">
                             </div>
                         </div>
                         <p class="help-block">* Insira uma foto da sua Startup.</p>
                     </div>
                 </div>
-
-                <div>
-                    <input type="text" name="objetivo" id="objetivo" class="input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
-                    @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="main-img-preview">
+                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                    </div>
+                    @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
+                    <div class="input-group">
+                        <div class="fileUpload btn btn-info fake-shadow">
+                            <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                            <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                        </div>
+                        <p class="help-block">* Insira uma foto da sua Startup.</p>
+                    </div>
                 </div>
-                <br />
-                <div class="fileUpload btn btn-primary">
-                    <span>Insir seu LogoTipo *</span>
-                    <input type="file" id="logoTipo" name="logoTipo" class="upload" />
-                    @{
-    string logoTipo = ViewBag.FotoMensagem;
-    if (logoTipo != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
-                    }
+                <div class="col-md-6">
+                    <div class="main-img-preview">
+                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                    </div>
+                    <div class="input-group-btn">
+                        @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
+                        <div class="input-group">
+                            <div class="fileUpload btn btn-info fake-shadow">
+                                <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                                <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                            </div>
+                        </div>
+                        <p class="help-block">* Insira uma foto da sua Startup.</p>
+                    </div>
                 </div>
             </div>
-            @*Imagens da Startup*@
-            <label>Insira fotos da sua Startup</label>
-            <div class="fileUpload btn btn-primary">
-                <span>Imagem da Startup *</span>
-                <input type="file" id="imagemLocal1" name="imagemLocal1" class="upload" />
-                @{
-    string imagemLocal1 = ViewBag.FotoMensagem;
-    if (imagemLocal1 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
-                }
-            </div>
+            @*Fim das imagens MVP*@
 
-            <div class="fileUpload btn btn-primary">
-                <span>Imagem da Startup</span>
-                <input type="file" id="imagemLocal2" name="imagemLocal2" class="upload" />
-                @{
-    string imagemLocal2 = ViewBag.FotoMensagem;
-    if (imagemLocal2 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+            @*<div class="fileUpload btn btn-primary">
+                                <span>Insir seu LogoTipo *</span>
+                                <input type="file" id="logoTipo" name="logoTipo" class="upload" />
+                                @{
+                string logoTipo = ViewBag.FotoMensagem;
+                if (logoTipo != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
                 }
-            </div>
+                                }
+                            </div>
+                        </div>
+                        @*Imagens da Startup*@
+            @*<label>Insira fotos da sua Startup</label>
+                        <div class="fileUpload btn btn-primary">
+                            <span>Imagem da Startup *</span>
+                            <input type="file" id="imagemLocal1" name="imagemLocal1" class="upload" />
+                            @{
+                string imagemLocal1 = ViewBag.FotoMensagem;
+                if (imagemLocal1 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+                            }
+                        </div>
 
-            @*MVP*@
-            <label>Insira fotos do seu MVP</label>
-            <div class="fileUpload btn btn-primary">
-                <span>MVP</span>
-                <input type="file" id="imagemMVP1" name="imagemMVP1" class="upload" />
-                @{
-    string imagemMVP1 = ViewBag.FotoMensagem;
-    if (imagemMVP1 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                        <div class="fileUpload btn btn-primary">
+                            <span>Imagem da Startup</span>
+                            <input type="file" id="imagemLocal2" name="imagemLocal2" class="upload" />
+                            @{
+                string imagemLocal2 = ViewBag.FotoMensagem;
+                if (imagemLocal2 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
                 }
-            </div>
+                            }
+                        </div>
 
-            <div class="fileUpload btn btn-primary">
-                <span>MVP</span>
-                <input type="file" id="imagemMVP2" name="imagemMVP2" class="upload" />
-                @{
-    string imagemMVP2 = ViewBag.FotoMensagem;
-    if (imagemMVP2 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                        @*MVP*@
+            @*<label>Insira fotos do seu MVP</label>
+                        <div class="fileUpload btn btn-primary">
+                            <span>MVP</span>
+                            <input type="file" id="imagemMVP1" name="imagemMVP1" class="upload" />
+                            @{
+                string imagemMVP1 = ViewBag.FotoMensagem;
+                if (imagemMVP1 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
                 }
-            </div>
+                            }
+                        </div>
 
-            <div class="fileUpload btn btn-primary">
-                <span>MVP</span>
-                <input type="file" id="imagemMVP3" name="imagemMVP3" class="upload" />
-                @{
-    string imagemMVP3 = ViewBag.FotoMensagem;
-    if (imagemMVP3 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                        <div class="fileUpload btn btn-primary">
+                            <span>MVP</span>
+                            <input type="file" id="imagemMVP2" name="imagemMVP2" class="upload" />
+                            @{
+                string imagemMVP2 = ViewBag.FotoMensagem;
+                if (imagemMVP2 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
                 }
-            </div>
+                            }
+                        </div>
 
-            <div class="fileUpload btn btn-primary">
-                <span>MVP</span>
-                <input type="file" id="imagemMVP4" name="imagemMVP4" class="upload" />
-                @{
-    string imagemMVP4 = ViewBag.FotoMensagem;
-    if (imagemMVP4 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                        <div class="fileUpload btn btn-primary">
+                            <span>MVP</span>
+                            <input type="file" id="imagemMVP3" name="imagemMVP3" class="upload" />
+                            @{
+                string imagemMVP3 = ViewBag.FotoMensagem;
+                if (imagemMVP3 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
                 }
-            </div>
+                            }
+                        </div>
+
+                        <div class="fileUpload btn btn-primary">
+                            <span>MVP</span>
+                            <input type="file" id="imagemMVP4" name="imagemMVP4" class="upload" />
+                            @{
+                string imagemMVP4 = ViewBag.FotoMensagem;
+                if (imagemMVP4 != "")
+                {
+                    <span class="text-danger contenterror">
+                        @ViewBag.FotoMensagem
+                    </span>
+                }
+                            }*@
         </form>
-        <div>
-            <textarea name="sobre" id="sobre" class="input" rows="5" cols="60" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!"></textarea>
-            @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
-        </div>
+
         <br />
         <div class="text-center">
             <button class="main-btn" type="submit" value="Criar">Criar Perfil</button>
         </div>
         <br /><br />
-
-
-        
-
     </div>
-<footer id="footer" class="sm-padding bg-dark">
-    <!-- Container -->
-    <div class="container-fluid">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <!-- footer logo -->
-                <div class="footer-logo">
-                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+    <footer id="footer" class="sm-padding bg-dark">
+        <!-- Container -->
+        <div class="container-fluid">
+            <br /><br />
+            <!-- Row -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <!-- footer logo -->
+                    <div class="footer-logo">
+                        <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+                    </div>
+                    <!-- /footer logo -->
+                    <!-- footer follow -->
+                    <ul class="footer-follow">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <!-- /footer follow -->
+                    <!-- footer copyright -->
+                    <div class="footer-copyright">
+                        <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                    </div>
+                    <!-- /footer copyright -->
                 </div>
-                <!-- /footer logo -->
-                <!-- footer follow -->
-                <ul class="footer-follow">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-                <!-- /footer follow -->
-                <!-- footer copyright -->
-                <div class="footer-copyright">
-                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
-                </div>
-                <!-- /footer copyright -->
             </div>
+            <!-- /Row -->
         </div>
-        <!-- /Row -->
-    </div>
-    <!-- /Container -->
-</footer>
-<!-- /Footer -->
+        <!-- /Container -->
+    </footer>
+    <!-- /Footer -->
 }
 <script type="text/javascript">
     $(document).ready(function () {

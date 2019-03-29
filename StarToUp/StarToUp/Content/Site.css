@@ -96,7 +96,6 @@ select {
     filter: alpha(opacity=0);
 }
 .img-preview {
-    max-width: 240px;
     width: 200px;
     height: 200px;
 }
