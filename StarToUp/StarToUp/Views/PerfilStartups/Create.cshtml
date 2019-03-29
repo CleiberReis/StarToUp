@@ -185,115 +185,78 @@
                             }
                         </div>
                     </div>
-                    <p class="help-block">* Insira uma foto da sua Startup.</p>
                 </div>
                 <div class="col-md-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                        <img class="thumbnail img-preview5" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
                     </div>
                     <div class="input-group-btn">
                         @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
                         <div class="input-group">
                             <div class="fileUpload btn btn-info fake-shadow">
                                 <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
-                                <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                                <input id="imagemMVP2" name="imagemMVP2" value="imagemMVP2" type="file" class="attachment_upload">
+                                @{
+                                    string imagemMVP2 = ViewBag.FotoMensagem;
+                                    if (imagemMVP2 != "")
+                                    {
+                                        <span class="text-danger contenterror">
+                                            @ViewBag.FotoMensagem
+                                        </span>
+                                    }
+                                }
 
                             </div>
                         </div>
-                        <p class="help-block">* Insira uma foto da sua Startup.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                        <img class="thumbnail img-preview6" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
                     </div>
                     @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
                     <div class="input-group">
                         <div class="fileUpload btn btn-info fake-shadow">
                             <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
-                            <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                            <input id="imagemMVP3" name="imagemMVP3" value="imagemMVP3" type="file" class="attachment_upload">
+                            @{
+                                string imagemMVP3 = ViewBag.FotoMensagem;
+                                if (imagemMVP3 != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
+                            }
                         </div>
-                        <p class="help-block">* Insira uma foto da sua Startup.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
+                        <img class="thumbnail img-preview7" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
                     </div>
                     <div class="input-group-btn">
                         @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
                         <div class="input-group">
                             <div class="fileUpload btn btn-info fake-shadow">
                                 <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
-                                <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                                <input id="imagemMVP4" name="imagemMVP4" value="imagemMVP4" type="file" class="attachment_upload">
+                                @{
+                                    string imagemMVP4 = ViewBag.FotoMensagem;
+                                    if (imagemMVP4 != "")
+                                    {
+                                        <span class="text-danger contenterror">
+                                            @ViewBag.FotoMensagem
+                                        </span>
+                                    }
+                                }
                             </div>
                         </div>
-                        <p class="help-block">* Insira uma foto da sua Startup.</p>
                     </div>
                 </div>
             </div>
-            @*Fim das imagens MVP*@
-
-            @*
-
-                        @*MVP*@
-            @*<label>Insira fotos do seu MVP</label>
-                        <div class="fileUpload btn btn-primary">
-                            <span>MVP</span>
-                            <input type="file" id="imagemMVP1" name="imagemMVP1" class="upload" />
-                            @{
-                string imagemMVP1 = ViewBag.FotoMensagem;
-                if (imagemMVP1 != "")
-                {
-                    <span class="text-danger contenterror">
-                        @ViewBag.FotoMensagem
-                    </span>
-                }
-                            }
-                        </div>
-
-                        <div class="fileUpload btn btn-primary">
-                            <span>MVP</span>
-                            <input type="file" id="imagemMVP2" name="imagemMVP2" class="upload" />
-                            @{
-                string imagemMVP2 = ViewBag.FotoMensagem;
-                if (imagemMVP2 != "")
-                {
-                    <span class="text-danger contenterror">
-                        @ViewBag.FotoMensagem
-                    </span>
-                }
-                            }
-                        </div>
-
-                        <div class="fileUpload btn btn-primary">
-                            <span>MVP</span>
-                            <input type="file" id="imagemMVP3" name="imagemMVP3" class="upload" />
-                            @{
-                string imagemMVP3 = ViewBag.FotoMensagem;
-                if (imagemMVP3 != "")
-                {
-                    <span class="text-danger contenterror">
-                        @ViewBag.FotoMensagem
-                    </span>
-                }
-                            }
-                        </div>
-
-                        <div class="fileUpload btn btn-primary">
-                            <span>MVP</span>
-                            <input type="file" id="imagemMVP4" name="imagemMVP4" class="upload" />
-                            @{
-                string imagemMVP4 = ViewBag.FotoMensagem;
-                if (imagemMVP4 != "")
-                {
-                    <span class="text-danger contenterror">
-                        @ViewBag.FotoMensagem
-                    </span>
-                }
-                            }*@
         </form>
 
         <br />
@@ -356,7 +319,7 @@
             }
         }
         $("#logoTipo").change(function () {
-            readURL(this);
+            returneadURL(this);
         });
     });
 
@@ -426,5 +389,70 @@
         });
     });
 
+    $(document).ready(function () {
+        var brand = document.getElementById('imagemMVP2');
+        brand.className = 'attachment_upload';
+        brand.onchange = function () {
+            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
+        };
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.img-preview5').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imagemMVP2").change(function () {
+            readURL(this);
+        });
+    });
+
+    $(document).ready(function () {
+        var brand = document.getElementById('imagemMVP3');
+        brand.className = 'attachment_upload';
+        brand.onchange = function () {
+            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
+        };
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.img-preview6').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imagemMVP3").change(function () {
+            readURL(this);
+        });
+    });
+
+    $(document).ready(function () {
+        var brand = document.getElementById('imagemMVP4');
+        brand.className = 'attachment_upload';
+        brand.onchange = function () {
+            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
+        };
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.img-preview7').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imagemMVP4").change(function () {
+            readURL(this);
+        });
+    });
 
 </script>
