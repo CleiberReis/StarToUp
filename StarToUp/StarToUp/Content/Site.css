@@ -95,7 +95,7 @@ select {
     opacity: 0;
     filter: alpha(opacity=0);
 }
-.img-preview {
+.img-preview, .img-preview2, .img-preview3, .img-preview4, .img-preview5, .img-preview6, .img-preview7 {
     width: 200px;
     height: 200px;
 }

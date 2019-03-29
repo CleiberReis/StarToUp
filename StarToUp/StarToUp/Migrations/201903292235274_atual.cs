@@ -86,7 +86,7 @@ namespace StarToUp.Migrations
                         NomeStartup = c.String(unicode: false),
                         DataFundacao = c.DateTime(nullable: false, precision: 0),
                         TamanhoTime = c.String(unicode: false),
-                        Cep = c.Int(nullable: false),
+                        Cep = c.String(unicode: false),
                         Rua = c.String(unicode: false),
                         Bairro = c.String(unicode: false),
                         Numero = c.Int(nullable: false),
