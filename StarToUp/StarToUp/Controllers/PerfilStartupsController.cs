@@ -49,13 +49,12 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup,
-            HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase mvp1, HttpPostedFileBase mvp2, HttpPostedFileBase mvp3, HttpPostedFileBase mvp4)
+        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup, 
+            HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
-            ViewBag.LogoMensagem = "";
+            ViewBag.FotoMensagem = "";
             try
             {
-
                 if (ModelState.IsValid)
                 {
                     string fileName = "";
@@ -65,12 +64,11 @@ namespace StarToUp.Controllers
                     {
                         fileName = System.IO.Path.GetFileName(logoTipo.FileName);
                         contentType = logoTipo.ContentType;
-                        path =
-                        System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" +
-                        fileName;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
                         logoTipo.SaveAs(path);
                         perfilStartup.Logotipo = fileName;
                     }
+
                     if (imagemLocal1 != null && imagemLocal1.ContentLength > 0)
                     {
                         fileName = System.IO.Path.GetFileName(imagemLocal1.FileName);
@@ -79,6 +77,7 @@ namespace StarToUp.Controllers
                         imagemLocal1.SaveAs(path);
                         perfilStartup.ImagemLocal1 = fileName;
                     }
+
                     if (imagemLocal2 != null && imagemLocal2.ContentLength > 0)
                     {
                         fileName = System.IO.Path.GetFileName(imagemLocal2.FileName);
@@ -87,36 +86,40 @@ namespace StarToUp.Controllers
                         imagemLocal2.SaveAs(path);
                         perfilStartup.ImagemLocal2 = fileName;
                     }
-                    if (mvp1 != null && mvp1.ContentLength > 0)
+
+                    if (imagemMVP1 != null && imagemMVP1.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(mvp1.FileName);
-                        contentType = mvp1.ContentType;
+                        fileName = System.IO.Path.GetFileName(imagemMVP1.FileName);
+                        contentType = imagemMVP1.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        mvp1.SaveAs(path);
+                        imagemMVP1.SaveAs(path);
                         perfilStartup.ImagemMVP1 = fileName;
                     }
-                    if (mvp2 != null && mvp2.ContentLength > 0)
+
+                    if (imagemMVP2 != null && imagemMVP2.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(mvp2.FileName);
-                        contentType = mvp2.ContentType;
+                        fileName = System.IO.Path.GetFileName(imagemMVP2.FileName);
+                        contentType = imagemMVP2.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        mvp2.SaveAs(path);
+                        imagemMVP2.SaveAs(path);
                         perfilStartup.ImagemMVP2 = fileName;
                     }
-                    if (mvp3 != null && mvp3.ContentLength > 0)
+
+                    if (imagemMVP3 != null && imagemMVP3.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(mvp3.FileName);
-                        contentType = mvp3.ContentType;
+                        fileName = System.IO.Path.GetFileName(imagemMVP3.FileName);
+                        contentType = imagemMVP3.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        mvp3.SaveAs(path);
+                        imagemMVP3.SaveAs(path);
                         perfilStartup.ImagemMVP3 = fileName;
                     }
-                    if (mvp4 != null && mvp4.ContentLength > 0)
+
+                    if (imagemMVP4 != null && imagemMVP4.ContentLength > 0)
                     {
-                        fileName = System.IO.Path.GetFileName(mvp4.FileName);
-                        contentType = mvp4.ContentType;
+                        fileName = System.IO.Path.GetFileName(imagemMVP4.FileName);
+                        contentType = imagemMVP4.ContentType;
                         path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilStartup\\" + fileName;
-                        mvp4.SaveAs(path);
+                        imagemMVP4.SaveAs(path);
                         perfilStartup.ImagemMVP4 = fileName;
                     }
                     db.PerfilStartups.Add(perfilStartup);
@@ -126,12 +129,13 @@ namespace StarToUp.Controllers
             }
             catch (Exception ex)
             {
-                ViewBag.LogoMensagem = "Não foi possível salvar a foto";
+                ViewBag.FotoMensagem = "Não foi possível salvar a foto";
             }
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", perfilStartup.SegmentacaoID);
             ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", perfilStartup.StartupCadastroID);
             return View(perfilStartup);
         }
+
 
         // GET: PerfilStartups/Edit/5
         public ActionResult Edit(int? id)
