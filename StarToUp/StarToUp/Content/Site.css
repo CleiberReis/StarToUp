@@ -85,17 +85,32 @@ select {
     position: relative;
     overflow: hidden;
 }
-    .fileUpload #logoTipo, #imagemLocal1, #imagemLocal2, #imagemMVP1, #imagemMVP2, #imagemMVP3, #imagemMVP4 {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
-.img-preview, .img-preview2, .img-preview3, .img-preview4, .img-preview5, .img-preview6, .img-preview7 {
-    width: 200px;
-    height: 200px;
+
+.uploadImage {
+    text-align: center;
+}
+
+.fileUpload #logoTipo, #imagemLocal1, #imagemLocal2, #imagemMVP1, #imagemMVP2, #imagemMVP3, #imagemMVP4 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.img-preview, .img-preview2, .img-preview3 {
+    height: 150px;
+    width: 150px;
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+}
+
+.img-preview4, .img-preview5, .img-preview6, .img-preview7 {
+    height: 250px;
+    width: 250px;
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
