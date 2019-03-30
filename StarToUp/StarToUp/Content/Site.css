@@ -18,17 +18,16 @@
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
-select,
-textarea {
+select {
     max-width: 580px;
 }
 
-.textoTermo{
+.textoTermo {
     font-size: smaller;
     text-align: center;
 }
 
-.captcha{
+.captcha {
     margin-left: 100px;
 }
 
@@ -41,7 +40,7 @@ textarea {
     background-color: #eeeeee;
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
-    margin-top: 50px;
+    margin-top: 30px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -50,10 +49,53 @@ textarea {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-
 .form-signin .form-control:focus {
     border-color: rgb(104, 145, 162);
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+/*.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    .form-control, .thumbnail {
+    border-radius: 2px;
+}*/
+
+/* File Upload */
+.fake-shadow {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload #logo-id {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.img-preview, .img-preview2, .img-preview3, .img-preview4, .img-preview5, .img-preview6, .img-preview7 {
+    width: 200px;
+    height: 200px;
 }

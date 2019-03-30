@@ -1,106 +1,145 @@
 ﻿@model IEnumerable<StarToUp.Models.PerfilEmpresa>
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div style="text-align: center; padding-top: 2%;">
+    <h2>Perfil da Empresa</h2>
+</div>
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row">
+            <div class="container col-md-6">
+                <div class="card" style="height: 395px; margin-top:0px;">
+                    <div style="text-align: center; padding-top: 5%">
+                        @{
+                            string logomarca = item.Logomarca;
+                            if (logomarca != string.Empty)
+                            {
+                                if (logomarca != null)
+                                {
+                                    string file = logomarca;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
+                                    <img src='@Url.Content(path)' style="height:300px; width: 300px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='@Url.Action("Edit", "PerfilEmpresas", new { id = item.PerfilEmpresaID })'>
+                            <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
+                                 title="Editar" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container col-md-6">
+                <div class="card" style="margin-top:0px;">
+                    <h4>Objetivo:</h4>
+                    <div>
+                        <textarea disabled style="overflow: auto; width: 100%; height:300px; resize: none;">
+                            @Html.DisplayFor(modelItem => item.Objetivo)
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h2>Index</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="margin-top:0px;">
+                    <h4>Informações da Empresa:</h4>
+                    <div>
+                        <input type="text" value="@Html.DisplayFor(modelItem => item.EmpresaCadastro.Nome)" disabled style="outline:none;">
+                        <b>Nome da Empresa</b>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" value="@Html.DisplayFor(modelItem => item.NomeFantasia)" disabled style="outline:none;">
+                        <b>Nome Fantasia</b>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" value="@Html.DisplayFor(modelItem => item.RazaoSocial)" disabled style="outline:none;">
+                        <b>Razão Social</b>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" value="@Html.DisplayFor(modelItem => item.SegmentoMercado)" disabled style="outline:none;">
+                        <b>Segmento de Mercado</b>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" value="@Html.DisplayFor(modelItem => item.QtdFuncionario)" disabled style="outline:none;">
+                        <b>Quantidade de Funcionários</b>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div class="container col-md-6">
+                <div class="card" style="margin-top:0px;">
+                    <h4>Endereço:</h4>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" value="@Html.DisplayFor(modelItem => item.Cep)" disabled style="outline:none;">
+                            <b>CEP</b>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" value="@Html.DisplayFor(modelItem => item.Rua)" disabled style="outline:none;">
+                            <b>Rua</b>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" value="@Html.DisplayFor(modelItem => item.Bairro)" disabled style="outline:none;">
+                            <b>Bairro</b>
+                        </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EmpresaCadastro.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeFantasia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RazaoSocial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SegmentoMercado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QtdFuncionario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Logomarca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Objetivo)
-        </th>
-        <th></th>
-    </tr>
+                        <div class="col-md-6">
+                            <input type="text" value="@Html.DisplayFor(modelItem => item.Numero)" disabled style="outline:none;">
+                            <b>Número</b>
+                        </div>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" value="@Html.DisplayFor(modelItem => item.Complemento)" disabled style="outline:none; width: 100%;">
+                        <b>Complemento</b>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" value="@Html.DisplayFor(modelItem => item.Cidade)" disabled style="outline:none; width: 100%;">
+                            <b>Cidade</b>
+                        </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmpresaCadastro.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeFantasia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RazaoSocial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SegmentoMercado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QtdFuncionario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Complemento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Logomarca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Objetivo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PerfilEmpresaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PerfilEmpresaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PerfilEmpresaID })
-        </td>
-    </tr>
+                        <div class="col-md-6">
+                            <input type="text" value="@Html.DisplayFor(modelItem => item.Estado)" disabled style="outline:none;">
+                            <b>Estado</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div>
+        @Html.ActionLink("Editar", "Edit", new { id = item.PerfilEmpresaID })
+    </div>
+
+
+    <br />
+
+    <div>
+        @Html.ActionLink("Create New", "Create")
+    </div>
 }
 
-</table>
