@@ -43,6 +43,14 @@
                             <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
                             <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
                         </div>
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.EventoID }) |
+                                    @Html.ActionLink("Apagar", "Delete", new { id = item.EventoID })
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <!-- /blog -->
@@ -83,15 +91,6 @@
                         </div>
                     </div>
                 </div>*@
-                <table class="table">
-                    <tr>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.EventoID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.EventoID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.EventoID })
-                        </td>
-                    </tr>
-                </table>
                 <!-- /blog -->
             }
 

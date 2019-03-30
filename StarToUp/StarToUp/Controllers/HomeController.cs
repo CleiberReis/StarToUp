@@ -11,6 +11,8 @@ namespace StarToUp.Controllers
 {
     public class HomeController : Controller
     {
+        private Context db = new Context();
+
         public ActionResult Index()
         {
             //if (Session["Usuario"] != null)
@@ -22,6 +24,8 @@ namespace StarToUp.Controllers
             //{
             //    return RedirectToAction("Logar", "Logon");
             //}
+            IEnumerable<Evento> eventos = db.Eventoes.ToList();
+            ViewBag.Eventos = eventos;
             return View();
         }
 
