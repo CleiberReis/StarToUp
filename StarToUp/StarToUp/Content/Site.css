@@ -85,16 +85,16 @@ select {
     position: relative;
     overflow: hidden;
 }
-.fileUpload #logo-id {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
+    .fileUpload #logoTipo, #imagemLocal1, #imagemLocal2, #imagemMVP1, #imagemMVP2, #imagemMVP3, #imagemMVP4 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
 .img-preview, .img-preview2, .img-preview3, .img-preview4, .img-preview5, .img-preview6, .img-preview7 {
     width: 200px;
     height: 200px;

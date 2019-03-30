@@ -170,9 +170,9 @@
                         <img class="thumbnail img-preview4" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" style="width:500px; height:500px;" />
                     </div>
                     @*<input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">*@
-                    <div class="input-group">
+                    <div class="input-group-btn">
                         <div class="fileUpload btn btn-info fake-shadow">
-                            <span><i class="glyphicon glyphicon-upload"></i> Upload Logo</span>
+                            <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP1" name="imagemMVP1" value="imagemMVP1" type="file" class="attachment_upload" />
                             @{
                                 string imagemMVP1 = ViewBag.FotoMensagem;
@@ -304,9 +304,9 @@
     $(document).ready(function () {
         var brand = document.getElementById('logoTipo');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(12);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -319,16 +319,16 @@
             }
         }
         $("#logoTipo").change(function () {
-            returneadURL(this);
+            readURL(this);
         });
     });
 
     $(document).ready(function () {
         var brand = document.getElementById('imagemLocal1');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(13);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -348,9 +348,9 @@
     $(document).ready(function () {
         var brand = document.getElementById('imagemLocal2');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(14);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -370,9 +370,9 @@
     $(document).ready(function () {
         var brand = document.getElementById('imagemMVP1');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(15);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -392,9 +392,9 @@
     $(document).ready(function () {
         var brand = document.getElementById('imagemMVP2');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(16);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -414,9 +414,9 @@
     $(document).ready(function () {
         var brand = document.getElementById('imagemMVP3');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(17);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -436,9 +436,9 @@
     $(document).ready(function () {
         var brand = document.getElementById('imagemMVP4');
         brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
+        //brand.onchange = function () {
+        //    document.getElementById('fakeUploadLogo').value = this.value.substring(18);
+        //};
 
         function readURL(input) {
             if (input.files && input.files[0]) {
