@@ -10,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
@@ -76,9 +76,9 @@
             @Html.DisplayNameFor(model => model.ImagemMVP4)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-    @foreach (var item in Model)
+    @*@foreach (var item in Model)
     {
         <tr>
             <td>
@@ -152,7 +152,7 @@
         </tr>
     }
 
-</table>
+</table>*@
 
 <div style="text-align: center; padding-top: 2%;">
     <h2>Perfil da Empresa</h2>
@@ -201,10 +201,10 @@
             <div class="col-md-6">
                 <div class="card" style="margin-top:0px;">
                     <h4>Informações da Empresa:</h4>
-                    <div>
+                    @*<div>
                         <input type="text" value="@Html.DisplayFor(modelItem => item.StartupCadastro.Nome)" disabled style="outline:none;">
                         <b>Nome da Statup</b>
-                    </div>
+                    </div>*@
                     <br />
                     <br />
                     <div>
