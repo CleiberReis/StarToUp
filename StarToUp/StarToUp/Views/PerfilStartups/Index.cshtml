@@ -5,188 +5,82 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Lista de Startups</h2>
 
-@*<table class="table">*@
-    <div class="row linhaunderline">
-        <div class="col-md-8">
-            <b>Nome</b>
+<div class="row linhaunderline">
+    <div class="col-md-2">
+        <b>Nome Startup</b>
+    </div>
+    <div class="col-md-2">
+        <b>Segmentação</b>
+    </div>
+    <div class="col-md-2 acoesadireita">
+        <b>Ações</b>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#e2e2e2'" onmouseout="javascript:this.style.backgroundColor=''">
+        <div class="col-md-2">
+            @Html.DisplayFor(modelItem => item.StartupCadastro.Nome)
         </div>
         <div class="col-md-2">
-            <b>Nome Startup</b>
+            @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
         </div>
         <div class="col-md-2 acoesadireita">
-            <b>Data da Fundacao</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Data da Fundacao</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Tamanho do Time</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>CEP</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Rua</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Bairro</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Nº</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Complemento</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Cidade</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>UF</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Sobre</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Objetivo</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>LogoTipo</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Imagens da Startup</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>MVP da Startup</b>
+            <a href='@Url.Action("Edit", "PerfilStartups", new { id = item.PerfilStartupID })'>
+                <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
+                     title="Editar" />
+            </a>
+            <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal" data-content="@item.Segmentacoes" data-id="@item.PerfilStartupID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
+            </a>
+            <a href='@Url.Action("Details", "PerfilStartups", new { id = item.PerfilStartupID })'>
+                <img src='@Url.Content("~/Content/img/detalhes.png")' class="botaoicone"
+                     title="Detalhes" />
+            </a>
         </div>
     </div>
-    @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartupCadastro.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeStartup)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataFundacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TamanhoTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cep)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rua)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bairro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Numero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Complemento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sobre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Objetivo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Logotipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemLocal1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemLocal2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemMVP1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemMVP2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemMVP3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemMVP4)
-            </th>
-            <th></th>
-        </tr>*@
 
-    @foreach (var item in Model)
-    {
-        <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#e2e2e2'" onmouseout="javascript:this.style.backgroundColor=''">
-            <div class="col-md-8">
-                @Html.DisplayFor(modelItem => item.StartupCadastro.Nome)
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayFor(modelItem => item.Segmentacoes)
-            </div>
-            <div class="col-md-2 acoesadireita">
-                <a href='@Url.Action("Edit", "Estados", new { id = item.PerfilStartupID })'>
-                    <img src='@Url.Content("~/Content/Images/editar.png")' class="botaoicone"
-                         title="Editar" />
-                </a>
-                <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal"
-                   data-content="@item.TamanhoTime" data-id="@item.PerfilStartupID" style="background: url(@Url.Content("~/Content/Images/excluir.png")) no-repeat;">
-                </a>
-            </div>
-        </div>
+    <div id="modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Exclusão de Startup</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="mensagem"></div>
+                    <input type="hidden" id="numero" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btnDelete">Deletar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-        <div id="modal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-                        </button>
-                        <h4 class="modal-title">Exclusão de Estado</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div id="mensagem"></div>
-                        <input type="hidden" id="numero" />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default"
-                                data-dismiss="modal">
-                            Cancelar
-                        </button>
-                        <button type="button" class="btn btn-primary" id="btnDelete">Deletar</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        @section scripts{
-            <script>
+    @section scripts{
+        <script>
  $(function () {
  $(".excluir").click(function () {
  var id = $(this).attr("data-id");
  var descricao = $(this).attr("data-content");
- $("#mensagem").html("<p>Deseja excluir o estado " + descricao + "?</p>");
+ $("#mensagem").html("<p>Deseja excluir a startup " + descricao + "?</p>");
  $("#numero").text(id);
  });
  $("#btnDelete").click(function () {
  var id = $("#numero").text();
- var url = '@Url.Action("DeleteAJAX", "Estados")';
+ var url = '@Url.Action("DeleteAJAX", "PerfilStartups")';
  $.post(url, { estadoID: id },
  function (data) {
- window.location.href = "@Url.Action("Index", "Estados")";
+ window.location.href = "@Url.Action("Index", "PerfilStartups")";
  })
  .fail(function () {
  alert("error")
@@ -197,94 +91,16 @@
  $('#modal').modal('hide');
  });
  })
-            </script>
-        }
-        <br />
-        <div class="row linha">
-            <div class="col-md-12">
-                <b>Legenda:</b> <br />
-                <img src='@Url.Content("~/Content/Images/adicionar.png")' class="botaoicone" /> Novo
-                <img src='@Url.Content("~/Content/Images/editar.png")' class="botaoicone" /> Editar
-                <img src='@Url.Content("~/Content/Images/excluir.png")' class="botaoicone" />
-                Excluir
-            </div>
-        </div>
+        </script>
     }
-
-    @*<tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartupCadastro.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NomeStartup)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DataFundacao)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TamanhoTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cep)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rua)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Bairro)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Numero)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Complemento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cidade)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Estado)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Sobre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Objetivo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Logotipo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagemLocal1)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagemLocal2)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagemMVP1)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagemMVP2)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagemMVP3)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagemMVP4)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.PerfilStartupID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.PerfilStartupID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PerfilStartupID })
-                    </td>
-                </tr>
-            }
-
-        </table>
-
-        <p>
-            <img src='@Url.Content("~/Content/Images/adicionar.png")' /> @Html.ActionLink("Nova Startup", "Create")
-        </p>*@
+    <br />
+    <div class="row linha">
+        <div class="col-md-12">
+            <b>Legenda:</b> <br />
+            <img src='@Url.Content("~/Content/img/adicionar.png")' class="botaoicone" /> Novo
+            <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone" /> Editar
+            <img src='@Url.Content("~/Content/img/excluir.png")' class="botaoicone" />
+            Excluir
+        </div>
+    </div>
+}
