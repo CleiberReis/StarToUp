@@ -146,6 +146,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradorsController.cs" />
+    <Compile Include="Controllers\ContatosController.cs" />
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -162,6 +163,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
+    <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\Evento.cs" />
@@ -380,6 +382,11 @@
     <Content Include="Views\PerfilStartups\Details.cshtml" />
     <Content Include="Views\PerfilStartups\Edit.cshtml" />
     <Content Include="Views\PerfilStartups\Index.cshtml" />
+    <Content Include="Views\Contatos\Create.cshtml" />
+    <Content Include="Views\Contatos\Delete.cshtml" />
+    <Content Include="Views\Contatos\Details.cshtml" />
+    <Content Include="Views\Contatos\Edit.cshtml" />
+    <Content Include="Views\Contatos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
