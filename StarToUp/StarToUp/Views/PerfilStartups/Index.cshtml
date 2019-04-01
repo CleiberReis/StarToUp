@@ -7,272 +7,284 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartupCadastro.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeStartup)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataFundacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TamanhoTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cep)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sobre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Objetivo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Logotipo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagemLocal1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagemLocal2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagemMVP1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagemMVP2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagemMVP3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagemMVP4)
-        </th>
-        <th></th>
-    </tr>*@
+@*<table class="table">*@
+    <div class="row linhaunderline">
+        <div class="col-md-8">
+            <b>Nome</b>
+        </div>
+        <div class="col-md-2">
+            <b>Nome Startup</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Data da Fundacao</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Data da Fundacao</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Tamanho do Time</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>CEP</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Rua</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Bairro</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Nº</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Complemento</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Cidade</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>UF</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Sobre</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Objetivo</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>LogoTipo</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>Imagens da Startup</b>
+        </div>
+        <div class="col-md-2 acoesadireita">
+            <b>MVP da Startup</b>
+        </div>
+    </div>
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupCadastro.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeStartup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFundacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TamanhoTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sobre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Objetivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Logotipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemLocal1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemLocal2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemMVP1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemMVP2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemMVP3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemMVP4)
+            </th>
+            <th></th>
+        </tr>*@
 
-    @*@foreach (var item in Model)
+    @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
-            </td>
-            <td>
+        <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#e2e2e2'" onmouseout="javascript:this.style.backgroundColor=''">
+            <div class="col-md-8">
                 @Html.DisplayFor(modelItem => item.StartupCadastro.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeStartup)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataFundacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TamanhoTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cep)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rua)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bairro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Complemento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sobre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Objetivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Logotipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemLocal1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemLocal2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemMVP1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemMVP2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemMVP3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemMVP4)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PerfilStartupID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PerfilStartupID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PerfilStartupID })
-            </td>
-        </tr>
+            </div>
+            <div class="col-md-2">
+                @Html.DisplayFor(modelItem => item.Segmentacoes)
+            </div>
+            <div class="col-md-2 acoesadireita">
+                <a href='@Url.Action("Edit", "Estados", new { id = item.PerfilStartupID })'>
+                    <img src='@Url.Content("~/Content/Images/editar.png")' class="botaoicone"
+                         title="Editar" />
+                </a>
+                <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal"
+                   data-content="@item.TamanhoTime" data-id="@item.PerfilStartupID" style="background: url(@Url.Content("~/Content/Images/excluir.png")) no-repeat;">
+                </a>
+            </div>
+        </div>
+
+        <div id="modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title">Exclusão de Estado</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="mensagem"></div>
+                        <input type="hidden" id="numero" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnDelete">Deletar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        @section scripts{
+            <script>
+ $(function () {
+ $(".excluir").click(function () {
+ var id = $(this).attr("data-id");
+ var descricao = $(this).attr("data-content");
+ $("#mensagem").html("<p>Deseja excluir o estado " + descricao + "?</p>");
+ $("#numero").text(id);
+ });
+ $("#btnDelete").click(function () {
+ var id = $("#numero").text();
+ var url = '@Url.Action("DeleteAJAX", "Estados")';
+ $.post(url, { estadoID: id },
+ function (data) {
+ window.location.href = "@Url.Action("Index", "Estados")";
+ })
+ .fail(function () {
+ alert("error")
+ });
+ //$("#modal").fadeOut("slow", function () {
+ // // Animation complete.
+ //});
+ $('#modal').modal('hide');
+ });
+ })
+            </script>
+        }
+        <br />
+        <div class="row linha">
+            <div class="col-md-12">
+                <b>Legenda:</b> <br />
+                <img src='@Url.Content("~/Content/Images/adicionar.png")' class="botaoicone" /> Novo
+                <img src='@Url.Content("~/Content/Images/editar.png")' class="botaoicone" /> Editar
+                <img src='@Url.Content("~/Content/Images/excluir.png")' class="botaoicone" />
+                Excluir
+            </div>
+        </div>
     }
 
-</table>*@
+    @*<tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartupCadastro.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeStartup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataFundacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TamanhoTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cep)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rua)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bairro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Complemento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sobre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Objetivo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Logotipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagemLocal1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagemLocal2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagemMVP1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagemMVP2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagemMVP3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagemMVP4)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PerfilStartupID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.PerfilStartupID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PerfilStartupID })
+                    </td>
+                </tr>
+            }
 
-<div style="text-align: center; padding-top: 2%;">
-    <h2>Perfil da Empresa</h2>
-</div>
-@foreach (var item in Model)
-{
-    <div class="container">
-        <div class="row">
-            <div class="container col-md-6">
-                <div class="card" style="height: 395px; margin-top:0px;">
-                    <div style="text-align: center; padding-top: 5%">
-                        @*@{
-                            string logomarca = item.Logotipo;
-                            if (logomarca != string.Empty)
-                            {
-                                if (logoTipo != null)
-                                {
-                                    string file = logomarca;
-                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                    <img src='@Url.Content(path)' style="height:300px; width: 300px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
-                                }
-                            }
-                        }*@
-                    </div>
-                    <div style="text-align:right;">
-                        <a href='@Url.Action("Edit", "PerfilEmpresas", new { id = item.PerfilStartupID })'>
-                            <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
-                                 title="Editar" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="container col-md-6">
-                <div class="card" style="margin-top:0px;">
-                    <h4>Objetivo:</h4>
-                    <div>
-                        <textarea disabled style="overflow: auto; width: 100%; height:300px; resize: none;">
-                            @Html.DisplayFor(modelItem => item.Objetivo)
-                        </textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </table>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card" style="margin-top:0px;">
-                    <h4>Informações da Empresa:</h4>
-                    @*<div>
-                        <input type="text" value="@Html.DisplayFor(modelItem => item.StartupCadastro.Nome)" disabled style="outline:none;">
-                        <b>Nome da Statup</b>
-                    </div>*@
-                    <br />
-                    <br />
-                    <div>
-                        <input type="text" value="@Html.DisplayFor(modelItem => item.TamanhoTime)" disabled style="outline:none;">
-                        <b>Tamanho do Time</b>
-                    </div>
-                    <br />
-                </div>
-            </div>
-            <div class="container col-md-6">
-                <div class="card" style="margin-top:0px;">
-                    <h4>Endereço:</h4>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" value="@Html.DisplayFor(modelItem => item.Cep)" disabled style="outline:none;">
-                            <b>CEP</b>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="text" value="@Html.DisplayFor(modelItem => item.Rua)" disabled style="outline:none;">
-                            <b>Rua</b>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" value="@Html.DisplayFor(modelItem => item.Bairro)" disabled style="outline:none;">
-                            <b>Bairro</b>
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="text" value="@Html.DisplayFor(modelItem => item.Numero)" disabled style="outline:none;">
-                            <b>Número</b>
-                        </div>
-                    </div>
-                    <br />
-                    <div>
-                        <input type="text" value="@Html.DisplayFor(modelItem => item.Complemento)" disabled style="outline:none; width: 100%;">
-                        <b>Complemento</b>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" value="@Html.DisplayFor(modelItem => item.Cidade)" disabled style="outline:none; width: 100%;">
-                            <b>Cidade</b>
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="text" value="@Html.DisplayFor(modelItem => item.Estado)" disabled style="outline:none;">
-                            <b>Estado</b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br />
-    <div>
-        @Html.ActionLink("Editar", "Edit", new { id = item.PerfilStartupID })
-    </div>
-
-
-    <br />
-
-    <div>
-        @Html.ActionLink("Create New", "Create")
-    </div>
-}
+        <p>
+            <img src='@Url.Content("~/Content/Images/adicionar.png")' /> @Html.ActionLink("Nova Startup", "Create")
+        </p>*@

@@ -26,10 +26,10 @@
                 <div class="col-md-6">
                     <div class="card">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @*<div>
-                                @Html.DropDownList("StartupCadastroID", null, "Qual Startup é você?", new { @class = "form-control input" })
-                                @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
-                            </div>*@
+                        <div>
+                            @Html.DropDownList("StartupCadastroID", null, "Qual Startup é você?", new { @class = "form-control input" })
+                            @Html.ValidationMessageFor(model => model.StartupCadastroID, "", new { @class = "text-danger" })
+                        </div>
                         <br />
                         <div>
                             <input type="text" name="nome" id="nome" class="form-control input" placeholder="Nome da Startup *" />
@@ -41,10 +41,10 @@
                             @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
                         </div>
                         <br />
-                        @*<div>
-                                @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control input" })
-                                @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
-                            </div>*@
+                        <div>
+                            @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control input" })
+                            @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                        </div>
                         <br />
                         <div>
                             <input type="text" name="tamanhoTime" id="tamanhoTime" class="form-control input" placeholder="Qual a média de pessoas no seu time?" />
@@ -101,13 +101,13 @@
                                 <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                                 <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
                                 @{
-    string logoTipo = ViewBag.FotoMensagem;
-    if (logoTipo != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                    string logoTipo = ViewBag.FotoMensagem;
+                                    if (logoTipo != "")
+                                    {
+                                        <span class="text-danger contenterror">
+                                            @ViewBag.FotoMensagem
+                                        </span>
+                                    }
                                 }
                             </div>
                         </div>
@@ -121,13 +121,13 @@
                                         <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                                         <input id="imagemLocal1" name="imagemLocal1" value="imagemLocal1" type="file" class="attachment_upload" />
                                         @{
-    string imagemLocal1 = ViewBag.FotoMensagem;
-    if (imagemLocal1 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                            string imagemLocal1 = ViewBag.FotoMensagem;
+                                            if (imagemLocal1 != "")
+                                            {
+                                                <span class="text-danger contenterror">
+                                                    @ViewBag.FotoMensagem
+                                                </span>
+                                            }
                                         }
                                     </div>
                                 </div>
@@ -140,13 +140,13 @@
                                         <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                                         <input id="imagemLocal2" name="imagemLocal2" value="imagemLocal2" type="file" class="attachment_upload" />
                                         @{
-    string imagemLocal2 = ViewBag.FotoMensagem;
-    if (imagemLocal2 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                            string imagemLocal2 = ViewBag.FotoMensagem;
+                                            if (imagemLocal2 != "")
+                                            {
+                                                <span class="text-danger contenterror">
+                                                    @ViewBag.FotoMensagem
+                                                </span>
+                                            }
                                         }
                                     </div>
                                 </div>
@@ -181,13 +181,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP1" name="imagemMVP1" value="imagemMVP1" type="file" class="attachment_upload" />
                             @{
-    string imagemMVP1 = ViewBag.FotoMensagem;
-    if (imagemMVP1 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                string imagemMVP1 = ViewBag.FotoMensagem;
+                                if (imagemMVP1 != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
                             }
                         </div>
                     </div>
@@ -199,13 +199,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP2" name="imagemMVP2" value="imagemMVP2" type="file" class="attachment_upload" />
                             @{
-    string imagemMVP2 = ViewBag.FotoMensagem;
-    if (imagemMVP2 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                string imagemMVP2 = ViewBag.FotoMensagem;
+                                if (imagemMVP2 != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
                             }
 
                         </div>
@@ -218,13 +218,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP3" name="imagemMVP3" value="imagemMVP3" type="file" class="attachment_upload">
                             @{
-    string imagemMVP3 = ViewBag.FotoMensagem;
-    if (imagemMVP3 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                string imagemMVP3 = ViewBag.FotoMensagem;
+                                if (imagemMVP3 != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
                             }
                         </div>
                     </div>
@@ -236,13 +236,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP4" name="imagemMVP4" value="imagemMVP4" type="file" class="attachment_upload">
                             @{
-    string imagemMVP4 = ViewBag.FotoMensagem;
-    if (imagemMVP4 != "")
-    {
-        <span class="text-danger contenterror">
-            @ViewBag.FotoMensagem
-        </span>
-    }
+                                string imagemMVP4 = ViewBag.FotoMensagem;
+                                if (imagemMVP4 != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
                             }
                         </div>
                     </div>
