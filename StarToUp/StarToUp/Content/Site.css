@@ -16,6 +16,34 @@
     white-space: normal;
 }
 
+.linha {
+    line-height: 32px;
+}
+
+.linhaunderline {
+    line-height: 32px;
+    border-bottom: 1pt solid #e2e2e2;
+}
+
+.linhaacima {
+    line-height: 32px;
+    border-top: 1pt solid #e2e2e2;
+}
+
+.acoesadireita {
+    text-align: right;
+}
+
+.botaoicone {
+    height: 22px;
+    width: 22px;
+}
+
+.botaoiconeusuario {
+    height: 40px;
+    width: 40px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select {
