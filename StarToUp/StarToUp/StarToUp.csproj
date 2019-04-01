@@ -275,6 +275,7 @@
     <Content Include="Content\img\logo1.png" />
     <Content Include="Content\img\logoStartup.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
+    <Content Include="Content\img\mvp.png" />
     <Content Include="Content\img\perso1.jpg" />
     <Content Include="Content\img\perso2.jpg" />
     <Content Include="Content\img\post1.jpg" />

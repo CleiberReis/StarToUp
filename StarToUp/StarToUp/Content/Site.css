@@ -37,10 +37,9 @@ select {
 }
 
 .card {
-    background-color: #eeeeee;
+    background-color: #f3f3f3;
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
-    margin-top: 30px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -55,27 +54,6 @@ select {
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
 }
-
-/*.fileUpload {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-
-    .fileUpload input.upload {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
-    .form-control, .thumbnail {
-    border-radius: 2px;
-}*/
 
 /* File Upload */
 .fake-shadow {
@@ -108,7 +86,7 @@ select {
 }
 
 .img-preview4, .img-preview5, .img-preview6, .img-preview7 {
-    height: 250px;
+    height: 460px;
     width: 250px;
     box-shadow: 2px 2px 2px black;
     margin-bottom: 10px;
