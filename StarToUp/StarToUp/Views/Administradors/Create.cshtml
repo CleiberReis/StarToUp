@@ -19,6 +19,27 @@
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <br />
             <form class="form-signin">
+                <div>
+                    <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
+                    @{
+                        string str = ViewBag.FotoMensagem;
+                        if (str != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.FotoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="nomeAdmin" id="nomeAdmin" class="input" placeholder="Nome *" />
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="funcao" id="funcao" class="input" placeholder="Função *" />
+                </div>
+                <br />
                 @*@Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })*@
                 <div>
