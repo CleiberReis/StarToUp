@@ -40,7 +40,7 @@ namespace StarToUp.Controllers
         {
             return View();
         }
-
+        //
         // POST: Contatos/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
