@@ -26,6 +26,7 @@ namespace StarToUp.Migrations
                         Email = c.String(nullable: false, unicode: false),
                         Senha = c.String(nullable: false, unicode: false),
                         TipoUsuarioID = c.Int(nullable: false),
+                        PerfilEmpresaID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EmpresaCadastroID)
                 .ForeignKey("dbo.TipoUsuario", t => t.TipoUsuarioID, cascadeDelete: true)
@@ -86,7 +87,7 @@ namespace StarToUp.Migrations
                         NomeStartup = c.String(unicode: false),
                         DataFundacao = c.DateTime(nullable: false, precision: 0),
                         TamanhoTime = c.String(unicode: false),
-                        Cep = c.Int(nullable: false),
+                        Cep = c.String(unicode: false),
                         Rua = c.String(unicode: false),
                         Bairro = c.String(unicode: false),
                         Numero = c.Int(nullable: false),
