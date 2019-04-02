@@ -77,7 +77,6 @@ namespace StarToUp.Controllers
             ViewBag.AdministradorID = new SelectList(db.Administradors, "AdministradorID", "NomeAdmin", administrador.AdministradorID);
 
             return View(administrador);
-
         }
     
 

@@ -391,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\Admin\" />
     <Folder Include="Files\PerfilEmpresa\" />
     <Folder Include="Files\PerfilStartup\" />
   </ItemGroup>

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AreaAdmin.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Administradors", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="container">
@@ -22,8 +22,8 @@
                 <div>
                     <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
                     @{
-                        string str = ViewBag.FotoMensagem;
-                        if (str != "")
+                        string foto = ViewBag.FotoMensagem;
+                        if (foto != "")
                         {
                             <span class="text-danger contenterror">
                                 @ViewBag.FotoMensagem
