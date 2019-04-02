@@ -388,6 +388,8 @@
     <Content Include="Views\Contatos\Edit.cshtml" />
     <Content Include="Views\Contatos\Index.cshtml" />
     <Content Include="Views\Contatos\Contato.cshtml" />
+    <Content Include="Views\Shared\_IndexStartup.cshtml" />
+    <Content Include="Views\Home\IndexStartup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
