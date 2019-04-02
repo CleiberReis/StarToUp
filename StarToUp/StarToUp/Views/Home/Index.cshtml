@@ -83,84 +83,111 @@
                 </div>
             </div>
             <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work2.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work2.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work3.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work3.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work4.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work4.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Contentt/img/work5.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work5.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work6.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work6.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
+           
+            @foreach (var item in PerfilStartup)
+            {
+                <!-- blog -->
+                <div class="col-md-4 col-xs-6 work">
+                    <div class="overlay">
+                        <div class="work-content">
+                            @{ string foto = item.Foto;
+                                if (foto != string.Empty)
+                                {
+                                    if (foto != null)
+                                    {
+                                        string file = foto;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
+                                    }
+                                }
+                            }
+                        </div>
+                        <div class="blog-content">
+                            <ul class="blog-meta">
+                                <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.PerfilStartup)</li>
+                            </ul>
+                            <h3>@Html.DisplayFor(modelItem => model.StartupCadastro.Nome)</h3>
+                            <p>@Html.DisplayFor(modelItem => model.NomeStartup)</p>
+                        </div>
+                     } 
+                        <!-- Work -->
+                        <div class="col-md-4 col-xs-6 work">
+                            <img class="img-responsive" src="~/Content/img/work2.jpg" alt="">
+                            <div class="overlay"></div>
+                            <div class="work-content">
+                                <span>Category</span>
+                                <h3>Lorem ipsum dolor</h3>
+                                <div class="work-link">
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    <a class="lightbox" href="~/Content/img/work2.jpg"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Work -->
+                        <!-- Work -->
+                        <div class="col-md-4 col-xs-6 work">
+                            <img class="img-responsive" src="~/Content/img/work3.jpg" alt="">
+                            <div class="overlay"></div>
+                            <div class="work-content">
+                                <span>Category</span>
+                                <h3>Lorem ipsum dolor</h3>
+                                <div class="work-link">
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    <a class="lightbox" href="~/Content/img/work3.jpg"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Work -->
+                        <!-- Work -->
+                        <div class="col-md-4 col-xs-6 work">
+                            <img class="img-responsive" src="~/Content/img/work4.jpg" alt="">
+                            <div class="overlay"></div>
+                            <div class="work-content">
+                                <span>Category</span>
+                                <h3>Lorem ipsum dolor</h3>
+                                <div class="work-link">
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    <a class="lightbox" href="~/Content/img/work4.jpg"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Work -->
+                        <!-- Work -->
+                        <div class="col-md-4 col-xs-6 work">
+                            <img class="img-responsive" src="~/Contentt/img/work5.jpg" alt="">
+                            <div class="overlay"></div>
+                            <div class="work-content">
+                                <span>Category</span>
+                                <h3>Lorem ipsum dolor</h3>
+                                <div class="work-link">
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    <a class="lightbox" href="~/Content/img/work5.jpg"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Work -->
+                        <!-- Work -->
+                        <div class="col-md-4 col-xs-6 work">
+                            <img class="img-responsive" src="~/Content/img/work6.jpg" alt="">
+                            <div class="overlay"></div>
+                            <div class="work-content">
+                                <span>Category</span>
+                                <h3>Lorem ipsum dolor</h3>
+                                <div class="work-link">
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    <a class="lightbox" href="~/Content/img/work6.jpg"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Work -->
 
-        </div>
-        <!-- /Row -->
+                    </div>
+                    <!-- /Row -->
 
-    </div>
-    <!-- /Container -->
+                </div>
+                <!-- /Container -->
 
-</div>
+            </div>
 <!-- /Portfolio -->
 <!-- Numbers -->
 <div id="numbers" class="section sm-padding">

@@ -7,7 +7,7 @@
 
 <div class="section-header text-center">
     <br />
-    <h2 class="title">Detalhe da Startups</h2>
+    <h2 class="title">Detalhe da Startup</h2>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 </div>
 <div class="container">
@@ -29,11 +29,11 @@
                     }
                 </div>
                 @*<div style="text-align:right;">
-            <a href='@Url.Action("Edit", "PerfilEmpresas", new { id = Model.PerfilStartupID })'>
-                <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
-                     title="Editar" />
-            </a>
-        </div>*@
+                        <a href='@Url.Action("Edit", "PerfilEmpresas", new { id = Model.PerfilStartupID })'>
+                            <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
+                                 title="Editar" />
+                        </a>
+                    </div>*@
                 <br />
                 <h4>Informações da Empresa:</h4>
                 <div>
@@ -59,7 +59,7 @@
                 <div>
                     <input type="text" value="@Html.DisplayFor(model => model.Objetivo)" disabled style="outline:none;">
                 </div>
-                <br/>
+                <br />
                 <h4>Sobre:</h4>
                 <div>
                     <textarea disabled style="overflow: auto; width: 100%; height:auto; resize: none;">

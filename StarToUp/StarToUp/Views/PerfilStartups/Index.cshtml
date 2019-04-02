@@ -5,11 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="section-header text-center">
-    <br />
-    <h2 class="title">Lista de Startups</h2>
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-</div>
+<h2>Lista de Startups</h2>
 
 <div class="row linhaunderline">
     <div class="col-md-2">
@@ -69,19 +65,19 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
     <br />
     <div class="row linha">
         <div class="col-md-12">
             <b>Legenda:</b> <br />
             <img src='@Url.Content("~/Content/img/adicionar.png")' class="botaoicone" /> Novo
             <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone" /> Editar
-            <img src='@Url.Content("~/Content/img/excluir.png")' class="botaoicone" />
-            Excluir
+            <img src='@Url.Content("~/Content/img/excluir.png")' class="botaoicone" /> Excluir
         </div>
     </div>
-    @section scripts{
-        <script>
+}
+
+@section scripts{
+    <script>
  $(function () {
  $(".excluir").click(function () {
  var id = $(this).attr("data-id");
@@ -92,7 +88,7 @@
  $("#btnDelete").click(function () {
  var id = $("#numero").text();
  var url = '@Url.Action("DeleteAJAX", "PerfilStartups")';
- $.post(url, { perfilStartupID: id },
+ $.post(url, { estadoID: id },
  function (data) {
  window.location.href = "@Url.Action("Index", "PerfilStartups")";
  })
@@ -104,8 +100,6 @@
  //});
  $('#modal').modal('hide');
  });
- })
-        </script>
-    }
-
+        })
+    </script>
 }

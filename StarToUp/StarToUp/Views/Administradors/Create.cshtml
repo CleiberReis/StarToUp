@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AreaAdmin.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Administradors", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="container">
@@ -22,12 +22,12 @@
                 <div>
                     <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
                     @{
-                        string str = ViewBag.FotoMensagem;
-                        if (str != "")
+                        string foto = ViewBag.FotoMensagem;
+                        if (foto != "")
                         {
                             <span class="text-danger contenterror">
                                 @ViewBag.FotoMensagem
-                            </span> 
+                            </span>
                         }
                     }
                 </div>
@@ -40,6 +40,8 @@
                     <input type="text" name="funcao" id="funcao" class="input" placeholder="Função *" />
                 </div>
                 <br />
+                @*@Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })*@
                 <div>
                     <input type="text" name="login" id="login" class="input" placeholder="Login *" />
                 </div>

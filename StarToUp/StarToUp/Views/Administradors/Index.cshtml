@@ -21,44 +21,44 @@
             <!-- /Section header -->
             @foreach (var item in Model)
             {
-                <!-- team -->
-                <div class="col-sm-4">
-                    <div class="team">
-                        <div class="team-img">
-                            @{ string foto = item.Foto;
-                                if (foto != string.Empty)
-                                {
-                                    if (foto != null)
-                                    {
-                                        string file = foto;
-                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Admin/" + file;
-                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
-                                    }
-                                }
-                            }
-                            <div class="overlay">
-                                <div class="team-social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
+            <!-- team -->
+            <div class="col-sm-4">
+                <div class="team">
+                    <div class="team-img">
+                        @{ string foto = item.Foto;
+                        if (foto != string.Empty)
+                        {
+                        if (foto != null)
+                        {
+                        string file = foto;
+                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Admin/" + file;
+                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
+                        }
+                        }
+                        }
+                        <div class="overlay">
+                            <div class="team-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
-                        <div class="team-content">
-                            <h3>@Html.DisplayFor(modelItem => item.NomeAdmin)</h3>
-                            <span>@Html.DisplayFor(modelItem => item.Funcao)</span>
-                        </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    @Html.ActionLink("Editar", "Edit", new { id = item.AdministradorID }) |
-                                    @Html.ActionLink("Apagar", "Delete", new { id = item.AdministradorID })
-                                </td>
-                            </tr>
-                        </table>
                     </div>
+                    <div class="team-content">
+                        <h3>@Html.DisplayFor(modelItem => item.NomeAdmin)</h3>
+                        <span>@Html.DisplayFor(modelItem => item.Funcao)</span>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.AdministradorID }) |
+                                @Html.ActionLink("Apagar", "Delete", new { id = item.AdministradorID })
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <!-- /team -->
+            </div>
+            <!-- /team -->
             }
 
         </div>
@@ -69,34 +69,4 @@
 
 </div>
 <!-- /Team -->
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Login)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
-            <th></th>
-        </tr>
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Login)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.AdminID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.AdminID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.AdminID })
-            </td>
-        </tr>
-    }
-
-    </table>*@
