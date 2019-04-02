@@ -156,9 +156,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903301313409_atual.cs" />
-    <Compile Include="Migrations\201903301313409_atual.Designer.cs">
-      <DependentUpon>201903301313409_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201904012225594_atual.cs" />
+    <Compile Include="Migrations\201904012225594_atual.Designer.cs">
+      <DependentUpon>201904012225594_atual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904012231522_admin.cs" />
+    <Compile Include="Migrations\201904012231522_admin.Designer.cs">
+      <DependentUpon>201904012231522_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904012300195_adminn.cs" />
+    <Compile Include="Migrations\201904012300195_adminn.Designer.cs">
+      <DependentUpon>201904012300195_adminn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -383,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\Admin\" />
     <Folder Include="Files\PerfilEmpresa\" />
     <Folder Include="Files\PerfilStartup\" />
   </ItemGroup>
@@ -400,8 +409,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903301313409_atual.resx">
-      <DependentUpon>201903301313409_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904012225594_atual.resx">
+      <DependentUpon>201904012225594_atual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904012231522_admin.resx">
+      <DependentUpon>201904012231522_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904012300195_adminn.resx">
+      <DependentUpon>201904012300195_adminn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -589,8 +589,6 @@ C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\Sta
 C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.Cache
 C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp - Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Gabriele Kiane\Desktop\Backup\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
@@ -632,3 +630,7 @@ C:\Users\Gabriele Kiane\Desktop\Backup\StarToUp\StarToUp\StarToUp\obj\Debug\Star
 C:\Users\Gabriele Kiane\Desktop\Backup\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Gabriele Kiane\Desktop\Backup\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Gabriele Kiane\Desktop\Backup\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.admin.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.adminn.resources

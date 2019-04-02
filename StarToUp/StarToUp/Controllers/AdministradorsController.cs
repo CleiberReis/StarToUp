@@ -46,15 +46,35 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AdminID,Login,Senha")] Administrador administrador)
+        public ActionResult Create([Bind(Include = "AdministradorID,Foto,NomeAdmin,Funcao,Login,Senha")] Administrador administrador, HttpPostedFileBase foto)
         {
-            if (ModelState.IsValid)
+            ViewBag.FotoMensagem = "";
+            try
             {
-                db.Administradors.Add(administrador);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    string fileName = "";
+                    string contentType = "";
+                    string path = "";
+                    if (foto != null && foto.ContentLength > 0)
+                    {
+                        fileName = System.IO.Path.GetFileName(foto.FileName);
+                        contentType = foto.ContentType;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Admin\\" + fileName;
+                        foto.SaveAs(path);
+                        administrador.Foto = fileName;
+                    }
+                    db.Administradors.Add(administrador);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                    
             }
-
+            catch (Exception ex)
+            {
+                ViewBag.FotoMensagem = "Não foi possível salvar a foto";
+            }
+            ViewBag.AdministradorID = new SelectList(db.Administradors, "AdministradorID", "NomeAdmin", administrador.AdministradorID);
             return View(administrador);
         }
 
@@ -78,7 +98,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AdminID,Login,Senha")] Administrador administrador)
+        public ActionResult Edit([Bind(Include = "AdministradorID,Foto,NomeAdmin,Funcao,Login,Senha")] Administrador administrador, HttpPostedFileBase foto)
         {
             if (ModelState.IsValid)
             {
