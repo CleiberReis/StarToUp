@@ -13,7 +13,7 @@ namespace StarToUp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201904022330064_atual"; }
+            get { return "201904030009050_atual"; }
         }
         
         string IMigrationMetadata.Source
