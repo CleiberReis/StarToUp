@@ -266,6 +266,7 @@
     <Content Include="Content\img\blog1.jpg" />
     <Content Include="Content\img\blog2.jpg" />
     <Content Include="Content\img\blog3.jpg" />
+    <Content Include="Content\img\calendar %281%29.png" />
     <Content Include="Content\img\cancelar.png" />
     <Content Include="Content\img\desativar.png" />
     <Content Include="Content\img\detalhes.png" />
@@ -283,6 +284,7 @@
     <Content Include="Content\img\post1.jpg" />
     <Content Include="Content\img\post2.jpg" />
     <Content Include="Content\img\post3.jpg" />
+    <Content Include="Content\img\search.png" />
     <Content Include="Content\img\startup.png" />
     <Content Include="Content\img\team1.jpg" />
     <Content Include="Content\img\team2.jpg" />
