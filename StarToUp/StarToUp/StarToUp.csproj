@@ -299,6 +299,7 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\Admin\foto.png" />
     <Content Include="Files\Evento\Logo_StarToUp1.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -381,6 +382,13 @@
     <Content Include="Views\PerfilStartups\Details.cshtml" />
     <Content Include="Views\PerfilStartups\Edit.cshtml" />
     <Content Include="Views\PerfilStartups\Index.cshtml" />
+    <Content Include="Views\Home\IndexStartup.cshtml" />
+    <Content Include="Views\Contatos\Contato.cshtml" />
+    <Content Include="Views\Contatos\Create.cshtml" />
+    <Content Include="Views\Contatos\Delete.cshtml" />
+    <Content Include="Views\Contatos\Details.cshtml" />
+    <Content Include="Views\Contatos\Edit.cshtml" />
+    <Content Include="Views\Contatos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
