@@ -1,404 +1,80 @@
-﻿@{
-    IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<!-- About -->
-<div id="about" class="section md-padding">
+    <title>@ViewBag.Title - StarToUp</title>
 
-    <!-- Container -->
-    <div class="container">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-            <!-- Section header -->
-            <div class="section-header text-center">
-                <h2 class="title">Seja Bem-vindo</h2>
-            </div>
-            <!-- /Section header -->
-            <!-- about -->
-            <div class="col-md-4">
-                <div class="about">
-                    <i class="fa fa-cogs"></i>
-                    <h3>Nossas Ferramentas</h3>
-                    <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-                    <a href="#">Leia mais</a>
-                </div>
-            </div>
-            <!-- /about -->
-            <!-- about -->
-            <div class="col-md-4">
-                <div class="about">
-                    <i class="fa fa-magic"></i>
-                    <h3>Awesome Features</h3>
-                    <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-                    <a href="#">Leia mais</a>
-                </div>
-            </div>
-            <!-- /about -->
-            <!-- about -->
-            <div class="col-md-4">
-                <div class="about">
-                    <i class="fa fa-mobile"></i>
-                    <h3>Fully Responsive</h3>
-                    <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-                    <a href="#">Leia mais</a>
-                </div>
-            </div>
-            <!-- /about -->
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+    @Styles.Render("~/Content/css")
 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Background Image -->
+        <div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
+            <div class="overlay"></div>
         </div>
-        <!-- /Row -->
+        <!-- /Background Image -->
+        <!-- Nav -->
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
 
-    </div>
-    <!-- /Container -->
-
-</div>
-<!-- /About -->
-<!-- Portfolio -->
-<div id="portfolio" class="section md-padding bg-grey">
-
-    <!-- Container -->
-    <div class="container">
-
-        <!-- Row -->
-        <div class="row">
-            <br /><br />
-            <!-- Section header -->
-            <div class="section-header text-center">
-                <h2 class="title">Startups em Destaque</h2>
-            </div>
-            <!-- /Section header -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" style="height:335px; width:100%;" src="~/Content/img/fatecoins1.png" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>FATECOINS</span>
-                    <h3>Quanto vale a sua ideia?</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/fatecoins1.png"><i class="fa fa-search"></i></a>
+                <div class="navbar-header">
+                    <!-- Collapse nav button -->
+                    <div class="nav-collapse">
+                        <span></span>
                     </div>
+                    <!-- /Collapse nav button -->
                 </div>
-            </div>
-            <!-- /Work -->
-            @*    @foreach (var item in PerfilStartup)
-                {
-                    <!-- blog -->
-                    <div class="col-md-4 col-xs-6 work">
-                        <div class="overlay">
-                            <div class="work-content">
-                                @{ string foto = item.Foto;
-                                    if (foto != string.Empty)
-                                    {
-                                        if (foto != null)
-                                        {
-                                            string file = foto;
-                                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                            <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
-                                        }
-                                    }
-                                }
-                            </div>
-                            <div class="blog-content">
-                                <ul class="blog-meta">
-                                    <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.PerfilStartup)</li>
-                                </ul>
-                                <h3>@Html.DisplayFor(modelItem => model.StartupCadastro.Nome)</h3>
-                                <p>@Html.DisplayFor(modelItem => model.NomeStartup)</p>
-                            </div>
-                            }*@
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work2.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work2.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work3.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work3.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work4.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work4.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Contentt/img/work5.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work5.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="~/Content/img/work6.jpg" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>Category</span>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="~/Content/img/work6.jpg"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
 
-        </div>
-        <!-- /Row -->
+                <!--  Main navigation  -->
+                @{
+                    StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                    if (startupCadastro != null)
+                    {
 
-    </div>
-    <!-- /Container -->
-
-</div>
-<!-- /Portfolio -->
-<!-- Numbers -->
-<div id="numbers" class="section sm-padding">
-
-    <!-- Background Image -->
-    <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
-        <div class="overlay"></div>
-    </div>
-    <!-- /Background Image -->
-    <!-- Container -->
-    <div class="container">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-users"></i>
-                    <h3 class="white-text"><span class="counter">451</span></h3>
-                    <span class="white-text">Startups</span>
-                </div>
-            </div>
-            <!-- /number -->
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-trophy"></i>
-                    <h3 class="white-text"><span class="counter">12</span></h3>
-                    <span class="white-text">Awards won</span>
-                </div>
-            </div>
-            <!-- /number -->
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-coffee"></i>
-                    <h3 class="white-text"><span class="counter">154</span>K</h3>
-                    <span class="white-text">Cups of Coffee</span>
-                </div>
-            </div>
-            <!-- /number -->
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-file"></i>
-                    <h3 class="white-text"><span class="counter">45</span></h3>
-                    <span class="white-text">Projetos de sucesso</span>
-                </div>
-            </div>
-            <!-- /number -->
-
-        </div>
-        <!-- /Row -->
-
-    </div>
-    <!-- /Container -->
-
-</div>
-<!-- /Numbers -->
-<!-- Blog -->
-<div id="blog" class="section md-padding bg-grey">
-
-    <!-- Container -->
-    <div class="container">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-
-            <!-- Section header -->
-            <div class="section-header text-center">
-                <h2 class="title">Eventos</h2>
-            </div>
-            <!-- /Section header -->
-            @foreach (var item in eventos)
-            {
-                <!-- blog -->
-                <div class="col-md-4">
-                    <div class="blog">
-                        <div class="blog-img">
-                            @{ string foto = item.Foto;
-                                if (foto != string.Empty)
-                                {
-                                    if (foto != null)
-                                    {
-                                        string file = foto;
-                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Evento/" + file;
-                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
-                                    }
-                                }
-                            }
-                        </div>
-                        <div class="blog-content">
-                            <ul class="blog-meta">
-                                <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.DataEvento)</li>
-                            </ul>
-                            <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
-                            <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /blog -->
-            }
-
-        </div>
-        <!-- /Row -->
-
-    </div>
-    <!-- /Container -->
-
-</div>
-<!-- /Blog -->
-<!-- Contact -->
-<div id="contact" class="section md-padding">
-
-    <!-- Container -->
-    <div class="container">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-
-            <!-- Section-header -->
-            <div class="section-header text-center">
-                <h2 class="title">Entre em contato conosco</h2>
-            </div>
-            <!-- /Section-header -->
-            <!-- contact -->
-            <div class="col-sm-4">
-                <div class="contact">
-                    <i class="fa fa-phone"></i>
-                    <h3>Telefone</h3>
-                    <p>(12) 98505-7686</p>
-                </div>
-            </div>
-            <!-- /contact -->
-            <!-- contact -->
-            <div class="col-sm-4">
-                <div class="contact">
-                    <i class="fa fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>startoupcontact@gmail.com</p>
-                </div>
-            </div>
-            <!-- /contact -->
-            <!-- contact -->
-            <div class="col-sm-4">
-                <div class="contact">
-                    <i class="fa fa-map-marker"></i>
-                    <h3>Endereço</h3>
-                    <p>Av. Castelo Branco, nº432, São Paulo/SP</p>
-                </div>
-            </div>
-            <!-- /contact -->
-            <!-- contact form -->
-            <div class="col-md-8 col-md-offset-2">
-                <form class="contact-form">
-                    <input type="text" class="input" placeholder="Nome">
-                    <input type="email" class="input" placeholder="Email">
-                    <input type="text" class="input" placeholder="Assunto">
-                    <textarea class="input" placeholder="Mensagem"></textarea>
-                    <button class="main-btn">Enviar mensagem</button>
-                </form>
-            </div>
-            <!-- /contact form -->
-
-        </div>
-        <!-- /Row -->
-
-    </div>
-    <!-- /Container -->
-
-</div>
-<!-- /Contact -->
-<!-- Footer -->
-<footer id="footer" class="sm-padding bg-dark">
-
-    <!-- Container -->
-    <div class="container">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <!-- footer logo -->
-                <div class="footer-logo">
-                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
-                </div>
-                <!-- /footer logo -->
-                <!-- footer follow -->
-                <ul class="footer-follow">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-                <!-- /footer follow -->
-                <!-- footer copyright -->
-                <div class="footer-copyright">
-                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
-                </div>
-                <!-- /footer copyright -->
+                        <ul class="main-nav nav navbar-nav navbar-right">
+                            <li><a href="#home">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
+                            <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
+                            <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
+                            <li>@Html.ActionLink("Sair", "Logoff", "PerfilStartups")</li>
+                        </ul>
+                        <!-- /Main navigation -->
+                    }
+                    else
+                    {
+                        <script type="text/javascript">
+                            window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                        </script>
+                    }
+                }
 
             </div>
+        </nav>
+        <!-- /Nav -->
 
-        </div>
-        <!-- /Row -->
+    </header>
 
-    </div>
-    <!-- /Container -->
-
-</footer>
-<!-- /Footer -->
+    <!-- /Numbers -->
+    @RenderBody()
+   
+    <!-- jQuery Plugins -->
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

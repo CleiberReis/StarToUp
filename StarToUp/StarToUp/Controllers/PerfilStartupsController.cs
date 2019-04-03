@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StarToUp.Models;
+using StarToUp.Repositories;
 
 namespace StarToUp.Controllers
 {
@@ -17,9 +18,65 @@ namespace StarToUp.Controllers
         // GET: PerfilStartups
         public ActionResult Index()
         {
-            var perfilStartups = db.PerfilStartups.Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
-            return View(perfilStartups.ToList());
+            if (Session["Usuario"] != null)
+            {
+                Funcoes.GetUsuario();
+                var perfilStartups = db.PerfilStartups.Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
+                return View(perfilStartups.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Logar", "Logon");
+            }
+
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Logoff()
+        {
+            StarToUp.Repositories.Funcoes.Deslogar();
+            return RedirectToAction("Index", "Home");
+        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(StartupCadastro u)
+        //{
+        //    // esta action trata o post (login)
+        //    if (ModelState.IsValid) //verifica se é válido
+        //    {
+        //        using (StartupCadastrosController dc = new StartupCadastrosController())
+        //        {
+        //            var v = dc.StartupCadastros.Where(a => a.NomeUsuario.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
+        //            if (v != null)
+        //            {
+        //                Session["StartupCadastroID"] = v.Id.ToString();
+        //                Session["nome"] = v.NomeUsuario.ToString();
+        //                return RedirectToAction("Index", "IndexStartup");
+        //            }
+        //        }
+        //    }
+        //    return View(u);
+        //}
+
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
+
+        //    return View();
+        //}
+
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
+
+
 
         // GET: PerfilStartups/Details/5
         public ActionResult Details(int? id)
@@ -49,7 +106,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup, 
+        public ActionResult Create([Bind(Include = "PerfilStartupID,NomeStartup,DataFundacao,TamanhoTime,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,StartupCadastroID,SegmentacaoID")] PerfilStartup perfilStartup,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
             ViewBag.FotoMensagem = "";
