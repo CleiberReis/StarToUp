@@ -121,7 +121,7 @@
                             string path =
                             System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
                             <img src='@Url.Content(path)' style="height:150px;" title="Logomarca" /><br />
-                            <a href="@path" target="_blank">Visualizar</a>
+                            
                             @Html.ActionLink("Excluir", "DeleteFile", "PerfilEmpresas", new { id = Model.PerfilEmpresaID, arquivo =
                             "Logomarca" }, null)
                         }
@@ -160,7 +160,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EmpresaCadastroID, "EmpresaCadastroID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EmpresaCadastroID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("EmpresaCadastroID", null, htmlAttributes: new { @class = "control-label col-md-2"})
                 @Html.ValidationMessageFor(model => model.EmpresaCadastroID, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -29,6 +29,7 @@ namespace StarToUp.Models
         public virtual TipoUsuario TipoUsuario { get; set; }
 
         // Relacionamento perfil empresas
+        public int PerfilEmpresaID { get; set; }
         public virtual ICollection<PerfilEmpresa> PerfilEmpresas { get; set; }
     }
 }

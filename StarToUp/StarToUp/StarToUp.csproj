@@ -146,7 +146,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradorsController.cs" />
-    <Compile Include="Controllers\ContatosController.cs" />
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -157,13 +156,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904020126288_atualizacao.cs" />
-    <Compile Include="Migrations\201904020126288_atualizacao.Designer.cs">
-      <DependentUpon>201904020126288_atualizacao.cs</DependentUpon>
+    <Compile Include="Migrations\201904022330064_atual.cs" />
+    <Compile Include="Migrations\201904022330064_atual.Designer.cs">
+      <DependentUpon>201904022330064_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
-    <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\Evento.cs" />
@@ -277,7 +275,6 @@
     <Content Include="Content\img\logo1.png" />
     <Content Include="Content\img\logoStartup.png" />
     <Content Include="Content\img\Logo_StarToUp1.png" />
-    <Content Include="Content\img\mvp.png" />
     <Content Include="Content\img\perso1.jpg" />
     <Content Include="Content\img\perso2.jpg" />
     <Content Include="Content\img\post1.jpg" />
@@ -382,18 +379,9 @@
     <Content Include="Views\PerfilStartups\Details.cshtml" />
     <Content Include="Views\PerfilStartups\Edit.cshtml" />
     <Content Include="Views\PerfilStartups\Index.cshtml" />
-    <Content Include="Views\Contatos\Create.cshtml" />
-    <Content Include="Views\Contatos\Delete.cshtml" />
-    <Content Include="Views\Contatos\Details.cshtml" />
-    <Content Include="Views\Contatos\Edit.cshtml" />
-    <Content Include="Views\Contatos\Index.cshtml" />
-    <Content Include="Views\Contatos\Contato.cshtml" />
-    <Content Include="Views\Shared\_IndexStartup.cshtml" />
-    <Content Include="Views\Home\IndexStartup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Files\Admin\" />
     <Folder Include="Files\PerfilEmpresa\" />
     <Folder Include="Files\PerfilStartup\" />
   </ItemGroup>
@@ -411,8 +399,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904020126288_atualizacao.resx">
-      <DependentUpon>201904020126288_atualizacao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904022330064_atual.resx">
+      <DependentUpon>201904022330064_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
