@@ -41,26 +41,33 @@
                 </div>
 
                 <!--  Main navigation  -->
-                @{
+                @*@{
                     StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
                     if (startupCadastro != null)
-                    {
+                    {*@
 
-                        <ul class="main-nav nav navbar-nav navbar-right">
-                            <li><a href="#home">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
-                            <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
-                            <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
-                            <li>@Html.ActionLink("Sair", "Logoff", "PerfilStartups")</li>
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    @*<li><a href="#home">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>*@
+                    <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
+                    <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
+                    <li class="has-dropdown">
+                        <a href="#">Sign In</a>
+                        <ul class="dropdown">
+                            <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
+                            <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
                         </ul>
+                    </li>
+                    @*<li>@Html.ActionLink("Sair", "Logoff", "PerfilStartups")</li>*@
+                </ul>
                         <!-- /Main navigation -->
-                    }
+                    @*}
                     else
                     {
                         <script type="text/javascript">
                             window.location.href = "@Url.Action("AcessoNegado","Logon")";
                         </script>
                     }
-                }
+                }*@
 
             </div>
         </nav>

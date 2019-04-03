@@ -1,42 +1,4 @@
 ﻿@model IEnumerable<StarToUp.Models.StartupCadastro>
-@*
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        <div class="container">
-            <div class="section-header text-center">
-                <br />
-                <h2 class="title">Startup, Crie seu cadastro</h2>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            </div>
-            <div class="card card-container">
-                <form class="form-signin">
-                    <br />
-                    <div>
-                        <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
-                    </div>
-                    <br />
-                    <div>
-                        <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
-                    </div>
-                    <br />
-                    <button class="main-btn btn-block" type="submit" value="Entrar">Entrar</button>
-                </form>
-            </div>
-        </div>
-
-    }
-    @section scripts{
-        <script>
-            $(function () {
-                $('input, select, textarea').each(function () {
-                    if ($(this).hasClass('input-validation-error'))
-                        $(this).focus();
-                });
-            });
-        </script>
-    }*@
-
 @{
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
     ViewBag.Title = "Logon";
@@ -55,7 +17,7 @@
                                 <div class="centerLoginContent">
                                     <form name="loginForm" action="/login" method="post">
                                         <input type="hidden" name="initialURI" value="/">
-                                        <h2 class="login_title">LOGIN</h2>
+                                        <h2 class="login_title">LOGIN STARTUP</h2>
                                         <div class="">
                                             <p class="login_text">Entre com seu email e senha para realizar<span> o login</span></p>
                                             <div class="form-group">
@@ -78,7 +40,7 @@
                                     </div>*@
                                 <div class="text-center">
                                     <div id="UIPortalLoginFormAction" class="loginButton">
-                                        <button class="button_login" tabindex="4" onclick="login();">Login</button>
+                                        <button class="button_login" type="submit" value="Entrar" tabindex="4">Login</button>
                                     </div>
                                 </div>
                             </div>

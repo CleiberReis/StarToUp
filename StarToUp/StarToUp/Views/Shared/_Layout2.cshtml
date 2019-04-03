@@ -9,17 +9,6 @@
 
     <title>@ViewBag.Title - StarToUp</title>
 
-    <script type="text/javascript">
-        function redirecionar() {
-            if (confirm("Deseja sair da sessão?")) {
-                window.location = "http://localhost:50072/Logon/Logar";
-            }
-            else {
-                return false;
-            }
-        }
-    </script>
-
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
     @Styles.Render("~/Content/css")
@@ -62,13 +51,12 @@
                     <li><a href="#blog">Eventos</a></li>
                     <li><a href="#contact">Contato</a></li>
                     <li class="has-dropdown">
-                        <a href="#blog">Sign In</a>
+                        <a href="#">Sign In</a>
                         <ul class="dropdown">
-                            <li>@Html.ActionLink("Sign In", "Logar", "Logon")</li>
+                            <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
+                            <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
                         </ul>
                     </li>
-                    <li><a href="#" onclick="redirecionar();">Sair</a></li>
-                    @*<li>@Html.ActionLink("Sair", "Logoff", "Logon")</li>*@
                 </ul>
                 <!-- /Main navigation -->
             </div>

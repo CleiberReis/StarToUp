@@ -27,7 +27,7 @@ namespace StarToUp.Controllers
             //}
             //else
             //{
-            //    return RedirectToAction("Logar", "Logon");
+            //    return RedirectToAction("Logar", "LogonEmpresa");
             //}
 
             var perfilEmpresas = db.PerfilEmpresas.Include(p => p.EmpresaCadastro);

@@ -18,29 +18,32 @@ namespace StarToUp.Controllers
         // GET: PerfilStartups
         public ActionResult Index()
         {
-            if (Session["Usuario"] != null)
-            {
-                Funcoes.GetUsuario();
-                var perfilStartups = db.PerfilStartups.Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
-                return View(perfilStartups.ToList());
-            }
-            else
-            {
-                return RedirectToAction("Logar", "Logon");
-            }
+            //if (Session["Usuario"] != null)
+            //{
+            //    Funcoes.GetUsuario();
+            //    var perfilStartups = db.PerfilStartups.Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
+            //    return View(perfilStartups.ToList());
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Logar", "Logon");
+            //}
+
+            var perfilStartups = db.PerfilStartups.Include(p => p.Segmentacoes).Include(p => p.StartupCadastro);
+            return View(perfilStartups.ToList());
 
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
 
-        public ActionResult Logoff()
-        {
-            StarToUp.Repositories.Funcoes.Deslogar();
-            return RedirectToAction("Index", "Home");
-        }
+        //public ActionResult Logoff()
+        //{
+        //    StarToUp.Repositories.Funcoes.Deslogar();
+        //    return RedirectToAction("Index", "Home");
+        //}
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public ActionResult Login(StartupCadastro u)

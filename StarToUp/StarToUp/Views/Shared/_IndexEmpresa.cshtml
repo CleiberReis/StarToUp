@@ -41,106 +41,33 @@
                 </div>
 
                 <!--  Main navigation  -->
-                @{
-                    StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
-                    if (startupCadastro != null)
-                    {
-
-                        <ul class="main-nav nav navbar-nav navbar-right">
-                            <li><a href="#home">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
-                            <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
-                            <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
-                            <li>@Html.ActionLink("Sair", "Logoff", "PerfilStartups")</li>
-                        </ul>
-                        <!-- /Main navigation -->
-                    }
-                    else
-                    {
-                        <script type="text/javascript">
-                            window.location.href = "@Url.Action("AcessoNegado","Logon")";
-                        </script>
-                    }
-                }
-
-            </div>
-        </nav>
-        <!-- /Nav -->
-
-    </header>
-
-    <!-- /Numbers -->
-    @RenderBody()
-
-    <!-- jQuery Plugins -->
-    @Scripts.Render("~/bundles/js")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>@ViewBag.Title - StarToUp</title>
-
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
-    @Styles.Render("~/Content/css")
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
-            <div class="overlay"></div>
-        </div>
-        <!-- /Background Image -->
-        <!-- Nav -->
-        <nav id="nav" class="navbar nav-transparent">
-            <div class="container">
-
-                <div class="navbar-header">
-                    <!-- Collapse nav button -->
-                    <div class="nav-collapse">
-                        <span></span>
-                    </div>
-                    <!-- /Collapse nav button -->
-                </div>
-
-                <!--  Main navigation  -->
-                @{
+                @*@{
                     StarToUp.Models.EmpresaCadastro empresaCadastro = StarToUp.Repositories.FuncoesEmpresa.GetUsuarioEmpresa();
-                    if (startupCadastro != null)
-                    {
+                    if (empresaCadastro != null)
+                    {*@
 
-                        <ul class="main-nav nav navbar-nav navbar-right">
-                            <li><a href="#home">Seja bem-vindo(a) - @empresaCadastro.Nome</a></li>
-                            <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
-                            <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
-                            <li>@Html.ActionLink("Sair", "Logoff", "PerfilEmpresas")</li>
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    @*<li><a href="#home">Seja bem-vindo(a) - @empresaCadastro.Nome</a></li>*@
+                    <li>@Html.ActionLink("Perfil", "Details", "PerfilEmpresas")</li>
+                    <li>@Html.ActionLink("Empresas", "Index", "PerfilEmpresas")</li>
+                    <li class="has-dropdown">
+                        <a href="#">Sign In</a>
+                        <ul class="dropdown">
+                            <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
+                            <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
                         </ul>
+                    </li>
+                    @*<li>@Html.ActionLink("Sair", "Logoff", "PerfilEmpresas")</li>*@
+                </ul>
                         <!-- /Main navigation -->
-                    }
+                    @*}
                     else
                     {
                         <script type="text/javascript">
-                            window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                            window.location.href = "@Url.Action("AcessoNegado","LogonEmpresa")";
                         </script>
                     }
-                }
+                }*@
 
             </div>
         </nav>
