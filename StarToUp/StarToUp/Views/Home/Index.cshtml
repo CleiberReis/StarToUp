@@ -85,15 +85,15 @@
                                 {
                                     string file = fotoStartups;
                                     string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                    <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
+                                    <img style="width: 250px; height: 260px;" src='@Url.Content(path)' title="Foto" /><br />
                                 }
                             }
                         }
-                        <div class="overlay"></div>
+                        <div class="overlay" style="width: 290px; height: 300px;"></div>
                         <div class="work-content">
                             <span>@Html.DisplayFor(modelItem => item.StartupCadastro.Nome)</span>
                             <div class="work-link">
-                                <a href="#"><i class="fa fa-external-link"></i></a>
+                                <!--<a href="#"><i class="fa fa-external-link"></i></a>-->
                                 <!--<a class="lightbox" href="~/Content/img/fatecoins1.png"><i class="fa fa-search"></i></a> -->
                             </div>
                         </div>
