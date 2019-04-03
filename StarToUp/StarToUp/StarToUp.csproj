@@ -282,6 +282,7 @@
     <Content Include="Content\img\post1.jpg" />
     <Content Include="Content\img\post2.jpg" />
     <Content Include="Content\img\post3.jpg" />
+    <Content Include="Content\img\startup.png" />
     <Content Include="Content\img\team1.jpg" />
     <Content Include="Content\img\team2.jpg" />
     <Content Include="Content\img\team3.jpg" />
