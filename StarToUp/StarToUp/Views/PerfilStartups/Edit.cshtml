@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>PerfilStartup</h4>
         <hr />
@@ -194,5 +194,19 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href='@Url.Action("Index", "PerfilStartups")'>
+        <img src='@Url.Content("~/Content/Images/voltar.png")' class="botaoicone"
+             title="Voltar" /> Todas Startups
+    </a>
 </div>
+
+@section scripts{
+    <script>
+$(function () {
+$('input, select, textarea').each(function () {
+if ($(this).hasClass('input-validation-error'))
+$(this).focus();
+});
+});
+    </script>
+}

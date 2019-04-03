@@ -198,6 +198,21 @@ namespace StarToUp.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult DeleteAJAX(string perfilStartupID)
+        {
+            int perfilIdInt;
+            if (int.TryParse(perfilStartupID, out perfilIdInt))
+            {
+                PerfilStartup estado = db.PerfilStartups.Find(perfilIdInt);
+                db.PerfilStartups.Remove(estado);
+                db.SaveChanges();
+                return Json(true);
+                //return RedirectToAction("Index");
+            }
+            return Json(false);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

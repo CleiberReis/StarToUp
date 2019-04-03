@@ -16,6 +16,34 @@
     white-space: normal;
 }
 
+.linha {
+    line-height: 32px;
+}
+
+.linhaunderline {
+    line-height: 32px;
+    border-bottom: 1pt solid #e2e2e2;
+}
+
+.linhaacima {
+    line-height: 32px;
+    border-top: 1pt solid #e2e2e2;
+}
+
+.acoesadireita {
+    text-align: right;
+}
+
+.botaoicone {
+    height: 22px;
+    width: 22px;
+}
+
+.botaoiconeusuario {
+    height: 40px;
+    width: 40px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select {
@@ -37,10 +65,9 @@ select {
 }
 
 .card {
-    background-color: #eeeeee;
+    background-color: #f3f3f3;
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
-    margin-top: 30px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -56,27 +83,6 @@ select {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
 }
 
-/*.fileUpload {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-
-    .fileUpload input.upload {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
-    .form-control, .thumbnail {
-    border-radius: 2px;
-}*/
-
 /* File Upload */
 .fake-shadow {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
@@ -85,7 +91,12 @@ select {
     position: relative;
     overflow: hidden;
 }
-.fileUpload #logo-id {
+
+.uploadImage {
+    text-align: center;
+}
+
+.fileUpload #logoTipo, #imagemLocal1, #imagemLocal2, #imagemMVP1, #imagemMVP2, #imagemMVP3, #imagemMVP4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -95,7 +106,17 @@ select {
     opacity: 0;
     filter: alpha(opacity=0);
 }
-.img-preview {
-    width: 200px;
-    height: 200px;
+.img-preview, .img-preview2, .img-preview3 {
+    height: 150px;
+    width: 150px;
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+}
+
+.img-preview4, .img-preview5, .img-preview6, .img-preview7 {
+    height: 460px;
+    width: 250px;
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

@@ -2,186 +2,127 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout2.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>PerfilStartup</h4>
-    <hr />
-    <dl class="dl-horizontal">
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Segmentacoes.Descricao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StartupCadastro.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartupCadastro.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeStartup)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NomeStartup)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataFundacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataFundacao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TamanhoTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TamanhoTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cep)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rua)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rua)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Bairro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Numero)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Numero)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Complemento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sobre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sobre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Objetivo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Objetivo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Logotipo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Logotipo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemLocal1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemLocal1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemLocal2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemLocal2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemMVP1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemMVP1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemMVP2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemMVP2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemMVP3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemMVP3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemMVP4)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemMVP4)
-        </dd>
-
-    </dl>
+<div class="section-header text-center">
+    <br />
+    <h2 class="title">Detalhe da Startup</h2>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 </div>
+<div class="container">
+    <div class="row">
+        <div class="container col-md-6">
+            <div class="card" style="height: 540px; margin-top:0px;">
+                <div style="text-align: left; padding-top: 5%">
+                    @{
+                        string logoTipo = Model.Logotipo;
+                        if (logoTipo != string.Empty)
+                        {
+                            if (logoTipo != null)
+                            {
+                                string file = logoTipo;
+                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                <img src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                            }
+                        }
+                    }
+                </div>
+                @*<div style="text-align:right;">
+                        <a href='@Url.Action("Edit", "PerfilEmpresas", new { id = Model.PerfilStartupID })'>
+                            <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
+                                 title="Editar" />
+                        </a>
+                    </div>*@
+                <br />
+                <h4>Informações da Empresa:</h4>
+                <div>
+                    <input type="text" value="@Html.DisplayNameFor(model => model.StartupCadastro.Nome)" disabled style="outline:none;">
+                    <b>Nome da Statup</b>
+                </div>
+                <br />
+                <div>
+                    <input type="text" value="@Html.DisplayFor(model => model.DataFundacao)" disabled style="outline:none;">
+                    <b>Data da Fundação</b>
+                </div>
+                <br />
+                <div>
+                    <input type="text" value="@Html.DisplayFor(model => model.TamanhoTime)" disabled style="outline:none;">
+                    <b>Tamanho do Time</b>
+                </div>
+                <br />
+            </div>
+        </div>
+        <div class="container col-md-6">
+            <div class="card" style="margin-top:0px;">
+                <h4>Objetivo:</h4>
+                <div>
+                    <input type="text" value="@Html.DisplayFor(model => model.Objetivo)" disabled style="outline:none;">
+                </div>
+                <br />
+                <h4>Sobre:</h4>
+                <div>
+                    <textarea disabled style="overflow: auto; width: 100%; height:auto; resize: none;">
+                            @Html.DisplayFor(model => model.Sobre)
+                        </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container col-md-6">
+            <div class="card" style="margin-top:0px;">
+                <h4>Endereço:</h4>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" value="@Html.DisplayFor(model => model.Cep)" disabled style="outline:none;">
+                        <b>CEP</b>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" value="@Html.DisplayFor(model => model.Rua)" disabled style="outline:none;">
+                        <b>Rua</b>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" value="@Html.DisplayFor(model => model.Bairro)" disabled style="outline:none;">
+                        <b>Bairro</b>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="text" value="@Html.DisplayFor(model => model.Numero)" disabled style="outline:none;">
+                        <b>Número</b>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <input type="text" value="@Html.DisplayFor(model => model.Complemento)" disabled style="outline:none; width: 100%;">
+                    <b>Complemento</b>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" value="@Html.DisplayFor(model => model.Cidade)" disabled style="outline:none; width: 100%;">
+                        <b>Cidade</b>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="text" value="@Html.DisplayFor(model => model.Estado)" disabled style="outline:none;">
+                        <b>Estado</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PerfilStartupID }) |
     @Html.ActionLink("Back to List", "Index")
