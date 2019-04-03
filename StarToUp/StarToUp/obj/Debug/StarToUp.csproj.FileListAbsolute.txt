@@ -589,6 +589,7 @@ C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\Sta
 C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.Cache
 C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Desireé Fraga\Desktop\Project\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
+C:\Users\cleib\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
 C:\Users\cleib\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\cleib\source\repos\CleiberReis\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.admin.resources
