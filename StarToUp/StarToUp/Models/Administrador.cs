@@ -13,7 +13,7 @@ namespace StarToUp.Models
         public int AdministradorID { get; set; }
 
         [DisplayName("Foto")]
-        public string Foto { get; set; }
+        public string FotoAdmin { get; set; }
 
         [Required(ErrorMessage = "Preenchimento obrigatório")]
         [DisplayName("Nome:")]

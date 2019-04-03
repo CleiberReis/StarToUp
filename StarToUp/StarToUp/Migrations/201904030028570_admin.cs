@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atual : DbMigration
+    public partial class admin : DbMigration
     {
         public override void Up()
         {
@@ -12,25 +12,13 @@ namespace StarToUp.Migrations
                 c => new
                     {
                         AdministradorID = c.Int(nullable: false, identity: true),
-                        Foto = c.String(unicode: false),
+                        FotoAdmin = c.String(unicode: false),
                         NomeAdmin = c.String(nullable: false, unicode: false),
                         Funcao = c.String(nullable: false, unicode: false),
                         Login = c.String(nullable: false, unicode: false),
                         Senha = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.AdministradorID);
-            
-            CreateTable(
-                "dbo.Contato",
-                c => new
-                    {
-                        CadastroID = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false, maxLength: 30, storeType: "nvarchar"),
-                        Email = c.String(nullable: false, unicode: false),
-                        Assunto = c.String(nullable: false, maxLength: 20, storeType: "nvarchar"),
-                        Mensagem = c.String(nullable: false, maxLength: 255, storeType: "nvarchar"),
-                    })
-                .PrimaryKey(t => t.CadastroID);
             
             CreateTable(
                 "dbo.EmpresaCadastro",
@@ -169,7 +157,6 @@ namespace StarToUp.Migrations
             DropTable("dbo.TipoUsuario");
             DropTable("dbo.PerfilEmpresa");
             DropTable("dbo.EmpresaCadastro");
-            DropTable("dbo.Contato");
             DropTable("dbo.Administrador");
         }
     }
