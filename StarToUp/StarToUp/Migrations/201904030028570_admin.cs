@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atual : DbMigration
+    public partial class admin : DbMigration
     {
         public override void Up()
         {
@@ -12,6 +12,9 @@ namespace StarToUp.Migrations
                 c => new
                     {
                         AdministradorID = c.Int(nullable: false, identity: true),
+                        FotoAdmin = c.String(unicode: false),
+                        NomeAdmin = c.String(nullable: false, unicode: false),
+                        Funcao = c.String(nullable: false, unicode: false),
                         Login = c.String(nullable: false, unicode: false),
                         Senha = c.String(nullable: false, unicode: false),
                     })

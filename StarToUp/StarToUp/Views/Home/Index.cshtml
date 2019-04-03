@@ -78,6 +78,9 @@
                 <!-- blog -->
                 <div class="col-md-4 col-xs-6 work">
                     <div class="col-md-4 col-xs-6 work">
+                        <div class="work-content">
+                            <h3>@Html.DisplayFor(modelItem => item.StartupCadastro.Nome)</h3>
+                        </div>
                         @{ string fotoStartups = item.Logotipo;
                             if (fotoStartups != string.Empty)
                             {
@@ -91,10 +94,10 @@
                         }
                         <div class="overlay" style="width: 290px; height: 300px;"></div>
                         <div class="work-content">
-                            <span>@Html.DisplayFor(modelItem => item.StartupCadastro.Nome)</span>
+
                             <div class="work-link">
                                 <!--<a href="#"><i class="fa fa-external-link"></i></a>-->
-                                <!--<a class="lightbox" href="~/Content/img/fatecoins1.png"><i class="fa fa-search"></i></a> -->
+                                <!--<a class="lightbox"><i class="fa fa-search"></i></a>-->
                             </div>
                         </div>
                     </div>
@@ -109,220 +112,220 @@
         <!-- /Container -->
 
     </div>
+</div>
 
+<!-- /Portfolio -->
+<!-- Numbers -->
+<div id="numbers" class="section sm-padding">
 
-    <!-- /Portfolio -->
-    <!-- Numbers -->
-    <div id="numbers" class="section sm-padding">
+    <!-- Background Image -->
+    <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+        <div class="overlay"></div>
+    </div>
+    <!-- /Background Image -->
+    <!-- Container -->
+    <div class="container">
+        <br /><br />
+        <!-- Row -->
+        <div class="row">
 
-        <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
-            <div class="overlay"></div>
-        </div>
-        <!-- /Background Image -->
-        <!-- Container -->
-        <div class="container">
-            <br /><br />
-            <!-- Row -->
-            <div class="row">
-
-                <!-- number -->
-                <div class="col-sm-3 col-xs-6">
-                    <div class="number">
-                        <i class="fa fa-users"></i>
-                        <h3 class="white-text"><span class="counter">451</span></h3>
-                        <span class="white-text">Startups</span>
-                    </div>
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6">
+                <div class="number">
+                    <i class="fa fa-users"></i>
+                    <h3 class="white-text"><span class="counter">451</span></h3>
+                    <span class="white-text">Startups</span>
                 </div>
-                <!-- /number -->
-                <!-- number -->
-                <div class="col-sm-3 col-xs-6">
-                    <div class="number">
-                        <i class="fa fa-trophy"></i>
-                        <h3 class="white-text"><span class="counter">12</span></h3>
-                        <span class="white-text">Awards won</span>
-                    </div>
-                </div>
-                <!-- /number -->
-                <!-- number -->
-                <div class="col-sm-3 col-xs-6">
-                    <div class="number">
-                        <i class="fa fa-coffee"></i>
-                        <h3 class="white-text"><span class="counter">154</span>K</h3>
-                        <span class="white-text">Cups of Coffee</span>
-                    </div>
-                </div>
-                <!-- /number -->
-                <!-- number -->
-                <div class="col-sm-3 col-xs-6">
-                    <div class="number">
-                        <i class="fa fa-file"></i>
-                        <h3 class="white-text"><span class="counter">45</span></h3>
-                        <span class="white-text">Projetos de sucesso</span>
-                    </div>
-                </div>
-                <!-- /number -->
-
             </div>
-            <!-- /Row -->
+            <!-- /number -->
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6">
+                <div class="number">
+                    <i class="fa fa-trophy"></i>
+                    <h3 class="white-text"><span class="counter">12</span></h3>
+                    <span class="white-text">Awards won</span>
+                </div>
+            </div>
+            <!-- /number -->
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6">
+                <div class="number">
+                    <i class="fa fa-coffee"></i>
+                    <h3 class="white-text"><span class="counter">154</span>K</h3>
+                    <span class="white-text">Cups of Coffee</span>
+                </div>
+            </div>
+            <!-- /number -->
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6">
+                <div class="number">
+                    <i class="fa fa-file"></i>
+                    <h3 class="white-text"><span class="counter">45</span></h3>
+                    <span class="white-text">Projetos de sucesso</span>
+                </div>
+            </div>
+            <!-- /number -->
 
         </div>
-        <!-- /Container -->
+        <!-- /Row -->
 
     </div>
-    <!-- /Numbers -->
-    <!-- Blog -->
-    <div id="blog" class="section md-padding bg-grey">
+    <!-- /Container -->
 
-        <!-- Container -->
-        <div class="container">
-            <br /><br />
-            <!-- Row -->
-            <div class="row">
+</div>
+<!-- /Numbers -->
+<!-- Blog -->
+<div id="blog" class="section md-padding bg-grey">
 
-                <!-- Section header -->
-                <div class="section-header text-center">
-                    <h2 class="title">Eventos</h2>
-                </div>
-                <!-- /Section header -->
-                @foreach (var item in eventos)
-                {
-                    <!-- blog -->
-                    <div class="col-md-4">
-                        <div class="blog">
-                            <div class="blog-img">
-                                @{ string foto = item.Foto;
-                                    if (foto != string.Empty)
+    <!-- Container -->
+    <div class="container">
+        <br /><br />
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Eventos</h2>
+            </div>
+            <!-- /Section header -->
+            @foreach (var item in eventos)
+            {
+                <!-- blog -->
+                <div class="col-md-4">
+                    <div class="blog">
+                        <div class="blog-img">
+                            @{ string foto = item.Foto;
+                                if (foto != string.Empty)
+                                {
+                                    if (foto != null)
                                     {
-                                        if (foto != null)
-                                        {
-                                            string file = foto;
-                                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Evento/" + file;
-                                            <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
-                                        }
+                                        string file = foto;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Evento/" + file;
+                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
                                     }
                                 }
-                            </div>
-                            <div class="blog-content">
-                                <ul class="blog-meta">
-                                    <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.DataEvento)</li>
-                                </ul>
-                                <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
-                                <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
-                            </div>
+                            }
+                        </div>
+                        <div class="blog-content">
+                            <ul class="blog-meta">
+                                <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.DataEvento)</li>
+                            </ul>
+                            <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                            <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
                         </div>
                     </div>
-                    <!-- /blog -->
-                }
-
-            </div>
-            <!-- /Row -->
+                </div>
+                <!-- /blog -->
+            }
 
         </div>
-        <!-- /Container -->
+        <!-- /Row -->
 
     </div>
-    <!-- /Blog -->
-    <!-- Contact -->
-    <div id="contact" class="section md-padding">
+    <!-- /Container -->
 
-        <!-- Container -->
-        <div class="container">
-            <br /><br />
-            <!-- Row -->
-            <div class="row">
+</div>
+<!-- /Blog -->
+<!-- Contact -->
+<div id="contact" class="section md-padding">
 
-                <!-- Section-header -->
-                <div class="section-header text-center">
-                    <h2 class="title">Entre em contato conosco</h2>
-                </div>
-                <!-- /Section-header -->
-                <!-- contact -->
-                <div class="col-sm-4">
-                    <div class="contact">
-                        <i class="fa fa-phone"></i>
-                        <h3>Telefone</h3>
-                        <p>(12) 98505-7686</p>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="col-sm-4">
-                    <div class="contact">
-                        <i class="fa fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>startoupcontact@gmail.com</p>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="col-sm-4">
-                    <div class="contact">
-                        <i class="fa fa-map-marker"></i>
-                        <h3>Endereço</h3>
-                        <p>Av. Castelo Branco, nº432, São Paulo/SP</p>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact form -->
-                <div class="col-md-8 col-md-offset-2">
-                    <form class="contact-form">
-                        <input type="text" class="input" placeholder="Nome">
-                        <input type="email" class="input" placeholder="Email">
-                        <input type="text" class="input" placeholder="Assunto">
-                        <textarea class="input" placeholder="Mensagem"></textarea>
-                        <button class="main-btn">Enviar mensagem</button>
-                    </form>
-                </div>
-                <!-- /contact form -->
+    <!-- Container -->
+    <div class="container">
+        <br /><br />
+        <!-- Row -->
+        <div class="row">
 
+            <!-- Section-header -->
+            <div class="section-header text-center">
+                <h2 class="title">Entre em contato conosco</h2>
             </div>
-            <!-- /Row -->
+            <!-- /Section-header -->
+            <!-- contact -->
+            <div class="col-sm-4">
+                <div class="contact">
+                    <i class="fa fa-phone"></i>
+                    <h3>Telefone</h3>
+                    <p>(12) 98505-7686</p>
+                </div>
+            </div>
+            <!-- /contact -->
+            <!-- contact -->
+            <div class="col-sm-4">
+                <div class="contact">
+                    <i class="fa fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>startoupcontact@gmail.com</p>
+                </div>
+            </div>
+            <!-- /contact -->
+            <!-- contact -->
+            <div class="col-sm-4">
+                <div class="contact">
+                    <i class="fa fa-map-marker"></i>
+                    <h3>Endereço</h3>
+                    <p>Av. Castelo Branco, nº432, São Paulo/SP</p>
+                </div>
+            </div>
+            <!-- /contact -->
+            <!-- contact form -->
+            <div class="col-md-8 col-md-offset-2">
+                <form class="contact-form">
+                    <input type="text" class="input" placeholder="Nome">
+                    <input type="email" class="input" placeholder="Email">
+                    <input type="text" class="input" placeholder="Assunto">
+                    <textarea class="input" placeholder="Mensagem"></textarea>
+                    <button class="main-btn">Enviar mensagem</button>
+                </form>
+            </div>
+            <!-- /contact form -->
 
         </div>
-        <!-- /Container -->
+        <!-- /Row -->
 
     </div>
-    <!-- /Contact -->
-    <!-- Footer -->
-    <footer id="footer" class="sm-padding bg-dark">
+    <!-- /Container -->
 
-        <!-- Container -->
-        <div class="container">
-            <br /><br />
-            <!-- Row -->
-            <div class="row">
+</div>
+<!-- /Contact -->
+<!-- Footer -->
+<footer id="footer" class="sm-padding bg-dark">
 
-                <div class="col-md-12">
+    <!-- Container -->
+    <div class="container">
+        <br /><br />
+        <!-- Row -->
+        <div class="row">
 
-                    <!-- footer logo -->
-                    <div class="footer-logo">
-                        <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
-                    </div>
-                    <!-- /footer logo -->
-                    <!-- footer follow -->
-                    <ul class="footer-follow">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                    <!-- /footer follow -->
-                    <!-- footer copyright -->
-                    <div class="footer-copyright">
-                        <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
-                    </div>
-                    <!-- /footer copyright -->
+            <div class="col-md-12">
 
+                <!-- footer logo -->
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
                 </div>
+                <!-- /footer logo -->
+                <!-- footer follow -->
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <!-- /footer follow -->
+                <!-- footer copyright -->
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
+                <!-- /footer copyright -->
 
             </div>
-            <!-- /Row -->
 
         </div>
-        <!-- /Container -->
+        <!-- /Row -->
 
-    </footer>
-    <!-- /Footer -->
+    </div>
+    <!-- /Container -->
+
+</footer>
+<!-- /Footer -->

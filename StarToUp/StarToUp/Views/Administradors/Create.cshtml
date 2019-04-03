@@ -20,10 +20,10 @@
             <br />
             <form class="form-signin">
                 <div>
-                    <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
+                    <input type="file" name="fotoAdmin" id="fotoAdmin" class="input" placeholder="Foto *" />
                     @{
-                        string foto = ViewBag.FotoMensagem;
-                        if (foto != "")
+                        string fotoAdmin = ViewBag.FotoMensagem;
+                        if (fotoAdmin != "")
                         {
                             <span class="text-danger contenterror">
                                 @ViewBag.FotoMensagem

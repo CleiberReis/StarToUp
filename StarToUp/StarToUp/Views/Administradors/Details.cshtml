@@ -12,6 +12,30 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.FotoAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcao)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Login)
         </dt>
 
@@ -30,6 +54,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AdminID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdministradorID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
