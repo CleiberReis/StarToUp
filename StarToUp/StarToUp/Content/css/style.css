@@ -207,6 +207,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     border-bottom: 2px solid #4d4949;
     color: #354052;
     padding: 0px 10px;
+    padding-left: 20px!important;
     opacity: 0.5;
     -webkit-transition: 0.2s border-color, 0.2s opacity;
     transition: 0.2s border-color, 0.2s opacity;

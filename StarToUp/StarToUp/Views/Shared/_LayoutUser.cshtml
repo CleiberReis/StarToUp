@@ -1,27 +1,39 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html>
-<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Cadastro</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    @RenderBody()
-    @*<div class="container body-content">
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - StarToUp</p>
-            </footer>
-        </div>*@
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>@ViewBag.Title - Login</title>
 
-    <!-- jQuery Plugins -->
-    @Scripts.Render("~/bundles/js")
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+
+</head>
+
+<body id="home" style="background-image: url('../../Content/img/backgroun6.jpg');">
+    <div class="bg-img">
+        <div class="overlay"></div>
+    </div>
+    <header>
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="nav-collapse">
+                        <span></span>
+                    </div>
+                </div>
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre o site</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

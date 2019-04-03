@@ -7,70 +7,64 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="container">
-        <div class="section-header text-center">
-            <br />
-            <h2 class="title">Startup, Crie seu cadastro</h2>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        </div>
-        <div class="card card-container">
-            <form class="form-signin">
-                <br />
-                <div>
-                    <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
+    <div id="login_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-login login_block">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="centerLoginContent">
+                                    <form name="loginForm" action="/login" method="post">
+                                        <input type="hidden" name="initialURI" value="/">
+                                        <h2 class="login_title">LOGIN STARTUP</h2>
+                                        <div class="">
+                                            <p class="login_text">Entre com seu email e senha para realizar<span> o login</span></p>
+                                            <div class="form-group">
+                                                <label for="username">Email<span class="err_cls">*</span></label>
+                                                <input class="input form-control" tabindex="1" id="email" name="email" type="text" placeholder="Email" onblur="this.placeholder = 'Email'" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Senha<span class="err_cls">*</span></label>
+                                                <input class="input form-control" tabindex="2" type="password" id="senha" name="senha" placeholder="Senha" onblur="this.placeholder = 'Senha'" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-heading">
+                            <div class="row">
+                                @*<div class="col-xs-6 text-center">
+                                        <a href="/forgotPassword" title="ForgotPassword"><div class="forgot_password">Forgot Password ?</div></a>
+                                    </div>*@
+                                <div class="text-center">
+                                    <div id="UIPortalLoginFormAction" class="loginButton">
+                                        <button class="button_login" type="submit" value="Entrar" tabindex="4">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="">
+                                <div class="">
+                                    <div id="social-login">
+                                        <p class="linkedin_bgcolor">
+                                            <a class="btn-block btn-social btn-linkedin" href="javascript:void(0)">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i><span class="fb_left">Sign in with facebook</span>
+                                            </a>
+                                        </p>
+                                        <p class="googleplus_bgcolor">
+                                            <a class="btn-block btn-social btn-linkedin" href="javascript:void(0)">
+                                                <i class="fa fa-google-plus"></i> <span class="g_plus">Sign in with Google</span>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
                 </div>
-                <br />
-                <div>
-                    <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
-                </div>
-                <br />
-                <button class="main-btn btn-block" type="submit" value="Entrar">Entrar</button>
-            </form>
-        </div>
-    </div>
-
-}
-<footer id="footer" class="sm-padding bg-dark">
-    <!-- Container -->
-    <div class="container-fluid">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <!-- footer logo -->
-                <div class="footer-logo">
-                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
-                </div>
-                <!-- /footer logo -->
-                <!-- footer follow -->
-                <ul class="footer-follow">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-                <!-- /footer follow -->
-                <!-- footer copyright -->
-                <div class="footer-copyright">
-                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
-                </div>
-                <!-- /footer copyright -->
             </div>
         </div>
-        <!-- /Row -->
     </div>
-    <!-- /Container -->
-</footer>
-<!-- /Footer -->
-@section scripts{
-    <script>
-        $(function () {
-            $('input, select, textarea').each(function () {
-                if ($(this).hasClass('input-validation-error'))
-                    $(this).focus();
-            });
-        });
-    </script>
 }
+

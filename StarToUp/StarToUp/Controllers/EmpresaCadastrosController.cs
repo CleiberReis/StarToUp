@@ -60,7 +60,7 @@ namespace StarToUp.Controllers
 
                 GmailEmailService gmail = new GmailEmailService();
                 EmailMessage msg = new EmailMessage();
-                msg.Body = "<!DOCTYPE HTML><html><body><p>" + empresaCadastro.Nome + ",<br/>Seja bem-vinda(o)!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><a href= http://localhost:50072/Logon/Logar/" + "> Faça seu login aqui!</a><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+                msg.Body = "<!DOCTYPE HTML><html><body><p>" + empresaCadastro.Nome + ",<br/>Seja bem-vinda(o)!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><a href= http://localhost:50072/LogonEmpresa/Logar/" + "> Faça seu login aqui!</a><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
                 msg.IsHtml = true;
                 msg.Subject = "E-mail de Confirmação - StarToUp";
                 msg.ToEmail = empresaCadastro.Email;

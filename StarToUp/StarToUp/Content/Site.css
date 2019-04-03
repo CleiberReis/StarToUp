@@ -42,9 +42,8 @@
 .botaoiconeusuario {
     height: 40px;
     width: 40px;
-}
+}
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select {
     max-width: 580px;
@@ -83,10 +82,11 @@ select {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
 }
 
-/* File Upload */
+/* Imagens Upload */
 .fake-shadow {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
+
 .fileUpload {
     position: relative;
     overflow: hidden;
@@ -106,6 +106,7 @@ select {
     opacity: 0;
     filter: alpha(opacity=0);
 }
+
 .img-preview, .img-preview2, .img-preview3 {
     height: 150px;
     width: 150px;
@@ -120,3 +121,158 @@ select {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+.panel {
+    border-radius: 0px;
+}
+
+
+/* CSS do login */
+.login_title {
+    margin: 0px;
+    text-align: center;
+    background: #efefef;
+    font-size: 18px;
+    padding: 20px 0px 20px 0px;
+}
+
+.login_block {
+    border-radius: 0px;
+}
+
+.login_text {
+    text-align: center;
+    font-size: 12px;
+    color: #8b8b8b;
+    margin: 10px 4px 22px 10px;
+    border-bottom: 1px solid #efefef;
+    padding: 12px 0px 24px 0px;
+}
+
+    .login_text span {
+        font-weight: bold;
+    }
+
+.err_cls {
+    color: red;
+}
+
+.login_block .form-control {
+    font-size: 17px;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0px;
+    border-left: 0px solid #ccc;
+    border-right: 0px solid red;
+    border-top: 0px solid red;
+    padding: 0px;
+    box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+    -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+}
+
+.login_button {
+    position: absolute;
+    bottom: 0px;
+    right: 13px;
+    width: 26%;
+    background: transparent;
+}
+
+.login_submit_btn {
+    background: transparent;
+    border-left: 1px solid #efefef !important;
+    margin-bottom: 11px;
+    border-bottom: 0px !important;
+    height: 36px;
+}
+
+.login_block .form-group label {
+    padding-left: 20px;
+}
+
+.forgot_password {
+    color: #f45044;
+}
+
+.button_login {
+    background-color: #4caf50;
+    color: white;
+    border: 0px;
+    padding: 6px 9px;
+    width: 145px;
+    height: 35px;
+}
+
+/* linked in css */
+.linkedin_bgcolor {
+    background: #385899;
+    margin: 0px;
+}
+
+    .linkedin_bgcolor a {
+        text-align: left;
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .linkedin_bgcolor a i {
+            background: #243b68;
+            padding: 20px;
+            color: #fff;
+            height: 50px;
+            width: 50px;
+        }
+/* google plus */
+.googleplus_bgcolor {
+    background: #de4936;
+    margin: 0px 0px 0px 0px;
+}
+
+    .googleplus_bgcolor a {
+        text-align: left;
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .googleplus_bgcolor a i {
+            background: #b72b19;
+            padding: 20px;
+            color: #fff;
+            height: 50px;
+            width: 50px;
+        }
+
+#social-login {
+    margin-bottom: -2px;
+}
+
+#login_form .container {
+    width: 48%;
+    margin-top: 7%;
+}
+
+.fb_left {
+    margin-left: 31%;
+}
+
+.g_plus {
+    margin-left: 31%;
+}
+
+.loginButton {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+/* password rest */
+.forgot_pass {
+    text-align: left;
+    font-size: 12px;
+    color: #8b8b8b;
+    margin: 10px 4px 0px 4px;
+    border-bottom: 0px solid #efefef;
+    padding: 12px 0px 24px 0px;
+}
+
+    .forgot_pass span {
+        font-weight: bold;
+    }

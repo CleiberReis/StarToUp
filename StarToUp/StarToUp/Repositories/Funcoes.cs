@@ -26,6 +26,7 @@ namespace StarToUp.Repositories
             HttpContext.Current.Session["Usuario"] = query.Email;
             return true;
         }
+
         public static StartupCadastro GetUsuario()
         {
             string _login = HttpContext.Current.User.Identity.Name;
@@ -52,7 +53,6 @@ namespace StarToUp.Repositories
             {
                 return null;
             }
-
         }
 
         public static StartupCadastro GetUsuario(string _login)
@@ -69,8 +69,8 @@ namespace StarToUp.Repositories
                                                    select u).SingleOrDefault();
                 return startupCadastro;
             }
-        }
 
+        }
         internal static bool AutenticarUsuario(object email, object senha)
         {
             throw new NotImplementedException();
@@ -88,4 +88,5 @@ namespace StarToUp.Repositories
             FormsAuthentication.SignOut();
         }
     }
+    
 }
