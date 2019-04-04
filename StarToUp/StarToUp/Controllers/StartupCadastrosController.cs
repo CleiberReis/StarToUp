@@ -104,7 +104,7 @@ namespace StarToUp.Controllers
                 else
                 {
                     ViewBag.Message = "Valid";
-                    return RedirectToAction("../Home/Index");
+                    return RedirectToAction("Create", "PerfilStartups");
                 }
             }
             ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", startupCadastro.TipoUsuarioID);
