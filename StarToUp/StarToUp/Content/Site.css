@@ -276,3 +276,7 @@ select {
     .forgot_pass span {
         font-weight: bold;
     }
+
+  #myNav li:not([disabled]){
+            cursor:pointer;
+        }

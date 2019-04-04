@@ -7,7 +7,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-<div class="container">
+    <div class="container">
     <div class="section-header text-center">
         <br/>
         <h2 class="title">Startup, Crie seu cadastro</h2>
@@ -47,9 +47,317 @@
             <button class="main-btn btn-block" type="submit" value="Cadastrar">Cadastrar</button>
             @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
 
-        </form>
+                </form>
+            </div>
+        </div> 
+
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    @*<div class="container">
+        <br/>
+        <div class="row form-group">
+            <div class="col-xs-12">
+                <ul class="nav nav-pills nav-justified thumbnail setup-panel" id="myNav">
+                    <li id="navStep1" class="li-nav active" step="#step-1">
+                        <a>
+                            <h4 class="list-group-item-heading">Passo 1</h4>
+                            <p class="list-group-item-text">Cadastro inicial - Email e Senha que será usado no Login</p>
+                        </a>
+                    </li>
+                    <li id="navStep2" class="li-nav disabled" step="#step-2">
+                        <a>
+                            <h4 class="list-group-item-heading">Passo 2</h4>
+                            <p class="list-group-item-text">Informações de contato da sua Startup</p>
+                        </a>
+                    </li>
+                    <li id="navStep3" class="li-nav disabled" step="#step-3">
+                        <a>
+                            <h4 class="list-group-item-heading">Step 3</h4>
+                            <p class="list-group-item-text">Nos conte mais sobre sua Starup</p>
+                        </a>
+                    </li>
+                    <li id="navStep4" class="li-nav disabled" step="#step-4">
+                        <a>
+                            <h4 class="list-group-item-heading">Passo Final</h4>
+                            <p class="list-group-item-text">Nos apresente seu MVP</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
+
+    <form class="container">
+        <div class="row setup-content" id="step-1">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <div class="section-header text-center">
+                        <br />
+                        <h2 class="title">Informações de Login</h2>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    </div>
+                    <!-- <form> -->
+                    <div class="container col-xs-12">
+                        <form class="form-signin">
+                            <span id="reauth-email" class="reauth-email"></span>
+                            <img class="img-circle img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
+                                    @*
+                                    @{
+                                        string logoTipo = ViewBag.FotoMensagem;
+                                        if (logoTipo != "")
+                                        {
+                                                            <span class="text-danger contenterror">
+                                                                @ViewBag.FotoMensagem
+                                                            </span>
+                                        }
+                                                                        }*@
+                                @*</div>
+                            </div>*@
+
+                            @*<div class="input">
+                                    @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
+                                </div>*@
+                            @*<br />
+                            <div>
+                                <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            </div>
+                            <br />
+                            <div>
+                                <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <br />
+                            <div>
+                                <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
+                                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            </div>
+                            <br />
+                            <div>
+                                <input type="password" name="senha" id="confsenha" class="input" placeholder="Confirmar Senha *" />
+                            </div>
+                            <br />*@ 
+                            @*<div class="captcha">
+                                <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
+                            </div>*@
+                            <br />
+                            @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de usu desse site.<br/><a href="#">Termos de Uso*</a></p>*@
+
+                        @*</form>
+                    </div>
+                    <input onclick="step1Next()" class="btn btn-md btn-info" value="Avançar >>">
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="container">
+        <div class="row setup-content" id="step-2">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <div class="section-header text-center">
+                        <br />
+                        <h2 class="title">Informações de Contato</h2>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="container col-xs-12">
+                        <div>
+                            <input type="text" name="cep" id="cep" class="form-control input" placeholder="CEP XX.XXX-XXX" />
+                            @*
+                            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="rua" id="rua" class="form-control input" placeholder="Digite a Rua *" />
+                            @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="bairro" id="bairro" class="form-control input" placeholder="Digite o Bairro *" />
+                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="numero" id="numero" class="form-control input" placeholder="Digite o Numero *" />
+                            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="complemento" id="complemento" class="form-control input" placeholder="Tem algum complemento?" />
+                            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="cidade" id="cidade" class="form-control input" placeholder="Em qual cidade fica sua Startup?" />
+                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="estado" id="estado" class="form-control input" placeholder="Em qual estado fica sua Startup?" />
+                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!--</form> -->
+                    <input onclick="prevStep()" class="btn btn-md btn-info" value="<< Voltar">
+                    <input onclick="step2Next()" class="btn btn-md btn-info" value="Avançar >>">
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="container">
+        <div class="row setup-content" id="step-3">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <h1 class="text-center"> STEP 3</h1>
+                    <div>
+                        <input type="text" name="objetivo" id="objetivo" class="form-control input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
+                        @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div>
+                        <input type="text" name="sobre" id="sobre" class="form-control input" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!" />
+                        @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 uploadImage">
+                            <img class="img-preview2" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="imagemLocal1" name="imagemLocal1" value="imagemLocal1" type="file" class="attachment_upload" />*@
+                                    @*@{
+                                        string imagemLocal1 = ViewBag.FotoMensagem;
+                                        if (imagemLocal1 != "")
+                                        {
+                                                                <span class="text-danger contenterror">
+                                                                    @ViewBag.FotoMensagem
+                                                                </span>
+                                        }
+                                                                                    }*@
+                                @*</div>
+                            </div>
+                            <p class="help-block">* Insira uma imagem do seu ambiente de trabalho.</p>
+                        </div>
+                        <div class="col-md-6 uploadImage">
+                            <img class="img-preview3" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="imagemLocal2" name="imagemLocal2" value="imagemLocal2" type="file" class="attachment_upload" />*@
+                                    @*@{
+                                        string imagemLocal2 = ViewBag.FotoMensagem;
+                                        if (imagemLocal2 != "")
+                                        {
+                                                                <span class="text-danger contenterror">
+                                                                    @ViewBag.FotoMensagem
+                                                                </span>
+                                        }
+                                                                                    }*@
+                                @*</div>
+                            </div>
+                            <p class="help-block">* Insira uma imagem do seu ambiente de trabalho.</p>
+                        </div>
+                    </div>
+
+                    <input onclick="prevStep()" class="btn btn-md btn-info" value="<< Voltar">
+                    <input onclick="step3Next()" class="btn btn-md btn-info" value="Avançar >>">
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="container">
+        <div class="row setup-content" id="step-4">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <h1 class="text-center"> STEP 4</h1>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-preview4" src="~/Content/img/mvp.png" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="imagemMVP1" name="imagemMVP1" value="imagemMVP1" type="file" class="attachment_upload" />*@
+                                    @*@{
+                                        string imagemMVP1 = ViewBag.FotoMensagem;
+                                        if (imagemMVP1 != "")
+                                        {
+                                                                <span class="text-danger contenterror">
+                                                                    @ViewBag.FotoMensagem
+                                                                </span>
+                                        }
+                                                                                    @*}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-preview5" src="~/Content/img/mvp.png" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="imagemMVP2" name="imagemMVP2" value="imagemMVP2" type="file" class="attachment_upload" />*@
+                                    @*@{
+                                        string imagemMVP2 = ViewBag.FotoMensagem;
+                                        if (imagemMVP2 != "")
+                                        {
+                                                                <span class="text-danger contenterror">
+                                                                    @ViewBag.FotoMensagem
+                                                                </span>
+                                        }
+                                                                                    }*@
+
+                                @*</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-preview6" src="~/Content/img/mvp.png" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="imagemMVP3" name="imagemMVP3" value="imagemMVP3" type="file" class="attachment_upload">*@
+                                    @*@{
+                                        string imagemMVP3 = ViewBag.FotoMensagem;
+                                        if (imagemMVP3 != "")
+                                        {
+                                                                <span class="text-danger contenterror">
+                                                                    @ViewBag.FotoMensagem
+                                                                </span>
+                                        }
+                                                                                    }*@
+                                @*</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-preview7" src="~/Content/img/mvp.png" title="Preview Logo" />
+                            <div class="input-group-btn">
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                    <input id="imagemMVP4" name="imagemMVP4" value="imagemMVP4" type="file" class="attachment_upload">*@
+                                    @*@{
+                                        string imagemMVP4 = ViewBag.FotoMensagem;
+                                        if (imagemMVP4 != "")
+                                        {
+                                                                <span class="text-danger contenterror">
+                                                                    @ViewBag.FotoMensagem
+                                                                </span>
+                                        }
+                                                                                    }*@
+                                @*</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input onclick="prevStep()" class="btn btn-md btn-info" value="<< Voltar">
+                    <button class="btn btn-md btn-primary" type="submit" value="Send">Finalizar Cadastro !</button>
+                </div>
+            </div>
+        </div>
+    </form>*@
 
 }
 <footer id="footer" class="sm-padding bg-dark">
@@ -61,7 +369,7 @@
             <div class="col-md-12 col-sm-12">
                 <!-- footer logo -->
                 <div class="footer-logo">
-                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
                 </div>
                 <!-- /footer logo -->
                 <!-- footer follow -->
@@ -103,4 +411,186 @@
         });
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        var currentStep = 1;
+
+        $(document).ready(function () {
+
+            $('.li-nav').click(function () {
+
+                var $targetStep = $($(this).attr('step'));
+                currentStep = parseInt($(this).attr('id').substr(7));
+
+                if (!$(this).hasClass('disabled')) {
+                    $('.li-nav.active').removeClass('active');
+                    $(this).addClass('active');
+                    $('.setup-content').hide();
+                    $targetStep.show();
+                }
+            });
+
+            $('#navStep1').click();
+
+        });
+
+
+
+        function step1Next() {
+            //You can make only one function for next, and inside you can check the current step
+            if (true) {//Insert here your validation of the first step
+                currentStep += 1;
+                $('#navStep' + currentStep).removeClass('disabled');
+                $('#navStep' + currentStep).click();
+            }
+        }
+
+        function prevStep() {
+            //Notice that the btn prev not exist in the first step
+            currentStep -= 1;
+            $('#navStep' + currentStep).click();
+        }
+
+        function step2Next() {
+            if (true) {
+                $('#navStep3').removeClass('disabled');
+                $('#navStep3').click();
+            }
+        }
+
+        function step3Next() {
+            if (true) {
+                $('#navStep4').removeClass('disabled');
+                $('#navStep4').click();
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var brand = document.getElementById('logoTipo');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#logoTipo").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemLocal1');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview2').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemLocal1").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemLocal2');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview3').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemLocal2").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP1');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview4').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP1").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP2');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview5').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP2").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP3');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview6').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP3").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP4');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview7').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP4").change(function () {
+                readURL(this);
+            });
+        });
+
+    </script>
 }
