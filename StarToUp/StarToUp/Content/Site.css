@@ -116,7 +116,7 @@ select {
 .img-preview, .img-preview2, .img-preview3 {
     height: 150px;
     width: 150px;
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 0px 0px 6px 0px black;
     margin-bottom: 10px;
 }
 
