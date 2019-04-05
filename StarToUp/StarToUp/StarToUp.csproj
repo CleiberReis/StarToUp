@@ -157,9 +157,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904050515418_atualizado.cs" />
-    <Compile Include="Migrations\201904050515418_atualizado.Designer.cs">
-      <DependentUpon>201904050515418_atualizado.cs</DependentUpon>
+    <Compile Include="Migrations\201904050559114_atualizado.cs" />
+    <Compile Include="Migrations\201904050559114_atualizado.Designer.cs">
+      <DependentUpon>201904050559114_atualizado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -389,6 +389,7 @@
     <Content Include="Views\StartupCadastros\Details.cshtml" />
     <Content Include="Views\StartupCadastros\Edit.cshtml" />
     <Content Include="Views\StartupCadastros\Index.cshtml" />
+    <Content Include="Views\StartupCadastros\IndexStartups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -409,8 +410,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904050515418_atualizado.resx">
-      <DependentUpon>201904050515418_atualizado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904050559114_atualizado.resx">
+      <DependentUpon>201904050559114_atualizado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -9,9 +9,9 @@
 @using (Html.BeginForm("Create", "StartupCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
 
 
     <div class="container">
@@ -276,6 +276,16 @@
         </div>
     </div>
     <br />
+
+    <div class="col-md-8 col-md-offset-2">
+        <form class="contact-form">
+            <input type="text" class="input" placeholder="Nome">
+            <input type="email" class="input" placeholder="Email">
+            <input type="text" class="input" placeholder="Assunto">
+            <textarea class="input" placeholder="Mensagem"></textarea>
+            <button class="main-btn">Enviar mensagem</button>
+        </form>
+    </div>
 }
 <footer id="footer" class="sm-padding bg-dark">
     <!-- Container -->

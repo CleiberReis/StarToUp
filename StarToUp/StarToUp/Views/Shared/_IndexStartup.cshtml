@@ -24,12 +24,12 @@
     <!-- Header -->
     <header>
         <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
+        @*<div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
             <div class="overlay"></div>
-        </div>
+        </div>*@
         <!-- /Background Image -->
         <!-- Nav -->
-        <nav id="nav" class="navbar nav-transparent">
+        <nav id="nav" class="navbar">
             <div class="container">
 
                 <div class="navbar-header">
@@ -48,16 +48,17 @@
 
                 <ul class="main-nav nav navbar-nav navbar-right">
                     @*<li><a href="#home">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>*@
+                    <li>@Html.ActionLink("Index", "Index", "StartupCadastros")</li>
                     <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
-                    <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
-                    <li class="has-dropdown">
+                    <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
+                    @*<li class="has-dropdown">
                         <a href="#">Sign In</a>
                         <ul class="dropdown">
                             <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
                             <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
                         </ul>
-                    </li>
-                    @*<li>@Html.ActionLink("Sair", "Logoff", "StartupCadastros")</li>*@
+                    </li>*@
+                    <li>@Html.ActionLink("Logoff", "Logoff", "StartupCadastros")</li>
                 </ul>
                         <!-- /Main navigation -->
                     @*}
