@@ -9,9 +9,9 @@
 @using (Html.BeginForm("Create", "StartupCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
     <div class="container">
@@ -22,28 +22,7 @@
         </div>
         <form class="form-signin">
             <div class="row">
-                <div class="cardLogin">
-                    <div class="col-md-6">
-                        <div>
-                            <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Startup *" />
-                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
-                        <div>
-                            <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
-                        <div>
-                            <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
-                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
-                        <div>
-                            <input type="password" name="senha" id="confsenha" class="input" placeholder="Confirmar Senha *" />
-                        </div>
-                        <br />
-                    </div>
+                <div @*class="cardLogin"*@>
                     <div class="col-md-6 uploadImage">
                         <img class="img-circle img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
                         <div class="input-group-btn">
@@ -51,13 +30,13 @@
                                 <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                                 <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
                                 @{
-                                    string logoTipo = ViewBag.FotoMensagem;
-                                    if (logoTipo != "")
-                                    {
-                                        <span class="text-danger contenterror">
-                                            @ViewBag.FotoMensagem
-                                        </span>
-                                    }
+    string logoTipo = ViewBag.FotoMensagem;
+    if (logoTipo != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                                 }
                             </div>
                         </div>
@@ -67,11 +46,33 @@
                             </div>*@
                         <br />
                     </div>
+                    <div class="col-md-6">
+                        <div>
+                            <input type="text" name="nome" id="nome" class="form-control input" placeholder="Nome da Startup *" />
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="email" id="email" class="form-control input" placeholder="E-mail de Contato *" />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="password" name="senha" id="senha" class="form-control input" placeholder="Senha *" />
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="password" name="senha" id="confsenha" class="form-control input" placeholder="Confirmar Senha *" />
+                        </div>
+                        <br />
+                    </div>
                 </div>
             </div>
+            <hr class="divisoria" />
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card">
+                    <div @*class="card"*@>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @*Endereço*@
                         <div>
@@ -113,10 +114,8 @@
 
 
                 @*LogoTipo*@
-
-
                 <div class="col-md-6 uploadImage">
-                    <div class="card">
+                    <div @*class="card"*@>
                         <div class="row">
                             <div class="col-md-6 uploadImage">
                                 <img class="img-preview2" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
@@ -125,13 +124,13 @@
                                         <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                                         <input id="imagemLocal1" name="imagemLocal1" value="imagemLocal1" type="file" class="attachment_upload" />
                                         @{
-                                            string imagemLocal1 = ViewBag.FotoMensagem;
-                                            if (imagemLocal1 != "")
-                                            {
-                                                <span class="text-danger contenterror">
-                                                    @ViewBag.FotoMensagem
-                                                </span>
-                                            }
+    string imagemLocal1 = ViewBag.FotoMensagem;
+    if (imagemLocal1 != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                                         }
                                     </div>
                                 </div>
@@ -144,13 +143,13 @@
                                         <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                                         <input id="imagemLocal2" name="imagemLocal2" value="imagemLocal2" type="file" class="attachment_upload" />
                                         @{
-                                            string imagemLocal2 = ViewBag.FotoMensagem;
-                                            if (imagemLocal2 != "")
-                                            {
-                                                <span class="text-danger contenterror">
-                                                    @ViewBag.FotoMensagem
-                                                </span>
-                                            }
+    string imagemLocal2 = ViewBag.FotoMensagem;
+    if (imagemLocal2 != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                                         }
                                     </div>
                                 </div>
@@ -179,17 +178,18 @@
                         </div>
                         <br />
                         <div>
-                            <input type="text" name="tamanhoTime" id="tamanhoTime" class="form-control input" placeholder="Qual a média de pessoas no seu time?" />
+                            <input type="text" name="tamanhoTime" id="tamanhoTime" class="input" placeholder="Qual a média de pessoas no seu time?" />
                             @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
                         </div>
                         <br />
                     </div>
                 </div>
+
             </div>
             @*FimLogoTipo*@
             <br />
 
-
+            <hr class="divisoria" />
             @*Imagens do MVP*@
 
 
@@ -201,13 +201,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP1" name="imagemMVP1" value="imagemMVP1" type="file" class="attachment_upload" />
                             @{
-                                string imagemMVP1 = ViewBag.FotoMensagem;
-                                if (imagemMVP1 != "")
-                                {
-                                    <span class="text-danger contenterror">
-                                        @ViewBag.FotoMensagem
-                                    </span>
-                                }
+    string imagemMVP1 = ViewBag.FotoMensagem;
+    if (imagemMVP1 != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                             }
                         </div>
                     </div>
@@ -219,15 +219,14 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP2" name="imagemMVP2" value="imagemMVP2" type="file" class="attachment_upload" />
                             @{
-                                string imagemMVP2 = ViewBag.FotoMensagem;
-                                if (imagemMVP2 != "")
-                                {
-                                    <span class="text-danger contenterror">
-                                        @ViewBag.FotoMensagem
-                                    </span>
-                                }
+    string imagemMVP2 = ViewBag.FotoMensagem;
+    if (imagemMVP2 != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                             }
-
                         </div>
                     </div>
                 </div>
@@ -238,13 +237,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP3" name="imagemMVP3" value="imagemMVP3" type="file" class="attachment_upload">
                             @{
-                                string imagemMVP3 = ViewBag.FotoMensagem;
-                                if (imagemMVP3 != "")
-                                {
-                                    <span class="text-danger contenterror">
-                                        @ViewBag.FotoMensagem
-                                    </span>
-                                }
+    string imagemMVP3 = ViewBag.FotoMensagem;
+    if (imagemMVP3 != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                             }
                         </div>
                     </div>
@@ -256,13 +255,13 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="imagemMVP4" name="imagemMVP4" value="imagemMVP4" type="file" class="attachment_upload">
                             @{
-                                string imagemMVP4 = ViewBag.FotoMensagem;
-                                if (imagemMVP4 != "")
-                                {
-                                    <span class="text-danger contenterror">
-                                        @ViewBag.FotoMensagem
-                                    </span>
-                                }
+    string imagemMVP4 = ViewBag.FotoMensagem;
+    if (imagemMVP4 != "")
+    {
+        <span class="text-danger contenterror">
+            @ViewBag.FotoMensagem
+        </span>
+    }
                             }
                         </div>
                     </div>
@@ -276,30 +275,14 @@
         </div>
     </div>
     <br />
-
-    <div class="col-md-8 col-md-offset-2">
-        <form class="contact-form">
-            <input type="text" class="input" placeholder="Nome">
-            <input type="email" class="input" placeholder="Email">
-            <input type="text" class="input" placeholder="Assunto">
-            <textarea class="input" placeholder="Mensagem"></textarea>
-            <button class="main-btn">Enviar mensagem</button>
-        </form>
-    </div>
 }
 <footer id="footer" class="sm-padding bg-dark">
-    <!-- Container -->
     <div class="container-fluid">
-        <br /><br />
-        <!-- Row -->
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <!-- footer logo -->
                 <div class="footer-logo">
                     <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
                 </div>
-                <!-- /footer logo -->
-                <!-- footer follow -->
                 <ul class="footer-follow">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -308,19 +291,14 @@
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                 </ul>
-                <!-- /footer follow -->
-                <!-- footer copyright -->
                 <div class="footer-copyright">
                     <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
                 </div>
-                <!-- /footer copyright -->
             </div>
         </div>
-        <!-- /Row -->
     </div>
-    <!-- /Container -->
 </footer>
-<!-- /Footer -->
+
 @section scripts{
     <script>
         $(function () {

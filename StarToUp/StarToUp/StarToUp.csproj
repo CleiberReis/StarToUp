@@ -272,6 +272,7 @@
     <Content Include="Content\img\excluir.png" />
     <Content Include="Content\img\foto.png" />
     <Content Include="Content\img\fotoUpload.png" />
+    <Content Include="Content\img\linha.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo1.png" />

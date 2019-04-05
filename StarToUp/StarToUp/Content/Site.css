@@ -3,15 +3,11 @@
     padding-bottom: 0px;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -63,19 +59,17 @@ select {
     padding: 40px 40px;
 }
 
-.card, .cardLogin{
-    background-color: #f3f3f3;
-    padding: 20px 25px 30px;
-    margin: 0 auto 25px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+.divisoria {
+    border: 0;
+    height: 2px;
+    background-color:aqua; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    /*height:3px;
+	border-width:0;
+	background: transparent url(img/linha.png) center no-repeat;*/
 }
 
-.cardLogin {
+.card {
     background-color: #f3f3f3;
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
@@ -85,7 +79,6 @@ select {
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    height: 320px;
 }
 
 .form-signin .form-control:focus {
@@ -128,17 +121,17 @@ select {
 }
 
 .img-preview4, .img-preview5, .img-preview6, .img-preview7 {
-    height: 460px;
-    width: 250px;
-    box-shadow: 2px 2px 2px black;
+    height: 380px;
+    width: 220px;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-radius: 10px; 
+    opacity: 0.8;
 }
 
 .panel {
     border-radius: 0px;
 }
-
 
 /* CSS do login */
 .login_title {
@@ -289,4 +282,3 @@ select {
     .forgot_pass span {
         font-weight: bold;
     }
-
