@@ -11,6 +11,6 @@ namespace StarToUp.Models
         public string Descricao { get; set; }
 
         //Relacionamento com Startup
-        public virtual ICollection<PerfilStartup> PerfilStartups { get; set; }
+        public virtual ICollection<StartupCadastro> StartupCadastros { get; set; }
     }
 }

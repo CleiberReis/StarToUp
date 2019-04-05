@@ -153,14 +153,13 @@
     <Compile Include="Controllers\LogonController.cs" />
     <Compile Include="Controllers\LogonEmpresaController.cs" />
     <Compile Include="Controllers\PerfilEmpresasController.cs" />
-    <Compile Include="Controllers\PerfilStartupsController.cs" />
     <Compile Include="Controllers\StartupCadastrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904032215211_atual.cs" />
-    <Compile Include="Migrations\201904032215211_atual.Designer.cs">
-      <DependentUpon>201904032215211_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201904050515418_atualizado.cs" />
+    <Compile Include="Migrations\201904050515418_atualizado.Designer.cs">
+      <DependentUpon>201904050515418_atualizado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -169,10 +168,8 @@
     <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\PerfilEmpresa.cs" />
-    <Compile Include="Models\PerfilStartup.cs" />
     <Compile Include="Models\Segmentacao.cs" />
     <Compile Include="Models\StartupCadastro.cs" />
-    <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CaptchaResponse.cs" />
     <Compile Include="Repositories\Funcoes.cs" />
@@ -352,11 +349,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\StartupCadastros\Create.cshtml" />
-    <Content Include="Views\StartupCadastros\Delete.cshtml" />
-    <Content Include="Views\StartupCadastros\Details.cshtml" />
-    <Content Include="Views\StartupCadastros\Edit.cshtml" />
-    <Content Include="Views\StartupCadastros\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Logon\Logar.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
@@ -382,12 +374,6 @@
     <Content Include="Views\Eventos\Details.cshtml" />
     <Content Include="Views\Eventos\Edit.cshtml" />
     <Content Include="Views\Eventos\Index.cshtml" />
-    <Content Include="Views\PerfilStartups\Create.cshtml" />
-    <Content Include="Views\PerfilStartups\Delete.cshtml" />
-    <Content Include="Views\PerfilStartups\Details.cshtml" />
-    <Content Include="Views\PerfilStartups\Edit.cshtml" />
-    <Content Include="Views\PerfilStartups\Index.cshtml" />
-    <Content Include="Views\Home\IndexStartup.cshtml" />
     <Content Include="Views\Contatos\Contato.cshtml" />
     <Content Include="Views\Contatos\Create.cshtml" />
     <Content Include="Views\Contatos\Delete.cshtml" />
@@ -398,6 +384,11 @@
     <Content Include="Views\Shared\_IndexEmpresa.cshtml" />
     <Content Include="Views\LogonEmpresa\Logar.cshtml" />
     <Content Include="Views\LogonEmpresa\AcessoNegadoEmpresa.cshtml" />
+    <Content Include="Views\StartupCadastros\Create.cshtml" />
+    <Content Include="Views\StartupCadastros\Delete.cshtml" />
+    <Content Include="Views\StartupCadastros\Details.cshtml" />
+    <Content Include="Views\StartupCadastros\Edit.cshtml" />
+    <Content Include="Views\StartupCadastros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -418,8 +409,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904032215211_atual.resx">
-      <DependentUpon>201904032215211_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904050515418_atualizado.resx">
+      <DependentUpon>201904050515418_atualizado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

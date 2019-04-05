@@ -24,8 +24,8 @@ namespace StarToUp.Controllers
             //{
             //    return RedirectToAction("Logar", "Logon");
             //}
-            IEnumerable<PerfilStartup> perfilStartups = db.PerfilStartups.ToList();
-            ViewBag.PerfilStartups = perfilStartups;
+            //IEnumerable<PerfilStartup> perfilStartups = db.PerfilStartups.ToList();
+            //ViewBag.PerfilStartups = perfilStartups;
            
             IEnumerable<Evento> eventos = db.Eventoes.ToList();
             ViewBag.Eventos = eventos;

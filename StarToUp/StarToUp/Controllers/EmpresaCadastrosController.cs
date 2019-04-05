@@ -19,8 +19,7 @@ namespace StarToUp.Controllers
         // GET: EmpresaCadastros
         public ActionResult Index()
         {
-            var empresaCadastros = db.EmpresaCadastros.Include(e => e.TipoUsuario);
-            return View(empresaCadastros.ToList());
+            return View(db.EmpresaCadastros.ToList()); ;
         }
 
         // GET: EmpresaCadastros/Details/5
@@ -41,7 +40,6 @@ namespace StarToUp.Controllers
         // GET: EmpresaCadastros/Create
         public ActionResult Create()
         {
-            ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao");
             return View();
         }
 
@@ -50,7 +48,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,TipoUsuarioID")] EmpresaCadastro empresaCadastro)
+        public ActionResult Create([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha")] EmpresaCadastro empresaCadastro)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +107,6 @@ namespace StarToUp.Controllers
                 
             }
 
-            ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", empresaCadastro.TipoUsuarioID);
             return View(empresaCadastro);
         }
 
@@ -125,7 +122,6 @@ namespace StarToUp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", empresaCadastro.TipoUsuarioID);
             return View(empresaCadastro);
         }
 
@@ -134,7 +130,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,TipoUsuarioID")] EmpresaCadastro empresaCadastro)
+        public ActionResult Edit([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha")] EmpresaCadastro empresaCadastro)
         {
             if (ModelState.IsValid)
             {
@@ -142,7 +138,6 @@ namespace StarToUp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TipoUsuarioID = new SelectList(db.TipoUsuarios, "TipoUsuarioID", "Descricao", empresaCadastro.TipoUsuarioID);
             return View(empresaCadastro);
         }
 

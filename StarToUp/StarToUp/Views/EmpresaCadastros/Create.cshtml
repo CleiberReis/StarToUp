@@ -16,11 +16,6 @@
         <div class="card card-container">
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <div class="input">
-                    @Html.DropDownList("TipoUsuarioID", null, "Você é uma Empresa ou Startup?", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.TipoUsuarioID, "", new { @class = "text-danger" })
-                </div>
-                <br />
                 <div>
                     <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Empresa *" />
                     @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })

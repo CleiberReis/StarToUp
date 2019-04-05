@@ -16,14 +16,6 @@ namespace StarToUp.Migrations
 
         protected override void Seed(StarToUp.Models.Context context)
         {
-            IList<TipoUsuario> tipoUsuarios = new List<TipoUsuario>();
-            tipoUsuarios.Add(new TipoUsuario() { Descricao = "Empresa"});
-            tipoUsuarios.Add(new TipoUsuario() { Descricao = "Startup" });
-            foreach (TipoUsuario tipoUsuario in tipoUsuarios)
-            {
-                context.TipoUsuarios.AddOrUpdate(x => x.TipoUsuarioID, tipoUsuario);
-            }
-
             IList<Segmentacao> segmentacoes = new List<Segmentacao>();
             segmentacoes.Add(new Segmentacao() { Descricao = "Saúde" });
             segmentacoes.Add(new Segmentacao() { Descricao = "Educação" });
