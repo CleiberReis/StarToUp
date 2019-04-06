@@ -1,8 +1,10 @@
-﻿using StarToUp.Models;
+﻿using Newtonsoft.Json;
+using StarToUp.Models;
 using StarToUp.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -24,6 +26,7 @@ namespace StarToUp.Controllers
                 ViewBag.Error = "Nome de usuário e/ou senha inválida";
                 return View();
             }
+
             return RedirectToAction("Index", "StartupCadastros");
         }
 

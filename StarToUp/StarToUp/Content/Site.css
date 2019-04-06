@@ -1,4 +1,5 @@
-﻿body {
+﻿@import url('Site.css');
+body {
     padding-top: 0px;
     padding-bottom: 0px;
 }
@@ -51,7 +52,7 @@ select {
 }
 
 .captcha {
-    margin-left: 100px;
+    margin-left: 450px;
 }
 
 .card-container.card {

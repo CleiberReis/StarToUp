@@ -5,202 +5,451 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "StartupCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>StartupCadastro</h4>
-        <hr />
+
+    <div class="container">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.StartupCadastroID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="container col-md-6">
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string logoTipo = Model.Logotipo;
+                            if (logoTipo != string.Empty)
+                            {
+                                if (logoTipo != null)
+                                {
+                                    string file = logoTipo;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                                else
+                                {
+                                    <div class="col-md-10">
+                                        <input type="file" id="logoTipo" name="logoTipo" />
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="col-md-10">
+                                    <input type="file" id="logoTipo" name="logoTipo" />
+                                </div>
+                            }
+                            logoTipo = ViewBag.FotoMensagem;
+                            if (logoTipo != "")
+                            {
+                                <span class="text-danger contenterror">
+                                    @ViewBag.FotoMensagem
+                                </span>
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
+                    </div>
+                    @Html.ActionLink("Excluir", "DeleteFile", "StartupCadastros", new { id = Model.StartupCadastroID, arquivo = "Foto" }, null)
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
+                <br />
+                <h4>Informações da Empresa:</h4>
+                <div>
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                    <b>Nome da Statup</b>
+                </div>
+                <br />
+                <div>
+                    @Html.EditorFor(model => model.DataFundacao, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
+                    <b>Data da Fundação</b>
+                </div>
+                <br />
+                <div>
+                    @Html.EditorFor(model => model.TamanhoTime, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
+                    <b>Tamanho do Time</b>
+                </div>
+                <br />
+                <div>
+                    @Html.DropDownList("SegmentacaoID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                    <b>Segmentação</b>
+                </div>
+                <br />
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Rua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Complemento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sobre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sobre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Objetivo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="col-md-6">
+            <div>
                 @Html.EditorFor(model => model.Objetivo, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                <b>Objetivo</b>
+            </div>
+            <br />
+            <div>
+                @Html.EditorFor(model => model.Sobre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                <b>Sobre</b>
             </div>
         </div>
+        <div>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            <div class="container col-md-6">
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemLocal1 = Model.ImagemLocal1;
+                            if (imagemLocal1 != string.Empty)
+                            {
+                                if (imagemLocal1 != null)
+                                {
+                                    string file = imagemLocal1;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview1" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                                else
+                                {
+                                    <div class="col-md-10">
+                                        <input type="file" id="imagemLocal1" name="imagemLocal1" />
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="col-md-10">
+                                    <input type="file" id="imagemLocal1" name="imagemLocal1" />
+                                </div>
+                            }
+                            imagemLocal1 = ViewBag.FotoMensagem;
+                            if (imagemLocal1 != "")
+                            {
+                                <span class="text-danger contenterror">
+                                    @ViewBag.FotoMensagem
+                                </span>
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="imagemLocal1" name="imagemLocal1" value="imagemLocal1" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DataFundacao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DataFundacao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemLocal2 = Model.ImagemLocal2;
+                            if (imagemLocal2 != string.Empty)
+                            {
+                                if (imagemLocal2 != null)
+                                {
+                                    string file = imagemLocal2;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview3" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="imagemLocal2" name="imagemLocal2" value="imagemLocal2" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
+
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP1 = Model.ImagemMVP1;
+                            if (imagemMVP1 != string.Empty)
+                            {
+                                if (imagemMVP1 != null)
+                                {
+                                    string file = imagemMVP1;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview4" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="imagemMVP1" name="imagemMVP1" value="imagemMVP1" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
+
+
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP2 = Model.ImagemMVP2;
+                            if (imagemMVP2 != string.Empty)
+                            {
+                                if (imagemMVP2 != null)
+                                {
+                                    string file = imagemMVP2;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview5" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="imagemMVP2" name="imagemMVP2" value="imagemMVP2" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
+
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP3 = Model.ImagemMVP3;
+                            if (imagemMVP3 != string.Empty)
+                            {
+                                if (imagemMVP3 != null)
+                                {
+                                    string file = imagemMVP3;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview6" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="imagemMVP3" name="imagemMVP3" value="imagemMVP3" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
+
+
+                <div class="col-md-6 uploadImage">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP4 = Model.ImagemMVP4;
+                            if (imagemMVP4 != string.Empty)
+                            {
+                                if (imagemMVP4 != null)
+                                {
+                                    string file = imagemMVP4;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-circle img-preview7" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                        <input id="imagemMVP4" name="imagemMVP4" value="imagemMVP4" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Insira o Logo da sua Startup acima.</p>
+                    <br />
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TamanhoTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TamanhoTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Logotipo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Logotipo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Logotipo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemLocal1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemLocal1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemLocal1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemLocal2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemLocal2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemLocal2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP3, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP3, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImagemMVP4, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImagemMVP4, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImagemMVP4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SegmentacaoID, "SegmentacaoID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("SegmentacaoID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <br />
+        <div class="text-center">
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Editar">Atualizar Perfil</button>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href='@Url.Action("Index", "StartupCadastros")'><img src='@Url.Content("~/Content/img/voltar.png")' class="botaoicone" title="Voltar" />Voltar</a>
 </div>
+
+
+@section scripts{
+    <script>
+        $(function () {
+            $('input, select, textarea').each(function () {
+                if ($(this).hasClass('input-validation-error'))
+                    $(this).focus();
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('logoTipo');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#logoTipo").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemLocal1');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview2').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemLocal1").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemLocal2');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview3').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemLocal2").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP1');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview4').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP1").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP2');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview5').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP2").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP3');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview6').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP3").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP4');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview7').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP4").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+}
