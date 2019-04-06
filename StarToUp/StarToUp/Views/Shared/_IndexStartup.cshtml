@@ -23,23 +23,13 @@
 <body>
     <!-- Header -->
     <header>
-        <!-- Background Image -->
-        @*<div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
-            <div class="overlay"></div>
-        </div>*@
-        <!-- /Background Image -->
-        <!-- Nav -->
-        <nav id="nav" class="navbar">
+        <nav id="nav" class="navbar nav-transparent">
             <div class="container">
-
                 <div class="navbar-header">
-                    <!-- Collapse nav button -->
                     <div class="nav-collapse">
-                        <span></span>
+                        <span>A</span>
                     </div>
-                    <!-- /Collapse nav button -->
                 </div>
-
                 <!--  Main navigation  -->
                 @*@{
                     StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
@@ -51,34 +41,43 @@
                     <li>@Html.ActionLink("Index", "Index", "StartupCadastros")</li>
                     <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
                     <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
-                    @*<li class="has-dropdown">
-                        <a href="#">Sign In</a>
-                        <ul class="dropdown">
-                            <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
-                            <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
-                        </ul>
-                    </li>*@
-                    <li>@Html.ActionLink("Logoff", "Logoff", "StartupCadastros")</li>
+                    <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+
                 </ul>
-                        <!-- /Main navigation -->
-                    @*}
-                    else
-                    {
-                        <script type="text/javascript">
-                            window.location.href = "@Url.Action("AcessoNegado","Logon")";
-                        </script>
-                    }
-                }*@
+                <!-- /Main navigation -->
+                @*}
+                        else
+                        {
+                            <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                            </script>
+                        }
+                    }*@
 
             </div>
         </nav>
         <!-- /Nav -->
-
     </header>
-
+    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Deseja sair da sessão?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                    <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "StartupCadastros")</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- /Numbers -->
     @RenderBody()
-   
+
     <!-- jQuery Plugins -->
     @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/jquery")

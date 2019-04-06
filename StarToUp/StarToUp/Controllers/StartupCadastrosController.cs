@@ -40,40 +40,41 @@ namespace StarToUp.Controllers
             var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
             return View(startupCadastros.ToList());
         }
-            //public ActionResult Login()
-            //{
-            //    return View();
-            //}
 
-            //public ActionResult Logoff()
-            //{
-            //    StarToUp.Repositories.Funcoes.Deslogar();
-            //    return RedirectToAction("Index", "Home");
-            //}
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
 
-            //[HttpPost]
-            //[ValidateAntiForgeryToken]
-            //public ActionResult Login(StartupCadastro u)
-            //{
-            //    // esta action trata o post (login)
-            //    if (ModelState.IsValid) //verifica se é válido
-            //    {
-            //        using (StartupCadastrosController dc = new StartupCadastrosController())
-            //        {
-            //            var v = dc.StartupCadastros.Where(a => a.NomeUsuario.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
-            //            if (v != null)
-            //            {
-            //                Session["StartupCadastroID"] = v.Id.ToString();
-            //                Session["nome"] = v.NomeUsuario.ToString();
-            //                return RedirectToAction("Index", "IndexStartup");
-            //            }
-            //        }
-            //    }
-            //    return View(u);
-            //}
+        //public ActionResult Logoff()
+        //{
+        //    StarToUp.Repositories.Funcoes.Deslogar();
+        //    return RedirectToAction("Index", "Home");
+        //}
 
-            // GET: StartupCadastros/Details/5
-            public ActionResult Details(int? id)
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(StartupCadastro u)
+        //{
+        //    // esta action trata o post (login)
+        //    if (ModelState.IsValid) //verifica se é válido
+        //    {
+        //        using (StartupCadastrosController dc = new StartupCadastrosController())
+        //        {
+        //            var v = dc.StartupCadastros.Where(a => a.NomeUsuario.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
+        //            if (v != null)
+        //            {
+        //                Session["StartupCadastroID"] = v.Id.ToString();
+        //                Session["nome"] = v.NomeUsuario.ToString();
+        //                return RedirectToAction("Index", "IndexStartup");
+        //            }
+        //        }
+        //    }
+        //    return View(u);
+        //}
+
+        // GET: StartupCadastros/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
