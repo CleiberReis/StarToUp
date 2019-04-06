@@ -26,7 +26,8 @@ namespace StarToUp.Controllers
             //}
             //IEnumerable<PerfilStartup> perfilStartups = db.PerfilStartups.ToList();
             //ViewBag.PerfilStartups = perfilStartups;
-           
+
+            IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
             IEnumerable<Evento> eventos = db.Eventoes.ToList();
             ViewBag.Eventos = eventos;
             return View();
