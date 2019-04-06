@@ -130,6 +130,13 @@ select {
     opacity: 0.8;
 }
 
+.imgMap {
+    margin-top: 10px;
+    width: 500px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
 .panel {
     border-radius: 0px;
 }
