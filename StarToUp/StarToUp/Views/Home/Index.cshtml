@@ -1,6 +1,6 @@
 ﻿@{
     IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
-    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.startupCadastros;
+    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.StartupCadastros;
     ViewBag.Title = "Home Page";
 }
 
@@ -83,27 +83,29 @@
             <!-- Work -->
             <!-- /Work -->
 
-            @*@foreach (var item in startupCadastros)
+            @foreach (var item in startupCadastros)
             {
                 <!-- blog -->
                 <div class="col-md-4 col-xs-6 work">
                     <div class="col-md-4 col-xs-6 work">
-                        @{ string fotoStartups = item.Logotipo;
-                            if (fotoStartups != string.Empty)
+                        @{ string logoTipo = item.Logotipo;
+                            if (logoTipo != string.Empty)
                             {
-                                if (fotoStartups != null)
+                                if (logoTipo != null)
                                 {
-                                    string file = fotoStartups;
+                                    string file = logoTipo;
                                     string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                    <img style="width: 250px; height: 260px;" src='@Url.Content(path)' title="Foto" /><br />
+                                    <img style="width: 250px; height: 260px;" src='@Url.Content(path)' title="LogoTipo" /><br />
                                 }
                             }
                         }
                         <div class="overlay" style="width: 290px; height: 300px;"></div>
                         <div class="work-content">
-                            <span>@Html.DisplayNameFor(modelItem => item.Nome)</span>
+                            <span>@Html.DisplayFor(modelItem => item.Nome)</span>
+                            <br />
+                            <span>@Html.DisplayFor(modelItem => item.Objetivo)</span>
                             <div class="work-link">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -112,7 +114,7 @@
 
                 </div>
                 <!-- /Row -->
-            }*@
+            }
 
         </div>
         <!-- /Container -->
