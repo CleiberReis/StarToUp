@@ -36,6 +36,11 @@ body {
     width: 22px;
 }
 
+.visualizacao {
+    height: 40px;
+    width: 40px;
+}
+
 .botaoiconeusuario {
     height: 40px;
     width: 40px;

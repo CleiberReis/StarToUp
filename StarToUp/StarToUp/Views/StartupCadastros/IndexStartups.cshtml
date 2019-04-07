@@ -5,6 +5,50 @@
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
 
+<!-- Header -->
+<header>
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                if (startupCadastro != null)
+                {
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
+                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
+                        <li class="has-dropdown">
+                            <a href="">@startupCadastro.Nome</a>
+                            <ul class="dropdown">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })">Editar</a></li>
+                                }
+                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
+
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header>
+
 <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
     <div class="overlay"></div>
 </div>
@@ -14,67 +58,69 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     </div>
 </div>
-<div class="row linhaunderline">
-    <div class="col-md-2">
-        <b>Nome Startup</b>
-    </div>
-    <div class="col-md-2">
-        <b>Segmentação</b>
-    </div>
-    <div class="col-md-2 acoesadireita">
-        <b>Ações</b>
-    </div>
-</div>
+<br />
+
 @foreach (var item in Model)
 {
-    <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#e2e2e2'" onmouseout="javascript:this.style.backgroundColor=''">
-        <div class="col-md-2">
-            @Html.DisplayFor(modelItem => item.Nome)
-        </div>
-        <div class="col-md-2">
-            @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <a href='@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })'>
+    <div class="container">
+        <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#606060'" onmouseout="javascript:this.style.backgroundColor=''">
+            <div class="col-md-3">
+                @{
+                    string logoTipo = item.Logotipo;
+                    if (logoTipo != string.Empty)
+                    {
+                        if (logoTipo != null)
+                        {
+                            string file = logoTipo;
+                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                            <img src='@Url.Content(path)' style="height:100px; width: 100px; border-radius: 100%; box-shadow: 2px 2px 2px black; margin-bottom:10px;" title="LogoTipo" /><br />
+                        }
+                    }
+                }
+            </div>
+            <br />
+            <div class="col-md-3" style="color:#fff;">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </div>
+            <div class="col-md-3" style="color:#fff;">
+                @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
+            </div>
+            <div class="col-md-3 acoesadireita">
+                @*<a href='@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })'>
                 <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
                      title="Editar" />
             </a>
             <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal" data-content="@item.Nome" data-id="@item.StartupCadastroID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
-            </a>
-            <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'>
-                <img src='@Url.Content("~/Content/img/detalhes.png")' class="botaoicone"
-                     title="Detalhes" />
-            </a>
+            </a>*@
+                <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+            </div>
         </div>
+        <div id="modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title">Exclusão de Startup</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="mensagem"></div>
+                        <input type="hidden" id="numero" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnDelete">Deletar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <br />
     </div>
-
-
-    <div id="modal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title">Exclusão de Startup</h4>
-                </div>
-                <div class="modal-body">
-                    <div id="mensagem"></div>
-                    <input type="hidden" id="numero" />
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">
-                        Cancelar
-                    </button>
-                    <button type="button" class="btn btn-primary" id="btnDelete">Deletar</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <br />
 }
-
 @section scripts{
     <script>
  $(function () {
@@ -103,14 +149,15 @@
     </script>
 }
 
-<div class="row linha" style="font-size:x-small;">
-    <div class="col-md-12">
-        <b>Legenda:</b> <br />
-        <img src='@Url.Content("~/Content/img/detalhes.png")' class="botaoicone" /> Detalhes
+<div class="container">
+    <div class="row linha" style="font-size:x-small;">
+        <div class="col-md-12">
+            <b>Legenda:</b> <br />
+            <img src='@Url.Content("~/Content/img/visualizacao.png")' class="botaoicone" /> Detalhes
 
+        </div>
     </div>
 </div>
-
 <!-- Footer -->
 <footer id="footer" class="sm-padding bg-dark">
 

@@ -5,20 +5,44 @@
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
 
+@*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+
+<header>
+    <nav id="nav" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Index", "Index", "Home")</li>
+                <li class="has-dropdown">
+                    <a href="#">Sign In</a>
+                    <ul class="dropdown">
+                        <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
+                        <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Main navigation -->
+        </div>
+    </nav>
+</header>
 
 @using (Html.BeginForm("Create", "StartupCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+   
     <div class="header-wrapper sm-padding bg-grey">
         <div class="container">
             <h2>Startup, Crie seu <b>Login</b> e seu <b>Perfil</b> abaixo</h2>
         </div>
     </div>
-
     <div class="container">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <form class="form-signin">
@@ -276,6 +300,7 @@
             <br />
         </form>
         <br />
+        <p class="help-block" style="text-align:center;">* Antes de finalizar precisamos saber se você não é um robô.</p>
         <div class="form-group">
             <div class="captcha">
                 <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>

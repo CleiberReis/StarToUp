@@ -8,10 +8,66 @@
 @using (Html.BeginForm("Edit", "StartupCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <header>
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="nav-collapse">
+                        <span></span>
+                    </div>
+                </div>
+                <!--  Main navigation  -->
+                @{
+                    StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                    if (startupCadastro != null)
+                    {
 
+                        <ul class="main-nav nav navbar-nav navbar-right">
+
+                            <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
+                            <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
+                            <li class="has-dropdown">
+                                <a href="">@startupCadastro.Nome</a>
+                                <ul class="dropdown">
+                                    <li><a href="#" class="disabled" style="color:#b4b4b4;">Editar Perfil</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- /Main navigation -->
+                    }
+                    else
+                    {
+                        <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                        </script>
+                    }
+                }
+            </div>
+        </nav>
+    </header>
+    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Deseja sair da sessão?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                    <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "StartupCadastros")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Numbers -->
+
+    <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+        <div class="overlay"></div>
+    </div>
     <div class="header-wrapper sm-padding bg-grey">
         <div class="container">
             <h2>Edite seu <label>Perfil</label> aqui</h2>
@@ -25,7 +81,7 @@
             <div class="row">
                 <div>
                     <div class="header-wrapper sm-padding">
-                        <h3 class="title">Dados de Login</h3>
+                        <h3 class="title" style="color:#fff;">Dados de Login</h3>
                     </div>
                     <div class="col-md-6 uploadImage">
                         <div class="input-group-btn">
@@ -65,7 +121,7 @@
                             <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
                             <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
                         </div>
-                        @Html.ActionLink("Excluir", "DeleteFile", "StartupCadastros", new { id = Model.StartupCadastroID, arquivo = "Foto" }, null)
+                        @*@Html.ActionLink("Excluir", "DeleteFile", "StartupCadastros", new { id = Model.StartupCadastroID, arquivo = "Foto" }, null)*@
                         <p class="help-block">* Insira o Logo da sua Startup acima.</p>
                         <br />
                     </div>

@@ -4,6 +4,64 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
+<!-- Header -->
+<header>
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                if (startupCadastro != null)
+                {
+
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
+                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
+                        <li class="has-dropdown">
+                            <a href="">@startupCadastro.Nome</a>
+                            <ul class="dropdown">
+                                <li>@Html.ActionLink("Editar", "Edit", "StartupCadastros")</li>
+                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header>
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+            </div>
+            <div class="modal-body">
+                <p>Deseja sair da sessão?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "StartupCadastros")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
     <div class="overlay"></div>
@@ -13,6 +71,7 @@
         <h2>Detalhes da <b>Startup</b></h2>
     </div>
 </div>
+
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="container">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -21,14 +80,14 @@
         <div class="row">
             <div>
                 <div class="col-md-12 uploadImage">
-                    <br/>
+                    <br />
                     <div style="color:#fff; font-size: 2.4em;">
                         @Html.DisplayFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                     <div style="color:#fff; font-size: 1.2em;;">
                         @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
-                    <br/>
+                    <br />
                     <div class="input-group-btn">
                         @{
                             string logoTipo = Model.Logotipo;
@@ -50,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <br/>
+        <br />
         <div class="row">
             <hr class="divisoria" />
             <div class="col-md-6">
@@ -270,12 +329,12 @@
 </footer>
 
 @section scripts{
-<script>
-    $(function () {
-        $('input, select, textarea').each(function () {
-            if ($(this).hasClass('input-validation-error'))
-                $(this).focus();
+    <script>
+        $(function () {
+            $('input, select, textarea').each(function () {
+                if ($(this).hasClass('input-validation-error'))
+                    $(this).focus();
+            });
         });
-    });
-</script>
+    </script>
 }

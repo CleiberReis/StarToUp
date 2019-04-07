@@ -17,22 +17,24 @@ namespace StarToUp.Controllers
     {
         private Context db = new Context();
 
+        public IEnumerable<object> StartupCadastros { get; private set; }
+
         // GET: StartupCadastros
         public ActionResult Index()
         {
-            //if (Session["Usuario"] != null)
-            //{
-            //    Funcoes.GetUsuario();
-            //    var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
-            //    return View(startupCadastros.ToList());
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Logar", "Logon");
-            //}
+            if (Session["Usuario"] != null)
+            {
+                Funcoes.GetUsuario();
+                var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
+                return View(startupCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Logar", "Logon");
+            }
 
-            var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
-            return View(startupCadastros.ToList());
+            //var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
+            //return View(startupCadastros.ToList());
         }
 
         public ActionResult IndexStartups()
@@ -41,16 +43,11 @@ namespace StarToUp.Controllers
             return View(startupCadastros.ToList());
         }
 
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
 
-        //public ActionResult Logoff()
-        //{
-        //    StarToUp.Repositories.Funcoes.Deslogar();
-        //    return RedirectToAction("Index", "Home");
-        //}
+        public ActionResult Login()
+        {
+            return View();
+        }
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
@@ -59,19 +56,23 @@ namespace StarToUp.Controllers
         //    // esta action trata o post (login)
         //    if (ModelState.IsValid) //verifica se é válido
         //    {
-        //        using (StartupCadastrosController dc = new StartupCadastrosController())
+        //        var startupCadastros = db.StartupCadastros.Include(p => p.Email).Where(a => a.Nome.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
+        //        //var v = db.StartupCadastros.Include("").Where(a => a.Nome.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
+        //        if (startupCadastros != null)
         //        {
-        //            var v = dc.StartupCadastros.Where(a => a.NomeUsuario.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
-        //            if (v != null)
-        //            {
-        //                Session["StartupCadastroID"] = v.Id.ToString();
-        //                Session["nome"] = v.NomeUsuario.ToString();
-        //                return RedirectToAction("Index", "IndexStartup");
-        //            }
+        //            Session["StartupCadastroID"] = startupCadastros.StartupCadastroID.ToString();
+        //            Session["nome"] = startupCadastros.Nome.ToString();
+        //            return RedirectToAction("Index", "StartupCadastros");
         //        }
         //    }
         //    return View(u);
         //}
+
+        public ActionResult Logoff()
+        {
+            StarToUp.Repositories.Funcoes.Deslogar();
+            return RedirectToAction("Index", "Home");
+        }
 
         // GET: StartupCadastros/Details/5
         public ActionResult Details(int? id)
@@ -96,8 +97,6 @@ namespace StarToUp.Controllers
         }
 
         // POST: StartupCadastros/Create
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,SegmentacaoID")] StartupCadastro startupCadastro,

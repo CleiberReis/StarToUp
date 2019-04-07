@@ -1,8 +1,73 @@
-﻿
-@{
+﻿@{
+    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.startupCadastros;
     ViewBag.Title = "IndexStartups";
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
+<!-- Header -->
+<header>
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                if (startupCadastro != null)
+                {
+                    <ul class="main-nav nav navbar-nav navbar-left">
+                        <li><a href="">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
+                    </ul>
+
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Startups</a></li>
+                        <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
+                        <li class="has-dropdown">
+                            <a href="">@startupCadastro.Nome</a>
+                            <ul class="dropdown">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })">Editar</a></li>
+                                }
+                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
+
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header>
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+            </div>
+            <div class="modal-body">
+                <p>Deseja sair da sessão?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "StartupCadastros")</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Numbers -->
 
 <div class="header-wrapper sm-padding bg-grey">
     <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
@@ -15,6 +80,7 @@
 </div>
 <br />
 <h2 class="text-center" style="color:antiquewhite;">**Espaço Em Desenvolvimento**</h2>
+
 <br />
 <br />
 <br />
