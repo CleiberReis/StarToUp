@@ -380,14 +380,6 @@
     <Content Include="Views\Eventos\Details.cshtml" />
     <Content Include="Views\Eventos\Edit.cshtml" />
     <Content Include="Views\Eventos\Index.cshtml" />
-    <Content Include="Views\Contatos\Contato.cshtml" />
-    <Content Include="Views\Contatos\HomePage.cshtml">
-      <BrowseToURL>~/Contatos/HomePage</BrowseToURL>
-    </Content>
-    <Content Include="Views\Contatos\Delete.cshtml" />
-    <Content Include="Views\Contatos\Details.cshtml" />
-    <Content Include="Views\Contatos\Edit.cshtml" />
-    <Content Include="Views\Contatos\Index.cshtml" />
     <Content Include="Views\Shared\_IndexStartup.cshtml" />
     <Content Include="Views\Shared\_IndexEmpresa.cshtml" />
     <Content Include="Views\LogonEmpresa\Logar.cshtml" />

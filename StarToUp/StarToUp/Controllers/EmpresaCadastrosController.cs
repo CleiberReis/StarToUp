@@ -102,7 +102,7 @@ namespace StarToUp.Controllers
                     else
                     {
                         ViewBag.Message = "Valid";
-                        return RedirectToAction("../Home/Index");
+                        return RedirectToAction("../Home/Principal");
                     }
                 
             }

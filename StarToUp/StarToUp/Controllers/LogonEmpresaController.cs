@@ -40,6 +40,6 @@ namespace StarToUp.Controllers
         public ActionResult Logoff()
         {
             StarToUp.Repositories.Funcoes.Deslogar();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Principal");
         }    }
 }

@@ -52,7 +52,7 @@ namespace StarToUp.Controllers
         public ActionResult Logoff()
         {
             StarToUp.Repositories.Funcoes.Deslogar();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Principal", "Home");
         }
 
         // GET: StartupCadastros/Details/5
@@ -202,7 +202,7 @@ namespace StarToUp.Controllers
                     else
                     {
                         ViewBag.Message = "Valid";
-                        return RedirectToAction("../Home/Index");
+                        return RedirectToAction("../Home/Principal");
                     }
                 }
             }
