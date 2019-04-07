@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StarToUp.Models;
+using StarToUp.Repositories;
 
 namespace StarToUp.Controllers
 {
@@ -17,6 +18,10 @@ namespace StarToUp.Controllers
         // GET: Contatos
         public ActionResult Index()
         {
+            IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
+            IEnumerable<Evento> eventos = db.Eventoes.ToList();
+            ViewBag.StartupCadastros = startupCadastros;
+            ViewBag.Eventos = eventos;
             return View(db.Contatos.ToList());
         }
 
@@ -36,7 +41,7 @@ namespace StarToUp.Controllers
         }
 
         // GET: Contatos/Create
-        public ActionResult Create()
+        public ActionResult HomePage()
         {
             return View();
         }
@@ -46,12 +51,21 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CadastroID,Nome,Email,Assunto,Mensagem")] Contato contato)
+        public ActionResult HomePage([Bind(Include = "CadastroID,Nome,Email,Assunto,Mensagem")] Contato contato)
         {
             if (ModelState.IsValid)
             {
                 db.Contatos.Add(contato);
                 db.SaveChanges();
+
+                GmailEmailService gmail = new GmailEmailService();
+                EmailMessage msg = new EmailMessage();
+                msg.Body = "<!DOCTYPE HTML><html><body><p>Mensagem de: <b>" + contato.Nome + "</b><br /><br /> " + contato.Mensagem + "</p><p>Contato do remetente para retorno: " + contato.Email + "</p></body></html>";
+                msg.IsHtml = true;
+                msg.Subject = contato.Assunto;
+                msg.ToEmail = "startoupcontact@gmail.com";
+                gmail.SendEmailMessage(msg);
+
                 return RedirectToAction("Index");
             }
 

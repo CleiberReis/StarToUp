@@ -49,25 +49,6 @@ namespace StarToUp.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login(StartupCadastro u)
-        //{
-        //    // esta action trata o post (login)
-        //    if (ModelState.IsValid) //verifica se é válido
-        //    {
-        //        var startupCadastros = db.StartupCadastros.Include(p => p.Email).Where(a => a.Nome.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
-        //        //var v = db.StartupCadastros.Include("").Where(a => a.Nome.Equals(u.Nome) && a.Senha.Equals(u.Senha)).FirstOrDefault();
-        //        if (startupCadastros != null)
-        //        {
-        //            Session["StartupCadastroID"] = startupCadastros.StartupCadastroID.ToString();
-        //            Session["nome"] = startupCadastros.Nome.ToString();
-        //            return RedirectToAction("Index", "StartupCadastros");
-        //        }
-        //    }
-        //    return View(u);
-        //}
-
         public ActionResult Logoff()
         {
             StarToUp.Repositories.Funcoes.Deslogar();

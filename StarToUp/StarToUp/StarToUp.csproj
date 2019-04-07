@@ -379,7 +379,9 @@
     <Content Include="Views\Eventos\Edit.cshtml" />
     <Content Include="Views\Eventos\Index.cshtml" />
     <Content Include="Views\Contatos\Contato.cshtml" />
-    <Content Include="Views\Contatos\Create.cshtml" />
+    <Content Include="Views\Contatos\HomePage.cshtml">
+      <BrowseToURL>~/Contatos/HomePage</BrowseToURL>
+    </Content>
     <Content Include="Views\Contatos\Delete.cshtml" />
     <Content Include="Views\Contatos\Details.cshtml" />
     <Content Include="Views\Contatos\Edit.cshtml" />
@@ -394,6 +396,7 @@
     <Content Include="Views\StartupCadastros\Edit.cshtml" />
     <Content Include="Views\StartupCadastros\Index.cshtml" />
     <Content Include="Views\StartupCadastros\IndexStartups.cshtml" />
+    <Content Include="Views\Home\Contato.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
