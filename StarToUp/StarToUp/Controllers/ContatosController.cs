@@ -15,14 +15,13 @@ namespace StarToUp.Controllers
     {
         private Context db = new Context();
 
-        // GET: Contatos
         public ActionResult Index()
         {
             IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
             IEnumerable<Evento> eventos = db.Eventoes.ToList();
             ViewBag.StartupCadastros = startupCadastros;
             ViewBag.Eventos = eventos;
-            return View(db.Contatos.ToList());
+            return View();
         }
 
         // GET: Contatos/Details/5
