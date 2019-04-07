@@ -24,7 +24,7 @@
     <!-- Header -->
     <header>
         <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
+        <div class="bg-img" style="background-image: url('../../Content/img/backgroun7.jpg'">
             <div class="overlay"></div>
         </div>
         <!-- /Background Image -->
@@ -39,12 +39,11 @@
                     </div>
                     <!-- /Collapse nav button -->
                 </div>
-
                 <!--  Main navigation  -->
                 @*@{
-                    StarToUp.Models.EmpresaCadastro empresaCadastro = StarToUp.Repositories.FuncoesEmpresa.GetUsuarioEmpresa();
-                    if (empresaCadastro != null)
-                    {*@
+        StarToUp.Models.EmpresaCadastro empresaCadastro = StarToUp.Repositories.FuncoesEmpresa.GetUsuarioEmpresa();
+        if (empresaCadastro != null)
+        {*@
 
                 <ul class="main-nav nav navbar-nav navbar-right">
                     @*<li><a href="#home">Seja bem-vindo(a) - @empresaCadastro.Nome</a></li>*@
@@ -59,15 +58,27 @@
                     </li>
                     @*<li>@Html.ActionLink("Sair", "Logoff", "PerfilEmpresas")</li>*@
                 </ul>
-                        <!-- /Main navigation -->
-                    @*}
-                    else
-                    {
-                        <script type="text/javascript">
-                            window.location.href = "@Url.Action("AcessoNegado","LogonEmpresa")";
-                        </script>
-                    }
-                }*@
+                <!-- /Main navigation -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- number -->
+                    <div class="col-sm-12 col-xs-6">
+                        <div class="number">
+                            <h3 class="white-text"><span class="counter">STARTOUP</span></h3>
+                        </div>
+                    </div>
+                    <!-- /number -->
+
+                </div>
+                <!-- /Row -->
+                @*}
+            else
+            {
+                <script type="text/javascript">
+                    window.location.href = "@Url.Action("AcessoNegado","LogonEmpresa")";
+                </script>
+            }
+        }*@
 
             </div>
         </nav>
