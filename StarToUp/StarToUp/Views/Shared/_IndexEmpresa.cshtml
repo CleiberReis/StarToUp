@@ -41,44 +41,49 @@
                 </div>
                 <!--  Main navigation  -->
                 @*@{
-        StarToUp.Models.EmpresaCadastro empresaCadastro = StarToUp.Repositories.FuncoesEmpresa.GetUsuarioEmpresa();
-        if (empresaCadastro != null)
-        {*@
-
-                <ul class="main-nav nav navbar-nav navbar-right">
-                    @*<li><a href="#home">Seja bem-vindo(a) - @empresaCadastro.Nome</a></li>*@
-                    <li>@Html.ActionLink("Perfil", "Details", "PerfilEmpresas")</li>
-                    <li>@Html.ActionLink("Empresas", "Index", "PerfilEmpresas")</li>
-                    <li class="has-dropdown">
-                        <a href="#">Sign In</a>
-                        <ul class="dropdown">
-                            <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
-                            <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
+                    StarToUp.Models.EmpresaCadastro empresaCadastro = StarToUp.Repositories.FuncoesEmpresa.GetUsuarioEmpresa();
+                    if (empresaCadastro != null)
+                    {*@
+                        <ul class="main-nav nav navbar-nav navbar-left">
+                            @*<li><a href="">Seja bem-vindo(a) - @empresaCadastro.Nome</a></li>*@
                         </ul>
-                    </li>
-                    @*<li>@Html.ActionLink("Sair", "Logoff", "PerfilEmpresas")</li>*@
-                </ul>
-                <!-- /Main navigation -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- number -->
-                    <div class="col-sm-12 col-xs-6">
-                        <div class="number">
-                            <h3 class="white-text"><span class="counter">STARTOUP</span></h3>
-                        </div>
-                    </div>
-                    <!-- /number -->
 
-                </div>
-                <!-- /Row -->
-                @*}
-            else
-            {
-                <script type="text/javascript">
+                        <ul class="main-nav nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Perfil", "Details", "PerfilEmpresas")</li>
+                            <li>@Html.ActionLink("Empresas", "Index", "PerfilEmpresas")</li>
+                            <li class="has-dropdown">
+                                @*<a href="">@empresaCadastro.Nome</a>*@
+                                <ul class="dropdown">
+                                    @*@foreach (var item in Model)
+                                    {
+                                        <li><a href="@Url.Action("Edit", "PerfilEmpresas", new { id = item.PerfilEmpresaID })">Editar</a></li>
+                                    }*@
+                                </ul>
+                            </li>
+                            <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                        </ul>
+                        <!-- /Main navigation -->
+                        <!-- Row -->
+                       
+                        <div class="row">
+                            <!-- number -->
+                            <div class="col-sm-12 col-xs-6">
+                                <div class="number">
+                                    <h3 class="white-text"><span class="counter">STARTOUP</span></h3>
+                                </div>
+                            </div>
+                            <!-- /number -->
+
+                        </div>
+                        <!-- /Row -->
+                    @*}
+                    else
+                    {
+                        <script type="text/javascript">
                     window.location.href = "@Url.Action("AcessoNegado","LogonEmpresa")";
-                </script>
-            }
-        }*@
+                        </script>
+                    }
+                }*@
 
             </div>
         </nav>

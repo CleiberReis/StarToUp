@@ -8,6 +8,24 @@
 <div style="text-align: center; padding-top: 2%;">
     <h2>Perfil da Empresa</h2>
 </div>
+
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+            </div>
+            <div class="modal-body">
+                <p>Deseja sair da sessão?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "PerfilEmpresas")</button>
+            </div>
+        </div>
+    </div>
+</div>
 @foreach (var item in Model)
 {
     <div class="container">
