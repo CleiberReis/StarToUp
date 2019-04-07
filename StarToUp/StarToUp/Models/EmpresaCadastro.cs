@@ -25,9 +25,6 @@ namespace StarToUp.Models
         [DisplayName("Senha:")]
         public string Senha { get; set; }
 
-        public int TipoUsuarioID { get; set; }
-        public virtual TipoUsuario TipoUsuario { get; set; }
-
         // Relacionamento perfil empresas
         public int PerfilEmpresaID { get; set; }
         public virtual ICollection<PerfilEmpresa> PerfilEmpresas { get; set; }

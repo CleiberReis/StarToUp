@@ -21,63 +21,9 @@
     <![endif]-->
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <!-- Background Image -->
-        <div class="bg-img" style="background-image: url('../../Content/img/backgroun6.jpg'">
-            <div class="overlay"></div>
-        </div>
-        <!-- /Background Image -->
-        <!-- Nav -->
-        <nav id="nav" class="navbar nav-transparent">
-            <div class="container">
-
-                <div class="navbar-header">
-                    <!-- Collapse nav button -->
-                    <div class="nav-collapse">
-                        <span></span>
-                    </div>
-                    <!-- /Collapse nav button -->
-                </div>
-
-                <!--  Main navigation  -->
-                @*@{
-                    StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
-                    if (startupCadastro != null)
-                    {*@
-
-                <ul class="main-nav nav navbar-nav navbar-right">
-                    @*<li><a href="#home">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>*@
-                    <li>@Html.ActionLink("Perfil", "Details", "PerfilStartups")</li>
-                    <li>@Html.ActionLink("Startups", "Index", "PerfilStartups")</li>
-                    <li class="has-dropdown">
-                        <a href="#">Sign In</a>
-                        <ul class="dropdown">
-                            <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
-                            <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
-                        </ul>
-                    </li>
-                    @*<li>@Html.ActionLink("Sair", "Logoff", "PerfilStartups")</li>*@
-                </ul>
-                        <!-- /Main navigation -->
-                    @*}
-                    else
-                    {
-                        <script type="text/javascript">
-                            window.location.href = "@Url.Action("AcessoNegado","Logon")";
-                        </script>
-                    }
-                }*@
-
-            </div>
-        </nav>
-        <!-- /Nav -->
-
-    </header>
-
-    <!-- /Numbers -->
-    @RenderBody()
    
+    @RenderBody()
+
     <!-- jQuery Plugins -->
     @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/jquery")

@@ -202,13 +202,13 @@ ul, ol {
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="url"], input[type="tel"], textarea {
     height: 40px;
     width: 100%;
-    border: none;
+    /*border: none;*/
 	background: #FFF;
     border-bottom: 2px solid #4d4949;
     color: #354052;
     padding: 0px 10px;
     padding-left: 20px!important;
-    opacity: 0.5;
+    opacity: 0.8;
     -webkit-transition: 0.2s border-color, 0.2s opacity;
     transition: 0.2s border-color, 0.2s opacity;
 }
@@ -1474,7 +1474,7 @@ header {
 }
 
 .footer-logo>a>img {
-    max-height: 80px;
+    max-height: 150px;
 }
 
 .footer-follow {

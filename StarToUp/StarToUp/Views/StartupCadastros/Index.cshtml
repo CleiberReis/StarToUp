@@ -1,51 +1,278 @@
-﻿@model IEnumerable<StarToUp.Models.StartupCadastro>
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.startupCadastros;
+    ViewBag.Title = "IndexStartups";
+    Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
+<!-- Header -->
+<header>
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                if (startupCadastro != null)
+                {
+                    <ul class="main-nav nav navbar-nav navbar-left">
+                        <li><a href="">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
+                    </ul>
 
-<h2>Index</h2>
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Startups</a></li>
+                        <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
+                        <li class="has-dropdown">
+                            <a href="">@startupCadastro.Nome</a>
+                            <ul class="dropdown">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })">Editar</a></li>
+                                }
+                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                            </ul>
+                        </li>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoUsuario.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
-        <th></th>
-    </tr>
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoUsuario.Descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Senha)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.StartupCadastroID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.StartupCadastroID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.StartupCadastroID })
-        </td>
-    </tr>
-}
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header>
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+            </div>
+            <div class="modal-body">
+                <p>Deseja sair da sessão?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "StartupCadastros")</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Numbers -->
 
-</table>
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+        <div class="overlay"></div>
+    </div>
+    <div class="container">
+        <h2>Startups</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<br />
+<h2 class="text-center" style="color:antiquewhite;">**Espaço Em Desenvolvimento**</h2>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@*
+    <div id="blog" class="section md-padding">
+        <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <main id="main" class="col-md-9">
+                    <div class="blog">
+                        <div class="blog-img">
+                            <img class="img-responsive" src="~/Content/img/blog-post.jpg" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <ul class="blog-meta">
+                                <li><i class="fa fa-user"></i>John doe</li>
+                                <li><i class="fa fa-clock-o"></i>18 Oct</li>
+                                <li><i class="fa fa-comments"></i>57</li>
+                            </ul>
+                            <h3>Morbi mattis felis at nunc. Duis viverra</h3>
+                            <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+                        </div>
+                        <div class="blog-tags">
+                            <h5>Tags :</h5>
+                            <a href="#"><i class="fa fa-tag"></i>Web</a>
+                            <a href="#"><i class="fa fa-tag"></i>Design</a>
+                            <a href="#"><i class="fa fa-tag"></i>Marketing</a>
+                            <a href="#"><i class="fa fa-tag"></i>Development</a>
+                            <a href="#"><i class="fa fa-tag"></i>Branding</a>
+                            <a href="#"><i class="fa fa-tag"></i>Photography</a>
+                        </div>
+                        <div class="blog-author">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img class="media-object" src="./img/author.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-heading">
+                                        <h3>Joe Doe</h3>
+                                        <div class="author-social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-comments">
+                            <h3 class="title">(13) Comments</h3>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img class="media-object" src="~/Content/img/perso1.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
+                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img class="media-object" src="~/Content/img/perso2.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
+                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+                                </div>
+                                <div class="media author">
+                                    <div class="media-left">
+                                        <img class="media-object" src="~/Content/img/perso1.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
+                                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img class="media-object" src="~/Content/img/perso2.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
+                                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img class="media-object" src="~/Content/img/perso1.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
+                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <aside id="aside" class="col-md-3">
+                    <div class="widget">
+                        <div class="widget-search">
+                            <input class="search-input" type="text" placeholder="search">
+                            <button class="search-btn" type="button"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h3 class="title">Category</h3>
+                        <div class="widget-category">
+                            <a href="#">Web Design<span>(7)</span></a>
+                            <a href="#">Marketing<span>(142)</span></a>
+                            <a href="#">Web Development<span>(74)</span></a>
+                            <a href="#">Branding<span>(60)</span></a>
+                            <a href="#">Photography<span>(5)</span></a>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h3 class="title">Populare Posts</h3>
+                        <div class="widget-post">
+                            <a href="#">
+                                <img src="./img/post1.jpg" alt=""> Blog title goes here
+                            </a>
+                            <ul class="blog-meta">
+                                <li>Oct 18, 2017</li>
+                            </ul>
+                        </div>
+                        <div class="widget-post">
+                            <a href="#">
+                                <img src="./img/post2.jpg" alt=""> Blog title goes here
+                            </a>
+                            <ul class="blog-meta">
+                                <li>Oct 18, 2017</li>
+                            </ul>
+                        </div>
+                        <div class="widget-post">
+                            <a href="#">
+                                <img src="./img/post3.jpg" alt=""> Blog title goes here
+                            </a>
+                            <ul class="blog-meta">
+                                <li>Oct 18, 2017</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h3 class="title">Tags</h3>
+                        <div class="widget-tags">
+                            <a href="#">Web</a>
+                            <a href="#">Design</a>
+                            <a href="#">Graphic</a>
+                            <a href="#">Marketing</a>
+                            <a href="#">Development</a>
+                            <a href="#">Branding</a>
+                            <a href="#">Photography</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>*@
+<footer id="footer" class="sm-padding bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
+                </div>
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

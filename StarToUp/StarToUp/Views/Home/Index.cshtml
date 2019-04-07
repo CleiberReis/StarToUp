@@ -1,6 +1,6 @@
 ﻿@{
     IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
-    IEnumerable<StarToUp.Models.PerfilStartup> perfilStartups = (IEnumerable<StarToUp.Models.PerfilStartup>)ViewBag.perfilStartups;
+    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.startupCadastros;
     ViewBag.Title = "Home Page";
 }
 
@@ -83,7 +83,7 @@
             <!-- Work -->
             <!-- /Work -->
 
-            @foreach (var item in perfilStartups)
+            @*@foreach (var item in startupCadastros)
             {
                 <!-- blog -->
                 <div class="col-md-4 col-xs-6 work">
@@ -101,7 +101,7 @@
                         }
                         <div class="overlay" style="width: 290px; height: 300px;"></div>
                         <div class="work-content">
-                            <span>@Html.DisplayNameFor(modelItem => item.NomeStartup)</span>
+                            <span>@Html.DisplayNameFor(modelItem => item.Nome)</span>
                             <div class="work-link">
                                
                             </div>
@@ -112,14 +112,14 @@
 
                 </div>
                 <!-- /Row -->
-            }
+            }*@
 
         </div>
         <!-- /Container -->
 
     </div>
 
-
+</div>
     <!-- /Portfolio -->
     <!-- Numbers -->
     <div id="numbers" class="section sm-padding">
