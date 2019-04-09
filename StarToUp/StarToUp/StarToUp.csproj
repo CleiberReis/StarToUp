@@ -160,6 +160,10 @@
     <Compile Include="Migrations\201904082233433_atual.Designer.cs">
       <DependentUpon>201904082233433_atual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904090324048_atualização.cs" />
+    <Compile Include="Migrations\201904090324048_atualização.Designer.cs">
+      <DependentUpon>201904090324048_atualização.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Contato.cs" />
@@ -407,6 +411,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904082233433_atual.resx">
       <DependentUpon>201904082233433_atual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904090324048_atualização.resx">
+      <DependentUpon>201904090324048_atualização.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

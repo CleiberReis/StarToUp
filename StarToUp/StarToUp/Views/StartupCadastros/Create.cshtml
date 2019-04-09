@@ -5,10 +5,6 @@
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
 
-@*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
-
 <header>
     <nav id="nav" class="navbar">
         <div class="container">
@@ -37,7 +33,7 @@
 {
     @Html.AntiForgeryToken()
 
-   
+
     <div class="header-wrapper sm-padding bg-grey">
         <div class="container">
             <h2>Startup, Crie seu <b>Login</b> e seu <b>Perfil</b> abaixo</h2>
@@ -76,20 +72,24 @@
                         <div>
                             <input type="text" name="nome" id="nome" class="form-control input" placeholder="Nome da Startup *" />
                             @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nome da Startup</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="email" id="email" class="form-control input" placeholder="E-mail de Contato *" />
                             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">E-mail de Contato</label>
                         </div>
                         <br />
                         <div>
                             <input type="password" name="senha" id="senha" class="form-control input" placeholder="Senha *" />
                             @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Senha</label>
                         </div>
                         <br />
                         <div>
                             <input type="password" name="senha" id="confsenha" class="form-control input" placeholder="Confirmar Senha *" />
+                            <label style="color:#8b8b8b">Confirmar Senha</label>
                         </div>
                         <br />
                     </div>
@@ -107,36 +107,43 @@
                         <div>
                             <input type="text" name="cep" id="cep" class="form-control input" placeholder="CEP XX.XXX-XXX" />
                             @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">CEP</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="rua" id="rua" class="form-control input" placeholder="Digite a Rua *" />
                             @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Rua</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="bairro" id="bairro" class="form-control input" placeholder="Digite o Bairro *" />
                             @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Bairro</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="numero" id="numero" class="form-control input" placeholder="Digite o Numero *" />
                             @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nº</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="complemento" id="complemento" class="form-control input" placeholder="Tem algum complemento?" />
                             @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Complemento</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="cidade" id="cidade" class="form-control input" placeholder="Em qual cidade fica sua Startup?" />
                             @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Cidade</label>
                         </div>
                         <br />
                         <div>
                             <input type="text" name="estado" id="estado" class="form-control input" placeholder="Em qual estado fica sua Startup?" />
                             @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Estado</label>
                         </div>
                     </div>
                 </div>
@@ -187,31 +194,38 @@
                             </div>
                         </div>
                         <br />
-                        <div>
-                            <input type="text" name="objetivo" id="objetivo" class="form-control input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
-                            @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                        <div class="text-left">
+                            <div>
+                                <input type="text" name="objetivo" id="objetivo" class="form-control input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
+                                @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Objetivo da Startup</label>
+                            </div>
+                            <br />
+                            <div>
+                                <input type="text" name="sobre" id="sobre" class="form-control input" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!" />
+                                @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Sobre</label>
+                            </div>
+                            <br />
+                            <div>
+                                <input type="text" name="dataFundacao" id="dataFundacao" class="form-control input" placeholder="Data da Fundação DD/MM/YYYY *" />
+                                @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Data da Fundação</label>
+                            </div>
+                            <br />
+                            <div>
+                                @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control input" })
+                                @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Segmentação</label>
+                            </div>
+                            <br />
+                            <div>
+                                <input type="text" name="tamanhoTime" id="tamanhoTime" class="form-control input" placeholder="Qual a média de pessoas no seu time?" />
+                                @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Média do Tamanho do Time</label>
+                            </div>
+                            <br />
                         </div>
-                        <br />
-                        <div>
-                            <input type="text" name="sobre" id="sobre" class="form-control input" placeholder="Nos conte sobre sua Startup, queremos saber tudo sobre vocês!" />
-                            @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
-                        <div>
-                            <input type="text" name="dataFundacao" id="dataFundacao" class="form-control input" placeholder="Data da Fundação DD/MM/YYYY *" />
-                            @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
-                        <div>
-                            @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control input" })
-                            @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
-                        <div>
-                            <input type="text" name="tamanhoTime" id="tamanhoTime" class="form-control input" placeholder="Qual a média de pessoas no seu time?" />
-                            @Html.ValidationMessageFor(model => model.TamanhoTime, "", new { @class = "text-danger" })
-                        </div>
-                        <br />
                     </div>
                 </div>
             </div>

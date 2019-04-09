@@ -766,3 +766,5 @@ C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
+C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualização.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
