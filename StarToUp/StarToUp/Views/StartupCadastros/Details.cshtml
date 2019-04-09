@@ -4,6 +4,7 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
+
 <!-- Header -->
 <header>
     <nav id="nav" class="navbar nav-transparent">
@@ -25,7 +26,7 @@
                         <li class="has-dropdown">
                             <a href="">@startupCadastro.Nome</a>
                             <ul class="dropdown">
-                                <li>@Html.ActionLink("Editar", "Edit", "StartupCadastros")</li>
+                                <li>@Html.ActionLink("Editar", "Edit", new { id = Model.StartupCadastroID })</li>
                                 <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
                             </ul>
                         </li>
@@ -36,7 +37,7 @@
                 else
                 {
                     <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                                window.location.href = "@Url.Action("AcessoNegado", "Logon")";
                     </script>
                 }
             }
@@ -61,7 +62,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
     <div class="overlay"></div>

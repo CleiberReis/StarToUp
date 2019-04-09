@@ -25,8 +25,27 @@ namespace StarToUp.Models
         [DisplayName("Senha:")]
         public string Senha { get; set; }
 
-        // Relacionamento perfil empresas
-        public int PerfilEmpresaID { get; set; }
-        public virtual ICollection<PerfilEmpresa> PerfilEmpresas { get; set; }
+        public string RazaoSocial { get; set; }
+        public string QtdFuncionario { get; set; }
+
+        // Dados de Endereço
+        public string Cep { get; set; }
+        public string Rua { get; set; }
+        public string Bairro { get; set; }
+        public string Numero { get; set; }
+        public string Complemento { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+
+        // Dados da apresentação da empresa
+        public string Logomarca { get; set; }
+        public string Objetivo { get; set; }
+
+        public int SegmentacaoID { get; set; }
+        public virtual Segmentacao Segmentacoes { get; set; }
+
+        //// Relacionamento perfil empresas
+        //public int PerfilEmpresaID { get; set; }
+        //public virtual ICollection<PerfilEmpresa> PerfilEmpresas { get; set; }
     }
 }

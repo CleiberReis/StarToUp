@@ -15,7 +15,7 @@ namespace StarToUp.Models
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
 
-        public DbSet<PerfilEmpresa> PerfilEmpresas { get; set; }
+        //public DbSet<PerfilEmpresa> PerfilEmpresas { get; set; }
         public DbSet<StartupCadastro> StartupCadastros { get; set; }        public DbSet<EmpresaCadastro> EmpresaCadastros { get; set; }        public DbSet<Segmentacao> Segmentacoes { get; set; }
         public DbSet<Contato> Contatos { get; set; }
 
