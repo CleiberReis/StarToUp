@@ -2,46 +2,121 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_IndexEmpresa.cshtml";
 }
 
-<h2>Index</h2>
+<!-- Header -->
+<header>
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.EmpresaCadastro empresaCadastro = StarToUp.Repositories.FuncoesEmpresa.GetUsuarioEmpresa();
+                if (empresaCadastro != null)
+                {
+                    <ul class="main-nav nav navbar-nav navbar-left">
+                        <li><a href="">Seja bem-vindo(a) - @empresaCadastro.Nome</a></li>
+                    </ul>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <div class="row linhaunderline">
-        <div class="col-md-8">
-            <b>Descrição</b>
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Empresas</a></li>
+                        <li>@Html.ActionLink("Empresas", "IndexEmpresas", "EmpresaCadastros")</li>
+                        <li class="has-dropdown">
+                            <a href="">@empresaCadastro.Nome</a>
+                            <ul class="dropdown">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="@Url.Action("Edit", "EmpresaCadastros", new { id = item.EmpresaCadastroID })">Editar</a></li>
+                                }
+                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
+
         </div>
-        <div class="col-md-2">
-            <b>Nome:</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>E-mail:</b>
-        </div>
-        <div class="col-md-2 acoesadireita">
-            <b>Senha:</b>
+    </nav>
+    <!-- /Nav -->
+</header>
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Logoff</h3>
+            </div>
+            <div class="modal-body">
+                <p>Deseja sair da sessão?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-default">@Html.ActionLink("Sair!", "Logoff", "StartupCadastros")</button>
+            </div>
         </div>
     </div>
+</div>
+<!-- /Numbers -->
 
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+        <div class="overlay"></div>
+    </div>
+    <div class="container">
+        <h2>Empresas</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<br />
+<h2 class="text-center" style="color:antiquewhite;">**Espaço Em Desenvolvimento**</h2>
 
-    @foreach (var item in Model)
-    {
-        <div class="row linhaunderline"
-             onmouseover="javascript:this.style.backgroundColor='#e2e2e2'"
-             onmouseout="javascript:this.style.backgroundColor=''">
-            <div class="col-md-8">
-                @Html.DisplayFor(modelItem => item.Nome)
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayFor(modelItem => item.Email)
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayFor(modelItem => item.Senha)
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<footer id="footer" class="sm-padding bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
+                </div>
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
             </div>
         </div>
-    }
-
-</table>
-
+    </div>
+</footer>

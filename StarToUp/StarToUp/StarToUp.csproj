@@ -152,14 +152,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
     <Compile Include="Controllers\LogonEmpresaController.cs" />
-    <Compile Include="Controllers\PerfilEmpresasController.cs" />
     <Compile Include="Controllers\StartupCadastrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904071847211_atual.cs" />
-    <Compile Include="Migrations\201904071847211_atual.Designer.cs">
-      <DependentUpon>201904071847211_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201904082233433_atual.cs" />
+    <Compile Include="Migrations\201904082233433_atual.Designer.cs">
+      <DependentUpon>201904082233433_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -167,7 +166,6 @@
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\Evento.cs" />
-    <Compile Include="Models\PerfilEmpresa.cs" />
     <Compile Include="Models\Segmentacao.cs" />
     <Compile Include="Models\StartupCadastro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -359,16 +357,6 @@
     <Content Include="Views\Logon\Logar.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Logon\AcessoNegado.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Create.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Delete.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Details.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Edit.cshtml" />
-    <Content Include="Views\EmpresaCadastros\Index.cshtml" />
-    <Content Include="Views\PerfilEmpresas\Create.cshtml" />
-    <Content Include="Views\PerfilEmpresas\Delete.cshtml" />
-    <Content Include="Views\PerfilEmpresas\Details.cshtml" />
-    <Content Include="Views\PerfilEmpresas\Edit.cshtml" />
-    <Content Include="Views\PerfilEmpresas\Index.cshtml" />
     <Content Include="Views\Shared\_AreaAdmin.cshtml" />
     <Content Include="Views\Administradors\Create.cshtml" />
     <Content Include="Views\Administradors\Delete.cshtml" />
@@ -391,6 +379,12 @@
     <Content Include="Views\StartupCadastros\Index.cshtml" />
     <Content Include="Views\StartupCadastros\IndexStartups.cshtml" />
     <Content Include="Views\Home\Contato.cshtml" />
+    <Content Include="Views\EmpresaCadastros\Create.cshtml" />
+    <Content Include="Views\EmpresaCadastros\Delete.cshtml" />
+    <Content Include="Views\EmpresaCadastros\Details.cshtml" />
+    <Content Include="Views\EmpresaCadastros\Edit.cshtml" />
+    <Content Include="Views\EmpresaCadastros\Index.cshtml" />
+    <Content Include="Views\EmpresaCadastros\IndexEmpresas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -411,8 +405,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904071847211_atual.resx">
-      <DependentUpon>201904071847211_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904082233433_atual.resx">
+      <DependentUpon>201904082233433_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

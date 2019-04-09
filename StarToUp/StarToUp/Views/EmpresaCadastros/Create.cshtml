@@ -1,65 +1,193 @@
-﻿@model StarToUp.Models.StartupCadastro
+﻿@model StarToUp.Models.EmpresaCadastro
+
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_IndexEmpresa.cshtml";
 }
 
-@using (Html.BeginForm())
+<header>
+    <nav id="nav" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Index", "Index", "Home")</li>
+                <li class="has-dropdown">
+                    <a href="#">Sign In</a>
+                    <ul class="dropdown">
+                        <li>@Html.ActionLink("Startup", "Logar", "Logon")</li>
+                        <li>@Html.ActionLink("Empresa", "Logar", "LogonEmpresa")</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Main navigation -->
+        </div>
+    </nav>
+</header>
+
+@using (Html.BeginForm("Create", "EmpresaCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <div class="container">
-        <div class="section-header text-center">
-            <br />
-            <h2 class="title">Empresa, crie seu cadastro:</h2>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        </div>
-        <div class="card card-container">
-            <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <div>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome da Empresa *" />
-                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="text" name="email" id="email" class="input" placeholder="E-mail de Contato *" />
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
-                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                </div>
-                <br />
-                <div>
-                    <input type="password" name="senha" id="confsenha" class="input" placeholder="Confirmar Senha *" />
-                </div>
-                <br />
-                <div class="captcha">
-                    <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
-                </div>
-                <br />
-                <button class="main-btn btn-block" type="submit" value="Cadastrar">Cadastrar</button>
-                @*<p class="textoTermo">Ao Clicar em CADASTRAR você estará aceitanto os termos de uso desse site.<br/><a href="#">Termos de Uso*</a></p>*@
 
-            </form>
+
+    <div class="header-wrapper sm-padding bg-grey">
+        <div class="container">
+            <h2>Empresa, Crie seu <b>Login</b> e seu <b>Perfil</b> abaixo</h2>
         </div>
     </div>
-
+    <div class="container">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <form class="form-signin">
+            <div class="row">
+                <div>
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Login</h3>
+                    </div>
+                    <div class="col-md-6 uploadImage">
+                        <img class="img-circle img-preview" src="http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg" title="Preview Logo" />
+                        <div class="input-group-btn">
+                            <div class="fileUpload btn btn-info fake-shadow">
+                                <span><i class="glyphicon glyphicon-upload"></i> Upload </span>
+                                <input id="logomarca" name="logomarca" value="logomarca" type="file" class="attachment_upload" />
+                                @{
+                                    string logomarca = ViewBag.FotoMensagem;
+                                    if (logomarca != "")
+                                    {
+                                        <span class="text-danger contenterror">
+                                            @ViewBag.FotoMensagem
+                                        </span>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <p class="help-block">* Insira o Logo da sua Empresa acima.</p>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <input type="text" name="nome" id="nome" class="form-control input" placeholder="Nome da Startup *" />
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="email" id="email" class="form-control input" placeholder="E-mail de Contato *" />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="password" name="senha" id="senha" class="form-control input" placeholder="Senha *" />
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="password" name="senha" id="confsenha" class="form-control input" placeholder="Confirmar Senha *" />
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <hr class="divisoria" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Contato</h3>
+                    </div>
+                    <div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @*Endereço*@
+                        <div>
+                            <input type="text" name="cep" id="cep" class="form-control input" placeholder="CEP XX.XXX-XXX" />
+                            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="rua" id="rua" class="form-control input" placeholder="Digite a Rua *" />
+                            @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="bairro" id="bairro" class="form-control input" placeholder="Digite o Bairro *" />
+                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="numero" id="numero" class="form-control input" placeholder="Digite o Numero *" />
+                            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="complemento" id="complemento" class="form-control input" placeholder="Tem algum complemento?" />
+                            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="cidade" id="cidade" class="form-control input" placeholder="Em qual cidade fica sua Startup?" />
+                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="estado" id="estado" class="form-control input" placeholder="Em qual estado fica sua Startup?" />
+                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                @*LogoTipo*@
+                <div class="col-md-6 uploadImage">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="text-align:left;">Sobre a Empresa</h3>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="text" name="objetivo" id="objetivo" class="form-control input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
+                            @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="objetivo" id="objetivo" class="form-control input" placeholder="Digite qual o objetivo de vocês. É apenas uma breve descrição ou frase!" />
+                            @Html.ValidationMessageFor(model => model.Objetivo, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control input" })
+                            @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="tamanhoTime" id="tamanhoTime" class="form-control input" placeholder="Qual a média de pessoas no seu time?" />
+                            @Html.ValidationMessageFor(model => model.QtdFuncionario, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            @*FimLogoTipo*@
+            <br />
+        </form>
+        <br />
+        <p class="help-block" style="text-align:center;">* Antes de finalizar precisamos saber se você não é um robô.</p>
+        <div class="form-group">
+            <div class="captcha">
+                <div class="g-recaptcha" data-sitekey="6Ldjv5gUAAAAAClKvvSPLuzA5KkLrdm1hv9pMwmD"></div>
+            </div>
+        </div>
+        <br />
+        <div class="text-center">
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Criar">Criar Perfil</button>
+        </div>
+    </div>
+    <br />
 }
 <footer id="footer" class="sm-padding bg-dark">
-    <!-- Container -->
     <div class="container-fluid">
-        <br /><br />
-        <!-- Row -->
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <!-- footer logo -->
                 <div class="footer-logo">
-                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/Logo_StarToUp1.png" alt="logo"></a>
+                    <a href="~/Views/Home/Principal.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
                 </div>
-                <!-- /footer logo -->
-                <!-- footer follow -->
                 <ul class="footer-follow">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -68,19 +196,14 @@
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                 </ul>
-                <!-- /footer follow -->
-                <!-- footer copyright -->
                 <div class="footer-copyright">
                     <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
                 </div>
-                <!-- /footer copyright -->
             </div>
         </div>
-        <!-- /Row -->
     </div>
-    <!-- /Container -->
 </footer>
-<!-- /Footer -->
+
 @section scripts{
     <script>
         $(function () {
@@ -98,4 +221,26 @@
         });
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        $(document).ready(function () {
+            var brand = document.getElementById('logomarca');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#logomarca").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+
 }
+
+

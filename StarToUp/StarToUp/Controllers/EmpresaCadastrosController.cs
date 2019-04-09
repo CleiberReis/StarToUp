@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -19,7 +20,36 @@ namespace StarToUp.Controllers
         // GET: EmpresaCadastros
         public ActionResult Index()
         {
-            return View(db.EmpresaCadastros.ToList()); ;
+            if (Session["Usuario"] != null)
+            {
+                FuncoesEmpresa.GetUsuarioEmpresa();
+                var empresaCadastros = db.EmpresaCadastros.Include(e => e.Segmentacoes);
+                return View(empresaCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Logar", "LogonEmpresa");
+            }
+
+            //var empresaCadastros = db.EmpresaCadastros.Include(e => e.Segmentacoes);
+            //return View(empresaCadastros.ToList());
+        }
+
+        public ActionResult IndexEmpresas()
+        {
+            var empresaCadastros = db.EmpresaCadastros.Include(e => e.Segmentacoes);
+            return View(empresaCadastros.ToList());
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Logoff()
+        {
+            StarToUp.Repositories.Funcoes.Deslogar();
+            return RedirectToAction("Principal", "Home");
         }
 
         // GET: EmpresaCadastros/Details/5
@@ -40,6 +70,7 @@ namespace StarToUp.Controllers
         // GET: EmpresaCadastros/Create
         public ActionResult Create()
         {
+            ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao");
             return View();
         }
 
@@ -48,23 +79,38 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha")] EmpresaCadastro empresaCadastro)
+        public ActionResult Create([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,RazaoSocial,QtdFuncionario,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Logomarca,Objetivo,SegmentacaoID")] EmpresaCadastro empresaCadastro, HttpPostedFileBase logomarca)
         {
-            if (ModelState.IsValid)
+
+            ViewBag.FotoMensagem = "";
+            try
             {
-                db.EmpresaCadastros.Add(empresaCadastro);
-                db.SaveChanges();
-                Session["EmpresaCadastroID"] = empresaCadastro;
+                if (ModelState.IsValid)
+                {
+                    string fileName = "";
+                    string contentType = "";
+                    string path = "";
+                    if (logomarca != null && logomarca.ContentLength > 0)
+                    {
+                        fileName = System.IO.Path.GetFileName(logomarca.FileName);
+                        contentType = logomarca.ContentType;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilEmpresa\\" + fileName;
+                        logomarca.SaveAs(path);
+                        empresaCadastro.Logomarca = fileName;
+                    }
 
-                GmailEmailService gmail = new GmailEmailService();
-                EmailMessage msg = new EmailMessage();
-                msg.Body = "<!DOCTYPE HTML><html><body><p>" + empresaCadastro.Nome + ",<br/>Seja bem-vinda(o)!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><a href= http://localhost:50072/LogonEmpresa/Logar/" + "> Faça seu login aqui!</a><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
-                msg.IsHtml = true;
-                msg.Subject = "E-mail de Confirmação - StarToUp";
-                msg.ToEmail = empresaCadastro.Email;
-                gmail.SendEmailMessage(msg);
+                    db.EmpresaCadastros.Add(empresaCadastro);
+                    db.SaveChanges();
 
-                var response = Request["g-recaptcha-response"];
+                    GmailEmailService gmail = new GmailEmailService();
+                    EmailMessage msg = new EmailMessage();
+                    msg.Body = "<!DOCTYPE HTML><html><body><p>" + empresaCadastro.Nome + ",<br/>Seja bem-vinda(o)!</p><p>Sua decolagem está prestes a iniciar!<br/>Clique no link abaixo para finalizar seu cadastro:</p><a href= http://localhost:50072/Logon/Logar/" + "> Faça seu login aqui!</a><p>Esperamos que você decole com a gente!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+                    msg.IsHtml = true;
+                    msg.Subject = "E-mail de Confirmação - StarToUp";
+                    msg.ToEmail = empresaCadastro.Email;
+                    gmail.SendEmailMessage(msg);
+
+                    var response = Request["g-recaptcha-response"];
                     //chave secreta que foi gerada no site
                     const string secret = "6Ldjv5gUAAAAAE8AgNayyITU99Lexs-BEeZU4imx";
                     var client = new WebClient();
@@ -86,13 +132,13 @@ namespace StarToUp.Controllers
                                 break;
                             case ("invalid-input-secret"):
                                 ViewBag.Message = "The secret parameter is invalid or malformed.";
-                         break;
+                                break;
                             case ("missing-input-response"):
                                 ViewBag.Message = "The response parameter is missing.";
                                 break;
                             case ("invalid-input-response"):
                                 ViewBag.Message = "The response parameter is invalid or malformed.";
-                         break;
+                                break;
                             default:
                                 ViewBag.Message = "Error occured. Please try again";
                                 break;
@@ -104,9 +150,14 @@ namespace StarToUp.Controllers
                         ViewBag.Message = "Valid";
                         return RedirectToAction("../Home/Principal");
                     }
-                
+                }
             }
-
+            catch (Exception ex)
+            {
+                ViewBag.FotoMensagem = "Não foi possível salvar a foto";
+            }
+            ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", empresaCadastro.SegmentacaoID);
+            ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", empresaCadastro.EmpresaCadastroID);
             return View(empresaCadastro);
         }
 
@@ -122,6 +173,7 @@ namespace StarToUp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", empresaCadastro.SegmentacaoID);
             return View(empresaCadastro);
         }
 
@@ -130,14 +182,52 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha")] EmpresaCadastro empresaCadastro)
+        public ActionResult Edit([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,RazaoSocial,QtdFuncionario,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Logomarca,Objetivo,SegmentacaoID")] EmpresaCadastro empresaCadastro, HttpPostedFileBase logomarca)
         {
-            if (ModelState.IsValid)
+            ViewBag.FotoMensagem = "";
+            try
             {
-                db.Entry(empresaCadastro).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    string fileName = "";
+                    string contentType = "";
+                    string path = "";
+
+                    EmpresaCadastro empresaCadastroBD = db.EmpresaCadastros.Find(empresaCadastro.EmpresaCadastroID);
+                    if (logomarca != null && logomarca.ContentLength > 0)
+                    {
+                        fileName = System.IO.Path.GetFileName(logomarca.FileName);
+                        contentType = logomarca.ContentType;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\PerfilEmpresa\\" + fileName;
+                        logomarca.SaveAs(path);
+                        empresaCadastro.Logomarca = fileName;
+                    }
+                    else
+                    {
+                        if (logomarca == null)
+                        {
+                            if (empresaCadastroBD.Logomarca != null)
+                            {
+                                if (empresaCadastroBD.Logomarca.Length > 0)
+                                {
+                                    //usa valores que ja estao no BD
+                                    empresaCadastro.Logomarca = empresaCadastroBD.Logomarca;
+                                }
+                            }
+                        }
+                    }
+
+                    ((IObjectContextAdapter)db).ObjectContext.Detach(empresaCadastroBD);
+                    db.Entry(empresaCadastro).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+            catch (Exception ex)
+            {
+                ViewBag.FotoMensagem = "Não foi possível salvar a foto";
+            }
+            ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", empresaCadastro.SegmentacaoID);
             return View(empresaCadastro);
         }
 

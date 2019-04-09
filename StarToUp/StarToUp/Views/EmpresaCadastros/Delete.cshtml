@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_IndexEmpresa.cshtml";
 }
 
 <h2>Delete</h2>
@@ -11,6 +12,14 @@
     <h4>EmpresaCadastro</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Segmentacoes.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Segmentacoes.Descricao)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
@@ -33,6 +42,94 @@
 
         <dd>
             @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdFuncionario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtdFuncionario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logomarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logomarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Objetivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Objetivo)
         </dd>
 
     </dl>

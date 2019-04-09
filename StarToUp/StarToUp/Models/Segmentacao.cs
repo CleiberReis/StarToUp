@@ -12,5 +12,6 @@ namespace StarToUp.Models
 
         //Relacionamento com Startup
         public virtual ICollection<StartupCadastro> StartupCadastros { get; set; }
+        public virtual ICollection<EmpresaCadastro> EmpresaCadastros { get; set; }
     }
 }

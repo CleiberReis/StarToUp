@@ -26,7 +26,7 @@ namespace StarToUp.Controllers
                 ViewBag.Error = "Nome de usuário e/ou senha inválida";
                 return View();
             }
-            return RedirectToAction("Index", "PerfilEmpresas");
+            return RedirectToAction("Index", "EmpresaCadastros");
         }
 
         public ActionResult AcessoNegadoEmpresa()
