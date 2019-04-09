@@ -67,6 +67,7 @@ namespace StarToUp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", startupCadastro.StartupCadastroID);
             return View(startupCadastro);
         }
 

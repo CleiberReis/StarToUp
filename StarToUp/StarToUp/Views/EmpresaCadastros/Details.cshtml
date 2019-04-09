@@ -26,7 +26,7 @@
                         <li class="has-dropdown">
                             <a href="">@empresaCadastro.Nome</a>
                             <ul class="dropdown">
-                                <li>@Html.ActionLink("Editar", "Edit", "EmpresaCadastros")</li>
+                                <li>@Html.ActionLink("Editar", "Edit", new { id = Model.EmpresaCadastroID })</li>
                                 <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
                             </ul>
                         </li>
@@ -37,7 +37,7 @@
                 else
                 {
                     <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                                window.location.href = "@Url.Action("AcessoNegadoEmpresa","LogonEmpresa")";
                     </script>
                 }
             }

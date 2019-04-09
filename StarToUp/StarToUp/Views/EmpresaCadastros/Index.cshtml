@@ -33,7 +33,7 @@
                                 {
                                     <li><a href="@Url.Action("Edit", "EmpresaCadastros", new { id = item.EmpresaCadastroID })">Editar</a></li>
                                 }
-                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
                             </ul>
                         </li>
 
@@ -43,7 +43,7 @@
                 else
                 {
                     <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                                window.location.href = "@Url.Action("AcessoNegadoEmpresa","LogonEmpresa")";
                     </script>
                 }
             }
