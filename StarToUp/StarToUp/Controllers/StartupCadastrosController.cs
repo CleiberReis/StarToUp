@@ -25,6 +25,7 @@ namespace StarToUp.Controllers
             if (Session["Usuario"] != null)
             {
                 Funcoes.GetUsuario();
+                
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
                 return View(startupCadastros.ToList());
             }
