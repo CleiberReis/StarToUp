@@ -426,6 +426,20 @@ namespace StarToUp.Controllers
             return View(startupCadastro);
         }
 
+        [HttpPost]
+        public ActionResult Search(FormCollection fc, string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString)).OrderBy(o => o.Segmentacoes.Descricao);
+                return View("IndexStartups", startupCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("IndexStartups");
+            }
+        }
+
         // GET: StartupCadastros/Delete/5
         public ActionResult Delete(int? id)
         {
