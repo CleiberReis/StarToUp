@@ -49,6 +49,10 @@ namespace StarToUp.Models
         public string ImagemMVP3 { get; set; }
         public string ImagemMVP4 { get; set; }
 
+        //Aceitação do Termo
+        [Required(ErrorMessage = "Preencha o nome da sua Startup")]
+        public bool Aceite { get; set; }
+
         ////Relacionamento com PerfilStartup
         //public virtual ICollection<PerfilStartup> PerfilStartups { get; set; }
 

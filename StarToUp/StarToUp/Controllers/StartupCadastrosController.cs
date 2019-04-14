@@ -25,7 +25,7 @@ namespace StarToUp.Controllers
             if (Session["Usuario"] != null)
             {
                 Funcoes.GetUsuario();
-                
+
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
                 return View(startupCadastros.ToList());
             }
@@ -82,17 +82,18 @@ namespace StarToUp.Controllers
         // POST: StartupCadastros/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,SegmentacaoID")] StartupCadastro startupCadastro,
+        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,Aceite,SegmentacaoID")] StartupCadastro startupCadastro,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
             ViewBag.FotoMensagem = "";
             try
             {
-                if (ModelState.IsValid)
+                if (ModelState.IsValid && startupCadastro.Aceite == true)
                 {
                     string fileName = "";
                     string contentType = "";
                     string path = "";
+
                     if (logoTipo != null && logoTipo.ContentLength > 0)
                     {
                         fileName = System.IO.Path.GetFileName(logoTipo.FileName);

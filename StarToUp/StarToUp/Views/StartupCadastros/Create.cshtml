@@ -322,6 +322,13 @@
         </div>
         <br />
         <div class="text-center">
+            <input type="checkbox" name="aceite" id="aceite" value="true" class="input" />
+            @Html.ValidationMessageFor(model => model.Aceite, "", new { @class = "text-danger" })
+            @*@Html.CheckBoxFor(model => model.Aceite)*@
+            Para se cadastrar aceite os termos de uso da plataforma.@Html.ActionLink("Termos de Uso", "Logar", "Logon")
+        </div>
+        <br />
+        <div class="text-center">
             <button class="btn btn-lg btn-success btn-block" type="submit" value="Criar">Criar Perfil</button>
         </div>
     </div>

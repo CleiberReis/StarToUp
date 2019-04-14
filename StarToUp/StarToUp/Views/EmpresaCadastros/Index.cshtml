@@ -25,6 +25,7 @@
 
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Empresas</a></li>
+                        <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
                         <li>@Html.ActionLink("Empresas", "IndexEmpresas", "EmpresaCadastros")</li>
                         <li class="has-dropdown">
                             <a href="">@empresaCadastro.Nome</a>
@@ -33,7 +34,7 @@
                                 {
                                     <li><a href="@Url.Action("Edit", "EmpresaCadastros", new { id = item.EmpresaCadastroID })">Editar</a></li>
                                 }
-                            <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
                             </ul>
                         </li>
 

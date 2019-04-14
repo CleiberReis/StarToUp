@@ -42,10 +42,10 @@ namespace StarToUp.Migrations
                         Senha = c.String(nullable: false, unicode: false),
                         RazaoSocial = c.String(unicode: false),
                         QtdFuncionario = c.String(unicode: false),
-                        Cep = c.Int(nullable: false),
+                        Cep = c.String(unicode: false),
                         Rua = c.String(unicode: false),
                         Bairro = c.String(unicode: false),
-                        Numero = c.Int(nullable: false),
+                        Numero = c.String(unicode: false),
                         Complemento = c.String(unicode: false),
                         Cidade = c.String(unicode: false),
                         Estado = c.String(unicode: false),
@@ -92,6 +92,7 @@ namespace StarToUp.Migrations
                         ImagemMVP2 = c.String(unicode: false),
                         ImagemMVP3 = c.String(unicode: false),
                         ImagemMVP4 = c.String(unicode: false),
+                        Aceite = c.Boolean(nullable: false),
                         SegmentacaoID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.StartupCadastroID)
