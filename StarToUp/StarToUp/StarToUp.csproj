@@ -392,6 +392,7 @@
     <Content Include="Views\EmpresaCadastros\Index.cshtml" />
     <Content Include="Views\EmpresaCadastros\IndexEmpresas.cshtml" />
     <Content Include="Views\Administradors\Estatisticas.cshtml" />
+    <Content Include="Views\StartupCadastros\EsqueciSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -35,9 +35,29 @@
                         </div>
                         <div class="panel-heading">
                             <div class="row">
-                                @*<div class="col-xs-6 text-center">
-                                        <a href="/forgotPassword" title="ForgotPassword"><div class="forgot_password">Forgot Password ?</div></a>
-                                    </div>*@
+                                <div class="col-xs-6 text-center">
+                                    @*<a href="#" data-toggle="modal" data-target="#modal">Esqueceu a senha? - Clique aqui!</a>*@
+                                    @Html.ActionLink("Esqueceu a senha? - Clique aqui!", "EsqueciSenha", "StartupCadastros")
+                                </div>
+                                <br />
+                                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h3 class="modal-title" id="myModalLabel">Recuperação de Senha!</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label>Digite seu e-mail abaixo para receber sua senha:</label>
+                                                <input type="text" name="email" id="email" class="form-control input" placeholder="E-mail" />
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-warning">@Html.ActionLink("Enviar Senha!", "EsqueciSenha", "StartupCadastros")</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
                             </div>
                         </div>
                         <div class="text-center">

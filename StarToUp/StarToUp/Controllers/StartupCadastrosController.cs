@@ -28,8 +28,7 @@ namespace StarToUp.Controllers
 
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
                 return View(startupCadastros.ToList());
-            }
-            else
+            }else
             {
                 return RedirectToAction("Logar", "Logon");
             }
@@ -48,6 +47,30 @@ namespace StarToUp.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        public ActionResult EsqueciSenha()
+        {
+            var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
+            return View(startupCadastros.ToList());
+            //return View();
+        }
+
+        [HttpPost]
+        public ActionResult EsqueciSenha(StartupCadastro startupCadastro)
+        {
+            var cons = db.StartupCadastros.Where(c => c.Email == startupCadastro.Email);
+
+            GmailEmailService gmail = new GmailEmailService();
+            EmailMessage msg = new EmailMessage();
+            msg.Body = "<!DOCTYPE HTML><html><body><p>" + startupCadastro.Nome + ",<br/>Olá!</p><p>Segue aqui a sua última senha cadastrada: <br/>" + startupCadastro.Senha + "</p><p>Aconselhamos que por segurança você altere sua senha!</p><p>Clique no link abaixo para logar novamente:</p><a href= http://localhost:50072/Logon/Logar/" + "><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.IsHtml = true;
+            msg.Subject = "Esqueceu a senha? Abra o E-mail - StarToUp";
+            msg.ToEmail = startupCadastro.Email;
+            gmail.SendEmailMessage(msg);
+
+            return View();
+
         }
 
         public ActionResult Logoff()
