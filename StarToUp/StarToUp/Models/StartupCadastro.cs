@@ -50,7 +50,7 @@ namespace StarToUp.Models
         public string ImagemMVP4 { get; set; }
 
         //Aceitação do Termo
-        [Required(ErrorMessage = "Preencha o nome da sua Startup")]
+        [Required(ErrorMessage = "É obrigatório aceitar os termos de uso da plataforma")]
         public bool Aceite { get; set; }
 
         ////Relacionamento com PerfilStartup

@@ -41,6 +41,11 @@ namespace StarToUp.Models
         public string Logomarca { get; set; }
         public string Objetivo { get; set; }
 
+        //Aceitação do Termo
+        [Required(ErrorMessage = "É obrigatório aceitar os termos de uso da plataforma")]
+        public bool Aceite { get; set; }
+
+
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
 

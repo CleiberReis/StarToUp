@@ -769,3 +769,4 @@ C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\bin\roslyn\V
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizando.resources
