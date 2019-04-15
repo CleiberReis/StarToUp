@@ -17,8 +17,6 @@ namespace StarToUp.Controllers
     {
         private Context db = new Context();
 
-        public IEnumerable<object> StartupCadastros { get; private set; }
-
         // GET: StartupCadastros
         public ActionResult Index()
         {
@@ -49,17 +47,19 @@ namespace StarToUp.Controllers
             return View();
         }
 
-        public ActionResult EsqueciSenha()
+        public ActionResult EsqueciSenha(int? id)
         {
-            var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
+            var startupCadastros = db.StartupCadastros;
             return View(startupCadastros.ToList());
             //return View();
         }
 
         [HttpPost]
-        public ActionResult EsqueciSenha(StartupCadastro startupCadastro)
+        public ActionResult EsqueciSenha([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,SegmentacaoID")] StartupCadastro startupCadastro,
+            HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
-            var cons = db.StartupCadastros.Where(c => c.Email == startupCadastro.Email);
+            Funcoes.GetUsuario();
+            var cons = db.StartupCadastros.Where(c => c.Email == startupCadastro.Email).Where(c => c.Senha == startupCadastro.Senha);
 
             GmailEmailService gmail = new GmailEmailService();
             EmailMessage msg = new EmailMessage();
