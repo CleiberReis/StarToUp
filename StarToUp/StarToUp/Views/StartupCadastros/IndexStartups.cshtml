@@ -59,21 +59,23 @@
     </div>
 </div>
 <br />
-
-@using (Html.BeginForm("Search", "StartupCadastros", null, FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <div class="col-md-10">
-                Pesquisar: <input type="text" name="SearchString" id="SearchString" class="form-control" />
-                <input type="submit" value="Pesquisar por segmentação" class="btn btn-danger" />
+<div class="container">
+    <div id="aside" class="col-md-4">
+        @using (Html.BeginForm("Search", "StartupCadastros", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="widget">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="widget-search">
+                    <input type="text" name="SearchString" id="SearchString" class="search-input" placeholder="Pesquisa por Segmentação" />
+                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                    @*<input type="submit" value="Pesquisar por segmentação" class="btn btn-danger" />*@
+                </div>
             </div>
-        </div>
-    </div>
-}
 
+        }
+    </div>
+</div>
 <br />
 
 @foreach (var item in Model)
@@ -102,12 +104,6 @@
                 @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
             </div>
             <div class="col-md-3 acoesadireita">
-                @*<a href='@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })'>
-                        <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
-                             title="Editar" />
-                    </a>
-                    <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal" data-content="@item.Nome" data-id="@item.StartupCadastroID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
-                    </a>*@
                 <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
             </div>
         </div>
