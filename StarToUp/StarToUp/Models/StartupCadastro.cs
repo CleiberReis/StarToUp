@@ -49,13 +49,6 @@ namespace StarToUp.Models
         public string ImagemMVP3 { get; set; }
         public string ImagemMVP4 { get; set; }
 
-        //Aceitação do Termo
-        [Required(ErrorMessage = "É obrigatório aceitar os termos de uso da plataforma")]
-        public bool Aceite { get; set; }
-
-        ////Relacionamento com PerfilStartup
-        //public virtual ICollection<PerfilStartup> PerfilStartups { get; set; }
-
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
     }

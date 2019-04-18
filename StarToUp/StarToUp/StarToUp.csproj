@@ -168,6 +168,10 @@
     <Compile Include="Migrations\201904141709408_atualizando.Designer.cs">
       <DependentUpon>201904141709408_atualizando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181701273_atualizandoo.cs" />
+    <Compile Include="Migrations\201904181701273_atualizandoo.Designer.cs">
+      <DependentUpon>201904181701273_atualizandoo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Contato.cs" />
@@ -422,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904141709408_atualizando.resx">
       <DependentUpon>201904141709408_atualizando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181701273_atualizandoo.resx">
+      <DependentUpon>201904181701273_atualizandoo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

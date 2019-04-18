@@ -79,13 +79,13 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,RazaoSocial,QtdFuncionario,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Logomarca,Objetivo,Aceite,SegmentacaoID")] EmpresaCadastro empresaCadastro, HttpPostedFileBase logomarca)
+        public ActionResult Create([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,RazaoSocial,QtdFuncionario,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Logomarca,Objetivo,SegmentacaoID")] EmpresaCadastro empresaCadastro, HttpPostedFileBase logomarca)
         {
 
             ViewBag.FotoMensagem = "";
             try
             {
-                if (ModelState.IsValid && empresaCadastro.Aceite == true)
+                if (ModelState.IsValid)
                 {
                     string fileName = "";
                     string contentType = "";

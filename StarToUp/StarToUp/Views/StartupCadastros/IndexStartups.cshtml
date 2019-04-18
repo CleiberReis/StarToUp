@@ -15,34 +15,24 @@
                 </div>
             </div>
             <!--  Main navigation  -->
-            @{
-                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
-                if (startupCadastro != null)
-                {
-                    <ul class="main-nav nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
-                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
-                        <li class="has-dropdown">
-                            <a href="">@startupCadastro.Nome</a>
-                            <ul class="dropdown">
-                                @foreach (var item in Model)
-                                {
-                                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })">Editar</a></li>
-                                }
-                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
-                            </ul>
-                        </li>
+         
 
-                    </ul>
-                    <!-- /Main navigation -->
-                }
-                else
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
+                <li>@Html.ActionLink("Home Empresas", "Index", "EmpresaCadastros")</li>
+                <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
+                <li class="has-dropdown">
+                    <ul class="dropdown">
+                        @*@foreach (var item in Model)
                 {
-                    <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
-                    </script>
-                }
-            }
+                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })">Editar</a></li>
+                }*@
+                        <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+                <!-- /Main navigation -->
 
         </div>
     </nav>
