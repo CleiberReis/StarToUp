@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atual : DbMigration
+    public partial class atualizar : DbMigration
     {
         public override void Up()
         {
@@ -92,7 +92,6 @@ namespace StarToUp.Migrations
                         ImagemMVP2 = c.String(unicode: false),
                         ImagemMVP3 = c.String(unicode: false),
                         ImagemMVP4 = c.String(unicode: false),
-                        Aceite = c.Boolean(nullable: false),
                         SegmentacaoID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.StartupCadastroID)
