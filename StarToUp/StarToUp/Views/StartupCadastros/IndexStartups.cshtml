@@ -19,8 +19,8 @@
 
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
-                <li>@Html.ActionLink("Home Empresas", "Index", "EmpresaCadastros")</li>
-                <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
+                <li>@Html.ActionLink("Empresas do Site", "IndexEmpresas", "EmpresaCadastros")</li>
+                @*<li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>*@
                 <li class="has-dropdown">
                     <ul class="dropdown">
                         @*@foreach (var item in Model)
@@ -33,7 +33,6 @@
 
             </ul>
                 <!-- /Main navigation -->
-
         </div>
     </nav>
     <!-- /Nav -->
