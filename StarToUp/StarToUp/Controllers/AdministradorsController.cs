@@ -17,6 +17,7 @@ namespace StarToUp.Controllers
         // GET: Administradors
         public ActionResult Index()
         {
+            IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
             return View(db.Administradors.ToList());
         }
 
@@ -134,6 +135,12 @@ namespace StarToUp.Controllers
             db.Administradors.Remove(administrador);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Estatisticas()
+        {
+
+            return View();
         }
 
         protected override void Dispose(bool disposing)

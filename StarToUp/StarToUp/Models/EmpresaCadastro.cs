@@ -44,8 +44,5 @@ namespace StarToUp.Models
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
 
-        //// Relacionamento perfil empresas
-        //public int PerfilEmpresaID { get; set; }
-        //public virtual ICollection<PerfilEmpresa> PerfilEmpresas { get; set; }
     }
 }

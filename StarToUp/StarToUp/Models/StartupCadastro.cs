@@ -49,9 +49,6 @@ namespace StarToUp.Models
         public string ImagemMVP3 { get; set; }
         public string ImagemMVP4 { get; set; }
 
-        ////Relacionamento com PerfilStartup
-        //public virtual ICollection<PerfilStartup> PerfilStartups { get; set; }
-
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
     }

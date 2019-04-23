@@ -17,18 +17,16 @@ namespace StarToUp.Controllers
     {
         private Context db = new Context();
 
-        public IEnumerable<object> StartupCadastros { get; private set; }
-
         // GET: StartupCadastros
         public ActionResult Index()
         {
             if (Session["Usuario"] != null)
             {
                 Funcoes.GetUsuario();
+
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
                 return View(startupCadastros.ToList());
-            }
-            else
+            }else
             {
                 return RedirectToAction("Logar", "Logon");
             }
@@ -47,6 +45,32 @@ namespace StarToUp.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        public ActionResult EsqueciSenha(int? id)
+        {
+            var startupCadastros = db.StartupCadastros;
+            return View(startupCadastros.ToList());
+            //return View();
+        }
+
+        [HttpPost]
+        public ActionResult EsqueciSenha([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,SegmentacaoID")] StartupCadastro startupCadastro,
+            HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
+        {
+            Funcoes.GetUsuario();
+            var cons = db.StartupCadastros.Where(c => c.Email == startupCadastro.Email).Where(c => c.Senha == startupCadastro.Senha);
+
+            GmailEmailService gmail = new GmailEmailService();
+            EmailMessage msg = new EmailMessage();
+            msg.Body = "<!DOCTYPE HTML><html><body><p>" + startupCadastro.Nome + ",<br/>Olá!</p><p>Segue aqui a sua última senha cadastrada: <br/>" + startupCadastro.Senha + "</p><p>Aconselhamos que por segurança você altere sua senha!</p><p>Clique no link abaixo para logar novamente:</p><a href= http://localhost:50072/Logon/Logar/" + "><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.IsHtml = true;
+            msg.Subject = "Esqueceu a senha? Abra o E-mail - StarToUp";
+            msg.ToEmail = startupCadastro.Email;
+            gmail.SendEmailMessage(msg);
+
+            return View();
+
         }
 
         public ActionResult Logoff()
@@ -92,6 +116,7 @@ namespace StarToUp.Controllers
                     string fileName = "";
                     string contentType = "";
                     string path = "";
+
                     if (logoTipo != null && logoTipo.ContentLength > 0)
                     {
                         fileName = System.IO.Path.GetFileName(logoTipo.FileName);
@@ -423,6 +448,20 @@ namespace StarToUp.Controllers
             }
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", startupCadastro.SegmentacaoID);
             return View(startupCadastro);
+        }
+
+        [HttpPost]
+        public ActionResult Search(FormCollection fc, string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString)).OrderBy(o => o.Segmentacoes.Descricao);
+                return View("IndexStartups", startupCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("IndexStartups");
+            }
         }
 
         // GET: StartupCadastros/Delete/5

@@ -15,34 +15,24 @@
                 </div>
             </div>
             <!--  Main navigation  -->
-            @{
-                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
-                if (startupCadastro != null)
-                {
-                    <ul class="main-nav nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
-                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
-                        <li class="has-dropdown">
-                            <a href="">@startupCadastro.Nome</a>
-                            <ul class="dropdown">
-                                @foreach (var item in Model)
-                                {
-                                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })" >Editar</a></li>
-                                }
-                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
-                            </ul>
-                        </li>
+         
 
-                    </ul>
-                    <!-- /Main navigation -->
-                }
-                else
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
+                <li>@Html.ActionLink("Home Empresas", "Index", "EmpresaCadastros")</li>
+                <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
+                <li class="has-dropdown">
+                    <ul class="dropdown">
+                        @*@foreach (var item in Model)
                 {
-                    <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegado","Logon")";
-                    </script>
-                }
-            }
+                    <li><a href="@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })">Editar</a></li>
+                }*@
+                        <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+                <!-- /Main navigation -->
 
         </div>
     </nav>
@@ -56,6 +46,24 @@
     <div class="container">
         <h2>Startups</h2>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<br />
+<div class="container">
+    <div id="aside" class="col-md-4">
+        @using (Html.BeginForm("Search", "StartupCadastros", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="widget">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="widget-search">
+                    <input type="text" name="SearchString" id="SearchString" class="search-input" placeholder="Pesquisa por Segmentação" />
+                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                    @*<input type="submit" value="Pesquisar por segmentação" class="btn btn-danger" />*@
+                </div>
+            </div>
+
+        }
     </div>
 </div>
 <br />
@@ -86,12 +94,6 @@
                 @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
             </div>
             <div class="col-md-3 acoesadireita">
-                @*<a href='@Url.Action("Edit", "StartupCadastros", new { id = item.StartupCadastroID })'>
-                <img src='@Url.Content("~/Content/img/editar.png")' class="botaoicone"
-                     title="Editar" />
-            </a>
-            <a class="btn excluir botaoicone" data-target="#modal" data-toggle="modal" data-content="@item.Nome" data-id="@item.StartupCadastroID" style="background: url(@Url.Content("~/Content/img/excluir.png")) no-repeat;">
-            </a>*@
                 <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
             </div>
         </div>
