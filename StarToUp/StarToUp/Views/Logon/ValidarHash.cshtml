@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<StarToUp.Models.StartupCadastro>
 @{
-    ViewBag.Title = "EsqueciSenha";
+    ViewBag.Title = "ValidarHash";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
@@ -17,12 +17,16 @@
                                 <div class="centerLoginContent">
                                     <form name="loginForm" action="/login" method="post">
                                         <input type="hidden" name="initialURI" value="/">
-                                        <h2 class="login_title">REDEFINIR SENHA</h2>
+                                        <h2 class="login_title">REDEFINA A SENHA</h2>
                                         <div class="">
-                                            <p class="login_text">Insira seu e-mail abaixo para recuperação de <span>senha</span></p>
+                                            <p class="login_text">Cadastre sua nova <span>senha</span></p>
                                             <div class="form-group">
-                                                <label for="username">Email<span class="err_cls">*</span></label>
-                                                <input class="input form-control" tabindex="1" id="email" name="email" type="text" placeholder="Email" onblur="this.placeholder = 'Email'" />
+                                                <label for="username">Nova Senha<span class="err_cls">*</span></label>
+                                                <input class="input form-control" tabindex="1" id="senha" name="senha" type="password" placeholder="Senha" onblur="this.placeholder = 'Senha'" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username">Confirme a Senha<span class="err_cls">*</span></label>
+                                                <input class="input form-control" tabindex="1" id="confsenha" name="confsenha" type="password" placeholder="Confirme a Senha" onblur="this.placeholder = 'Confirme a Senha'" />
                                             </div>
                                         </div>
                                     </form>
@@ -31,15 +35,16 @@
                         </div>
                         <div class="text-center">
                             <div id="UIPortalLoginFormAction" class="loginButton">
-                                <button class="button_login" type="submit" value="EsqueciSenha" tabindex="4">Redefinir senha</button>
+                                <button class="button_novasenha" type="submit" value="NovaSenha" tabindex="4">Salvar Senha</button>
                             </div>
                         </div>
-                        <br />
+                        <br/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 }
+
 
 

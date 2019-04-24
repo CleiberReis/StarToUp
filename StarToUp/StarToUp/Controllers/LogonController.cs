@@ -4,6 +4,7 @@ using StarToUp.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -58,16 +59,17 @@ namespace StarToUp.Controllers
         {
             StartupCadastro s = db.StartupCadastros.Where(e => e.Email == startupCadastro.Email).ToList().SingleOrDefault();
 
-            string hash = (startupCadastro.Email + startupCadastro.DataFundacao + startupCadastro.Cep);
+            string hash = (s.Email + s.Nome + s.Bairro);
             s.Email = startupCadastro.Email;
             s.Hash = hash;
 
-            db.Entry(startupCadastro).State = EntityState.Modified;
+            ((IObjectContextAdapter)db).ObjectContext.Detach(s);
+            db.Entry(s).State = EntityState.Modified;
             db.SaveChanges();
 
             GmailEmailService gmail = new GmailEmailService();
             EmailMessage msg = new EmailMessage();
-            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha: <br/><a href = http://localhost:50072/Logon/ValidarHash?"+ hash + ">" +"</p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/Logon/ValidarHash/" + s.Hash + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
             msg.IsHtml = true;
             msg.Subject = "Redefinir Senha - StarToUp";
             msg.ToEmail = startupCadastro.Email;
@@ -77,7 +79,7 @@ namespace StarToUp.Controllers
 
         }
 
-        public ActionResult ValidarHash()
+        public ActionResult ValidarHash(string hash)
         {
             return View();
             //return View();

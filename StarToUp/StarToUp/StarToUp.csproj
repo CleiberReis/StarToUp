@@ -393,6 +393,7 @@
     <Content Include="Views\EmpresaCadastros\IndexEmpresas.cshtml" />
     <Content Include="Views\Administradors\Estatisticas.cshtml" />
     <Content Include="Views\Logon\EsqueciSenha.cshtml" />
+    <Content Include="Views\Logon\ValidarHash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

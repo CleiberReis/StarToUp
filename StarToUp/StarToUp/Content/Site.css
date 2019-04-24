@@ -221,6 +221,15 @@ select {
     height: 35px;
 }
 
+.button_novasenha {
+    background-color: #1583a1;
+    color: white;
+    border: 0px;
+    padding: 6px 9px;
+    width: 145px;
+    height: 35px;
+}
+
 /* linked in css */
 .linkedin_bgcolor {
     background: #385899;
