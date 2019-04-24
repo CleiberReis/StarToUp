@@ -160,9 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904232225037_atualizar.cs" />
-    <Compile Include="Migrations\201904232225037_atualizar.Designer.cs">
-      <DependentUpon>201904232225037_atualizar.cs</DependentUpon>
+    <Compile Include="Migrations\201904240124352_teste.cs" />
+    <Compile Include="Migrations\201904240124352_teste.Designer.cs">
+      <DependentUpon>201904240124352_teste.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -392,7 +392,6 @@
     <Content Include="Views\EmpresaCadastros\Index.cshtml" />
     <Content Include="Views\EmpresaCadastros\IndexEmpresas.cshtml" />
     <Content Include="Views\Administradors\Estatisticas.cshtml" />
-    <Content Include="Views\StartupCadastros\EsqueciSenha.cshtml" />
     <Content Include="Views\Logon\EsqueciSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -414,8 +413,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904232225037_atualizar.resx">
-      <DependentUpon>201904232225037_atualizar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904240124352_teste.resx">
+      <DependentUpon>201904240124352_teste.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
