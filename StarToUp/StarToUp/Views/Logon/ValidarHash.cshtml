@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StarToUp.Models.StartupCadastro>
+﻿@model StarToUp.Models.StartupCadastro
 @{
     ViewBag.Title = "ValidarHash";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -23,6 +23,7 @@
                                             <div class="form-group">
                                                 <label for="username">Nova Senha<span class="err_cls">*</span></label>
                                                 <input class="input form-control" tabindex="1" id="senha" name="senha" type="password" placeholder="Senha" onblur="this.placeholder = 'Senha'" />
+                                                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">Confirme a Senha<span class="err_cls">*</span></label>
@@ -35,10 +36,10 @@
                         </div>
                         <div class="text-center">
                             <div id="UIPortalLoginFormAction" class="loginButton">
-                                <button class="button_novasenha" type="submit" value="NovaSenha" tabindex="4">Salvar Senha</button>
+                                <button class="button_novasenha" type="submit" value="ValidarHash" tabindex="4">Salvar Senha</button>
                             </div>
                         </div>
-                        <br/>
+                        <br />
                     </div>
                 </div>
             </div>

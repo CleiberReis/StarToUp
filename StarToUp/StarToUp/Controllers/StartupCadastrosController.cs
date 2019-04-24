@@ -232,9 +232,6 @@ namespace StarToUp.Controllers
             return View(startupCadastro);
         }
 
-        // POST: StartupCadastros/Edit/5
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,Has,SegmentacaoID")] StartupCadastro startupCadastro,
