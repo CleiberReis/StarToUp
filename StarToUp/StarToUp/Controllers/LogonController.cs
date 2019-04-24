@@ -3,6 +3,7 @@ using StarToUp.Models;
 using StarToUp.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,29 +47,40 @@ namespace StarToUp.Controllers
             return RedirectToAction("Index", "Principal");
         }
 
-        public ActionResult EsqueciSenha(int? id)
+        public ActionResult EsqueciSenha()
         {
             return View();
-            //return View();
         }
 
         [HttpPost]
         public ActionResult EsqueciSenha([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
-            Funcoes.GetUsuario();
-            var cons = db.StartupCadastros.Where(c => c.Email == startupCadastro.Email).Where(c => c.Senha == startupCadastro.Senha);
+            StartupCadastro s = db.StartupCadastros.Where(e => e.Email == startupCadastro.Email).ToList().SingleOrDefault();
+
+            string hash = (startupCadastro.Email + startupCadastro.DataFundacao + startupCadastro.Cep);
+            s.Email = startupCadastro.Email;
+            s.Hash = hash;
+
+            db.Entry(startupCadastro).State = EntityState.Modified;
+            db.SaveChanges();
 
             GmailEmailService gmail = new GmailEmailService();
             EmailMessage msg = new EmailMessage();
-            msg.Body = "<!DOCTYPE HTML><html><body><p>" + startupCadastro.Nome + ",<br/>Olá!</p><p>Segue aqui a sua última senha cadastrada: <br/>" + startupCadastro.Senha + "</p><p>Aconselhamos que por segurança você altere sua senha!</p><p>Clique no link abaixo para logar novamente:</p><a href= http://localhost:50072/Logon/Logar/" + "><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha: <br/><a href = http://localhost:50072/Logon/ValidarHash?"+ hash + ">" +"</p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
             msg.IsHtml = true;
-            msg.Subject = "Esqueceu a senha? Abra o E-mail - StarToUp";
+            msg.Subject = "Redefinir Senha - StarToUp";
             msg.ToEmail = startupCadastro.Email;
             gmail.SendEmailMessage(msg);
 
             return View();
 
+        }
+
+        public ActionResult ValidarHash()
+        {
+            return View();
+            //return View();
         }
     }
 }
