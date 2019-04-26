@@ -69,7 +69,7 @@ namespace StarToUp.Controllers
 
             GmailEmailService gmail = new GmailEmailService();
             EmailMessage msg = new EmailMessage();
-            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/Logon/ValidarHash/" + s.StartupCadastroID + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/Logon/ValidarHash/" + (s.StartupCadastroID) + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
             msg.IsHtml = true;
             msg.Subject = "Redefinir Senha - StarToUp";
             msg.ToEmail = startupCadastro.Email;
@@ -81,29 +81,34 @@ namespace StarToUp.Controllers
 
         public ActionResult ValidarHash(int? id)
         {
-            string h = Request.QueryString["Hash"];
-            StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
+            //string h = Request.QueryString["Hash"];
+            //StartupCadastro s = db.StartupCadastros.Find(id);
 
-            if (s != null)
+            if (id == null)
             {
-                return View();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            ViewBag.Message = "Link inválido, entre em contato com a StarToUp";
-            return RedirectToAction("../Logon/ValidarHash");
+            StartupCadastro startupCadastro = db.StartupCadastros.Find(id);
+            if (startupCadastro == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", startupCadastro.SegmentacaoID);
+            return View(startupCadastro);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ValidarHash([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
-            string h = Request.QueryString["Hash"];
-            StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
+            //string h = Request.QueryString["Hash"];
+            //StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
 
-            if (s.Senha != null)
+            if (ModelState.IsValid)
             {
-                ((IObjectContextAdapter)db).ObjectContext.Detach(s);
-                db.Entry(s).State = EntityState.Modified;
+                //((IObjectContextAdapter)db).ObjectContext.Detach(startupCadastro);
+                db.Entry(startupCadastro).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Logar");
             }
