@@ -60,7 +60,6 @@ namespace StarToUp.Controllers
             StartupCadastro s = db.StartupCadastros.Where(e => e.Email == startupCadastro.Email).ToList().SingleOrDefault();
 
             string hash = (s.Email + s.Nome + s.Bairro);
-            s.Email = startupCadastro.Email;
             s.Hash = hash;
 
             ((IObjectContextAdapter)db).ObjectContext.Detach(s);
@@ -96,6 +95,23 @@ namespace StarToUp.Controllers
             ViewBag.SegmentacaoID = new SelectList(db.Segmentacoes, "SegmentacaoID", "Descricao", startupCadastro.SegmentacaoID);
             return View(startupCadastro);
         }
+
+        //public ActionResult ValidarHash(string hash)
+        //{
+        //    string h = Request.QueryString["Hash"];
+        //    //StartupCadastro s = db.StartupCadastros.Find(id);
+
+        //    if (hash == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
+        //    if (hash == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View();
+        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]

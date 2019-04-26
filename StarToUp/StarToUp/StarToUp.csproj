@@ -164,6 +164,10 @@
     <Compile Include="Migrations\201904240124352_teste.Designer.cs">
       <DependentUpon>201904240124352_teste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904260422098_startup.cs" />
+    <Compile Include="Migrations\201904260422098_startup.Designer.cs">
+      <DependentUpon>201904260422098_startup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Contato.cs" />
@@ -416,6 +420,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904240124352_teste.resx">
       <DependentUpon>201904240124352_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904260422098_startup.resx">
+      <DependentUpon>201904260422098_startup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
