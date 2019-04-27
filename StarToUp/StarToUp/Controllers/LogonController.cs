@@ -68,7 +68,7 @@ namespace StarToUp.Controllers
 
             GmailEmailService gmail = new GmailEmailService();
             EmailMessage msg = new EmailMessage();
-            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/Logon/ValidarHash/" + (s.StartupCadastroID) + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/Logon/ValidarHash?h=" + hash + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
             msg.IsHtml = true;
             msg.Subject = "Redefinir Senha - StarToUp";
             msg.ToEmail = startupCadastro.Email;
@@ -78,12 +78,14 @@ namespace StarToUp.Controllers
 
         }
 
-        public ActionResult ValidarHash(int? id)
+        public ActionResult ValidarHash(string h)
         {
-            if (id == null)
+            if (h == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
+            int id = s.StartupCadastroID;
             StartupCadastro startupCadastro = db.StartupCadastros.Find(id);
             if (startupCadastro == null)
             {

@@ -56,7 +56,7 @@ namespace StarToUp.Controllers
         {
             EmpresaCadastro e = db.EmpresaCadastros.Where(s => s.Email == empresaCadastro.Email).ToList().SingleOrDefault();
 
-            string hash = (e.Email + e.Nome + e.Bairro);
+            string hash = (e.Email + e.Numero);
             e.Hash = hash;
 
             ((IObjectContextAdapter)db).ObjectContext.Detach(e);
@@ -65,7 +65,7 @@ namespace StarToUp.Controllers
 
             GmailEmailService gmail = new GmailEmailService();
             EmailMessage msg = new EmailMessage();
-            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/LogonEmpresa/ValidarHash/" + (e.EmpresaCadastroID) + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
+            msg.Body = "<!DOCTYPE HTML><html><body><p>Olá!</p><p>Clique no link abaixo para redefinir senha:<br/><a href= http://localhost:50072/LogonEmpresa/ValidarHash?h=" + hash + ">Redefinir Senha</a></p><p>Aconselhamos que por segurança você altere sua senha para uma mais forte!</p><p>Atenciosamente,<br/>StarToUp.</p></body></html>";
             msg.IsHtml = true;
             msg.Subject = "Redefinir Senha - StarToUp";
             msg.ToEmail = empresaCadastro.Email;
@@ -75,12 +75,14 @@ namespace StarToUp.Controllers
 
         }
 
-        public ActionResult ValidarHash(int? id)
+        public ActionResult ValidarHash(string h)
         {
-            if (id == null)
+            if (h == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            EmpresaCadastro s = db.EmpresaCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
+            int id = s.EmpresaCadastroID;
             EmpresaCadastro empresaCadastro = db.EmpresaCadastros.Find(id);
             if (empresaCadastro == null)
             {
