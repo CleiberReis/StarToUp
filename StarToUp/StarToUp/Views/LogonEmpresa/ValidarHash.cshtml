@@ -1,0 +1,65 @@
+﻿@model StarToUp.Models.EmpresaCadastro
+@{
+    ViewBag.Title = "ValidarHash";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@using (Html.BeginForm("ValidarHash", "LogonEmpresa", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div id="login_form">
+        <div class="container">
+            @*Trazendo dados ocultos pra salvar no banco*@
+            @Html.HiddenFor(model => model.EmpresaCadastroID)
+            @Html.HiddenFor(model => model.SegmentacaoID)
+            @Html.HiddenFor(model => model.Nome)
+            @Html.HiddenFor(model => model.Email)
+            @Html.HiddenFor(model => model.Cep)
+            @Html.HiddenFor(model => model.Rua)
+            @Html.HiddenFor(model => model.Bairro)
+            @Html.HiddenFor(model => model.Complemento)
+            @Html.HiddenFor(model => model.Numero)
+            @Html.HiddenFor(model => model.Cidade)
+            @Html.HiddenFor(model => model.Estado)
+            @Html.HiddenFor(model => model.Objetivo)
+            @Html.HiddenFor(model => model.Logomarca)
+            @Html.HiddenFor(model => model.RazaoSocial)
+            @Html.HiddenFor(model => model.QtdFuncionario)
+            @Html.HiddenFor(model => model.Hash)
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-login login_block">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="centerLoginContent">
+                                    <form name="loginForm" action="/login" method="post">
+                                        <input type="hidden" name="initialURI" value="/">
+                                        <h2 class="login_title">REDEFINA A SENHA</h2>
+                                        <div class="">
+                                            <p class="login_text">Cadastre sua nova <span>senha</span></p>
+                                            <div class="form-group">
+                                                <label for="username">Nova Senha<span class="err_cls">*</span></label>
+                                                <input class="input form-control" tabindex="1" id="senha" name="senha" type="password" placeholder="Senha" onblur="this.placeholder = 'Senha'" />
+                                                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username">Confirme a Senha<span class="err_cls">*</span></label>
+                                                <input class="input form-control" tabindex="1" id="confsenha" name="confsenha" type="password" placeholder="Confirme a Senha" onblur="this.placeholder = 'Confirme a Senha'" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div id="UIPortalLoginFormAction" class="loginButton">
+                                <button class="button_novasenha" type="submit" value="ValidarHash" tabindex="4">Salvar Senha</button>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

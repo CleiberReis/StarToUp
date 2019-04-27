@@ -168,6 +168,10 @@
     <Compile Include="Migrations\201904260422098_startup.Designer.cs">
       <DependentUpon>201904260422098_startup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904271519385_hashempresa.cs" />
+    <Compile Include="Migrations\201904271519385_hashempresa.Designer.cs">
+      <DependentUpon>201904271519385_hashempresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Contato.cs" />
@@ -398,6 +402,8 @@
     <Content Include="Views\Administradors\Estatisticas.cshtml" />
     <Content Include="Views\Logon\EsqueciSenha.cshtml" />
     <Content Include="Views\Logon\ValidarHash.cshtml" />
+    <Content Include="Views\LogonEmpresa\EsqueciSenha.cshtml" />
+    <Content Include="Views\LogonEmpresa\ValidarHash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904260422098_startup.resx">
       <DependentUpon>201904260422098_startup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271519385_hashempresa.resx">
+      <DependentUpon>201904271519385_hashempresa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

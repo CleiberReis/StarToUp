@@ -41,6 +41,8 @@ namespace StarToUp.Models
         public string Logomarca { get; set; }
         public string Objetivo { get; set; }
 
+        public string Hash { get; set; }
+
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
 
