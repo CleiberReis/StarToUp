@@ -160,17 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904240124352_teste.cs" />
-    <Compile Include="Migrations\201904240124352_teste.Designer.cs">
-      <DependentUpon>201904240124352_teste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904260422098_startup.cs" />
-    <Compile Include="Migrations\201904260422098_startup.Designer.cs">
-      <DependentUpon>201904260422098_startup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904271519385_hashempresa.cs" />
-    <Compile Include="Migrations\201904271519385_hashempresa.Designer.cs">
-      <DependentUpon>201904271519385_hashempresa.cs</DependentUpon>
+    <Compile Include="Migrations\201904272153455_atualizando.cs" />
+    <Compile Include="Migrations\201904272153455_atualizando.Designer.cs">
+      <DependentUpon>201904272153455_atualizando.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -424,14 +416,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904240124352_teste.resx">
-      <DependentUpon>201904240124352_teste.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904260422098_startup.resx">
-      <DependentUpon>201904260422098_startup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904271519385_hashempresa.resx">
-      <DependentUpon>201904271519385_hashempresa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904272153455_atualizando.resx">
+      <DependentUpon>201904272153455_atualizando.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

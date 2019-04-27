@@ -728,8 +728,6 @@ C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\bin\roslyn\V
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizando.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizar.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
@@ -771,3 +769,5 @@ C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizando.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache

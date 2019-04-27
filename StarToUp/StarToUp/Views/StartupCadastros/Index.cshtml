@@ -1,7 +1,6 @@
 ﻿@{
-    IEnumerable<StarToUp.Models.StartupCadastro>
-    startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>
-        )ViewBag.startupCadastros;
+    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.startupCadastros;
+    IEnumerable<StarToUp.Models.EmpresaCadastro> empresaCadastros = (IEnumerable<StarToUp.Models.EmpresaCadastro>)ViewBag.EmpresaCadastros;
     ViewBag.Title = "IndexStartups";
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
@@ -93,48 +92,30 @@
             </div>
             <!-- /Section header -->
             <!-- Empresas Parceiras -->
-            <div class="col-md-4">
-                <div class="about">
+            @foreach (var item in empresaCadastros)
+            {
+                <div class="col-md-4">
+                    <div class="about">
 
-                    <img style="width:70px; height:50px;" src="~/Content/img/startup.png" />
-                    <h3>A StartToUp</h3>
-                    <p>
-                        Uma plataforma criada para divulgar diversos segmentos de startups, facilitando
-                        que as empresas encontrem as ideias e soluções que precisam para levar tecnologia e inovação
-                        para dentro de suas companhias.
-                    </p>
-
+                        @{
+                            string logomarca = item.Logomarca;
+                            if (logomarca != string.Empty)
+                            {
+                                if (logomarca != null)
+                                {
+                                    string file = logomarca;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
+                                    <img src='@Url.Content(path)' style="width:150px; height:150px; border-radius: 100%;" /><br />
+                                }
+                            }
+                        }
+                        <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
+                        <a href='@Url.Action("Details", "EmpresaCadastros", new { id = item.EmpresaCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+                    </div>
                 </div>
-            </div>
+            }
             <!-- /Empresas Parceiras -->
-            <!-- Empresas Parceiras -->
-            <div class="col-md-4">
-                <div class="about">
-
-                    <img style="width:70px; height:50px;" src="~/Content/img/search.png" />
-                    <h3>Facilidade</h3>
-                    <p>
-                        Facilitaremos o encontro entre empresas e as melhores Startups, filtrando aquela que agregará valor ao negócio e reduzindo o tempo de pesquisa.
-                        As startups serão elencadas por segmentação.
-                    </p>
-
-                </div>
-            </div>
-            <!-- /Empresas Parceiras -->
-            <!-- Empresas Parceiras -->
-            <div class="col-md-4">
-                <div class="about">
-
-                    <img style="width:60px; height:50px;" src="~/Content/img/calendar (1).png" />
-                    <h3>Fique por dentro!</h3>
-                    <p>Saiba de todos os eventos relacionados à Startups que estarão prestes a acontecer, seu conteúdo e local.</p>
-                    <br />
-                    <br />
-                    <br />
-                </div>
-            </div>
-            <!-- /Empresas Parceiras -->
-
         </div>
         <!-- /Row -->
 
@@ -143,7 +124,6 @@
 
 </div>
 <!-- /Empresas Parceiras -->
-
 @*
     <div id="blog" class="section md-padding">
         <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">

@@ -25,11 +25,14 @@ namespace StarToUp.Controllers
                 Funcoes.GetUsuario();
 
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
+                IEnumerable<EmpresaCadastro> empresaCadastros = db.EmpresaCadastros.ToList();
+                ViewBag.EmpresaCadastros = empresaCadastros;
                 return View(startupCadastros.ToList());
             }else
             {
                 return RedirectToAction("Logar", "Logon");
             }
+            
 
             //var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
             //return View(startupCadastros.ToList());
