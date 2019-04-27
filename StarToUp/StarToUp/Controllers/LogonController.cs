@@ -80,9 +80,6 @@ namespace StarToUp.Controllers
 
         public ActionResult ValidarHash(int? id)
         {
-            //string h = Request.QueryString["Hash"];
-            //StartupCadastro s = db.StartupCadastros.Find(id);
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -96,34 +93,13 @@ namespace StarToUp.Controllers
             return View(startupCadastro);
         }
 
-        //public ActionResult ValidarHash(string hash)
-        //{
-        //    string h = Request.QueryString["Hash"];
-        //    //StartupCadastro s = db.StartupCadastros.Find(id);
-
-        //    if (hash == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
-        //    if (hash == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View();
-        //}
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ValidarHash([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
-            //string h = Request.QueryString["Hash"];
-            //StartupCadastro s = db.StartupCadastros.Where(e => e.Hash == h).ToList().SingleOrDefault();
-
             if (ModelState.IsValid)
             {
-                //((IObjectContextAdapter)db).ObjectContext.Detach(startupCadastro);
                 db.Entry(startupCadastro).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Logar");
