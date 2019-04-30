@@ -803,7 +803,6 @@ C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.co
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll

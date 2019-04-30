@@ -75,6 +75,7 @@ namespace StarToUp.Migrations
                         Nome = c.String(unicode: false),
                         Email = c.String(unicode: false),
                         Senha = c.String(unicode: false),
+                        DataCadastro = c.DateTime(nullable: false, precision: 0),
                         Cep = c.String(unicode: false),
                         Rua = c.String(unicode: false),
                         Bairro = c.String(unicode: false),

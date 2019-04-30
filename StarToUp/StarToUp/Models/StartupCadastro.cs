@@ -25,6 +25,12 @@ namespace StarToUp.Models
         //[DisplayName("Senha:")]
         public string Senha { get; set; }
 
+        //[DisplayName("Data de Cadastro")]
+        //[DataType(DataType.DateTime, ErrorMessage = "Formato de data inválido")]
+        //[ScaffoldColumn(false)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss tt}")]
+        public DateTime DataCadastro { get; set; }
+
         // Dados de Endereço
         public string Cep { get; set; }
         public string Rua { get; set; }
