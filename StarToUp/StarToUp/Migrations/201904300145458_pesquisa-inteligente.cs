@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atualizando : DbMigration
+    public partial class pesquisainteligente : DbMigration
     {
         public override void Up()
         {
