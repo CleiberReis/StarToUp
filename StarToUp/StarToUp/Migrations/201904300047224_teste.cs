@@ -51,6 +51,7 @@ namespace StarToUp.Migrations
                         Estado = c.String(unicode: false),
                         Logomarca = c.String(unicode: false),
                         Objetivo = c.String(unicode: false),
+                        Hash = c.String(unicode: false),
                         SegmentacaoID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EmpresaCadastroID)
@@ -71,9 +72,9 @@ namespace StarToUp.Migrations
                 c => new
                     {
                         StartupCadastroID = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false, maxLength: 30, storeType: "nvarchar"),
-                        Email = c.String(nullable: false, unicode: false),
-                        Senha = c.String(nullable: false, unicode: false),
+                        Nome = c.String(unicode: false),
+                        Email = c.String(unicode: false),
+                        Senha = c.String(unicode: false),
                         Cep = c.String(unicode: false),
                         Rua = c.String(unicode: false),
                         Bairro = c.String(unicode: false),
