@@ -160,9 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904300215362_pesquisa-inteligente.cs" />
-    <Compile Include="Migrations\201904300215362_pesquisa-inteligente.Designer.cs">
-      <DependentUpon>201904300215362_pesquisa-inteligente.cs</DependentUpon>
+    <Compile Include="Migrations\201904300254460_pesquisa-inteligente.cs" />
+    <Compile Include="Migrations\201904300254460_pesquisa-inteligente.Designer.cs">
+      <DependentUpon>201904300254460_pesquisa-inteligente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -416,8 +416,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904300215362_pesquisa-inteligente.resx">
-      <DependentUpon>201904300215362_pesquisa-inteligente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904300254460_pesquisa-inteligente.resx">
+      <DependentUpon>201904300254460_pesquisa-inteligente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

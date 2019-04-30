@@ -809,3 +809,4 @@ C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.pesquisainteligente.resources
 C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache

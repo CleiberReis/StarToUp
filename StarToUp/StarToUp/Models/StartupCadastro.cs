@@ -28,7 +28,7 @@ namespace StarToUp.Models
         //[DisplayName("Data de Cadastro")]
         //[DataType(DataType.DateTime, ErrorMessage = "Formato de data inválido")]
         //[ScaffoldColumn(false)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss tt}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss tt}")]
         public DateTime DataCadastro { get; set; }
 
         // Dados de Endereço
