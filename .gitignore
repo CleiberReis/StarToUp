@@ -22,8 +22,8 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
-bin/
-obj/
+bin/*
+obj/*
 TestResults/
 ###################
 # Web publish log #
@@ -58,8 +58,8 @@ TestResults/
 ehthumbs.db
 Icon?
 Thumbs.db
-[Bb]in
-[Oo]bj
+*/[Bb]in/*
+*/[Oo]bj/*
 [Tt]est[Rr]esults
 *.suo
 *.user
@@ -77,4 +77,5 @@ _[Ss]cripts
 ########
 # TEST #
 ########
-.vs/*
+*/.vs/*
+*/Migrations/*
