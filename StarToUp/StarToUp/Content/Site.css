@@ -12,7 +12,6 @@ body {
 .dl-horizontal dt {
     white-space: normal;
 }
-
 .linha {
     line-height: 32px;
 }
@@ -304,3 +303,5 @@ select {
     .forgot_pass span {
         font-weight: bold;
     }
+
+   

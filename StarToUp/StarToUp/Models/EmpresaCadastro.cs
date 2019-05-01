@@ -41,6 +41,10 @@ namespace StarToUp.Models
         public string Logomarca { get; set; }
         public string Objetivo { get; set; }
 
+        public string LinkInstagram { get; set; }
+        public string LinkFacebook { get; set; }
+        public string LinkLinkedin { get; set; }
+
         public string Hash { get; set; }
 
         public int SegmentacaoID { get; set; }

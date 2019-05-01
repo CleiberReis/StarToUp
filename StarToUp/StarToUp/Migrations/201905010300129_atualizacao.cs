@@ -51,6 +51,9 @@ namespace StarToUp.Migrations
                         Estado = c.String(unicode: false),
                         Logomarca = c.String(unicode: false),
                         Objetivo = c.String(unicode: false),
+                        LinkInstagram = c.String(unicode: false),
+                        LinkFacebook = c.String(unicode: false),
+                        LinkLinkedin = c.String(unicode: false),
                         Hash = c.String(unicode: false),
                         SegmentacaoID = c.Int(nullable: false),
                     })
