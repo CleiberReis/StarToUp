@@ -15,10 +15,14 @@ namespace StarToUp.Controllers
 
         public ActionResult Index()
         {
+
+            
             IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
             IEnumerable<Evento> eventos = db.Eventoes.ToList();
+            IEnumerable<Segmentacao> segmentacoes = db.Segmentacoes.ToList();
             ViewBag.StartupCadastros = startupCadastros;
             ViewBag.Eventos = eventos;
+            ViewBag.Segmentacoes = segmentacoes;
             return View();
         }
 
@@ -33,8 +37,26 @@ namespace StarToUp.Controllers
         {
             IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
             IEnumerable<Evento> eventos = db.Eventoes.ToList();
+
+
+            IEnumerable<Segmentacao> segmentacoes = db.Segmentacoes.ToList();
+
+            var query = from c in db.Segmentacoes
+                        join p in db.StartupCadastros
+                        on c.SegmentacaoID equals p.SegmentacaoID
+                        group new { c, p } by new { c.Descricao } into g
+                        select new SegmentacaoStartupGroup
+                        {
+                            Descricao = g.Key.Descricao,
+                            //SumPrice = (decimal?)g.Sum(pt => pt.p.UnitPrice),
+                            Count = g.Count()
+                        };
+
+            ViewBag.Segmentos = (IEnumerable<Models.SegmentacaoStartupGroup>) query.ToList();
+
             ViewBag.StartupCadastros = startupCadastros;
             ViewBag.Eventos = eventos;
+            ViewBag.Segmentacoes = segmentacoes;
             return View();
         }
 

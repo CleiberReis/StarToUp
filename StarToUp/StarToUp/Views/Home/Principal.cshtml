@@ -1,9 +1,28 @@
 ﻿@model StarToUp.Models.Contato
 @{
+
+    IEnumerable<StarToUp.Models.SegmentacaoStartupGroup> grupos = (IEnumerable<StarToUp.Models.SegmentacaoStartupGroup>)ViewBag.Segmentos;
+
+
+
     IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
+    IEnumerable<StarToUp.Models.Segmentacao> segmentacoes = (IEnumerable<StarToUp.Models.Segmentacao>)ViewBag.Segmentacoes;
     IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.StartupCadastros;
     ViewBag.Title = "Home Page";
 }
+
+@*@{
+
+
+        foreach (var item in grupos)
+        {
+
+            <div>Descrição:  (  )</div>
+
+        }
+
+    }*@
+
 <!-- About -->
 <div id="about" class="section md-padding">
 
@@ -129,54 +148,30 @@
     </div>
     <!-- /Background Image -->
     <!-- Container -->
-    <div class="container">
-        <br /><br />
-        <!-- Row -->
-        <div class="row">
+    <div class="row">
+        @foreach (var item in grupos)
+        {
+            
+                
+                <!-- Row -->
+                
 
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-users"></i>
-                    <h3 class="white-text"><span class="counter">451</span></h3>
-                    <span class="white-text">Startups</span>
-                </div>
-            </div>
-            <!-- /number -->
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-trophy"></i>
-                    <h3 class="white-text"><span class="counter">12</span></h3>
-                    <span class="white-text">Awards won</span>
-                </div>
-            </div>
-            <!-- /number -->
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-coffee"></i>
-                    <h3 class="white-text"><span class="counter">154</span>K</h3>
-                    <span class="white-text">Cups of Coffee</span>
-                </div>
-            </div>
-            <!-- /number -->
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-file"></i>
-                    <h3 class="white-text"><span class="counter">45</span></h3>
-                    <span class="white-text">Projetos de sucesso</span>
-                </div>
-            </div>
-            <!-- /number -->
+                    <!-- number -->
+                    <div class="col-sm-3 col-xs-6 col-md-4">
+                        <div class="number">
+                            <i class="fa fa-users"></i>
+                            <h3 class="white-text"><span class="counter">@item.Count</span></h3>
+                            <span class="white-text">@item.Descricao</span>
+                        </div>
+                    </div>
+                    <!-- /number -->
 
-        </div>
-        <!-- /Row -->
-
+                
+                <!-- /Row -->
+           
+        }
+        <!-- /Container -->
     </div>
-    <!-- /Container -->
-
 </div>
 <!-- /Numbers -->
 <!-- Blog -->
