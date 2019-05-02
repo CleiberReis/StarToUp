@@ -760,10 +760,6 @@ C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.teste.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.startup.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.hashempresa.resources
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
@@ -810,3 +806,5 @@ C:\Users\Gabriele Kiane\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dl
 C:\Users\Gabriele Kiane\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\Gabriele Kiane\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacao.resources
 C:\Users\Gabriele Kiane\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacao.resources
+C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
