@@ -254,9 +254,13 @@
                         {
                             if (imagemMVP2 != null)
                             {
-                                string file = imagemMVP2;
-                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                <img class="img-preview5" src='@Url.Content(path)' title="MVP2" /><br />
+
+                                //string file = imagemMVP2;
+                                //string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+
+                                var path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/";
+                                path += imagemMVP2;
+                                        <img class="img-preview5" src='@Url.Content(path)' title="MVP2" /><br />
                             }
                         }
                     }
@@ -300,11 +304,40 @@
             </div>
         </div>
         <br />
+        <br />
+        <div class="row">
+
+            <div class="input-group col-md-3" style="display:inline-block; margin-left:20px">
+                <div class="input-group" style="width:115%">
+                    <span class="input-group-addon">
+                        <img class="imgsocial" src="~/Content/img/instagram.png" title="Instagram" style="width:20px" />
+                    </span>
+                    @Html.DisplayFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="input-group col-md-3" style="display:inline-block; margin-left:90px">
+                <div class="input-group" style="width:115%">
+                    <span class="input-group-addon"><img class="imgsocial" src="~/Content/img/facebook.png" title="Facebook" style="width:20px" /></span>
+                    @Html.DisplayFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="input-group col-md-3" style="float:right; margin-right:80px">
+                <div class="input-group" style="width:115%">
+                    <span class="input-group-addon"><img class="imgsocial" src="~/Content/img/linkedin.png" title="LinkedIn" style="width:20px" /></span>
+                    <a href="@Url.Content(Model.LinkLinkedin)">teste.com
+                    </a>
+                    
+                    
+                </div>
+            </div>
+
+        </div>
     </form>
     <br />
 </div>
 <br />
-}
 <footer id="footer" class="sm-padding bg-dark">
     <div class="container-fluid">
         <div class="row">
