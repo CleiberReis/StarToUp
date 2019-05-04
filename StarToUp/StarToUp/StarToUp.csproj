@@ -160,9 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905040316006_atualizada.cs" />
-    <Compile Include="Migrations\201905040316006_atualizada.Designer.cs">
-      <DependentUpon>201905040316006_atualizada.cs</DependentUpon>
+    <Compile Include="Migrations\201905041746249_atualizada.cs" />
+    <Compile Include="Migrations\201905041746249_atualizada.Designer.cs">
+      <DependentUpon>201905041746249_atualizada.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -274,13 +274,12 @@
     <Content Include="Content\img\detalhes.png" />
     <Content Include="Content\img\editar.png" />
     <Content Include="Content\img\excluir.png" />
-    <None Include="Content\img\icon-face" />
-    <Content Include="Content\img\facebook.png" />
+    <Content Include="Content\img\icon-face.png" />
     <Content Include="Content\img\foto.png" />
     <Content Include="Content\img\fotoUpload.png" />
-    <Content Include="Content\img\instagram.png" />
+    <Content Include="Content\img\icon-insta.png" />
+    <Content Include="Content\img\icon-linkedin.png" />
     <Content Include="Content\img\linha.png" />
-    <Content Include="Content\img\linkedin.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo1.png" />
@@ -420,8 +419,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905040316006_atualizada.resx">
-      <DependentUpon>201905040316006_atualizada.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905041746249_atualizada.resx">
+      <DependentUpon>201905041746249_atualizada.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

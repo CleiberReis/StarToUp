@@ -305,30 +305,36 @@
         </div>
         <br />
         <hr class="divisoria" />
-        <br />
+       
+        <div class="header-wrapper sm-padding">
+            <h3 class="title">Redes Sociais</h3>
+          
+        </div>
         <div class="row">
 
-            <div class="input-group col-md-3" style="display:inline-block; margin-left:20px">
-                <div class="input-group" style="width:115%">
-
-                    <li><a href="http://www.@startupCadastro.LinkInstagram" target="_blank"><img class="imgsocial" src="~/Content/img/instagram.png" title="Instagram" style="width:40px" /></a></li>
-
+            <div class="input-group col-md-2" style="display:inline-block">
+                <div class="input-group">
+                    <ul>
+                        <li><a href="http://www.@startupCadastro.LinkInstagram" target="_blank"><img class="imgsocial" src="~/Content/img/icon-insta.png" title="Instagram" style="width:50px" /></a></li>
+                    </ul>
                     @Html.DisplayFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
 
-            <div class="input-group col-md-3" style="display:inline-block; margin-left:100px">
-                <div class="input-group" style="width:115%">
-
-                    <li><a href="http://@startupCadastro.LinkFacebook" target="_blank"><img class="imgsocial" src="~/Content/img/facebook.png" title="Facebook" style="width:40px" /></a></li>
+            <div class="input-group col-md-2" style="display:inline-block">
+                <div class="input-group">
+                    <ul>
+                        <li><a href="http://@startupCadastro.LinkFacebook" target="_blank"><img class="imgsocial" src="~/Content/img/icon-face.png" title="Facebook" style="width:50px" /></a></li>
+                    </ul>
                     <!-- @Html.DisplayFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })-->
                 </div>
             </div>
 
-            <div class="input-group col-md-3" style="float:right;margin-right:50px">
-                <div class="input-group" style="width:115%">
-
-                    <li><a href="http://@startupCadastro.LinkLinkedin" target="_blank"><img class="imgsocial" src="~/Content/img/linkedin.png" title="LinkedIn" style="width:40px" /></a></li>
+            <div class="input-group col-md-2" style="display:inline-block">
+                <div class="input-group">
+                    <ul>
+                        <li><a href="http://@startupCadastro.LinkLinkedin" target="_blank"><img class="imgsocial" src="~/Content/img/icon-linkedin.png" title="LinkedIn" style="width:50px" /></a></li>
+                    </ul>
                     <!--@Html.DisplayFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })-->
                 </div>
             </div>
