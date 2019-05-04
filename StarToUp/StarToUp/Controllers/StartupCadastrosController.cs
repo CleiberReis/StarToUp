@@ -158,7 +158,7 @@ namespace StarToUp.Controllers
                         startupCadastro.ImagemMVP4 = fileName;
                     }
 
-                    //TODO fazer uma função que valide os links: verificar se ja consta com http e www caso nao inserir blz!!!!!!!
+                 
 
                     db.StartupCadastros.Add(startupCadastro);
                     db.SaveChanges();
