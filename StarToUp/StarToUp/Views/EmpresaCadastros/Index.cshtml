@@ -82,6 +82,22 @@
     </div>
 </div>
 <br />
+<div class="container">
+    <div id="aside" class="col-md-4">
+        @using (Html.BeginForm("SearchStartup", "StartupCadastros", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="widget">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="widget-search">
+                    <input type="text" name="SearchString" id="SearchString" class="search-input" placeholder="O que está precisando?" />
+                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
 <h2 class="text-center" style="color:antiquewhite;">**Espaço Em Desenvolvimento**</h2>
 
 <br />

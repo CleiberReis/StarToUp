@@ -49,7 +49,8 @@
 </div>
 <br />
 <div class="container">
-    <div id="aside" class="col-md-4">
+    <div id="aside" class="col-md-4 text-center">
+        <label>Pesquisa pela segmentação desejada!</label>
         @using (Html.BeginForm("Search", "StartupCadastros", null, FormMethod.Post))
         {
             @Html.AntiForgeryToken()
@@ -64,9 +65,23 @@
 
         }
     </div>
+    <div id="aside" class="col-md-4 col-md-offset-4 text-center">
+        <label>O que você está precisando?</label>
+        @using (Html.BeginForm("SearchStartup", "StartupCadastros", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="widget">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="widget-search">
+                    <input type="text" name="SearchString" id="SearchString" class="search-input" placeholder="O que está precisando?" />
+                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+        }
+    </div>
 </div>
 <br />
-
 @foreach (var item in Model)
 {
     <div class="container">

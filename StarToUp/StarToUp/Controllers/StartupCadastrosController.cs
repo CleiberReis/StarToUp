@@ -83,7 +83,7 @@ namespace StarToUp.Controllers
         // POST: StartupCadastros/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,LinkInstagram,LinkFacebook,LinkLinkedin,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
+        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,DataCadastro,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,LinkInstagram,LinkFacebook,LinkLinkedin,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
             ViewBag.FotoMensagem = "";
@@ -158,8 +158,7 @@ namespace StarToUp.Controllers
                         startupCadastro.ImagemMVP4 = fileName;
                     }
 
-                 
-
+                    startupCadastro.DataCadastro = DateTime.Now;
                     db.StartupCadastros.Add(startupCadastro);
                     db.SaveChanges();
 
@@ -240,7 +239,7 @@ namespace StarToUp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StartupCadastroID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,LinkInstagram,LinkFacebook,LinkLinkedin,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
+        public ActionResult Edit([Bind(Include = "StartupCadastroID,Nome,Email,Senha,DataCadastro,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,LinkInstagram,LinkFacebook,LinkLinkedin,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
             ViewBag.FotoMensagem = "";
@@ -439,6 +438,25 @@ namespace StarToUp.Controllers
             else
             {
                 return RedirectToAction("IndexStartups");
+            }
+        }
+
+        public ActionResult SearchStartup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SearchStartup(FormCollection fc, string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString) || s.Nome.Contains(searchString) || s.Objetivo.Contains(searchString) || s.Sobre.Contains(searchString) || s.Cep.Contains(searchString)).OrderBy(o => o.DataCadastro);
+                return View("SearchStartup", startupCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("SearchStartup");
             }
         }
 

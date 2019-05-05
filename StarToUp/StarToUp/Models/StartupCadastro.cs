@@ -24,6 +24,7 @@ namespace StarToUp.Models
         //[Required(ErrorMessage = "Você precisa de uma senha!")]
         //[DisplayName("Senha:")]
         public string Senha { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         // Dados de Endereço
         public string Cep { get; set; }
