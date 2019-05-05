@@ -441,6 +441,20 @@ namespace StarToUp.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult SearchStartup(FormCollection fc, string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString) || s.Nome.Contains(searchString) || s.Objetivo.Contains(searchString) || s.Sobre.Contains(searchString) || s.Cep.Contains(searchString)).OrderBy(o => o.DataCadastro);                                                                    
+                return View("SearchStartup", startupCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("SearchStartup");
+            }
+        }
+
         // GET: StartupCadastros/Delete/5
         public ActionResult Delete(int? id)
         {

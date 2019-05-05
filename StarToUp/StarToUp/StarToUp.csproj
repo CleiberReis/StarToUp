@@ -396,6 +396,7 @@
     <Content Include="Views\Logon\ValidarHash.cshtml" />
     <Content Include="Views\LogonEmpresa\EsqueciSenha.cshtml" />
     <Content Include="Views\LogonEmpresa\ValidarHash.cshtml" />
+    <Content Include="Views\StartupCadastros\SearchStartup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
