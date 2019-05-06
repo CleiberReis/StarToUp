@@ -7,13 +7,13 @@ namespace StarToUp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class pesquisa : IMigrationMetadata
+    public sealed partial class atualizacao : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(pesquisa));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(atualizacao));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905050425530_pesquisa"; }
+            get { return "201905062256333_atualizacao"; }
         }
         
         string IMigrationMetadata.Source

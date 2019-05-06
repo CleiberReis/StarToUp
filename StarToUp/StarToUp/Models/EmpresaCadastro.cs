@@ -45,6 +45,10 @@ namespace StarToUp.Models
         public string LinkFacebook { get; set; }
         public string LinkLinkedin { get; set; }
 
+        //Termos de Uso da Plataforma
+        [Required(ErrorMessage = "É obrigatório aceitar os termos de uso da plataforma!")]
+        public bool TermoUso { get; set; }
+
         public string Hash { get; set; }
 
         public int SegmentacaoID { get; set; }

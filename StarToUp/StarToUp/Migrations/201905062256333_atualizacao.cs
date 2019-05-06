@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class pesquisa : DbMigration
+    public partial class atualizacao : DbMigration
     {
         public override void Up()
         {
@@ -54,6 +54,7 @@ namespace StarToUp.Migrations
                         LinkInstagram = c.String(unicode: false),
                         LinkFacebook = c.String(unicode: false),
                         LinkLinkedin = c.String(unicode: false),
+                        TermoUso = c.Boolean(nullable: false),
                         Hash = c.String(unicode: false),
                         SegmentacaoID = c.Int(nullable: false),
                     })
@@ -100,6 +101,7 @@ namespace StarToUp.Migrations
                         LinkInstagram = c.String(unicode: false),
                         LinkFacebook = c.String(unicode: false),
                         LinkLinkedin = c.String(unicode: false),
+                        TermoUso = c.Boolean(nullable: false),
                         Hash = c.String(unicode: false),
                         SegmentacaoID = c.Int(nullable: false),
                     })
