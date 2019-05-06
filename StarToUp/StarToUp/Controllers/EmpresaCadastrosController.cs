@@ -182,7 +182,7 @@ namespace StarToUp.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,RazaoSocial,QtdFuncionario,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Logomarca,Objetivo,Hash,SegmentacaoID")] EmpresaCadastro empresaCadastro, HttpPostedFileBase logomarca)
+        public ActionResult Edit([Bind(Include = "EmpresaCadastroID,Nome,Email,Senha,RazaoSocial,QtdFuncionario,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Logomarca,Objetivo,LinkInstagram,LinkFacebook,LinkLinkedin,Hash,SegmentacaoID")] EmpresaCadastro empresaCadastro, HttpPostedFileBase logomarca)
         {
             ViewBag.FotoMensagem = "";
             try
