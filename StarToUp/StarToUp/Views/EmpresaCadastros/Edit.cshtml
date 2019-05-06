@@ -228,32 +228,27 @@
                             </div>
                         </div>
                         <br />
-                        <div class="row">
-
-                            <div class="input-group col-md-3" style="display:inline-block; margin-left:20px">
-                                <div class="input-group" style="width:115%">
-                                    @Html.EditorFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.LinkInstagram, "", new { @class = "text-danger" })
-
-                                </div>
-                            </div>
-
-                            <div class="input-group col-md-3" style="display:inline-block; margin-left:90px">
-                                <div class="input-group" style="width:115%">
-                                    @Html.EditorFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.LinkFacebook, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="input-group col-md-3" style="float:right; margin-right:80px">
-                                <div class="input-group" style="width:115%">
-                                    @Html.EditorFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.LinkLinkedin, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <h3>Midias Sociais</h3>
+                    <div class="input-group col-md-4">
+                        @Html.EditorFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkInstagram, "", new { @class = "text-danger" })
+                        <i class="fa fa-facebook-square" aria-hidden="true"> </i><label style="color:#8b8b8b"> - Instagram</label>
+                    </div>
+                    <div class="input-group col-md-4">
+                        @Html.EditorFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkFacebook, "", new { @class = "text-danger" })
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i><label style="color:#8b8b8b"> - Facebook</label>
+                    </div>
+                    <div class="input-group col-md-4">
+                        @Html.EditorFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkLinkedin, "", new { @class = "text-danger" })
+                        <i class="fa fa-instagram" aria-hidden="true"> </i><label style="color:#8b8b8b"> - Linkedin</label>
+                    </div>
+                </div>
+
             </div>
             <br />
         </form>

@@ -107,7 +107,7 @@ select {
     text-align: center;
 }
 
-.fileUpload #logoTipo, #imagemLocal1, #imagemLocal2, #imagemMVP1, #imagemMVP2, #imagemMVP3, #imagemMVP4 {
+.fileUpload #logoTipo, #logomarca, #imagemLocal1, #imagemLocal2, #imagemMVP1, #imagemMVP2, #imagemMVP3, #imagemMVP4 {
     position: absolute;
     top: 0;
     right: 0;
