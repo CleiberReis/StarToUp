@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -441,17 +442,18 @@ namespace StarToUp.Controllers
             }
         }
 
+        // Retorno da pesquisa na IndexEmpresa
         [HttpPost]
         public ActionResult SearchStartup(FormCollection fc, string searchString)
         {
             if (!String.IsNullOrEmpty(searchString))
             {
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString) || s.Nome.Contains(searchString) || s.Objetivo.Contains(searchString) || s.Sobre.Contains(searchString) || s.Cep.Contains(searchString)).OrderBy(o => o.DataCadastro);                                                                    
-                return View("SearchStartup", startupCadastros.ToList());
+                return View("IndexStartups", startupCadastros.ToList());
             }
             else
             {
-                return RedirectToAction("SearchStartup");
+                return RedirectToAction("IndexStartups");
             }
         }
 
