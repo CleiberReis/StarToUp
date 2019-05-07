@@ -106,26 +106,26 @@
                 <!-- blog -->
                 <div class="col-md-4 col-xs-6 work">
                     <div class="col-md-4 col-xs-6 work">
-                        @{ string logoTipo = item.Logotipo;
-                            if (logoTipo != string.Empty)
-                            {
-                                if (logoTipo != null)
+                        <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'>
+                            @{ string logoTipo = item.Logotipo;
+                                if (logoTipo != string.Empty)
                                 {
-                                    string file = logoTipo;
-                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                    <img style="width: 250px; height: 260px;" src='@Url.Content(path)' title="LogoTipo" /><br />
+                                    if (logoTipo != null)
+                                    {
+                                        string file = logoTipo;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                        <img style="width: 250px; height: 260px;" src='@Url.Content(path)' title="LogoTipo" /><br />
+                                    }
                                 }
                             }
-                        }
-                        <div class="overlay" style="width: 290px; height: 300px;"></div>
-                        <div class="work-content">
-                            <span>@Html.DisplayFor(modelItem => item.Nome)</span>
-                            <br />
-                            <span>@Html.DisplayFor(modelItem => item.Objetivo)</span>
-                            <div class="work-link">
+                            <div class="overlay" style="width: 290px; height: 300px;"></div>
+                            <div class="work-content">
+                                <span>@Html.DisplayFor(modelItem => item.Nome)</span>
+                                <div class="work-link">
 
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- /Work -->
@@ -151,24 +151,24 @@
     <div class="row">
         @foreach (var item in grupos)
         {
-            
-                
-                <!-- Row -->
-                
 
-                    <!-- number -->
-                    <div class="col-sm-3 col-xs-6 col-md-4">
-                        <div class="number">
-                            <i class="fa fa-users"></i>
-                            <h3 class="white-text"><span class="counter">@item.Count</span></h3>
-                            <span class="white-text">@item.Descricao</span>
-                        </div>
-                    </div>
-                    <!-- /number -->
 
-                
-                <!-- /Row -->
-           
+            <!-- Row -->
+
+
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6 col-md-4">
+                <div class="number">
+                    <i class="fa fa-users"></i>
+                    <h3 class="white-text"><span class="counter">@item.Count</span></h3>
+                    <span class="white-text">@item.Descricao</span>
+                </div>
+            </div>
+            <!-- /number -->
+
+
+            <!-- /Row -->
+
         }
         <!-- /Container -->
     </div>
