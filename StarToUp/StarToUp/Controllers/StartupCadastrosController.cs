@@ -211,6 +211,10 @@ namespace StarToUp.Controllers
                         return RedirectToAction("../Home/Principal");
                     }
                 }
+                else
+                {
+                    
+                 }
             }
             catch (Exception ex)
             {

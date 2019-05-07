@@ -222,9 +222,9 @@
         <br />
 
         <div class="text-center">
-            <input type="checkbox" name="termodeuso" id="termodeuso" value="true" class="input" />
+           
             @Html.ValidationMessageFor(model => model.TermoUso, "", new { @class = "text-danger" })
-            @*@Html.CheckBoxFor(model => model.TermoUso)*@
+            @Html.CheckBoxFor(model => model.TermoUso)
             Para se cadastrar aceite os termos de uso da plataforma.<a href="#" data-toggle="modal" data-target="#modal">Termos de Uso</a>
         </div>
         <br />
