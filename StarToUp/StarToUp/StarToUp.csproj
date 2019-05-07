@@ -164,6 +164,10 @@
     <Compile Include="Migrations\201905050425530_pesquisa.Designer.cs">
       <DependentUpon>201905050425530_pesquisa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905070245109_termo.cs" />
+    <Compile Include="Migrations\201905070245109_termo.Designer.cs">
+      <DependentUpon>201905070245109_termo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Contato.cs" />
@@ -274,12 +278,15 @@
     <Content Include="Content\img\detalhes.png" />
     <Content Include="Content\img\editar.png" />
     <Content Include="Content\img\excluir.png" />
+    <Content Include="Content\img\facebook.png" />
     <Content Include="Content\img\icon-face.png" />
     <Content Include="Content\img\foto.png" />
     <Content Include="Content\img\fotoUpload.png" />
     <Content Include="Content\img\icon-insta.png" />
     <Content Include="Content\img\icon-linkedin.png" />
+    <Content Include="Content\img\instagram.png" />
     <Content Include="Content\img\linha.png" />
+    <Content Include="Content\img\linkedin.png" />
     <Content Include="Content\img\logo-alt.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo1.png" />
@@ -422,6 +429,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905050425530_pesquisa.resx">
       <DependentUpon>201905050425530_pesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905070245109_termo.resx">
+      <DependentUpon>201905070245109_termo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

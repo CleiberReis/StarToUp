@@ -351,6 +351,15 @@
             </div>
         </div>
         <br />
+        <div class="text-center">
+            <input type="checkbox" name="TermoUso" id="TermoUso" value="true" class="input" />
+            @Html.ValidationMessageFor(model => model.TermoUso, "", new { @class = "text-danger" })
+            @*@Html.CheckBoxFor(model => model.TermoUso)*@
+            Para se cadastrar aceite os termos de uso da plataforma.<a href="#" data-toggle="modal" data-target="#modal">Termos de Uso</a>
+        </div>
+        <br />
+
+        <br />
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -359,7 +368,11 @@
                         <h3 class="modal-title" id="myModalLabel">Termos de Uso da Plataforma</h3>
                     </div>
                     <div class="modal-body">
-                        <p>Termos de Uso AQUI</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor quam non massa euismod faucibus.
+                            Aliquam sit amet urna leo. Cras sagittis arcu nibh. Pellentesque odio tellus, ultrices vel aliquam sed, varius in lorem. Curabitur tempus nulla quis nunc varius, id commodo justo vulputate. Aliquam et elit libero. Donec dui sapien, luctus eget mattis sit amet, venenatis in nisi. Fusce turpis massa, cursus eget maximus non, sollicitudin ac massa. Mauris sem orci, auctor vitae semper sed, rhoncus sit amet justo.
+                            Nam interdum massa elementum consectetur cursus. Phasellus dictum arcu dui, vitae aliquet mauris tincidunt ut.
+                        </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>

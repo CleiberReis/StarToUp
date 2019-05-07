@@ -12,17 +12,17 @@ namespace StarToUp.Models
         [Key]
         public int StartupCadastroID { get; set; }
 
-        //[Required(ErrorMessage = "Preencha o nome da sua Startup")]
-        //[DisplayName("Nome:")]
-        //[StringLength(30, MinimumLength = 3, ErrorMessage = "O nome deve ter entre 3 e 30 caracteres")]
+        [Required(ErrorMessage = "Preencha o nome da sua Startup")]
+        [DisplayName("Nome:")]
+        [StringLength(30, MinimumLength = 3, ErrorMessage = "O nome deve ter entre 3 e 30 caracteres")]
         public string Nome { get; set; }
 
-        //[Required(ErrorMessage = "Digite o e-mail de recado da sua Startup")]
-        //[DisplayName("Email:")]
+        [Required(ErrorMessage = "Digite o e-mail de recado da sua Startup")]
+        [DisplayName("Email:")]
         public string Email { get; set; }
 
-        //[Required(ErrorMessage = "Você precisa de uma senha!")]
-        //[DisplayName("Senha:")]
+        [Required(ErrorMessage = "Você precisa de uma senha!")]
+        [DisplayName("Senha:")]
         public string Senha { get; set; }
         public DateTime DataCadastro { get; set; }
 
@@ -54,6 +54,7 @@ namespace StarToUp.Models
         public string LinkFacebook { get; set; }
         public string LinkLinkedin { get; set; }
 
+        public bool TermoUso { get; set; }
         public string Hash { get; set; }
 
         public int SegmentacaoID { get; set; }

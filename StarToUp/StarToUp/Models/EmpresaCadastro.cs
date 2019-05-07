@@ -45,6 +45,7 @@ namespace StarToUp.Models
         public string LinkFacebook { get; set; }
         public string LinkLinkedin { get; set; }
 
+        public bool TermoUso { get; set; }
         public string Hash { get; set; }
 
         public int SegmentacaoID { get; set; }
