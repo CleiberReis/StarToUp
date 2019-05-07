@@ -1,6 +1,7 @@
 ﻿@model StarToUp.Models.StartupCadastro
 
 @{
+    StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
@@ -14,33 +15,17 @@
                     <span></span>
                 </div>
             </div>
-            <!--  Main navigation  -->
-            @{
-                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
-                if (startupCadastro != null)
-                {
-
-                    <ul class="main-nav nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
-                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
-                        <li class="has-dropdown">
-                            <a href="">@startupCadastro.Nome</a>
-                            <ul class="dropdown">
-                                <li>@Html.ActionLink("Editar", "Edit", new { id = Model.StartupCadastroID })</li>
-                                <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
-                            </ul>
-                        </li>
-
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
+                <li><a href="#" class="disabled" style="color:#b4b4b4;">Startups</a></li>
+                <li class="has-dropdown">
+                    <ul class="dropdown">
+                        <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
                     </ul>
-                    <!-- /Main navigation -->
-                }
-                else
-                {
-                    <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegado", "Logon")";
-                    </script>
-                }
-            }
+                </li>
+
+            </ul>
+
         </div>
     </nav>
     <!-- /Nav -->
@@ -255,11 +240,8 @@
                             if (imagemMVP2 != null)
                             {
 
-                                //string file = imagemMVP2;
-                                //string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-
-                                var path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/";
-                                path += imagemMVP2;
+                                string file = imagemMVP2;
+                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
                                 <img class="img-preview5" src='@Url.Content(path)' title="MVP2" /><br />
                             }
                         }
@@ -305,10 +287,10 @@
         </div>
         <br />
         <hr class="divisoria" />
-       
+
         <div class="header-wrapper sm-padding">
             <h3 class="title">Redes Sociais</h3>
-          
+
         </div>
         <div class="row">
 

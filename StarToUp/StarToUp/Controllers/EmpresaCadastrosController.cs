@@ -41,6 +41,7 @@ namespace StarToUp.Controllers
             return View(empresaCadastros.ToList());
         }
 
+
         public ActionResult Login()
         {
             return View();
