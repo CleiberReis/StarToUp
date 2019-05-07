@@ -119,8 +119,33 @@
             }
             <!-- /Empresas Parceiras -->
         </div>
-        <!-- /Row -->
-
+        @*<div class="row">
+            <div class="section-header text-center">
+                <h2 class="title">Novas Startups Parceiras do Site</h2>
+            </div>
+            @foreach (var item in startupCadastros)
+            {
+                <div class="col-md-2">
+                    <div class="about">
+                        @{
+                            string logoTipo = item.Logotipo;
+                            if (logoTipo != string.Empty)
+                            {
+                                if (logoTipo != null)
+                                {
+                                    string file = logoTipo;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
+                                    <img src='@Url.Content(path)' style="width:150px; height:150px; border-radius: 100%;" /><br />
+                                }
+                            }
+                        }
+                        <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
+                        <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+                    </div>
+                </div>
+            }*@
+        </div>
     </div>
     <!-- /Container -->
 

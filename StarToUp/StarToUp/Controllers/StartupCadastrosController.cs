@@ -26,17 +26,17 @@ namespace StarToUp.Controllers
                 Funcoes.GetUsuario();
 
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
+                startupCadastros = db.StartupCadastros.OrderByDescending(x => x.DataCadastro);
                 IEnumerable<EmpresaCadastro> empresaCadastros = db.EmpresaCadastros.ToList();
                 ViewBag.EmpresaCadastros = empresaCadastros;
+                IEnumerable<StartupCadastro> startupCadastro = db.StartupCadastros.ToList();
+                ViewBag.StartupCadastros = startupCadastro;
                 return View(startupCadastros.ToList());
             }else
             {
                 return RedirectToAction("Logar", "Logon");
             }
             
-
-            //var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes);
-            //return View(startupCadastros.ToList());
         }
 
         public ActionResult IndexStartups()
