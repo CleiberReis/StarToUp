@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -83,7 +84,11 @@ namespace StarToUp.Controllers
         // POST: StartupCadastros/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,DataCadastro,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,LinkInstagram,LinkFacebook,LinkLinkedin,TermoUso,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
+=======
+        public ActionResult Create([Bind(Include = "StartupCadastroID,Nome,Email,Senha,DataCadastro,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,Objetivo,DataFundacao,TamanhoTime,Logotipo,ImagemLocal1,ImagemLocal2,ImagemMVP1,ImagemMVP2,ImagemMVP3,ImagemMVP4,Hash,SegmentacaoID")] StartupCadastro startupCadastro,
+>>>>>>> pesquisa-inteligente
             HttpPostedFileBase logoTipo, HttpPostedFileBase imagemLocal1, HttpPostedFileBase imagemLocal2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, HttpPostedFileBase imagemMVP3, HttpPostedFileBase imagemMVP4)
         {
             ViewBag.FotoMensagem = "";
@@ -441,22 +446,35 @@ namespace StarToUp.Controllers
             }
         }
 
+<<<<<<< HEAD
         public ActionResult SearchStartup()
         {
             return View();
         }
 
+=======
+        // Retorno da pesquisa na IndexEmpresa
+>>>>>>> pesquisa-inteligente
         [HttpPost]
         public ActionResult SearchStartup(FormCollection fc, string searchString)
         {
             if (!String.IsNullOrEmpty(searchString))
             {
+<<<<<<< HEAD
                 var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString) || s.Nome.Contains(searchString) || s.Objetivo.Contains(searchString) || s.Sobre.Contains(searchString) || s.Cep.Contains(searchString)).OrderBy(o => o.DataCadastro);
                 return View("SearchStartup", startupCadastros.ToList());
             }
             else
             {
                 return RedirectToAction("SearchStartup");
+=======
+                var startupCadastros = db.StartupCadastros.Include(s => s.Segmentacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString) || s.Nome.Contains(searchString) || s.Objetivo.Contains(searchString) || s.Sobre.Contains(searchString) || s.Cep.Contains(searchString)).OrderBy(o => o.DataCadastro);                                                                    
+                return View("IndexStartups", startupCadastros.ToList());
+            }
+            else
+            {
+                return RedirectToAction("IndexStartups");
+>>>>>>> pesquisa-inteligente
             }
         }
 
