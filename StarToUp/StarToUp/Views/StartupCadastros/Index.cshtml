@@ -32,15 +32,15 @@
                     </ul>
 
                     <ul class="main-nav nav navbar-nav navbar-right">
-                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Startups</a></li>
+                        <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Startup</a></li>
                         <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
                         <li class="has-dropdown">
                             <a href="">@startupCadastro.Nome</a>
                             <ul class="dropdown">
-                                @foreach (var item in Model)
-                                {
-                                    <li><a href="@Url.Action("Edit", "StartupCadastros" , new { id=item.StartupCadastroID })">Editar</a></li>
-                                }
+                                @*@foreach (var item in Model)
+                                    {*@
+                                <li><a href="@Url.Action("Edit", "StartupCadastros" , new { id= startupCadastro.StartupCadastroID})">Editar</a></li>
+                                @*}*@
                                 <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>
                             </ul>
                         </li>
@@ -80,15 +80,17 @@
 <!-- /Numbers -->
 <!-- Empresas Parceiras -->
 <div id="about">
-
-    <!-- Container -->
+    <div class="header-wrapper sm-padding bg-grey">
+        <div class="container">
+            <h2>Espaço Startup</h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="container">
         <br /><br />
-        <!-- Row -->
         <div class="row">
-            <!-- Section header -->
             <div class="section-header text-center">
-                <h2 class="title">Empresas Parceiras</h2>
+                <h2 class="title">Conheça as Empresas Parceiras da StarToUp</h2>
             </div>
             <!-- /Section header -->
             <!-- Empresas Parceiras -->

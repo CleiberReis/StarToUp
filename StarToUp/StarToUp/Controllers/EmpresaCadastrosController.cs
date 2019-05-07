@@ -24,6 +24,8 @@ namespace StarToUp.Controllers
             {
                 FuncoesEmpresa.GetUsuarioEmpresa();
                 var empresaCadastros = db.EmpresaCadastros.Include(e => e.Segmentacoes);
+                IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
+                ViewBag.StartupCadastros = startupCadastros;
                 return View(empresaCadastros.ToList());
             }
             else

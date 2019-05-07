@@ -21,11 +21,13 @@
                     StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
                     if (startupCadastro != null)
                     {
+                        <ul class="main-nav nav navbar-nav navbar-left">
+                            <li><a href="">Editar Meu Perfil - @startupCadastro.Nome</a></li>
+                        </ul>
 
                         <ul class="main-nav nav navbar-nav navbar-right">
-
-                            <li>@Html.ActionLink("Home Startups", "Index", "StartupCadastros")</li>
-                            <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
+                            <li>@Html.ActionLink("Minha Home", "Index", "StartupCadastros")</li>
+                            @*<li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>*@
                             <li class="has-dropdown">
                                 <a href="">@startupCadastro.Nome</a>
                                 <ul class="dropdown">
@@ -428,7 +430,7 @@
                     </div>
                 </div>
             </div>
-            <br/>
+            <br />
         </form>
         <br />
         <div class="text-center">

@@ -78,16 +78,16 @@
                     <br />
                     <div class="input-group-btn">
                         @{
-                            string logomarca = Model.Logomarca;
-                            if (logomarca != string.Empty)
-                            {
-                                if (logomarca != null)
-                                {
-                                    string file = logomarca;
-                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
-                                    <img class="img-circle img-preview" src='@Url.Content(path)' style="height:250px; width: 250px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
-                                }
-                            }
+                        string logomarca = Model.Logomarca;
+                        if (logomarca != string.Empty)
+                        {
+                        if (logomarca != null)
+                        {
+                        string file = logomarca;
+                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
+                        <img class="img-circle img-preview" src='@Url.Content(path)' style="height:250px; width: 250px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                        }
+                        }
                         }
                     </div>
                     <p style="font-size:x-small;">*Logo.</p>
@@ -232,12 +232,12 @@
 </footer>
 
 @section scripts{
-    <script>
-        $(function () {
-            $('input, select, textarea').each(function () {
-                if ($(this).hasClass('input-validation-error'))
-                    $(this).focus();
-            });
+<script>
+    $(function () {
+        $('input, select, textarea').each(function () {
+            if ($(this).hasClass('input-validation-error'))
+                $(this).focus();
         });
-    </script>
+    });
+</script>
 }
