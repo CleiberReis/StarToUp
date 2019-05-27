@@ -71,13 +71,14 @@ namespace StarToUp.Controllers
             {
                 return HttpNotFound();
             }
-            List<Avaliacao> avaliacoes = db.Avaliacoes.OfType<Avaliacao>().OrderBy(c => c.Descricao).ToList();
+            List<Avaliacao> avaliacoes = db.Avaliacoes.OfType<Avaliacao>().OrderBy(c => c.AvaliacaoID).ToList();
             ViewBag.Avaliacoes = avaliacoes;
             ViewBag.StartupCadastro = id;
             ViewBag.StartupCadastroID = new SelectList(db.StartupCadastros, "StartupCadastroID", "Nome", startupCadastro.StartupCadastroID);
             return View(startupCadastro);
         }
 
+        //Salva no banco as avaliações da respectiva Startup.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Details(string[] selectedAvaliacao, int StartupCadastroID)
@@ -486,38 +487,6 @@ namespace StarToUp.Controllers
                 return RedirectToAction("SearchStartup");
             }
         }
-
-        //public ActionResult AvaliaStartup(int? id)
-        //{
-        //    id = 5;
-        //    List<Avaliacao> avaliacoes = db.Avaliacoes.OfType<Avaliacao>().OrderBy(c => c.Descricao).ToList();
-        //    ViewBag.Avaliacoes = avaliacoes;
-        //    ViewBag.StartupCadastro = id;
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult AvaliaStartup(string[] selectedAvaliacao, int StartupCadastroID)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        StartupCadastro startupCadastro = db.StartupCadastros.Include("Avaliacoes").Where(c => c.StartupCadastroID == StartupCadastroID).FirstOrDefault<StartupCadastro>();
-        //        foreach (var item in selectedAvaliacao)
-        //        {
-        //            int idAvaliacao = int.Parse(item);
-        //            Avaliacao avaliacao = db.Avaliacoes.Find(idAvaliacao);
-        //            startupCadastro.Avaliacoes.Add(avaliacao);
-        //            db.SaveChanges();
-        //        }
-        //        return RedirectToAction("Index");
-        //    }
-        //    List<Avaliacao> avaliacoes = db.Avaliacoes.OfType<Avaliacao>().OrderBy(c => c.Descricao).ToList();
-        //    ViewBag.Avaliacoes = avaliacoes;
-        //    ViewBag.StartupCadastroID = StartupCadastroID;
-        //    return View();
-        //}
-
         // GET: StartupCadastros/Delete/5
         public ActionResult Delete(int? id)
         {

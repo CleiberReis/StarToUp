@@ -66,6 +66,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.StartupCadastroID)
         <form class="form-signin">
+            
             <div class="row">
                 <div>
                     <div class="col-md-12 uploadImage">
@@ -100,6 +101,21 @@
             </div>
             <br />
             <div class="row">
+                <div class="vote text-center">
+                    @{
+                        foreach (var avalia in avaliacoes)
+                        {
+                            <label>
+                                <input type="checkbox" id="cm_star" name="selectedAvaliacao" value="@avalia.AvaliacaoID" />
+                                <i class="fa"></i>
+                            </label>
+                            @*@avalia.Descricao*@
+                        }
+                    }
+                    @Html.HiddenFor(model => model.StartupCadastroID, new { Value = ViewBag.StartupCadastroID })
+                    <br/>
+                    <input type="submit" value="Avaliar Startup" class="btn btn-sm btn-success" />
+                </div>
                 <hr class="divisoria" />
                 <div class="col-md-6">
                     <div class="header-wrapper sm-padding">
@@ -324,23 +340,7 @@
                         @*@Html.DisplayFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })*@
                     </div>
                 </div>
-                @{
-                    foreach (var avalia in avaliacoes)
-                    {
-                        <div class="col-md-offset-2 col-md-10 linha">
-                            <input type="checkbox"
-                                   name="selectedAvaliacao"
-                                   value="@avalia.AvaliacaoID" />
-                            @avalia.Descricao
-                        </div>
-                    }
-                }
-                @Html.HiddenFor(model => model.StartupCadastroID, new { Value = ViewBag.StartupCadastroID })
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Avaliar" class="btn btn-default" />
-                    </div>
-                </div>
+
             </div>
         </form>
         <br />

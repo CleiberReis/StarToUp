@@ -306,6 +306,7 @@ select {
 
 .vote label {
     cursor: pointer;
+    margin-top: 10px;
 }
 
     .vote label input {
