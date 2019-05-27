@@ -160,12 +160,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905070530559_atualizacao.cs" />
-    <Compile Include="Migrations\201905070530559_atualizacao.Designer.cs">
-      <DependentUpon>201905070530559_atualizacao.cs</DependentUpon>
+    <Compile Include="Migrations\201905240242568_atual.cs" />
+    <Compile Include="Migrations\201905240242568_atual.Designer.cs">
+      <DependentUpon>201905240242568_atual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905270034007_nn.cs" />
+    <Compile Include="Migrations\201905270034007_nn.Designer.cs">
+      <DependentUpon>201905270034007_nn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
+    <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
@@ -403,6 +408,7 @@
     <Content Include="Views\LogonEmpresa\EsqueciSenha.cshtml" />
     <Content Include="Views\LogonEmpresa\ValidarHash.cshtml" />
     <Content Include="Views\StartupCadastros\SearchStartup.cshtml" />
+    <Content Include="Views\StartupCadastros\AvaliaStartup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -423,8 +429,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905070530559_atualizacao.resx">
-      <DependentUpon>201905070530559_atualizacao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905240242568_atual.resx">
+      <DependentUpon>201905240242568_atual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905270034007_nn.resx">
+      <DependentUpon>201905270034007_nn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,6 +1,7 @@
 ﻿@model StarToUp.Models.StartupCadastro
 
 @{
+    IEnumerable<StarToUp.Models.Avaliacao> avaliacoes = (IEnumerable<StarToUp.Models.Avaliacao>)ViewBag.Avaliacoes;
     StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
@@ -57,275 +58,295 @@
     </div>
 </div>
 
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<div class="container">
+@using (Html.BeginForm("Details", "StartupCadastros", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.StartupCadastroID)
-    <form class="form-signin">
-        <div class="row">
-            <div>
-                <div class="col-md-12 uploadImage">
-                    <br />
-                    <div style="color:#fff; font-size: 2.4em;">
-                        @Html.DisplayFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+    <div class="container">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.StartupCadastroID)
+        <form class="form-signin">
+            <div class="row">
+                <div>
+                    <div class="col-md-12 uploadImage">
+                        <br />
+                        <div style="color:#fff; font-size: 2.4em;">
+                            @Html.DisplayFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div style="color:#fff; font-size: 1.2em;;">
+                            @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <br />
+                        <div class="input-group-btn">
+                            @{
+                                string logoTipo = Model.Logotipo;
+                                if (logoTipo != string.Empty)
+                                {
+                                    if (logoTipo != null)
+                                    {
+                                        string file = logoTipo;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                        <img class="img-circle img-preview" src='@Url.Content(path)' style="height:250px; width: 250px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                    }
+                                }
+                            }
+                        </div>
+                        <p style="font-size:x-small;">*Logo.</p>
+                        <div>
+                            @Html.HiddenFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
                     </div>
-                    <div style="color:#fff; font-size: 1.2em;;">
-                        @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <hr class="divisoria" />
+                <div class="col-md-6">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Contato</h3>
                     </div>
-                    <br />
+                    <div>
+                        @*Endereço*@
+                        <div>
+                            <label style="color:#8b8b8b">CEP - </label>
+                            @Html.DisplayFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <label style="color:#8b8b8b">Rua</label>
+                            @Html.DisplayFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <label style="color:#8b8b8b">Bairro - </label>
+                            @Html.DisplayFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <label style="color:#8b8b8b">Nº - </label>
+                            @Html.DisplayFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <label style="color:#8b8b8b">Complemento - </label>
+                            @Html.DisplayFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <label style="color:#8b8b8b">Cidade - </label>
+                            @Html.DisplayFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <label style="color:#8b8b8b">UF - </label>
+                            @Html.DisplayFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            <img class="imgMap img-responsive" src="~/Content/img/maps.png" />
+                        </div>
+                    </div>
+                </div>
+                @*LogoTipo*@
+                <div class="col-md-6 uploadImage">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="text-align:left;">Sobre a Startup</h3>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6 uploadImage">
+                                <div class="input-group-btn">
+                                    @{
+                                        string imagemLocal1 = Model.ImagemLocal1;
+                                        if (imagemLocal1 != string.Empty)
+                                        {
+                                            if (imagemLocal1 != null)
+                                            {
+                                                string file = imagemLocal1;
+                                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                                <img class="img-preview2" src='@Url.Content(path)' title="Local1" /><br />
+                                            }
+                                        }
+                                    }
+                                </div>
+                                <br />
+                            </div>
+                            <div class="col-md-6 uploadImage">
+                                <div class="input-group-btn">
+                                    @{
+                                        string imagemLocal2 = Model.ImagemLocal2;
+                                        if (imagemLocal2 != string.Empty)
+                                        {
+                                            if (imagemLocal2 != null)
+                                            {
+                                                string file = imagemLocal2;
+                                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                                <img class="img-preview3" src='@Url.Content(path)' title="Local2" /><br />
+                                            }
+                                        }
+                                    }
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <p style="font-size:x-small;">*Imagens da Startup.</p>
+                        <br />
+                        <div class="text-left">
+                            <div>
+                                <label style="color:#8b8b8b">Objetivo - </label>
+                                @Html.DisplayFor(model => model.Objetivo, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div>
+                                <label style="color:#8b8b8b">Data da Fundação - </label>
+                                @Html.DisplayFor(model => model.DataFundacao, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div>
+                                <label style="color:#8b8b8b">Segmentação</label>
+                                @Html.DisplayFor(model => model.SegmentacaoID, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div>
+                                <label style="color:#8b8b8b">Tamanho do Time - </label>
+                                @Html.DisplayFor(model => model.TamanhoTime, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div>
+                                <label style="color:#8b8b8b">Sobre - </label>
+                                @Html.DisplayFor(model => model.Sobre, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*FimLogoTipo*@
+            <br />
+            <hr class="divisoria" />
+            @*Imagens do MVP*@
+            <div class="header-wrapper sm-padding">
+                <h3 class="title">Imagens do MVP*</h3>
+                <p style="font-size:x-small;">*Minimo Produto Viavél</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
                     <div class="input-group-btn">
                         @{
-                        string logoTipo = Model.Logotipo;
-                        if (logoTipo != string.Empty)
-                        {
-                        if (logoTipo != null)
-                        {
-                        string file = logoTipo;
-                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                        <img class="img-circle img-preview" src='@Url.Content(path)' style="height:250px; width: 250px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                            string imagemMVP1 = Model.ImagemMVP1;
+                            if (imagemMVP1 != string.Empty)
+                            {
+                                if (imagemMVP1 != null)
+                                {
+                                    string file = imagemMVP1;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-preview4" src='@Url.Content(path)' title="MVP1" /><br />
+                                }
+                            }
                         }
-                        }
-                        }
                     </div>
-                    <p style="font-size:x-small;">*Logo.</p>
-                    <div>
-                        @Html.HiddenFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <hr class="divisoria" />
-            <div class="col-md-6">
-                <div class="header-wrapper sm-padding">
-                    <h3 class="title">Dados de Contato</h3>
-                </div>
-                <div>
-                    @*Endereço*@
-                    <div>
-                        <label style="color:#8b8b8b">CEP - </label>
-                        @Html.DisplayFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <label style="color:#8b8b8b">Rua</label>
-                        @Html.DisplayFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <label style="color:#8b8b8b">Bairro - </label>
-                        @Html.DisplayFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <label style="color:#8b8b8b">Nº - </label>
-                        @Html.DisplayFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <label style="color:#8b8b8b">Complemento - </label>
-                        @Html.DisplayFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <label style="color:#8b8b8b">Cidade - </label>
-                        @Html.DisplayFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <label style="color:#8b8b8b">UF - </label>
-                        @Html.DisplayFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div>
-                        <img class="imgMap img-responsive" src="~/Content/img/maps.png" />
-                    </div>
-                </div>
-            </div>
-            @*LogoTipo*@
-            <div class="col-md-6 uploadImage">
-                <div class="header-wrapper sm-padding">
-                    <h3 class="title" style="text-align:left;">Sobre a Startup</h3>
-                </div>
-                <div>
-                    <div class="row">
-                        <div class="col-md-6 uploadImage">
-                            <div class="input-group-btn">
-                                @{
-                                string imagemLocal1 = Model.ImagemLocal1;
-                                if (imagemLocal1 != string.Empty)
-                                {
-                                if (imagemLocal1 != null)
-                                {
-                                string file = imagemLocal1;
-                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                <img class="img-preview2" src='@Url.Content(path)' title="Local1" /><br />
-                                }
-                                }
-                                }
-                            </div>
-                            <br />
-                        </div>
-                        <div class="col-md-6 uploadImage">
-                            <div class="input-group-btn">
-                                @{
-                                string imagemLocal2 = Model.ImagemLocal2;
-                                if (imagemLocal2 != string.Empty)
-                                {
-                                if (imagemLocal2 != null)
-                                {
-                                string file = imagemLocal2;
-                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                                <img class="img-preview3" src='@Url.Content(path)' title="Local2" /><br />
-                                }
-                                }
-                                }
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <p style="font-size:x-small;">*Imagens da Startup.</p>
                     <br />
-                    <div class="text-left">
-                        <div>
-                            <label style="color:#8b8b8b">Objetivo - </label>
-                            @Html.DisplayFor(model => model.Objetivo, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP2 = Model.ImagemMVP2;
+                            if (imagemMVP2 != string.Empty)
+                            {
+                                if (imagemMVP2 != null)
+                                {
+
+                                    string file = imagemMVP2;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-preview5" src='@Url.Content(path)' title="MVP2" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <br />
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP3 = Model.ImagemMVP3;
+                            if (imagemMVP3 != string.Empty)
+                            {
+                                if (imagemMVP3 != null)
+                                {
+                                    string file = imagemMVP3;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-preview6" src='@Url.Content(path)' title="MVP3" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <br />
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP4 = Model.ImagemMVP4;
+                            if (imagemMVP4 != string.Empty)
+                            {
+                                if (imagemMVP4 != null)
+                                {
+                                    string file = imagemMVP4;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                    <img class="img-preview7" src='@Url.Content(path)' title="MVP4" /><br />
+                                }
+                            }
+                        }
+
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <br />
+            <hr class="divisoria" />
+
+            <div class="header-wrapper sm-padding">
+                <h3 class="title">Redes Sociais</h3>
+
+            </div>
+            <div class="row">
+
+                <div class="input-group col-md-2" style="display:inline-block">
+                    <div class="input-group">
+                        <ul>
+                            <li><a href="http://@startupCadastro.LinkInstagram" target="_blank"><img class="imgsocial" src="~/Content/img/icon-insta.png" title="Instagram" style="width:50px" /></a></li>
+                        </ul>
+                        @*@Html.DisplayFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })*@
+                    </div>
+                </div>
+
+                <div class="input-group col-md-2" style="display:inline-block">
+                    <div class="input-group">
+                        <ul>
+                            <li><a href="http://@startupCadastro.LinkFacebook" target="_blank"><img class="imgsocial" src="~/Content/img/icon-face.png" title="Facebook" style="width:50px" /></a></li>
+                        </ul>
+                        @*@Html.DisplayFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })*@
+                    </div>
+                </div>
+
+                <div class="input-group col-md-2" style="display:inline-block">
+                    <div class="input-group">
+                        <ul>
+                            <li><a href="http://@startupCadastro.LinkLinkedin" target="_blank"><img class="imgsocial" src="~/Content/img/icon-linkedin.png" title="LinkedIn" style="width:50px" /></a></li>
+                        </ul>
+                        @*@Html.DisplayFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })*@
+                    </div>
+                </div>
+                @{
+                    foreach (var avalia in avaliacoes)
+                    {
+                        <div class="col-md-offset-2 col-md-10 linha">
+                            <input type="checkbox"
+                                   name="selectedAvaliacao"
+                                   value="@avalia.AvaliacaoID" />
+                            @avalia.Descricao
                         </div>
-                        <div>
-                            <label style="color:#8b8b8b">Data da Fundação - </label>
-                            @Html.DisplayFor(model => model.DataFundacao, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        <div>
-                            <label style="color:#8b8b8b">Segmentação</label>
-                            @Html.DisplayFor(model => model.SegmentacaoID, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        <div>
-                            <label style="color:#8b8b8b">Tamanho do Time - </label>
-                            @Html.DisplayFor(model => model.TamanhoTime, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        <div>
-                            <label style="color:#8b8b8b">Sobre - </label>
-                            @Html.DisplayFor(model => model.Sobre, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                    }
+                }
+                @Html.HiddenFor(model => model.StartupCadastroID, new { Value = ViewBag.StartupCadastroID })
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Avaliar" class="btn btn-default" />
                     </div>
                 </div>
             </div>
-        </div>
-        @*FimLogoTipo*@
+        </form>
         <br />
-        <hr class="divisoria" />
-        @*Imagens do MVP*@
-        <div class="header-wrapper sm-padding">
-            <h3 class="title">Imagens do MVP*</h3>
-            <p style="font-size:x-small;">*Minimo Produto Viavél</p>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="input-group-btn">
-                    @{
-                    string imagemMVP1 = Model.ImagemMVP1;
-                    if (imagemMVP1 != string.Empty)
-                    {
-                    if (imagemMVP1 != null)
-                    {
-                    string file = imagemMVP1;
-                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                    <img class="img-preview4" src='@Url.Content(path)' title="MVP1" /><br />
-                    }
-                    }
-                    }
-                </div>
-                <br />
-            </div>
-            <div class="col-md-3">
-                <div class="input-group-btn">
-                    @{
-                    string imagemMVP2 = Model.ImagemMVP2;
-                    if (imagemMVP2 != string.Empty)
-                    {
-                    if (imagemMVP2 != null)
-                    {
-
-                    string file = imagemMVP2;
-                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                    <img class="img-preview5" src='@Url.Content(path)' title="MVP2" /><br />
-                    }
-                    }
-                    }
-                </div>
-                <br />
-            </div>
-            <div class="col-md-3">
-                <div class="input-group-btn">
-                    @{
-                    string imagemMVP3 = Model.ImagemMVP3;
-                    if (imagemMVP3 != string.Empty)
-                    {
-                    if (imagemMVP3 != null)
-                    {
-                    string file = imagemMVP3;
-                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                    <img class="img-preview6" src='@Url.Content(path)' title="MVP3" /><br />
-                    }
-                    }
-                    }
-                </div>
-                <br />
-            </div>
-            <div class="col-md-3">
-                <div class="input-group-btn">
-                    @{
-                    string imagemMVP4 = Model.ImagemMVP4;
-                    if (imagemMVP4 != string.Empty)
-                    {
-                    if (imagemMVP4 != null)
-                    {
-                    string file = imagemMVP4;
-                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                    <img class="img-preview7" src='@Url.Content(path)' title="MVP4" /><br />
-                    }
-                    }
-                    }
-
-                </div>
-                <br />
-            </div>
-        </div>
-        <br />
-        <hr class="divisoria" />
-
-        <div class="header-wrapper sm-padding">
-            <h3 class="title">Redes Sociais</h3>
-
-        </div>
-        <div class="row">
-
-            <div class="input-group col-md-2" style="display:inline-block">
-                <div class="input-group">
-                    <ul>
-                        <li><a href="http://@startupCadastro.LinkInstagram" target="_blank"><img class="imgsocial" src="~/Content/img/icon-insta.png" title="Instagram" style="width:50px" /></a></li>
-                    </ul>
-                    @*@Html.DisplayFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })*@
-                </div>
-            </div>
-
-            <div class="input-group col-md-2" style="display:inline-block">
-                <div class="input-group">
-                    <ul>
-                        <li><a href="http://@startupCadastro.LinkFacebook" target="_blank"><img class="imgsocial" src="~/Content/img/icon-face.png" title="Facebook" style="width:50px" /></a></li>
-                    </ul>
-                    @*@Html.DisplayFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })*@
-                </div>
-            </div>
-
-            <div class="input-group col-md-2" style="display:inline-block">
-                <div class="input-group">
-                    <ul>
-                        <li><a href="http://@startupCadastro.LinkLinkedin" target="_blank"><img class="imgsocial" src="~/Content/img/icon-linkedin.png" title="LinkedIn" style="width:50px" /></a></li>
-                    </ul>
-                    @*@Html.DisplayFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })*@
-                </div>
-            </div>
-
-        </div>
-    </form>
+    </div>
     <br />
-</div>
-<br />
+}
 <footer id="footer" class="sm-padding bg-dark">
     <div class="container-fluid">
         <div class="row">
@@ -350,12 +371,53 @@
 </footer>
 
 @section scripts{
-<script>
-    $(function () {
-        $('input, select, textarea').each(function () {
-            if ($(this).hasClass('input-validation-error'))
-                $(this).focus();
+    <script>
+        $(function () {
+            $('input, select, textarea').each(function () {
+                if ($(this).hasClass('input-validation-error'))
+                    $(this).focus();
+            });
         });
-    });
-</script>
+
+        $('.vote label i.fa').on('click mouseover', function () {
+            // remove classe ativa de todas as estrelas
+            $('.vote label i.fa').removeClass('active');
+            // pegar o valor do input da estrela clicada
+            var val = $(this).prev('input').val();
+            //percorrer todas as estrelas
+            $('.vote label i.fa').each(function () {
+                /* checar de o valor clicado é menor ou igual do input atual
+                *  se sim, adicionar classe active
+                */
+                var $input = $(this).prev('input');
+                if ($input.val() <= val) {
+                    $(this).addClass('active');
+                }
+            });
+            $("#voto").html(val); // somente para teste
+        });
+        //Ao sair da div vote
+        $('.vote').mouseleave(function () {
+            //pegar o valor clicado
+            var val = $(this).find('input:checked').val();
+            //se nenhum foi clicado remover classe de todos
+            if (val == undefined) {
+                $('.vote label i.fa').removeClass('active');
+            } else {
+                //percorrer todas as estrelas
+                $('.vote label i.fa').each(function () {
+                    /* Testar o input atual do laço com o valor clicado
+                    *  se maior, remover classe, senão adicionar classe
+                    */
+                    var $input = $(this).prev('input');
+                    if ($input.val() > val) {
+                        $(this).removeClass('active');
+                    } else {
+                        $(this).addClass('active');
+                    }
+                });
+            }
+            $("#voto").html(val); // somente para teste
+        });
+    </script>
 }

@@ -2,27 +2,11 @@
 @{
 
     IEnumerable<StarToUp.Models.SegmentacaoStartupGroup> grupos = (IEnumerable<StarToUp.Models.SegmentacaoStartupGroup>)ViewBag.Segmentos;
-
-
-
     IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
     IEnumerable<StarToUp.Models.Segmentacao> segmentacoes = (IEnumerable<StarToUp.Models.Segmentacao>)ViewBag.Segmentacoes;
     IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.StartupCadastros;
     ViewBag.Title = "Home Page";
 }
-
-@*@{
-
-
-        foreach (var item in grupos)
-        {
-
-            <div>Descrição:  (  )</div>
-
-        }
-
-    }*@
-
 <!-- About -->
 <div id="about" class="section md-padding">
 

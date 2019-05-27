@@ -15,12 +15,21 @@ namespace StarToUp.Models
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
 
-        //public DbSet<PerfilEmpresa> PerfilEmpresas { get; set; }
         public DbSet<StartupCadastro> StartupCadastros { get; set; }        public DbSet<EmpresaCadastro> EmpresaCadastros { get; set; }        public DbSet<Segmentacao> Segmentacoes { get; set; }
         public DbSet<Contato> Contatos { get; set; }
+        public DbSet<Avaliacao> Avaliacoes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<StartupCadastro>()
+            .HasMany<Avaliacao>(s => s.Avaliacoes)
+            .WithMany(c => c.StartupCadastros)
+            .Map(cs =>
+            {
+                cs.MapLeftKey("StartupCadastroRefId");
+                cs.MapRightKey("AvaliacaoRefId");
+                cs.ToTable("AvaliaStartup");
+            });
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }

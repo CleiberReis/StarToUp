@@ -64,6 +64,9 @@ namespace StarToUp.Models
 
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
+
+        public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
+
     }
 
     public class SegmentacaoStartupGroup

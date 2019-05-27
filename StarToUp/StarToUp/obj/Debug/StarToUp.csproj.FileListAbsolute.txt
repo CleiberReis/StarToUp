@@ -848,3 +848,43 @@ C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.F
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizacao.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
+C:\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
+C:\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe.config
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.rsp
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.exe
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.rsp
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\System.AppContext.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Collections.Immutable.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Reflection.Metadata.dll
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe.config
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
+C:\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
+C:\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
+C:\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.nn.resources

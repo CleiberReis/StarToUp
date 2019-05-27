@@ -1,0 +1,31 @@
+﻿@model StarToUp.Models.StartupCadastro
+@{
+    ViewBag.Title = "Avaliação de Startups";
+}
+<h2>Avaliação de Startups</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @{
+            List<StarToUp.Models.Avaliacao> avaliacoes = ViewBag.Avaliacoes;
+            foreach (var avalia in avaliacoes)
+            {
+                <div class="col-md-offset-2 col-md-10 linha">
+                    <input type="checkbox"
+                           name="selectedAvaliacao"
+                           value="@avalia.AvaliacaoID" />
+                    @avalia.Descricao
+                </div>
+            }
+        }
+        @Html.HiddenFor(model => model.StartupCadastroID, new { Value = ViewBag.StartupCadastroID })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Avaliar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

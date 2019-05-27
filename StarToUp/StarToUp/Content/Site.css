@@ -303,3 +303,33 @@ select {
     .forgot_pass span {
         font-weight: bold;
     }
+
+.vote label {
+    cursor: pointer;
+}
+
+    .vote label input {
+        display: none;
+    }
+
+    .vote label i {
+        font-family: FontAwesome;
+        font-size: 18px;
+        -webkit-transition-property: color, text;
+        -webkit-transition-duration: .2s, .2s;
+        -webkit-transition-timing-function: linear, ease-in;
+        -moz-transition-property: color, text;
+        -moz-transition-duration: .2s;
+        -moz-transition-timing-function: linear, ease-in;
+        -o-transition-property: color, text;
+        -o-transition-duration: .2s;
+        -o-transition-timing-function: linear, ease-in;
+    }
+
+        .vote label i:before {
+            content: '\f005';
+        }
+
+        .vote label i.active {
+            color: yellow;
+        }
