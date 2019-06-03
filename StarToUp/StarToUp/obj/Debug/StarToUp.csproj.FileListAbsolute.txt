@@ -805,93 +805,40 @@ C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.pesquisa.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.termo.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
-<<<<<<< HEAD
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.rsp
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.rsp
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.AppContext.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.teste.resources
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
-=======
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-<<<<<<< HEAD
->>>>>>> d66a2896a24517ef036f4e108fca95685efed087
-=======
-C:\Users\Antonio Carlos\Desktop\StarToUp -Projeto\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizando.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.rsp
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.rsp
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.AppContext.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.pesquisainteligente.resources
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
-C:\Users\cleib\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
->>>>>>> pesquisa-inteligente
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.exe.config
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csc.rsp
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.exe
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\csi.rsp
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.AppContext.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.exe.config
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\vbc.rsp
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.teste.resources
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.termo.resources
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.Cache
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
+C:\Users\Desireé Fraga\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb

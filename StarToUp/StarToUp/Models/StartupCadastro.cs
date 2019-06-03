@@ -24,7 +24,6 @@ namespace StarToUp.Models
         [Required(ErrorMessage = "Você precisa de uma senha!")]
         [DisplayName("Senha:")]
         public string Senha { get; set; }
-        public DateTime DataCadastro { get; set; }
 
         //[DisplayName("Data de Cadastro")]
         //[DataType(DataType.DateTime, ErrorMessage = "Formato de data inválido")]

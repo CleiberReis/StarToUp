@@ -160,7 +160,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\201905070307117_teste.cs" />
     <Compile Include="Migrations\201905070307117_teste.Designer.cs">
       <DependentUpon>201905070307117_teste.cs</DependentUpon>
@@ -168,11 +167,6 @@
     <Compile Include="Migrations\201905070245109_termo.cs" />
     <Compile Include="Migrations\201905070245109_termo.Designer.cs">
       <DependentUpon>201905070245109_termo.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201904300254460_pesquisa-inteligente.cs" />
-    <Compile Include="Migrations\201904300254460_pesquisa-inteligente.Designer.cs">
-      <DependentUpon>201904300254460_pesquisa-inteligente.cs</DependentUpon>
->>>>>>> pesquisa-inteligente
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -434,16 +428,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201905070307117_teste.resx">
       <DependentUpon>201905070307117_teste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905070245109_termo.resx">
       <DependentUpon>201905070245109_termo.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201904300254460_pesquisa-inteligente.resx">
-      <DependentUpon>201904300254460_pesquisa-inteligente.cs</DependentUpon>
->>>>>>> pesquisa-inteligente
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
