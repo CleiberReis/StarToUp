@@ -2,6 +2,7 @@
 @{
 
     IEnumerable<StarToUp.Models.SegmentacaoStartupGroup> grupos = (IEnumerable<StarToUp.Models.SegmentacaoStartupGroup>)ViewBag.Segmentos;
+    IEnumerable<StarToUp.Models.SegmentacaoEmpresaGroup> grupo = (IEnumerable<StarToUp.Models.SegmentacaoEmpresaGroup>)ViewBag.SegmentoEmpresa;
     IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
     IEnumerable<StarToUp.Models.Segmentacao> segmentacoes = (IEnumerable<StarToUp.Models.Segmentacao>)ViewBag.Segmentacoes;
     IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.StartupCadastros;
@@ -133,7 +134,45 @@
     <!-- /Background Image -->
     <!-- Container -->
     <div class="row">
+
+        <!-- Section header -->
+        <div class="section-header text-center">
+            <h2 class="white-text">Startups por Segmentação</h2>
+        </div>
+    </div>
+    <div class="row">
         @foreach (var item in grupos)
+        {
+
+
+            <!-- Row -->
+
+
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6 col-md-4">
+                <div class="number">
+                    <i class="fa fa-users"></i>
+                    <h3 class="white-text"><span class="counter">@item.Count</span></h3>
+                    <span class="white-text">@item.Descricao</span>
+                </div>
+            </div>
+            <!-- /number -->
+
+
+            <!-- /Row -->
+
+        }
+        <!-- /Container -->
+    </div>
+    <div class="row">
+
+        <!-- Section header -->
+        <div class="section-header text-center">
+            <h2 class="white-text">Empresas por Segmentação</h2>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in grupo)
         {
 
 

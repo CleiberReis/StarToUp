@@ -52,4 +52,10 @@ namespace StarToUp.Models
         public virtual Segmentacao Segmentacoes { get; set; }
 
     }
+
+    public class SegmentacaoEmpresaGroup
+    {
+        public string Descricao { get; set; }
+        public int Count { get; set; }
+    }
 }

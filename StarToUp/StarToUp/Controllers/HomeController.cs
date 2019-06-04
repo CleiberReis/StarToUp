@@ -36,9 +36,8 @@ namespace StarToUp.Controllers
         public ActionResult Principal()
         {
             IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
+            IEnumerable<EmpresaCadastro> empresaCadastros = db.EmpresaCadastros.ToList();
             IEnumerable<Evento> eventos = db.Eventoes.ToList();
-
-
             IEnumerable<Segmentacao> segmentacoes = db.Segmentacoes.ToList();
 
             var query = from c in db.Segmentacoes
@@ -54,7 +53,21 @@ namespace StarToUp.Controllers
 
             ViewBag.Segmentos = (IEnumerable<Models.SegmentacaoStartupGroup>) query.ToList();
 
+            var queryy = from c in db.Segmentacoes
+                        join e in db.EmpresaCadastros
+                        on c.SegmentacaoID equals e.SegmentacaoID
+                        group new { c, e } by new { c.Descricao } into g
+                        select new SegmentacaoEmpresaGroup
+                        {
+                            Descricao = g.Key.Descricao,
+                            //SumPrice = (decimal?)g.Sum(pt => pt.p.UnitPrice),
+                            Count = g.Count()
+                        };
+
+            ViewBag.SegmentoEmpresa = (IEnumerable<Models.SegmentacaoEmpresaGroup>)queryy.ToList();
+
             ViewBag.StartupCadastros = startupCadastros;
+            ViewBag.EmpresaCadastros = empresaCadastros;
             ViewBag.Eventos = eventos;
             ViewBag.Segmentacoes = segmentacoes;
             return View();
