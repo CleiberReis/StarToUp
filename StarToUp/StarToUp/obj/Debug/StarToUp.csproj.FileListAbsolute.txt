@@ -386,15 +386,10 @@ C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\roslyn\VBCSCompiler.e
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual2.resources
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CoreCompileInputs.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.CopyComplete
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.perfilempresas2.resources
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\SendGrid.CSharp.HTTP.Client.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.dll
 C:\Users\Gabriele Kiane\Desktop\Projeto\StarToUp\StarToUp\StarToUp\bin\System.Net.Http.Formatting.xml
@@ -889,3 +884,5 @@ C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Mi
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.nn.resources
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
+C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
+C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
