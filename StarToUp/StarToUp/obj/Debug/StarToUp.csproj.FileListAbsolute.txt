@@ -886,4 +886,3 @@ C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations
 C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
-C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
