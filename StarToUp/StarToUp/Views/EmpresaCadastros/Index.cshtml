@@ -51,7 +51,7 @@
                 else
                 {
                     <script type="text/javascript">
-                                window.location.href = "@Url.Action("AcessoNegadoEmpresa","LogonEmpresa")";
+                                window.location.href = "@Url.Action("AcessoNegadoEmpresa", "LogonEmpresa")";
                     </script>
                 }
             }
@@ -142,29 +142,42 @@
     </div>
     <!-- /Section header -->
     <!-- Lista de Startups por segmentação igual -->
+
+    @{int processed = 0; }
     @foreach (var item in startupCadastros)
     {
-        <div class="col-md-4">
-            <div class="about">
 
-                @{
-                    string logoTipo = item.Logotipo;
-                    if (logoTipo != string.Empty)
-                    {
-                        if (logoTipo != null)
+        if (empresaCadastro.SegmentacaoID == item.SegmentacaoID)
+        {
+            <div class="col-md-4">
+                <div class="about">
+
+                    @{
+                        string logoTipo = item.Logotipo;
+                        if (logoTipo != string.Empty)
                         {
-                            string file = logoTipo;
-                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
-                            <img src='@Url.Content(path)' style="width:150px; height:150px; border-radius: 100%;" /><br />
+                            if (logoTipo != null)
+                            {
+                                string file = logoTipo;
+                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                <img src='@Url.Content(path)' style="width:150px; height:150px; border-radius: 100%;" /><br />
+                            }
                         }
                     }
-                }
-                <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
-                <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
-                <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+
+                    <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
+                    <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+                </div>
             </div>
-        </div>
+        }
+
+        if (++processed == 6)
+        {
+            break;
+        }
     }
+
     <!-- /Lista de Startups por segmentação -->
 </div>
 
