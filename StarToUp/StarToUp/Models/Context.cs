@@ -18,6 +18,7 @@ namespace StarToUp.Models
         public DbSet<StartupCadastro> StartupCadastros { get; set; }        public DbSet<EmpresaCadastro> EmpresaCadastros { get; set; }        public DbSet<Segmentacao> Segmentacoes { get; set; }
         public DbSet<Contato> Contatos { get; set; }
         public DbSet<Avaliacao> Avaliacoes { get; set; }
+        public DbSet<Emprego> Empregos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

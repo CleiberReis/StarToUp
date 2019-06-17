@@ -34,11 +34,12 @@
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li><a href="#" class="disabled" style="color:#b4b4b4;">Home Startup</a></li>
                         <li>@Html.ActionLink("Startups", "IndexStartups", "StartupCadastros")</li>
+                        <li>@Html.ActionLink("Vagas Emprego", "Index", "Empregoes")</li>
                         <li class="has-dropdown">
                             <a href="">@startupCadastro.Nome</a>
                             <ul class="dropdown">
                                 @*@foreach (var item in Model)
-                                    {*@
+                {*@
                                 <li><a href="@Url.Action("Edit", "StartupCadastros" , new { id= startupCadastro.StartupCadastroID})">Editar</a></li>
                                 @*}*@
                                 <li><a href="#" data-toggle="modal" data-target="#smallModal">Logoff</a></li>

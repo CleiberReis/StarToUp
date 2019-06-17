@@ -151,6 +151,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradorsController.cs" />
     <Compile Include="Controllers\ContatosController.cs" />
+    <Compile Include="Controllers\EmpregoesController.cs" />
     <Compile Include="Controllers\EmpresaCadastrosController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -160,15 +161,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906112330282_atual.cs" />
-    <Compile Include="Migrations\201906112330282_atual.Designer.cs">
-      <DependentUpon>201906112330282_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201906170111544_atualizafo.cs" />
+    <Compile Include="Migrations\201906170111544_atualizafo.Designer.cs">
+      <DependentUpon>201906170111544_atualizafo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Emprego.cs" />
     <Compile Include="Models\EmpresaCadastro.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Segmentacao.cs" />
@@ -405,6 +407,11 @@
     <Content Include="Views\LogonEmpresa\ValidarHash.cshtml" />
     <Content Include="Views\StartupCadastros\SearchStartup.cshtml" />
     <Content Include="Views\StartupCadastros\AvaliaStartup.cshtml" />
+    <Content Include="Views\Empregoes\Create.cshtml" />
+    <Content Include="Views\Empregoes\Delete.cshtml" />
+    <Content Include="Views\Empregoes\Details.cshtml" />
+    <Content Include="Views\Empregoes\Edit.cshtml" />
+    <Content Include="Views\Empregoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -425,8 +432,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906112330282_atual.resx">
-      <DependentUpon>201906112330282_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906170111544_atualizafo.resx">
+      <DependentUpon>201906170111544_atualizafo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
