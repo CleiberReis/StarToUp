@@ -1,0 +1,123 @@
+﻿@model IEnumerable<StarToUp.Models.Emprego>
+
+@{
+    IEnumerable<StarToUp.Models.StartupCadastro> startupCadastros = (IEnumerable<StarToUp.Models.StartupCadastro>)ViewBag.startupCadastros;
+    ViewBag.Title = "Vagas de Emprego";
+    Layout = "~/Views/Shared/_IndexStartup.cshtml";
+}
+<!-- Header -->
+<header>
+    <div>
+        <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+            <div class="overlay"></div>
+        </div>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    </div>
+
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                if (startupCadastro != null)
+                {
+                    <ul class="main-nav nav navbar-nav navbar-left">
+                        <li><a href="">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
+                    </ul>
+
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Nova vaga", "Create")</li>
+                        <li>@Html.ActionLink("Home Startup", "Index", "StartupCadastros")</li>
+
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                        window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
+
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header>
+<!-- /Header -->
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TituloVaga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocalVaga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalarioVaga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequisitosVaga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoVaga)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TituloVaga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalVaga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioVaga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequisitosVaga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoVaga)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.EmpregoID }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.EmpregoID }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.EmpregoID })
+            </td>
+        </tr>
+    }
+
+</table>
+<footer id="footer" class="sm-padding bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
+                </div>
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
