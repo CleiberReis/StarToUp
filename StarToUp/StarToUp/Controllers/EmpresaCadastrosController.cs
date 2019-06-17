@@ -26,6 +26,8 @@ namespace StarToUp.Controllers
                 var empresaCadastros = db.EmpresaCadastros.Include(e => e.Segmentacoes);
                 IEnumerable<StartupCadastro> startupCadastros = db.StartupCadastros.ToList();
                 ViewBag.StartupCadastros = startupCadastros;
+                IEnumerable<EmpresaCadastro> EmpresaCadastros = db.EmpresaCadastros.ToList();
+                ViewBag.EmpresaCadastros = empresaCadastros;
                 return View(empresaCadastros.ToList());
             }
             else
