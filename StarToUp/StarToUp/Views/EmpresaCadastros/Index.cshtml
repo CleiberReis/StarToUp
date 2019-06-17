@@ -109,13 +109,13 @@
     </div>
     <!-- /Section header -->
     <!-- Empresas Parceiras -->
-    @foreach (var item in startupCadastros)
+    @foreach (var item in empresaCadastros)
     {
         <div class="col-md-4">
             <div class="about">
 
                 @{
-                    string logoTipo = item.Logotipo;
+                    string logoTipo = item.Logomarca;
                     if (logoTipo != string.Empty)
                     {
                         if (logoTipo != null)
@@ -128,11 +128,44 @@
                 }
                 <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
                 <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
-                <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+                <a href='@Url.Action("Details", "EmpresasCadastros", new { id = item.EmpresaCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
             </div>
         </div>
     }
     <!-- /Empresas Parceiras -->
+</div>
+
+<div class="row">
+    <!-- Section header -->
+    <div class="section-header text-center">
+        <h2 class="title">Achamos que talvez você possa se interessar:</h2>
+    </div>
+    <!-- /Section header -->
+    <!-- Lista de Startups por segmentação -->
+    @foreach (var item in startupCadastros)
+    {
+        <div class="col-md-4">
+            <div class="about">
+
+                @{
+                    string logoTipo = item.Logotipo;
+                    if (logoTipo != string.Empty)
+                    {
+                        if (logoTipo != null)
+                        {
+                            string file = logoTipo;
+                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                            <img src='@Url.Content(path)' style="width:150px; height:150px; border-radius: 100%;" /><br />
+                        }
+                    }
+                }
+                <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
+                <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+            </div>
+        </div>
+    }
+    <!-- /Lista de Startups por segmentação -->
 </div>
 
 <footer id="footer" class="sm-padding bg-dark">

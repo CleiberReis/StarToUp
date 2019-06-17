@@ -487,6 +487,9 @@ namespace StarToUp.Controllers
                 return RedirectToAction("SearchStartup");
             }
         }
+
+
+
         // GET: StartupCadastros/Delete/5
         public ActionResult Delete(int? id)
         {
