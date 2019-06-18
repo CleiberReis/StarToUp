@@ -5,64 +5,150 @@
     Layout = "~/Views/Shared/_IndexStartup.cshtml";
 }
 
-<h2>Create</h2>
+<!-- Header -->
+<header>
+    <div>
+        <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+            <div class="overlay"></div>
+        </div>
 
-@using (Html.BeginForm()) 
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    </div>
+
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+            <!--  Main navigation  -->
+            @{
+                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
+                if (startupCadastro != null)
+                {
+                    <ul class="main-nav nav navbar-nav navbar-left">
+                        <li><a href="">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
+                    </ul>
+
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Home Startup", "Index", "StartupCadastros")</li>
+
+                    </ul>
+                    <!-- /Main navigation -->
+                }
+                else
+                {
+                    <script type="text/javascript">
+                        window.location.href = "@Url.Action("AcessoNegado","Logon")";
+                    </script>
+                }
+            }
+
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header>
+<!-- /Header -->
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Emprego</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.TituloVaga, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TituloVaga, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TituloVaga, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <!-- Pricing -->
+    <div id="pricing" class="section md-padding">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LocalVaga, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LocalVaga, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LocalVaga, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <!-- Container -->
+        <div class="container">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SalarioVaga, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SalarioVaga, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SalarioVaga, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <!-- Row -->
+            <div class="row">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.RequisitosVaga, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RequisitosVaga, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RequisitosVaga, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <!-- Section header -->
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DescricaoVaga, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DescricaoVaga, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DescricaoVaga, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="section-header text-center">
+                    <h2 class="title">Vagas abertas</h2>
+                </div>
+                <!-- /Section header -->
+                <!-- pricing -->
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-sm-4">
+                    <div class="pricing">
+                        <div class="price-head">
+                            <span class="price-title">
+                                @Html.LabelFor(model => model.TituloVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.TituloVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TituloVaga, "", new { @class = "text-danger" })
+                            </span>
+                            <div class="price">
+                                <h3><span class="duration">Foto da empresa</span></h3>
+                            </div>
+                        </div>
+                        <ul class="price-content">
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.LocalVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.LocalVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LocalVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.SalarioVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.SalarioVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.SalarioVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.RequisitosVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.RequisitosVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RequisitosVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.DescricaoVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.DescricaoVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DescricaoVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="price-btn">
+                            <button class="outline-btn" type="submit" value="Create">Cadastrar Vaga</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /pricing -->
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+            <!-- Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Pricing -->
+}
+
+<footer id="footer" class="sm-padding bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="footer-logo">
+                    <a href="~/Views/Home/Index.cshtml"><img src="~/Content/img/logo2.png" alt="logo"></a>
+                </div>
+                <ul class="footer-follow">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>Copyright © 2019. All Rights Reserved. Designed by <a href="https://techintime.com" target="_blank">Tech In Time</a></p>
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+</footer>

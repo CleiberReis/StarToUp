@@ -24,81 +24,78 @@
                 </div>
             </div>
             <!--  Main navigation  -->
-            @{
-                StarToUp.Models.StartupCadastro startupCadastro = StarToUp.Repositories.Funcoes.GetUsuario();
-                if (startupCadastro != null)
-                {
-                    <ul class="main-nav nav navbar-nav navbar-left">
-                        <li><a href="">Seja bem-vindo(a) - @startupCadastro.Nome</a></li>
-                    </ul>
-
+            
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li>@Html.ActionLink("Nova vaga", "Create")</li>
                         <li>@Html.ActionLink("Home Startup", "Index", "StartupCadastros")</li>
 
                     </ul>
                     <!-- /Main navigation -->
-                }
-                else
-                {
-                    <script type="text/javascript">
-                        window.location.href = "@Url.Action("AcessoNegado","Logon")";
-                    </script>
-                }
-            }
 
         </div>
     </nav>
     <!-- /Nav -->
 </header>
 <!-- /Header -->
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TituloVaga)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocalVaga)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SalarioVaga)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RequisitosVaga)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescricaoVaga)
-        </th>
-        <th></th>
-    </tr>
+<!-- Pricing -->
+<div id="pricing" class="section md-padding">
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TituloVaga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocalVaga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SalarioVaga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RequisitosVaga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoVaga)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.EmpregoID }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.EmpregoID }) |
-                @Html.ActionLink("Excluir", "Delete", new { id = item.EmpregoID })
-            </td>
-        </tr>
-    }
+    <!-- Container -->
+    <div class="container">
 
-</table>
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Section header -->
+            <br />
+            <div class="section-header text-center">
+                <h2 class="title">Vagas abertas</h2>
+            </div>
+            <!-- /Section header -->
+            <!-- pricing -->
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-4">
+                    <div class="pricing">
+                        <div class="price-head">
+                            <span class="price-title">@Html.DisplayFor(modelItem => item.TituloVaga)</span>
+                            <div class="price">
+                                <h3><span class="duration">Foto da empresa</span></h3>
+                            </div>
+                        </div>
+                        <ul class="price-content">
+                            <li>
+                                <p>@Html.DisplayNameFor(model => model.LocalVaga) @Html.DisplayFor(modelItem => item.LocalVaga)</p>
+                            </li>
+                            <li>
+                                <p>@Html.DisplayNameFor(model => model.SalarioVaga) @Html.DisplayFor(modelItem => item.SalarioVaga)</p>
+                            </li>
+                            <li>
+                                <p>@Html.DisplayNameFor(model => model.RequisitosVaga) @Html.DisplayFor(modelItem => item.RequisitosVaga)</p>
+                            </li>
+                            <li>
+                                <p>@Html.DisplayNameFor(model => model.DescricaoVaga) @Html.DisplayFor(modelItem => item.DescricaoVaga)</p>
+                            </li>
+                        </ul>
+                        <div class="price-btn">
+                            <button class="outline-btn">@Html.ActionLink("Detalhes", "Details", new { id = item.EmpregoID })</button>
+                        </div>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.EmpregoID }) |
+                        @Html.ActionLink("Excluir", "Delete", new { id = item.EmpregoID })
+                    </div>
+                </div>
+            }
+            <!-- /pricing -->
+
+        </div>
+        <!-- Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Pricing -->
+
 <footer id="footer" class="sm-padding bg-dark">
     <div class="container-fluid">
         <div class="row">

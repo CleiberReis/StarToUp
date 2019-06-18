@@ -846,8 +846,6 @@ C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.nn.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atual.resources
 C:\Users\Antonio Carlos\Desktop\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.nn.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizafo.resources
-C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll.config
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\StarToUp.dll
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\bin\StarToUp.pdb
@@ -887,3 +885,5 @@ C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.pdb
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualz.resources
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
 C:\Users\cleib\source\repos\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.Migrations.atualizado.resources
+C:\Users\DELL\Documents\StarToUp\StarToUp\StarToUp\obj\Debug\StarToUp.csproj.GenerateResource.cache
