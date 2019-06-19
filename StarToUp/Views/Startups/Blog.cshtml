@@ -1,0 +1,78 @@
+﻿
+@{
+    IEnumerable<StarToUp.Models.Startup> startups = (IEnumerable<StarToUp.Models.Startup>)ViewBag.startups;
+    IEnumerable<StarToUp.Models.Empresa> empresas = (IEnumerable<StarToUp.Models.Empresa>)ViewBag.empresas;
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Startup.cshtml";
+}
+
+<div id="about">
+    <div class="header-wrapper sm-padding bg-grey">
+        <div class="container">
+            <h2>Seja Bem-Vindo(a)</h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="container">
+        <br /><br />
+        <div class="row">
+            <div class="section-header text-center">
+                <h2 class="title">Conheça as Empresas Parceiras da StarToUp</h2>
+            </div>
+            <!-- /Section header -->
+            <!-- Empresas Parceiras -->
+            @foreach (var item in empresas)
+            {
+                <div class="col-md-4">
+                    <div class="about">
+
+                        @{
+                            string logotipo = item.Logotipo;
+                            if (logotipo != string.Empty)
+                            {
+                                if (logotipo != null)
+                                {
+                                    string file = logotipo;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Empresa/" + file;
+                                    <img src='@Url.Content(path)' style="width:250px; height:250px;" class="img-preview2"/><br />
+                                }
+                            }
+                        }
+                        <br/>
+                        <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Sobre)</p>
+                        <a href='@Url.Action("Details", "Empresas", new { id = item.EmpresaID })'><img src='@Url.Content("~/Content/img/icons/visualizacao.png")' class="view" title="Detalhes" /></a>
+                    </div>
+                </div>
+            }
+            <!-- /Empresas Parceiras -->
+        </div>
+        @*<div class="row">
+            <div class="section-header text-center">
+                <h2 class="title">Novas Startups Parceiras do Site</h2>
+            </div>
+            @foreach (var item in startupCadastros)
+            {
+                <div class="col-md-2">
+                    <div class="about">
+                        @{
+                            string logoTipo = item.Logotipo;
+                            if (logoTipo != string.Empty)
+                            {
+                                if (logoTipo != null)
+                                {
+                                    string file = logoTipo;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilEmpresa/" + file;
+                                    <img src='@Url.Content(path)' style="width:150px; height:150px; border-radius: 100%;" /><br />
+                                }
+                            }
+                        }
+                        <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Objetivo)</p>
+                        <a href='@Url.Action("Details", "StartupCadastros", new { id = item.StartupCadastroID })'><img src='@Url.Content("~/Content/img/visualizacao.png")' class="visualizacao" title="Detalhes" /></a>
+                    </div>
+                </div>
+            }*@
+    </div>
+</div>
+<!-- /Container -->

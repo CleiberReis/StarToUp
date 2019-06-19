@@ -1,0 +1,327 @@
+﻿@model StarToUp.Models.Contato
+@{
+    IEnumerable<StarToUp.Models.SegmentacaoStartupGroup> grupos = (IEnumerable<StarToUp.Models.SegmentacaoStartupGroup>)ViewBag.Segmentos;
+    IEnumerable<StarToUp.Models.SegmentacaoEmpresaGroup> grupo = (IEnumerable<StarToUp.Models.SegmentacaoEmpresaGroup>)ViewBag.SegmentoEmpresa;
+    IEnumerable<StarToUp.Models.Evento> eventos = (IEnumerable<StarToUp.Models.Evento>)ViewBag.Eventos;
+    IEnumerable<StarToUp.Models.Segmentacao> segmentacoes = (IEnumerable<StarToUp.Models.Segmentacao>)ViewBag.Segmentacoes;
+    IEnumerable<StarToUp.Models.Startup> startups = (IEnumerable<StarToUp.Models.Startup>)ViewBag.Startups;
+    IEnumerable<StarToUp.Models.Empresa> empresas = (IEnumerable<StarToUp.Models.Empresa>)ViewBag.Empresas;
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    
+</div>
+
+<!-- Portfolio -->
+<div id="portfolio" class="section md-padding bg-grey">
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Startups em Destaque</h2>
+            </div>
+            <!-- /Section header -->
+            @foreach (var item in startups)
+            {
+                <div class="col-md-4 col-xs-6 work">
+                    <div class="col-md-4 col-xs-6 work">
+                        <a href='@Url.Action("Details", "Startups", new { id = item.StartupID })'>
+                            @{ string logoTipo = item.Logotipo;
+                                if (logoTipo != string.Empty)
+                                {
+                                    if (logoTipo != null)
+                                    {
+                                        string file = logoTipo;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                                        <img style="width: 340px; height: 320px;" src='@Url.Content(path)' title="LogoTipo" /><br />
+                                    }
+                                }
+                            }
+                            <div class="overlay" style="width: 380px; height: 355px;"></div>
+                            <div class="work-content">
+                                <span>@Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)</span>
+                                <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                                <div class="work-link">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+            <!-- /Work -->
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+<!-- /Portfolio -->
+<!-- Numbers -->
+<div id="numbers" class="section sm-padding">
+    <!-- Background Image -->
+    <div class="bg-img" style="background-image: url('../../Content/img/background2.jpg');">
+        <div class="overlay"></div>
+    </div>
+    <!-- /Background Image -->
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- number -->
+            @foreach (var item in grupos)
+            {
+                <div class="col-sm-3 col-xs-6 col-md-3">
+                    <div class="number">
+                        <i class="fa fa-users"></i>
+                        <h3 class="white-text"><span class="counter">@item.Count</span></h3>
+                        <span class="white-text">@item.Descricao</span>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+<!-- /Numbers -->
+<!-- Blog -->
+<div id="service" class="section md-padding bg-grey">
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Eventos</h2>
+            </div>
+            <!-- /Section header -->
+            <!-- blog -->
+            @foreach (var item in eventos)
+            {
+                <div class="col-md-4">
+                    <div class="blog">
+                        <div class="blog-img">
+                            @{ string foto = item.Foto;
+                                if (foto != string.Empty)
+                                {
+                                    if (foto != null)
+                                    {
+                                        string file = foto;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Evento/" + file;
+                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
+                                    }
+                                }
+                            }
+                        </div>
+                        <div class="blog-content">
+                            <ul class="blog-meta">
+                                <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.DataEvento)</li>
+                            </ul>
+                            <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                            <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+<!-- /Blog -->
+<!-- Pricing -->
+@*<div id="pricing" class="section md-padding">
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row">
+                <!-- Section header -->
+                <div class="section-header text-center">
+                    <h2 class="title">Pricing Table</h2>
+                </div>
+                <!-- /Section header -->
+                <!-- pricing -->
+                <div class="col-sm-4">
+                    <div class="pricing">
+                        <div class="price-head">
+                            <span class="price-title">Basic plan</span>
+                            <div class="price">
+                                <h3>$9<span class="duration">/ month</span></h3>
+                            </div>
+                        </div>
+                        <ul class="price-content">
+                            <li>
+                                <p>1GB Disk Space</p>
+                            </li>
+                            <li>
+                                <p>100 Email Account</p>
+                            </li>
+                            <li>
+                                <p>24/24 Support</p>
+                            </li>
+                        </ul>
+                        <div class="price-btn">
+                            <button class="outline-btn">Purchase now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /pricing -->
+                <!-- pricing -->
+                <div class="col-sm-4">
+                    <div class="pricing">
+                        <div class="price-head">
+                            <span class="price-title">Silver plan</span>
+                            <div class="price">
+                                <h3>$19<span class="duration">/ month</span></h3>
+                            </div>
+                        </div>
+                        <ul class="price-content">
+                            <li>
+                                <p>1GB Disk Space</p>
+                            </li>
+                            <li>
+                                <p>100 Email Account</p>
+                            </li>
+                            <li>
+                                <p>24/24 Support</p>
+                            </li>
+                        </ul>
+                        <div class="price-btn">
+                            <button class="outline-btn">Purchase now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /pricing -->
+                <!-- pricing -->
+                <div class="col-sm-4">
+                    <div class="pricing">
+                        <div class="price-head">
+                            <span class="price-title">Gold plan</span>
+                            <div class="price">
+                                <h3>$39<span class="duration">/ month</span></h3>
+                            </div>
+                        </div>
+                        <ul class="price-content">
+                            <li>
+                                <p>1GB Disk Space</p>
+                            </li>
+                            <li>
+                                <p>100 Email Account</p>
+                            </li>
+                            <li>
+                                <p>24/24 Support</p>
+                            </li>
+                        </ul>
+                        <div class="price-btn">
+                            <button class="outline-btn">Purchase now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /pricing -->
+            </div>
+            <!-- Row -->
+        </div>
+        <!-- /Container -->
+    </div>*@
+<!-- /Pricing -->
+<!-- Number 2 -->
+<div id="testimonial" class="section md-padding">
+    <!-- Background Image -->
+    <div class="bg-img" style="background-image: url('../../Content/img/background3.jpg');">
+        <div class="overlay"></div>
+    </div>
+    <!-- /Background Image -->
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <div class="section-header text-center">
+                <h2 class="title" style="color:#fff;">Segmentação de Empresas Cadastradas</h2>
+            </div>
+            <!-- number -->
+            @foreach (var item in grupo)
+            {
+                <div class="col-sm-3 col-xs-6 col-md-3">
+                    <div class="number">
+                        <i class="fa fa-users"></i>
+                        <h3 class="white-text"><span class="counter">@item.Count</span></h3>
+                        <span class="white-text">@item.Descricao</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- /Numbers 2 -->
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <!-- Contact -->
+    <div id="contact" class="section md-padding">
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row">
+                <!-- Section-header -->
+                <div class="section-header text-center">
+                    <h2 class="title">Entre em contato</h2>
+                </div>
+                <!-- /Section-header -->
+                <!-- contact -->
+                <div class="col-sm-4">
+                    <div class="contact">
+                        <i class="fa fa-phone"></i>
+                        <h3>Telefone / WhatsApp</h3>
+                        <p>(12) 98505-7686</p>
+                    </div>
+                </div>
+                <!-- /contact -->
+                <!-- contact -->
+                <div class="col-sm-4">
+                    <div class="contact">
+                        <i class="fa fa-envelope"></i>
+                        <h3>E-mail</h3>
+                        <p>startoupcontact@gmail.com</p>
+                    </div>
+                </div>
+                <!-- /contact -->
+                <!-- contact -->
+                <div class="col-sm-4">
+                    <div class="contact">
+                        <i class="fa fa-map-marker"></i>
+                        <h3>Endereço</h3>
+                        <p>Av. Prof. João Rodrigues, nº1501, Jardim Esperança, Guaratinguetá/SP</p>
+                    </div>
+                </div>
+                <!-- /contact -->
+                <!-- contact form -->
+                <div class="col-md-8 col-md-offset-2">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="input" name="nome" placeholder="Nome">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="input" name="email" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <br />
+                        <input type="text" class="input" name="assunto" placeholder="Assunto">
+                        <br /><br />
+                        <textarea class="input" name="mensagem" placeholder="Mensagem"></textarea>
+                        <div class="text-center">
+                            <button class="main-btn" type="submit" name="enviar">Enviar Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /contact form -->
+            </div>
+            <!-- /Row -->
+        </div>
+        <!-- /Container -->
+    </div>
+    <!-- /Contact -->
+}

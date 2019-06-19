@@ -1,0 +1,57 @@
+﻿@model StarToUp.Models.Administrador
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Adimin.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Administradores", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <br />
+        <div class="section-header text-center">
+            <h2 class="title">Novo Usuário Administrador</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <br />
+            <form class="form-signin">
+                <div>
+                    <input type="file" name="fotoAdmin" id="fotoAdmin" class="input" placeholder="Foto *" />
+                    @{
+                        string fotoAdmin = ViewBag.FotoMensagem;
+                        if (fotoAdmin != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.FotoMensagem
+                            </span>
+                        }
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="nomeAdmin" id="nomeAdmin" class="input" placeholder="Nome *" />
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="funcao" id="funcao" class="input" placeholder="Função *" />
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="login" id="login" class="input" placeholder="Login *" />
+                </div>
+                <br />
+                <div>
+                    <input type="password" name="senha" id="senha" class="input" placeholder="Senha *" />
+                </div>
+                <br />
+                <button class="btn btn-lg btn-success btn-block" type="submit" value="Cadastrar">Cadastrar</button>
+                <br />
+            </form>
+        </div>
+    </div>
+
+}

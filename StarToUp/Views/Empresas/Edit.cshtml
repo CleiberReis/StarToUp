@@ -1,0 +1,190 @@
+﻿@model StarToUp.Models.Empresa
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Empresa.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Empresas", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="header-wrapper sm-padding bg-grey">
+        <div class="container">
+            <h2>Edite seu <label>Perfil</label> aqui</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EmpresaID)
+        <form class="form-signin">
+            <div class="row">
+                <div>
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="color:#fff;">Dados de Login</h3>
+                    </div>
+                    <div class="col-md-6 uploadImage">
+                        <div class="input-group-btn">
+                            @{
+                                string logotipo = Model.Logotipo;
+                                if (logotipo != string.Empty)
+                                {
+                                    if (logotipo != null)
+                                    {
+                                        string file = logotipo;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Empresa/" + file;
+                                        <img class="img-circle img-preview" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                    }
+                                    else
+                                    {
+                                        <div class="col-md-10">
+                                            <input type="file" id="logoTipo" name="logotipo" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="col-md-10">
+                                        <input type="file" id="logoTipo" name="logotipo" />
+                                    </div>
+                                }
+                                logotipo = ViewBag.FotoMensagem;
+                                if (logotipo != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
+                            }
+                        </div>
+                        <div class="fileUpload btn btn-info fake-shadow">
+                            <span><i class="fa fa-upload"></i> Upload </span>
+                            <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
+                        </div>
+                        <p class="help-block">* Insira o Logo da sua Empresa acima.</p>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nome da sua Empresa</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">E-Mail</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.HiddenFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <hr class="divisoria" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Contato</h3>
+                    </div>
+                    <div>
+                        @*Endereço*@
+                        <div>
+                            @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">CEP</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Rua</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Bairro</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nº</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Complemento</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Cidade</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Estado</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 uploadImage">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="text-align:left;">Sobre sua Empresa</h3>
+                    </div>
+                    <div>
+                        <div class="text-left">
+                            <div>
+                                @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Razão Social</label>
+                            </div>
+                            <br />
+                            <div>
+                                @Html.DropDownList("SegmentacaoID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Segmentação</label>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Midias Sociais</h3>
+                    <div class="input-group col-md-4">
+                        @Html.EditorFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkInstagram, "", new { @class = "text-danger" })
+                        <i class="fa fa-facebook-square" aria-hidden="true"> </i><label style="color:#8b8b8b"> - Instagram</label>
+                    </div>
+                    <div class="input-group col-md-4">
+                        @Html.EditorFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkFacebook, "", new { @class = "text-danger" })
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i><label style="color:#8b8b8b"> - Facebook</label>
+                    </div>
+                    <div class="input-group col-md-4">
+                        @Html.EditorFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkLinkedin, "", new { @class = "text-danger" })
+                        <i class="fa fa-instagram" aria-hidden="true"> </i><label style="color:#8b8b8b"> - Linkedin</label>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+        </form>
+        <br />
+        <div class="text-center">
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Editar">
+                Atualizar Perfil
+            </button>
+        </div>
+    </div>
+    <br />
+}

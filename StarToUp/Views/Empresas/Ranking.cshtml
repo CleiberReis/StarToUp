@@ -1,0 +1,80 @@
+﻿@model IEnumerable<StarToUp.Models.Startup>
+@{
+    ViewBag.Title = "Ranking";
+    Layout = "~/Views/Shared/_Empresa.cshtml";
+}
+
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="container">
+        <h2>Ranking</h2>
+        <p style="padding-top:10px;">Conheça as Startups mais bem avaliadas da plataforma!</p>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="container">
+    <div id="aside" class="text-center">
+        <br /><br />
+        <label>Escolha a segmentação e saiba qual Startup está em primeiro!</label>
+        @using (Html.BeginForm("SearchRanking", "Empresas", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="widget">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="widget-search">
+                    <input type="text" name="SearchString" id="ranking-search" class="search-input" placeholder="Pesquisa por Segmentação" />
+                    <button type="submit" class="btn-ranking"><i class="fa fa-search"></i></button>
+                    <a class="btn-ranking" href="@Url.Action("Ranking", "Empresas")"><i class="fa fa-refresh"></i></a>
+                </div>
+            </div>
+        }
+    </div>
+    <table class="table">
+        <tr class="text-center">
+            <th>
+                <label></label>
+            </th>
+            <th>
+                <label>Startups</label>
+            </th>
+            <th>
+                <label>Segmentação</label>
+            </th>
+            <th>
+                <label>Avaliação</label>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        string logoTipo = item.Logotipo;
+                        if (logoTipo != string.Empty)
+                        {
+                            if (logoTipo != null)
+                            {
+                                string file = logoTipo;
+                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                                <img src='@Url.Content(path)' style="height:100px; width: 100px; border-radius: 100%; box-shadow: 2px 2px 2px black; margin-bottom:10px;" title="LogoTipo" /><br />
+                            }
+                        }
+                    }
+                </td>
+                <td>
+                    <br /><br />
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <br /><br />
+                    @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
+                </td>
+                <td>
+                    <br /><br />
+                    @Html.DisplayFor(modelItem => item.AvaliacaoID)
+                    <i class="fa fa-star" style="color:#ebe00a;"></i>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

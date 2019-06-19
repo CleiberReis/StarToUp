@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StarToUp.Models.Startup>
+@{
+    IEnumerable<StarToUp.Models.Empresa> empresas = (IEnumerable<StarToUp.Models.Empresa>)ViewBag.Empresas;
+    ViewBag.Title = "SearchStartup";
+    Layout = "~/Views/Shared/_Startup.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#606060'" onmouseout="javascript:this.style.backgroundColor=''">
+            <div class="col-md-3">
+                @{
+                    string logoTipo = item.Logotipo;
+                    if (logoTipo != string.Empty)
+                    {
+                        if (logoTipo != null)
+                        {
+                            string file = logoTipo;
+                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                            <img src='@Url.Content(path)' style="height:100px; width: 100px; border-radius: 100%; box-shadow: 2px 2px 2px black; margin-bottom:10px;" title="LogoTipo" /><br />
+                        }
+                    }
+                }
+            </div>
+            <br />
+            <div class="col-md-3" style="color:#fff;">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </div>
+            <div class="col-md-3" style="color:#fff;">
+                @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
+            </div>
+            <div class="col-md-3 acoesadireita">
+                <a href='@Url.Action("Details", "Startups", new { id = item.StartupID })'><img src='@Url.Content("~/Content/img/icons/visualizacao.png")' class="view" title="Detalhes" /></a>
+            </div>
+        </div>
+    </div>
+}
+

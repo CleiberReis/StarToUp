@@ -1,0 +1,72 @@
+﻿@model StarToUp.Models.Emprego
+@{
+    ViewBag.Title = "CriarVagas";
+    Layout = "~/Views/Shared/_Startup.cshtml";
+}
+
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="container">
+        <h2>Cadastrar nova vaga</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="section md-padding">
+        <div class="container">
+            <div class="row">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-sm-4">
+                    <div class="vaga">
+                        <div class="price-head">
+                            <span class="price-title">
+                                @Html.LabelFor(model => model.TituloVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.TituloVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TituloVaga, "", new { @class = "text-danger" })
+                            </span>
+                            <div class="price">
+                                <h3><span class="duration">Foto da empresa</span></h3>
+                            </div>
+                        </div>
+                        <ul class="price-content">
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.LocalVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.LocalVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LocalVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.SalarioVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.SalarioVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.SalarioVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.RequisitosVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.RequisitosVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RequisitosVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    @Html.LabelFor(model => model.DescricaoVaga, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.DescricaoVaga, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DescricaoVaga, "", new { @class = "text-danger" })
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="price-btn">
+                            <button class="outline-btn" type="submit" value="Create">Cadastrar Vaga</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>@ViewBag.Title - StarToUp</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/css/owl.theme.default.css" />
+    <!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/magnific-popup.css" />
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <!-- Background Image -->
+        <div class="bg-img" style="background-image: url(../../Content/img/background1.jpg);">
+            <div class="overlay"></div>
+        </div>
+        <!-- /Background Image -->
+        <!-- Nav -->
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Logo -->
+                    <div class="navbar-brand">
+                        @*<a href="index.html">
+                            <img class="logo" src="~/Content/img/logo.png" alt="logo">
+                            <img class="logo-alt" src="~/Content/img/logo-alt.png" alt="logo">
+                        </a>*@
+                    </div>
+                    <!-- /Logo -->
+                    <!-- Collapse nav button -->
+                    <div class="nav-collapse">
+                        <span></span>
+                    </div>
+                    <!-- /Collapse nav button -->
+                </div>
+                <!--  Main navigation  -->
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="has-dropdown">
+                        <a href="#blog">Login</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Startup</a></li>
+                            <li><a href="#">Empresa</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- /Main navigation -->
+            </div>
+        </nav>
+        <!-- /Nav -->
+        <!-- home wrapper -->
+        <div class="home-wrapper">
+            <div class="container">
+                @RenderBody()
+
+            </div>
+        </div>
+        <!-- /home wrapper -->
+    </header>
+    <!-- /Header -->
+
+    <!-- Back to top -->
+    <div id="back-to-top"></div>
+    <!-- /Back to top -->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- /Preloader -->
+    <!-- jQuery Plugins -->
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="~/Content/js/main.js"></script>
+</body>
+</html>

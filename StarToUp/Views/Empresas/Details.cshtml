@@ -1,0 +1,146 @@
+﻿@model StarToUp.Models.Empresa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Empresa.cshtml";
+}
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="container">
+        <h2>Detalhes da <b>Empresa</b></h2>
+    </div>
+</div>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="container">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.EmpresaID)
+    <form class="form-signin">
+        <div class="row">
+            <div>
+                <div class="col-md-12 uploadImage">
+                    <br />
+                    <div style="font-size: 2.4em;">
+                        @Html.DisplayFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div style="font-size: 1.2em;">
+                        @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <br />
+                    <div class="input-group-btn">
+                        @{
+                            string logotipo = Model.Logotipo;
+                            if (logotipo != string.Empty)
+                            {
+                                if (logotipo != null)
+                                {
+                                    string file = logotipo;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Empresa/" + file;
+                                    <img class="img-circle img-preview" src='@Url.Content(path)' style="height:250px; width: 250px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <p style="font-size:x-small;">*Logo.</p>
+                    <div>
+                        @Html.HiddenFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <hr class="divisoria" />
+            <div class="col-md-6">
+                <div class="header-wrapper sm-padding">
+                    <h3 class="title">Dados de Contato</h3>
+                </div>
+                <div>
+                    @*Endereço*@
+                    <div>
+                        <label style="color:#8b8b8b">CEP - </label>
+                        @Html.DisplayFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <label style="color:#8b8b8b">Rua</label>
+                        @Html.DisplayFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <label style="color:#8b8b8b">Bairro - </label>
+                        @Html.DisplayFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <label style="color:#8b8b8b">Nº - </label>
+                        @Html.DisplayFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <label style="color:#8b8b8b">Complemento - </label>
+                        @Html.DisplayFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <label style="color:#8b8b8b">Cidade - </label>
+                        @Html.DisplayFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <label style="color:#8b8b8b">UF - </label>
+                        @Html.DisplayFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div>
+                        <img class="imgMap img-responsive" src="~/Content/img/maps.png" />
+                    </div>
+                </div>
+            </div>
+            @*LogoTipo*@
+            <div class="col-md-6 uploadImage">
+                <div class="header-wrapper sm-padding">
+                    <h3 class="title" style="text-align:left;">Sobre a Empresa</h3>
+                </div>
+                <div>
+                    <div class="text-left">
+                        <div>
+                            <label style="color:#8b8b8b">Razao Social - </label>
+                            @Html.DisplayFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>
+                            @*<label style="color:#8b8b8b">Segmentação</label>*@
+                            @Html.HiddenFor(model => model.SegmentacaoID, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <hr class="divisoria" />
+        <div class="header-wrapper sm-padding">
+            <h3 class="title">Redes Sociais</h3>
+        </div>
+        <div class="row">
+            <div class="input-group col-md-2" style="display:inline-block">
+                <div class="input-group">
+                    <ul>
+                        <li><a href="http://@Model.LinkInstagram" target="_blank"><img class="imgsocial" src="~/Content/img/icons/icon-insta.png" title="Instagram" style="width:50px" /></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="input-group col-md-2" style="display:inline-block">
+                <div class="input-group">
+                    <ul>
+                        <li><a href="http://@Model.LinkFacebook" target="_blank"><img class="imgsocial" src="~/Content/img/icons/icon-face.png" title="Facebook" style="width:50px" /></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="input-group col-md-2" style="display:inline-block">
+                <div class="input-group">
+                    <ul>
+                        <li><a href="http://@Model.LinkLinkedin" target="_blank"><img class="imgsocial" src="~/Content/img/icons/icon-linkedin.png" title="LinkedIn" style="width:50px" /></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <br />
+</div>
+<br />
+}

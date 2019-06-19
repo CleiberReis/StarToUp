@@ -1,0 +1,50 @@
+﻿@model StarToUp.Models.Evento
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Adimin.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Eventos", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <br />
+        <div class="section-header text-center">
+            <h2 class="title">Novo Evento</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div class="contact col-md-6">
+            <br />
+            <form class="contact-form">
+                <div>
+                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome *" />
+                </div>
+                <br />
+                <div>
+                    <input type="text" name="descricao" id="descricao" class="input" placeholder="Descrição *" />
+                </div>
+                <br />
+                <div>
+                    <input type="file" name="foto" id="foto" class="input" placeholder="Foto *" />
+                    @{
+                        string str = ViewBag.FotoMensagem;
+                        if (str != "")
+                        {
+                            <span class="text-danger contenterror">
+                                @ViewBag.FotoMensagem
+                            </span> }
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="date" name="data" id="data" class="input" placeholder="Data *" />
+                </div>
+                <br />
+                <button class="btn btn-lg btn-success btn-block" type="submit" value="Cadastrar">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+}

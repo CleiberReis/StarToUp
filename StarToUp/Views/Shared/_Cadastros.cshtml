@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>@ViewBag.Title - StarToUp</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/css/owl.theme.default.css" />
+    <!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/magnific-popup.css" />
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <nav id="nav" class="navbar bg-grey">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Logo -->
+                    <div class="navbar-brand">
+                        @*<a href="index.html">
+                            <img class="logo" src="~/Content/img/logo.png" alt="logo">
+                            <img class="logo-alt" src="~/Content/img/logo-alt.png" alt="logo">
+                        </a>*@
+                    </div>
+                    <!-- /Logo -->
+                    <!-- Collapse nav button -->
+                    <div class="nav-collapse">
+                        <span></span>
+                    </div>
+                    <!-- /Collapse nav button -->
+                </div>
+                <!--  Main navigation  -->
+                        <ul class="main-nav nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        </ul>
+                <!-- /Main navigation -->
+            </div>
+        </nav>
+        <!-- /Nav -->
+    </header>
+    <!-- /Header -->
+    @RenderBody()
+    <!-- Footer -->
+    <footer id="footer" class="sm-padding bg-dark">
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- footer logo -->
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="~/Content/img/logo2.png" alt="logo"></a>
+                    </div>
+                    <!-- /footer logo -->
+                    <!-- footer follow -->
+                    <ul class="footer-follow">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                    <!-- /footer follow -->
+                    <!-- footer copyright -->
+                    <div class="footer-copyright">
+                        <p style="font-size:x-small;">Copyright © 2019. Todos os direitos reservados. Desenvolvido por <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                    </div>
+                    <!-- /footer copyright -->
+                </div>
+            </div>
+            <!-- /Row -->
+        </div>
+        <!-- /Container -->
+    </footer>
+    <!-- /Footer -->
+    <!-- Back to top -->
+    <div id="back-to-top"></div>
+    <!-- /Back to top -->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- /Preloader -->
+    <!-- jQuery Plugins -->
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="~/Content/js/main.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('input, select, textarea').each(function () {
+                if ($(this).hasClass('input-validation-error'))
+                    $(this).focus();
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('logoTipo');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#logoTipo").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imgStartup1');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview2').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imgStartup1").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imgStartup2');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview3').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imgStartup2").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP1');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview4').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP1").change(function () {
+                readURL(this);
+            });
+        });
+
+        $(document).ready(function () {
+            var brand = document.getElementById('imagemMVP2');
+            brand.className = 'attachment_upload';
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.img-preview5').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imagemMVP2").change(function () {
+                readURL(this);
+            });
+        });
+
+        $('.vote label i.fa').on('click mouseover', function () {
+            // remove classe ativa de todas as estrelas
+            $('.vote label i.fa').removeClass('active');
+            // pegar o valor do input da estrela clicada
+            var val = $(this).prev('input').val();
+            //percorrer todas as estrelas
+            $('.vote label i.fa').each(function () {
+                /* checar de o valor clicado é menor ou igual do input atual
+                *  se sim, adicionar classe active
+                */
+                var $input = $(this).prev('input');
+                if ($input.val() <= val) {
+                    $(this).addClass('active');
+                }
+            });
+            $("#voto").html(val); // somente para teste
+        });
+        //Ao sair da div vote
+        $('.vote').mouseleave(function () {
+            //pegar o valor clicado
+            var val = $(this).find('input:checked').val();
+            //se nenhum foi clicado remover classe de todos
+            if (val == undefined) {
+                $('.vote label i.fa').removeClass('active');
+            } else {
+                //percorrer todas as estrelas
+                $('.vote label i.fa').each(function () {
+                    /* Testar o input atual do laço com o valor clicado
+                    *  se maior, remover classe, senão adicionar classe
+                    */
+                    var $input = $(this).prev('input');
+                    if ($input.val() > val) {
+                        $(this).removeClass('active');
+                    } else {
+                        $(this).addClass('active');
+                    }
+                });
+            }
+            $("#voto").html(val); // somente para teste
+        });
+    </script>
+
+</body>
+</html>

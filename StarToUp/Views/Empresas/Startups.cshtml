@@ -1,0 +1,88 @@
+﻿@model IEnumerable<StarToUp.Models.Startup>
+@{
+    ViewBag.Title = "Startups";
+    Layout = "~/Views/Shared/_Empresa.cshtml";
+}
+
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="container">
+        <h2>Startups</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<br />
+<div class="container">
+    <div id="aside" class="col-md-4">
+        <label>O que você está precisando?</label>
+        @using (Html.BeginForm("SearchStartup", "Startups", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="widget">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="widget-search">
+                    <input type="text" name="SearchString" id="SearchString" class="search-input" placeholder="O que está precisando?" />
+                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+<br />
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row linhaunderline" onmouseover="javascript:this.style.backgroundColor='#e0e0e0'" onmouseout="javascript:this.style.backgroundColor=''">
+            <div class="col-md-3">
+                @{
+                    string logoTipo = item.Logotipo;
+                    if (logoTipo != string.Empty)
+                    {
+                        if (logoTipo != null)
+                        {
+                            string file = logoTipo;
+                            string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                            <img src='@Url.Content(path)' style="height:100px; width: 100px; border-radius: 100%; box-shadow: 2px 2px 2px black; margin-bottom:10px;" title="LogoTipo" /><br />
+                        }
+                    }
+                }
+            </div>
+            <br />
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.Segmentacoes.Descricao)
+            </div>
+            <div class="col-md-3 acoesadireita">
+                <a href='@Url.Action("Details", "Startups", new { id = item.StartupID })'><img src='@Url.Content("~/Content/img/icons/visualizacao.png")' class="view" title="Detalhes" /></a>
+            </div>
+        </div>
+        <div id="modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title">Exclusão de Startup</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="mensagem"></div>
+                        <input type="hidden" id="numero" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnDelete">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+    <hr />
+}
+

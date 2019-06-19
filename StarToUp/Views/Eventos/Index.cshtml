@@ -1,0 +1,60 @@
+﻿@model IEnumerable<StarToUp.Models.Evento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adimin.cshtml";
+}
+
+<div id="blog" class="section md-padding bg-grey">
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Eventos</h2>
+            </div>
+            <!-- /Section header -->
+            @foreach (var item in Model)
+            {
+                <!-- blog -->
+                <div class="col-md-4">
+                    <div class="blog">
+                        <div class="blog-img">
+                            @{ string foto = item.Foto;
+                                if (foto != string.Empty)
+                                {
+                                    if (foto != null)
+                                    {
+                                        string file = foto;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Evento/" + file;
+                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
+                                    }
+                                }
+                            }
+                        </div>
+                        <div class="blog-content">
+                            <ul class="blog-meta">
+                                <li><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.DataEvento)</li>
+                            </ul>
+                            <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                            <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.EventoID }) |
+                                    @Html.ActionLink("Apagar", "Delete", new { id = item.EventoID })
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- /blog -->
+            }
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+<!-- /Blog -->

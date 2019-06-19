@@ -1,0 +1,64 @@
+﻿@model IEnumerable<StarToUp.Models.Administrador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adimin.cshtml";
+}
+<!-- Team -->
+<div id="team" class="section md-padding">
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Nosso Time</h2>
+            </div>
+            <!-- /Section header -->
+            @foreach (var item in Model)
+            {
+                <!-- team -->
+                <div class="col-sm-4">
+                    <div class="team">
+                        <div class="team-img">
+                            @{ string fotoAdmin = item.FotoAdmin;
+                                if (fotoAdmin != string.Empty)
+                                {
+                                    if (fotoAdmin != null)
+                                    {
+                                        string file = fotoAdmin;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Administrador/" + file;
+                                        <img class="img-responsive" src='@Url.Content(path)' title="Foto" /><br />
+                                    }
+                                }
+                            }
+                            <div class="overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>@Html.DisplayFor(modelItem => item.NomeAdmin)</h3>
+                            <span>@Html.DisplayFor(modelItem => item.Funcao)</span>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.AdministradorID }) |
+                                    @Html.ActionLink("Apagar", "Delete", new { id = item.AdministradorID })
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- /team -->
+            }
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+<!-- /Team -->

@@ -1,0 +1,332 @@
+﻿@model StarToUp.Models.Startup
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Startup.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Startups", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="header-wrapper sm-padding bg-grey">
+        <div class="container">
+            <h2>Edite seu <label>Perfil</label> aqui</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.StartupID)
+        <form class="form-signin">
+            <div class="row">
+                <div>
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="color:#fff;">Dados de Login</h3>
+                    </div>
+                    <div class="col-md-6 uploadImage">
+                        <div class="input-group-btn">
+                            @{
+                                string logoTipo = Model.Logotipo;
+                                if (logoTipo != string.Empty)
+                                {
+                                    if (logoTipo != null)
+                                    {
+                                        string file = logoTipo;
+                                        string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                                        <img class="img-circle img-preview" src='@Url.Content(path)' style="height:150px; width: 150px; border-radius: 100%; box-shadow: 2px 2px 2px black;" title="Logotipo" /><br />
+                                    }
+                                    else
+                                    {
+                                        <div class="col-md-10">
+                                            <input type="file" id="logoTipo" name="logoTipo" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="col-md-10">
+                                        <input type="file" id="logoTipo" name="logoTipo" />
+                                    </div>
+                                }
+                                logoTipo = ViewBag.FotoMensagem;
+                                if (logoTipo != "")
+                                {
+                                    <span class="text-danger contenterror">
+                                        @ViewBag.FotoMensagem
+                                    </span>
+                                }
+                            }
+                        </div>
+                        <div class="fileUpload btn btn-info fake-shadow">
+                            <span><i class="fa fa-upload"></i> Upload </span>
+                            <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
+                        </div>
+                        <p class="help-block">* Edite o Logo da sua Startup acima.</p>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nome da Statup</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">E-Mail</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.HiddenFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <hr class="divisoria" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Contato</h3>
+                    </div>
+                    <div>
+                        @*Endereço*@
+                        <div>
+                            @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">CEP</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Rua</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Bairro</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nº</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Complemento</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Cidade</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Estado</label>
+                        </div>
+                    </div>
+                </div>
+                @*LogoTipo*@
+                <div class="col-md-6 uploadImage">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="text-align:left;">Sobre sua Startup</h3>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6 uploadImage">
+                                <div class="input-group-btn">
+                                    @{
+                                        string imgStartup1 = Model.ImgStartup1;
+                                        if (imgStartup1 != string.Empty)
+                                        {
+                                            if (imgStartup1 != null)
+                                            {
+                                                string file = imgStartup1;
+                                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/PerfilStartup/" + file;
+                                                <img class="img-preview2" src='@Url.Content(path)' title="Logotipo" /><br />
+                                            }
+                                            else
+                                            {
+                                                <div class="col-md-10">
+                                                    <input type="file" id="imgStartup1" name="imgStartup1" />
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-10">
+                                                <input type="file" id="imgStartup1" name="imgStartup1" />
+                                            </div>
+                                        }
+                                        imgStartup1 = ViewBag.FotoMensagem;
+                                        if (imgStartup1 != "")
+                                        {
+                                            <span class="text-danger contenterror">
+                                                @ViewBag.FotoMensagem
+                                            </span>
+                                        }
+                                    }
+                                </div>
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="fa fa-upload"></i> Upload </span>
+                                    <input id="imgStartup1" name="imgStartup1" value="imgStartup1" type="file" class="attachment_upload" />
+                                </div>
+                                <p class="help-block">* Edite a imagem da sua Startup acima.</p>
+                                <br />
+                            </div>
+                            <div class="col-md-6 uploadImage">
+                                <div class="input-group-btn">
+                                    @{
+                                        string imgStartup2 = Model.ImgStartup2;
+                                        if (imgStartup2 != string.Empty)
+                                        {
+                                            if (imgStartup2 != null)
+                                            {
+                                                string file = imgStartup2;
+                                                string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                                                <img class="img-preview3" src='@Url.Content(path)' title="Logotipo" /><br />
+                                            }
+                                        }
+                                    }
+                                </div>
+                                <div class="fileUpload btn btn-info fake-shadow">
+                                    <span><i class="fa fa-upload"></i> Upload </span>
+                                    <input id="imgStartup2" name="imgStartup2" value="imgStartup2" type="file" class="attachment_upload" />
+                                </div>
+                                <p class="help-block">* Editar a imagem da sua Startup acima.</p>
+                                <br />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="text-left">
+                            <div>
+                                @Html.EditorFor(model => model.Sobre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Sobre</label>
+                            </div>
+                            <br />
+                            <div>
+                                @Html.EditorFor(model => model.DataFundacao, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DataFundacao, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Data da Fundação</label>
+                            </div>
+                            <br />
+                            <div>
+                                @Html.DropDownList("SegmentacaoID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Segmentação</label>
+                            </div>
+                            <br />
+                            <div>
+                                @Html.DropDownList("AvaliacaoID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.AvaliacaoID, "", new { @class = "text-danger" })
+                                <label style="color:#8b8b8b">Avaliacao</label>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            @*FimLogoTipo*@
+            <br />
+            <hr class="divisoria" />
+            @*Imagens do MVP*@
+            <div class="header-wrapper sm-padding">
+                <h3 class="title">Insira imgens do seu MVP* abaixo</h3>
+                <p style="font-size:x-small;">*Minimo Produto Viavél</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP1 = Model.ImagemMVP1;
+                            if (imagemMVP1 != string.Empty)
+                            {
+                                if (imagemMVP1 != null)
+                                {
+                                    string file = imagemMVP1;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                                    <img class="img-preview4" src='@Url.Content(path)' title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="fa fa-upload"></i> Upload </span>
+                        <input id="imagemMVP1" name="imagemMVP1" value="imagemMVP1" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Edite a imagem da sua Startup acima.</p>
+                    <br />
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group-btn">
+                        @{
+                            string imagemMVP2 = Model.ImagemMVP2;
+                            if (imagemMVP2 != string.Empty)
+                            {
+                                if (imagemMVP2 != null)
+                                {
+                                    string file = imagemMVP2;
+                                    string path = System.Configuration.ConfigurationManager.AppSettings["PathWeb"] + "/Files/Startup/" + file;
+                                    <img class="img-preview5" src='@Url.Content(path)' title="Logotipo" /><br />
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="fileUpload btn btn-info fake-shadow">
+                        <span><i class="fa fa-upload"></i> Upload </span>
+                        <input id="imagemMVP2" name="imagemMVP2" value="imagemMVP2" type="file" class="attachment_upload" />
+                    </div>
+                    <p class="help-block">* Edite a imagem da sua Startup acima.</p>
+                    <br />
+                </div>
+            </div>
+            <br />
+            <hr class="divisoria" />
+            <div class="header-wrapper sm-padding">
+                <h3 class="title">Links de suas Midias Sociais</h3>
+                <p style="font-size:x-small;">*Links das midias sociais da Startup</p>
+            </div>
+            <div class="row">
+                <div class="input-group col-md-3" style="display:inline-block; margin-left:20px">
+                    <div class="input-group" style="width:115%">
+                        @Html.EditorFor(model => model.LinkInstagram, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkInstagram, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="input-group col-md-3" style="display:inline-block; margin-left:90px">
+                    <div class="input-group" style="width:115%">
+                        @Html.EditorFor(model => model.LinkFacebook, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkFacebook, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="input-group col-md-3" style="float:right; margin-right:80px">
+                    <div class="input-group" style="width:115%">
+                        @Html.EditorFor(model => model.LinkLinkedin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LinkLinkedin, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+        </form>
+        <br />
+        <div class="text-center">
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Editar">
+                Atualizar Perfil
+            </button>
+        </div>
+    </div>
+    <br />
+}

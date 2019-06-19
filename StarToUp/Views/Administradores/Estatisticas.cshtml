@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Estatisticas";
+    Layout = "~/Views/Shared/_Adimin.cshtml";
+}
+
+<h2>Estatisticas</h2>
+
+<div id='graficoPizza'></div>
+@Scripts.Render("http://www.google.com/jsapi")
+
+@{
+    //GraficoPizza(nomeDaDIV, colunas, linhas, width, height)
+    string grafico = Html.GraficoPizza("graficoPizza", StarToUp.Repositories.DataChart.SelecionaColunasGraficoPizza(),
+    StarToUp.Repositories.DataChart.SelecionaLinhasBanco(), 600, 600);
+    //grafico = grafico.Replace("\r\n", "");
+}
+@Html.Raw(grafico.ToString())
+
+<script type="text/javascript">
+    //Carrega o tipo de gráfico a ser utilizado
+    google.load('visualization', '1.0', { 'packages': ['corechart'] });
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        //Adiciona as colunas do gráfico
+        data.addColumn('string', 'Região');
+        data.addColumn('number', 'Quantidade');
+        //Adiciona as linhas do gráfico
+        data.addRows([
+            ['Norte', 7],
+            ['Sul', 3],
+            ['Centro Oeste', 3],
+            ['Sudeste', 4],
+            ['Nordeste', 9]
+        ]);
+        //Opções adicionais do gráfico
+        var options = {
+            'title': 'Startups Cadastradas',
+            'pieSliceText': 'value',
+            'width': 600,
+            'height': 600
+        };
+        //Define onde será renderizado o gráfico, no caso no elemento divGraficoPizza
+        var chart = new
+            google.visualization.PieChart(document.getElementById('piechart'));
+        //Renderiza o Gráfico com as opções adicionais definidas
+        chart.draw(data, options);
+    }
+</script>

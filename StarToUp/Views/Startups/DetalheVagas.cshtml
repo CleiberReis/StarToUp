@@ -1,0 +1,60 @@
+﻿@model StarToUp.Models.Emprego
+@{
+    ViewBag.Title = "DetalheVagas";
+    Layout = "~/Views/Shared/_Startup.cshtml";
+}
+
+<div class="header-wrapper sm-padding bg-grey">
+    <div class="container">
+        <h2>Cadastrar nova vaga</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+</div>
+<br />
+<div>
+    <h4>Emprego</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TituloVaga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TituloVaga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalVaga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalVaga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalarioVaga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalarioVaga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequisitosVaga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequisitosVaga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoVaga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoVaga)
+        </dd>
+
+    </dl>
+</div>
+

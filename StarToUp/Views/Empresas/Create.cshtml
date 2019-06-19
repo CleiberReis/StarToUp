@@ -1,0 +1,219 @@
+﻿@model StarToUp.Models.Empresa
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Cadastros.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Empresas", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="header-wrapper sm-padding bg-grey">
+        <div class="container">
+            <h2>Empresa, Crie seu <b>Login</b> e seu <b>Perfil</b> abaixo</h2>
+        </div>
+    </div>
+    <div class="container">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <form class="form-signin">
+            <div class="row">
+                <div>
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Login</h3>
+                    </div>
+                    <div class="col-md-6 uploadImage">
+                        <img class="img-circle img-preview" src="~/Content/img/preview.png" title="Preview Logo" />
+                        <div class="input-group-btn">
+                            <div class="fileUpload btn btn-info fake-shadow">
+                                <span><i class="fa fa-upload"></i> Upload </span>
+                                <input id="logoTipo" name="logoTipo" value="logoTipo" type="file" class="attachment_upload" />
+                                @{
+                                    string logotipo = ViewBag.FotoMensagem;
+                                    if (logotipo != "")
+                                    {
+                                        <span class="text-danger contenterror">
+                                            @ViewBag.FotoMensagem
+                                        </span>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <p class="help-block">* Insira o Logo da sua Empresa acima.</p>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <input type="text" name="nome" id="nome" class="form-control input" placeholder="Nome da Empresa *" />
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nome da Empresa</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="email" id="email" class="form-control input" placeholder="E-mail de Contato *" />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">E-mail de Contato</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="password" name="senha" id="senha" class="form-control input" placeholder="Senha *" />
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Senha</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="password" name="senha" id="confsenha" class="form-control input" placeholder="Confirmar Senha *" />
+                            <label style="color:#8b8b8b">Confime a sua senha</label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <hr class="divisoria" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title">Dados de Contato</h3>
+                    </div>
+                    <div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @*Endereço*@
+                        <div>
+                            <input type="text" name="cep" id="cep" class="form-control input" placeholder="CEP XX.XXX-XXX" />
+                            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">CEP</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="rua" id="rua" class="form-control input" placeholder="Digite a Rua *" />
+                            @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Rua</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="bairro" id="bairro" class="form-control input" placeholder="Digite o Bairro *" />
+                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Bairro</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="numero" id="numero" class="form-control input" placeholder="Digite o Numero *" />
+                            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Nº</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="complemento" id="complemento" class="form-control input" placeholder="Tem algum complemento?" />
+                            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Complemento</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="cidade" id="cidade" class="form-control input" placeholder="Em qual cidade fica sua Startup?" />
+                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Cidade</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="text" name="estado" id="estado" class="form-control input" placeholder="Em qual estado fica sua Startup?" />
+                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Estado</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 uploadImage">
+                    <div class="header-wrapper sm-padding">
+                        <h3 class="title" style="text-align:left;">Sobre a Empresa</h3>
+                    </div>
+                    <div class="text-left">
+                        <div>
+                            <input type="text" name="razaoSocial" id="razaoSocial" class="form-control input" placeholder="Razão Social" />
+                            @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Razão Social</label>
+                        </div>
+                        <br />
+                        <div>
+                            <textarea type="text" name="sobre" id="sobre" class="form-control input" placeholder="Sobre a Empresa ..."></textarea>
+                            @Html.ValidationMessageFor(model => model.Sobre, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Sobre a Empresa</label>
+                        </div>
+                        <br />
+                        <div>
+                            @Html.DropDownList("SegmentacaoID", null, "Qual sua segmentação de mercado?", new { @class = "form-control input" })
+                            @Html.ValidationMessageFor(model => model.SegmentacaoID, "", new { @class = "text-danger" })
+                            <label style="color:#8b8b8b">Segmentação de Mercado</label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            @*FimLogoTipo*@
+            <hr class="divisoria" />
+            <br />
+            <div class="header-wrapper sm-padding">
+                <h3 class="title">Insira os links de suas Midias Sociais</h3>
+                <p style="font-size:x-small;">*Links das midias sociais da Startup</p>
+            </div>
+            <div class="row">
+                <div class="input-group col-md-3" style="display:inline-block; margin-left:20px">
+                    <div class="input-group" style="width:115%">
+                        <span class="input-group-addon"><img class="imgsocial" src="~/Content/img/icons/instagram.png" title="Instagram" style="width:20px" /></span>
+                        <input type="text" name="LinkInstagram" id="linkInstagram" class="form-control input" placeholder="Insira o link do seu Instagram" />
+                        @Html.ValidationMessageFor(model => model.LinkInstagram, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="input-group col-md-3" style="display:inline-block; margin-left:90px">
+                    <div class="input-group" style="width:115%">
+                        <span class="input-group-addon"><img class="imgsocial" src="~/Content/img/icons/facebook.png" title="Facebook" style="width:20px" /></span>
+                        <input type="text" name="LinkFacebook" id="linkFacebook" class="form-control input" placeholder="Insira o link do seu Facebook" />
+                        @Html.ValidationMessageFor(model => model.LinkFacebook, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="input-group col-md-3" style="float:right; margin-right:80px">
+                    <div class="input-group" style="width:115%">
+                        <span class="input-group-addon"><img class="imgsocial" src="~/Content/img/icons/linkedin.png" title="LinkedIn" style="width:20px" /></span>
+                        <input type="text" name="LinkLinkedin" id="linkLinkedin" class="form-control input" placeholder="Insira o link do seu LinkedIn" />
+                        @Html.ValidationMessageFor(model => model.LinkLinkedin, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <br />
+        <div class="text-center">
+            <input type="checkbox" name="TermoUso" id="TermoUso" value="true" class="input" />
+            @Html.ValidationMessageFor(model => model.TermoUso, "", new { @class = "text-danger" })
+            @*@Html.CheckBoxFor(model => model.TermoUso)*@
+            Para se cadastrar aceite os termos de uso da plataforma.<a href="#" data-toggle="modal" data-target="#modal">Termos de Uso</a>
+        </div>
+        <br />
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3 class="modal-title" id="myModalLabel">Termos de Uso da Plataforma</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor quam non massa euismod faucibus.
+                            Aliquam sit amet urna leo. Cras sagittis arcu nibh. Pellentesque odio tellus, ultrices vel aliquam sed, varius in lorem. Curabitur tempus nulla quis nunc varius, id commodo justo vulputate. Aliquam et elit libero. Donec dui sapien, luctus eget mattis sit amet, venenatis in nisi.
+                            Fusce turpis massa, cursus eget maximus non, sollicitudin ac massa. Mauris sem orci, auctor vitae semper sed, rhoncus sit amet justo. Nam interdum massa elementum consectetur cursus. Phasellus dictum arcu dui, vitae aliquet mauris tincidunt ut.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Criar">Criar Perfil</button>
+        </div>
+    </div>
+    <br />
+}
