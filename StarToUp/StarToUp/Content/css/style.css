@@ -1348,6 +1348,17 @@ header {
     color: #6195FF;
 }
 
+    #aside .widget-search .btn-ranking {
+        right: 0px;
+        bottom: 0px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        line-height: 40px;
+        background-color: transparent;
+        color: #6195FF;
+    }
+
 /* -- category sidebar -- */
 
 .widget-category a {

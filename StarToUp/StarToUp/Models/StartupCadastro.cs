@@ -25,9 +25,9 @@ namespace StarToUp.Models
         [DisplayName("Senha:")]
         public string Senha { get; set; }
 
-        //[DisplayName("Data de Cadastro")]
-        //[DataType(DataType.DateTime, ErrorMessage = "Formato de data inválido")]
-        //[ScaffoldColumn(false)]
+        [DisplayName("Data de Cadastro")]
+        [DataType(DataType.DateTime, ErrorMessage = "Formato de data inválido")]
+        [ScaffoldColumn(false)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss tt}")]
         public DateTime DataCadastro { get; set; }
 
@@ -65,7 +65,8 @@ namespace StarToUp.Models
         public int SegmentacaoID { get; set; }
         public virtual Segmentacao Segmentacoes { get; set; }
 
-        public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
+        public int AvaliacaoID { get; set; }
+        public virtual Avaliacao Avaliacoes { get; set; }
 
     }
 

@@ -46,6 +46,26 @@ namespace StarToUp.Controllers
             return View(startupCadastros.ToList());
         }
 
+        public ActionResult Ranking()
+        {
+            var avaliacao = db.StartupCadastros.Include(s => s.Segmentacoes).Include(a => a.Avaliacoes).OrderByDescending(m => m.AvaliacaoID).Take(50);
+            return View(avaliacao.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult SearchRanking(FormCollection fc, string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var startups = db.StartupCadastros.Include(s => s.Segmentacoes).Include(a => a.Avaliacoes).Where(s => s.Segmentacoes.Descricao.Contains(searchString)).OrderByDescending(o => o.AvaliacaoID);
+                return View("Ranking", startups.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Ranking");
+            }
+        }
+
 
         public ActionResult Login()
         {
@@ -78,27 +98,26 @@ namespace StarToUp.Controllers
             return View(startupCadastro);
         }
 
-        //Salva no banco as avaliações da respectiva Startup.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Details(string[] selectedAvaliacao, int StartupCadastroID)
+        public ActionResult Details([Bind(Include = "StartupID,Nome,Email,Senha,Cep,Rua,Bairro,Numero,Complemento,Cidade,Estado,Sobre,DataFundacao,Logotipo,ImgStartup1,ImgStartup2,ImagemMVP1,ImagemMVP2,LinkInstagram,LinkFacebook,LinkLinkedin,TermoUso,Hash,SegmentacaoID,AvaliacaoID")] StartupCadastro startupCadastro,
+            HttpPostedFileBase logoTipo, HttpPostedFileBase imgStartup1, HttpPostedFileBase imgStartup2, HttpPostedFileBase imagemMVP1, HttpPostedFileBase imagemMVP2, string[] selectedAvaliacao, int StartupID, Avaliacao avaliacao)
         {
-            if (ModelState.IsValid)
+            StartupCadastro s = db.StartupCadastros.Where(e => e.StartupCadastroID == StartupID).ToList().SingleOrDefault();
+
+            foreach (var item in selectedAvaliacao)
             {
-                StartupCadastro startupCadastro = db.StartupCadastros.Include("Avaliacoes").Where(c => c.StartupCadastroID == StartupCadastroID).FirstOrDefault<StartupCadastro>();
-                foreach (var item in selectedAvaliacao)
-                {
-                    int idAvaliacao = int.Parse(item);
-                    Avaliacao avaliacao = db.Avaliacoes.Find(idAvaliacao);
-                    startupCadastro.Avaliacoes.Add(avaliacao);
-                    db.SaveChanges();
-                }
-                return RedirectToAction("Index");
+                int idAvaliacao = int.Parse(item);
+                int valor1 = s.AvaliacaoID;
+                int valor2 = valor1 + idAvaliacao;
+                int media = (valor2 / valor2) * idAvaliacao;
+                s.AvaliacaoID = media;
+                ((IObjectContextAdapter)db).ObjectContext.Detach(s);
+                db.Entry(s).State = EntityState.Modified;
+                db.SaveChanges();
             }
-            List<Avaliacao> avaliacoes = db.Avaliacoes.OfType<Avaliacao>().OrderBy(c => c.Descricao).ToList();
-            ViewBag.Avaliacoes = avaliacoes;
-            ViewBag.StartupCadastroID = StartupCadastroID;
-            return View();
+
+            return RedirectToAction("Index");
         }
 
 

@@ -3,7 +3,7 @@ namespace StarToUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atualizado : DbMigration
+    public partial class atual : DbMigration
     {
         public override void Up()
         {
@@ -62,10 +62,13 @@ namespace StarToUp.Migrations
                         TermoUso = c.Boolean(nullable: false),
                         Hash = c.String(unicode: false),
                         SegmentacaoID = c.Int(nullable: false),
+                        AvaliacaoID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.StartupCadastroID)
+                .ForeignKey("dbo.Avaliacao", t => t.AvaliacaoID, cascadeDelete: true)
                 .ForeignKey("dbo.Segmentacao", t => t.SegmentacaoID, cascadeDelete: true)
-                .Index(t => t.SegmentacaoID);
+                .Index(t => t.SegmentacaoID)
+                .Index(t => t.AvaliacaoID);
             
             CreateTable(
                 "dbo.Segmentacao",
@@ -143,32 +146,16 @@ namespace StarToUp.Migrations
                     })
                 .PrimaryKey(t => t.EventoID);
             
-            CreateTable(
-                "dbo.AvaliaStartup",
-                c => new
-                    {
-                        StartupCadastroRefId = c.Int(nullable: false),
-                        AvaliacaoRefId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.StartupCadastroRefId, t.AvaliacaoRefId })
-                .ForeignKey("dbo.StartupCadastro", t => t.StartupCadastroRefId, cascadeDelete: true)
-                .ForeignKey("dbo.Avaliacao", t => t.AvaliacaoRefId, cascadeDelete: true)
-                .Index(t => t.StartupCadastroRefId)
-                .Index(t => t.AvaliacaoRefId);
-            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.StartupCadastro", "SegmentacaoID", "dbo.Segmentacao");
             DropForeignKey("dbo.EmpresaCadastro", "SegmentacaoID", "dbo.Segmentacao");
-            DropForeignKey("dbo.AvaliaStartup", "AvaliacaoRefId", "dbo.Avaliacao");
-            DropForeignKey("dbo.AvaliaStartup", "StartupCadastroRefId", "dbo.StartupCadastro");
-            DropIndex("dbo.AvaliaStartup", new[] { "AvaliacaoRefId" });
-            DropIndex("dbo.AvaliaStartup", new[] { "StartupCadastroRefId" });
+            DropForeignKey("dbo.StartupCadastro", "AvaliacaoID", "dbo.Avaliacao");
             DropIndex("dbo.EmpresaCadastro", new[] { "SegmentacaoID" });
+            DropIndex("dbo.StartupCadastro", new[] { "AvaliacaoID" });
             DropIndex("dbo.StartupCadastro", new[] { "SegmentacaoID" });
-            DropTable("dbo.AvaliaStartup");
             DropTable("dbo.Evento");
             DropTable("dbo.Emprego");
             DropTable("dbo.Contato");

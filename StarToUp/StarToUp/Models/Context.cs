@@ -22,15 +22,6 @@ namespace StarToUp.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<StartupCadastro>()
-            .HasMany<Avaliacao>(s => s.Avaliacoes)
-            .WithMany(c => c.StartupCadastros)
-            .Map(cs =>
-            {
-                cs.MapLeftKey("StartupCadastroRefId");
-                cs.MapRightKey("AvaliacaoRefId");
-                cs.ToTable("AvaliaStartup");
-            });
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
